@@ -10,16 +10,16 @@ updated: 2026-10-13T18:22:47
 refreshed: 2026-10-13T18:22:47
 status: stable
 sources: ["[[Block 7 Slides]]"]
-up: ["Parameter-Efficient Fine-Tuning"]
+up: ["[[Parameter-Efficient Fine-Tuning]]"]
 ---
 
 > [!concept] Concept
 > 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: Parameter-Efficient Fine-Tuning
+> Up: [[Parameter-Efficient Fine-Tuning]]
 
 ## Definition
 
-Adapters are a Parameter-Efficient Fine-Tuning approach: "add additional layers that have few parameters and tune only the parameters of those layers, keeping all others fixed" ([[Block 7 Slides]], p. 236). Another slide describes adapter modules as "Add small trainable transformations inside the model" (p. 237).
+Adapters are a [[Parameter-Efficient Fine-Tuning]] approach: "add additional layers that have few parameters and tune only the parameters of those layers, keeping all others fixed" ([[Block 7 Slides]], p. 236). Another slide describes adapter modules as "Add small trainable transformations inside the model" (p. 237).
 
 ## Explanation
 
@@ -39,7 +39,7 @@ Adapters are a Parameter-Efficient Fine-Tuning approach: "add additional layers 
 - The figure puts one adapter after attention and one after the feed-forward network. Each adapter comes before an "add & layer norm" step (p. 244, figure inspired by He et al. (2022), arXiv:2110.04366). See [[Transformers]] and [[Layer Normalization]].
 - "Interesting: it works even though the grey modules are kept fixed!" (p. 244)
 
-Training still uses backpropagation through the frozen layers above an adapter: "Frozen means no weight update; gradients can still pass through" (p. 245). See Parameter-Efficient Fine-Tuning and [[Backpropagation]].
+Training still uses backpropagation through the frozen layers above an adapter: "Frozen means no weight update; gradients can still pass through" (p. 245). See [[Parameter-Efficient Fine-Tuning]] and [[Backpropagation]].
 
 ### Results
 
@@ -76,7 +76,7 @@ Synthesis: an adapter module adds computation at inference, because its layers s
 
 ## Related
 
-- Parameter-Efficient Fine-Tuning
+- [[Parameter-Efficient Fine-Tuning]]
 - [[LoRA]]
 - [[Fine-Tuning]]
 - [[Transformers]]

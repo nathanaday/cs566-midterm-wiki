@@ -45,7 +45,7 @@ Stage 1 of [[Transfer Learning]] keeps the pretrained backbone fixed and trains 
 Source: [[Block 7 Slides]], p. 210. The slide says to compare these two options and the frozen-backbone baseline "using the same validation protocol" ([[Block 7 Slides]], p. 210).
 
 - "Full fine-tuning can change every entry of W." ([[Block 7 Slides]], p. 250) Each selected weight can change independently ([[Block 7 Slides]], p. 260). In [[LoRA]], the change must be expressible as B × A with the chosen rank. "More capacity does not guarantee better accuracy." ([[Block 7 Slides]], p. 260)
-- "Full fine-tuning stores more than the pretrained weights." Training also holds gradients and optimizer state (values used to update trainable parameters) and activations (intermediate values needed for backpropagation). "Fewer trainable parameters can reduce training-state cost." ([[Block 7 Slides]], p. 235) This cost is the reason for Parameter-Efficient Fine-Tuning.
+- "Full fine-tuning stores more than the pretrained weights." Training also holds gradients and optimizer state (values used to update trainable parameters) and activations (intermediate values needed for backpropagation). "Fewer trainable parameters can reduce training-state cost." ([[Block 7 Slides]], p. 235) This cost is the reason for [[Parameter-Efficient Fine-Tuning]].
 - The deck shows GPT-3 validation accuracy. Fine-tuned: 89.5% on MNLI-m and 85.4% on RTE. Few-shot: 40.6% and 69.0% ([[Block 7 Slides]], p. 256). The same slide asks "Can useful adaptation fit inside a small update space?" and gives the hypothesis "Small update spaces can suffice on some tasks." ([[Block 7 Slides]], p. 256)
 
 ### Learning rate
@@ -73,7 +73,7 @@ The deck uses "fine-tune" for different amounts of training. The bigger-dataset 
 ## Related
 
 - [[Transfer Learning]]
-- Parameter-Efficient Fine-Tuning
+- [[Parameter-Efficient Fine-Tuning]]
 - [[LoRA]]
 - In-Context Learning
 - Updating LLMs

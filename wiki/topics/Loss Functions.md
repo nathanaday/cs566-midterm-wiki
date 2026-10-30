@@ -156,7 +156,7 @@ Synthesis: the loss defines what "better" means before training starts. Two loss
 
 ## Related
 
-- Optimization
+- [[Optimization]]
 - [[Gradient Descent]]
 - [[Backpropagation]]: the backward pass starts from $\partial L / \partial \hat{y}$
 - [[Forward Propagation]]: the Block 3 network behind the squared-loss example

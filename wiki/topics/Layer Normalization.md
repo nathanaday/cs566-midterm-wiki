@@ -10,12 +10,12 @@ updated: 2026-10-13T18:22:47
 refreshed: 2026-10-13T18:22:47
 status: stable
 sources: ["[[Block 7 Slides]]", "[[Block 5 Slides]]"]
-up: ["Neural Network Training"]
+up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training
+> Up: [[Neural Network Training]]
 
 ## Definition
 

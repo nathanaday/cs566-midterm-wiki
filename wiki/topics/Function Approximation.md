@@ -55,7 +55,7 @@ The course is about two questions (p. 224):
 
 A bridge slide gives the chain: examples $(x, y)$ → model $f(x; W)$ → prediction $\hat{y}$ → loss $L(\hat{y}, y)$ → update $W$. It maps these steps to function approximation, supervised learning, linear models, and optimization ([[Block 1 Slides]], p. 207).
 
-Synthesis: [[Linear Classification]] is the simplest $f$. [[Loss Functions]] measure how far $f$ is from the target. Optimization adjusts $f$. [[Model Evaluation]] checks $f$ on data it did not see.
+Synthesis: [[Linear Classification]] is the simplest $f$. [[Loss Functions]] measure how far $f$ is from the target. [[Optimization]] adjusts $f$. [[Model Evaluation]] checks $f$ on data it did not see.
 
 ## Related
 
@@ -65,7 +65,7 @@ Synthesis: [[Linear Classification]] is the simplest $f$. [[Loss Functions]] mea
 - [[Linear Classification]]
 - [[Model Evaluation]]
 - [[Loss Functions]]
-- Optimization
+- [[Optimization]]
 - Machine Learning Task Types
 
 ## Sources

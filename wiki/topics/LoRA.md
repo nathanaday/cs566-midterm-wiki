@@ -10,16 +10,16 @@ updated: 2026-10-13T18:22:42
 refreshed: 2026-10-13T18:22:42
 status: stable
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 7 Slides]]"]
-up: ["Updating LLMs", "Parameter-Efficient Fine-Tuning"]
+up: ["Updating LLMs", "[[Parameter-Efficient Fine-Tuning]]"]
 ---
 
 > [!concept] Concept
 > 3 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: Updating LLMs · Parameter-Efficient Fine-Tuning
+> Up: Updating LLMs · [[Parameter-Efficient Fine-Tuning]]
 
 ## Definition
 
-LoRA (low-rank adaptation) is a Parameter-Efficient Fine-Tuning method: "learn a small delta for the each of the parameter matrices with the delta chosen to be low rank" ([[Block 7 Slides]], p. 236). It is one of the four ways in Updating LLMs that the Sep 14 lecture listed (Sep 14 Lecture Account, § Updating LLMs).
+LoRA (low-rank adaptation) is a [[Parameter-Efficient Fine-Tuning]] method: "learn a small delta for the each of the parameter matrices with the delta chosen to be low rank" ([[Block 7 Slides]], p. 236). It is one of the four ways in Updating LLMs that the Sep 14 lecture listed (Sep 14 Lecture Account, § Updating LLMs).
 
 Block 3: "Freeze a learned weight matrix W. None of its entries receive an update." "Replace Wx with (W + BA)x, where B and A are small. Only A and B are trained" ([[Block 3 Slides]], p. 217, citing LoRA, ICLR 2022).
 
@@ -52,7 +52,7 @@ At LLM scale, the deck labels one GPT-3 linear layer as "12k * 12k" (p. 255).
 - "A rank-2 update has fewer degrees of freedom than a full matrix update." A smaller rank gives "Fewer trainable parameters. A more restricted set of changes." A larger rank gives "More trainable parameters. More possible changes to the layer." "Validation decides whether extra capacity helps" (p. 262).
 - The deck lists "LoRA rank" with learning rate and weight decay as settings that hyperparameter tuning searches (p. 264). See HyperTuning for the separate method of that name.
 
-Intrinsic-dimension results suggest why a small update space can suffice. See Parameter-Efficient Fine-Tuning (pp. 256–259).
+Intrinsic-dimension results suggest why a small update space can suffice. See [[Parameter-Efficient Fine-Tuning]] (pp. 256–259).
 
 ### Initialization
 
@@ -92,7 +92,7 @@ Synthesis:
 
 ## Related
 
-- Parameter-Efficient Fine-Tuning
+- [[Parameter-Efficient Fine-Tuning]]
 - [[Adapters]]
 - [[Fine-Tuning]]
 - HyperTuning: generates LoRA parameters from task demonstrations

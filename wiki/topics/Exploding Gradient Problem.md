@@ -17,12 +17,12 @@ sources:
   - "Sep 14 Lecture Account"
   - "[[Block 5 Slides]]"
 up:
-  - "Neural Network Training"
+  - "[[Neural Network Training]]"
 ---
 
 > [!concept] Concept
 > 4 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training
+> Up: [[Neural Network Training]]
 
 ## Definition
 
@@ -78,7 +78,7 @@ Synthesis: one bad update can undo many good ones. Any calculation with `NaN` gi
 - [[Gradient Descent]]
 - [[Batch Normalization]]
 - Computational Graphs
-- Optimization
+- [[Optimization]]
 - [[Recurrent Neural Networks (RNN)]]
 - Backpropagation Through Time
 

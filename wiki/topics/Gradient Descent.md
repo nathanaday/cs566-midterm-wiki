@@ -25,12 +25,12 @@ sources:
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
 up:
-  - "Optimization"
+  - "[[Optimization]]"
 ---
 
 > [!concept] Concept
 > 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Optimization
+> Up: [[Optimization]]
 
 ## Definition
 
@@ -134,7 +134,7 @@ while True:
   weights += - step_size * weights_grad # perform parameter update
 ```
 
-In optimizer notation, SGD is $x_{t+1} = x_t - \alpha \nabla f(x_t)$ ([[Block 7 Slides]], p. 101). The midterm review repeats the SGD slide and this update ([[F26-midterm-review-234p]], pp. 108, 110). Minibatch gradients are noisy. Under poor conditioning, plain SGD zigzags, and where the gradient is zero, it gets stuck ([[Block 7 Slides]], pp. 92–97). Optimization explains these problems. [[Gradient-Based Optimizers]] covers the update rules built on SGD that address them.
+In optimizer notation, SGD is $x_{t+1} = x_t - \alpha \nabla f(x_t)$ ([[Block 7 Slides]], p. 101). The midterm review repeats the SGD slide and this update ([[F26-midterm-review-234p]], pp. 108, 110). Minibatch gradients are noisy. Under poor conditioning, plain SGD zigzags, and where the gradient is zero, it gets stuck ([[Block 7 Slides]], pp. 92–97). [[Optimization]] explains these problems. [[Gradient-Based Optimizers]] covers the update rules built on SGD that address them.
 
 ### Optimizers
 
@@ -148,7 +148,7 @@ Synthesis: the numerical method needs one extra loss computation for each weight
 
 - [[Gradient-Based Optimizers]]: SGD + Momentum, AdaGrad, RMSProp, Adam, and AdamW
 - Learning Rate Schedules: change the learning rate over training
-- Optimization
+- [[Optimization]]
 - [[Loss Functions]]
 - [[Perceptron]]
 - [[Backpropagation]]: computes $dW$ for every weight in one backward pass

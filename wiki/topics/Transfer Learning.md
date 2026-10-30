@@ -10,12 +10,12 @@ updated: 2026-10-19T18:32:33
 refreshed: 2026-10-19T18:32:33
 status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]", "Block 8 Slides"]
-up: ["Neural Network Training"]
+up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept
 > 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training
+> Up: [[Neural Network Training]]
 
 ## Definition
 
@@ -113,7 +113,7 @@ Layer transfer copies some parameters from a network trained on the source data 
 
 - [[Fine-Tuning]]
 - Pretrained Visual Encoders
-- Parameter-Efficient Fine-Tuning
+- [[Parameter-Efficient Fine-Tuning]]
 - Domain-Adversarial Training
 - Multitask Learning
 - Autoencoder Pretraining (pretraining with no class labels)

@@ -93,10 +93,10 @@ The decks give the instructor's own views, not course rules.
 - Language models: Autoregressive Language Modeling, Tokenization, Post-Training, KV Cache
 - Agents: Agent Loop, ReAct, Agent Skills, Agent Memory
 - Trustworthy AI: Deployment Failure Modes, Shortcut Learning, FORTIS, TrustLLM, LLM Trustworthiness
-- Foundations: [[Function Approximation]], [[Linear Classification]], [[Perceptron]], [[Model Evaluation]], [[Loss Functions]], [[Regularization]], [[Overfitting and Underfitting]], Optimization, [[Gradient Descent]], [[Linear Separability]]
+- Foundations: [[Function Approximation]], [[Linear Classification]], [[Perceptron]], [[Model Evaluation]], [[Loss Functions]], [[Regularization]], [[Overfitting and Underfitting]], [[Optimization]], [[Gradient Descent]], [[Linear Separability]]
 - Neural networks: [[Neural Networks]], [[Forward Propagation]], [[Backpropagation]], Computational Graphs, [[Activation Functions]], [[Dying ReLU]], [[Activation Sparsity]]
 - Training problems: [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Batch Normalization]], [[Residual Connections]]
-- Training and transfer (Block 7): Flower Classifier Running Example, [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Layer Normalization]], [[Weight Initialization]], [[Gradient-Based Optimizers]], Learning Rate Schedules, [[Dropout]], [[Data Augmentation]], [[Early Stopping]], [[Transfer Learning]], [[Fine-Tuning]], Domain-Adversarial Training, Multitask Learning, Parameter-Efficient Fine-Tuning, [[Adapters]], HyperTuning
+- Training and transfer (Block 7): Flower Classifier Running Example, [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Layer Normalization]], [[Weight Initialization]], [[Gradient-Based Optimizers]], Learning Rate Schedules, [[Dropout]], [[Data Augmentation]], [[Early Stopping]], [[Transfer Learning]], [[Fine-Tuning]], Domain-Adversarial Training, Multitask Learning, [[Parameter-Efficient Fine-Tuning]], [[Adapters]], HyperTuning
 - Automated ML and outlier detection: AutoML, Bayesian Optimization, [[Unsupervised Outlier Model Selection]], MetaOD, TOD
 - Research examples: LLM Election Simulation
 - Updating LLMs: Updating LLMs, In-Context Learning, [[LoRA]], Test-Time Training

@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["Neural Network Training", "[[Regularization]]"]
+up: ["[[Neural Network Training]]", "[[Regularization]]"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training · [[Regularization]]
+> Up: [[Neural Network Training]] · [[Regularization]]
 
 ## Definition
 

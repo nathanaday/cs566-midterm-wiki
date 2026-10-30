@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 7 Slides]]", "[[Block 3 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["Neural Network Training", "Optimization"]
+up: ["[[Neural Network Training]]", "[[Optimization]]"]
 ---
 
 > [!concept] Concept
 > 4 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training · Optimization
+> Up: [[Neural Network Training]] · [[Optimization]]
 
 ## Definition
 
@@ -47,7 +47,7 @@ while True:
   x -= learning_rate * dx
 ```
 
-SGD remembers only the current gradient (p. 116). [[Gradient Descent]] covers the full-data and minibatch forms. On real loss surfaces, plain SGD meets poor conditioning, local minima and saddle points, and noisy minibatch gradients ([[Block 7 Slides]], pp. 92–97). Optimization explains these problems. Momentum and per-parameter step scaling respond to them (pp. 99, 108).
+SGD remembers only the current gradient (p. 116). [[Gradient Descent]] covers the full-data and minibatch forms. On real loss surfaces, plain SGD meets poor conditioning, local minima and saddle points, and noisy minibatch gradients ([[Block 7 Slides]], pp. 92–97). [[Optimization]] explains these problems. Momentum and per-parameter step scaling respond to them (pp. 99, 108).
 
 ### SGD + Momentum
 
@@ -191,7 +191,7 @@ Synthesis: in the first steps both moments are near zero, so they underestimate 
 ## Related
 
 - [[Gradient Descent]]: the base update rule, full-batch and minibatch SGD, and the role of the learning rate
-- Optimization: poor conditioning, saddle points, and noisy minibatch gradients, the problems that momentum and adaptive steps address
+- [[Optimization]]: poor conditioning, saddle points, and noisy minibatch gradients, the problems that momentum and adaptive steps address
 - Learning Rate Schedules: every optimizer here still needs a learning rate and a schedule
 - [[Backpropagation]]: produces the gradients that optimizers consume
 - [[Regularization]]: L2 penalty versus decoupled weight decay

@@ -97,7 +97,7 @@ Credited to CMU 10701 ([[Block 1 Slides]], p. 298). Solve $\min_\beta (A\beta - 
 
 ### Linear models: when $A^T A$ is not invertible
 
-Credited to CMU 10601 ([[Block 2 Slides]], p. 100). The least-squares solution in Optimization needs $A^T A$ to be invertible. If it is not, the system has $r$ equations and $p$ unknowns and is underdetermined. It has many feasible solutions, so the solution must be constrained further. One constraint biases the solution toward small values of $\beta$, so that small changes in input do not give large changes in output. The two penalized estimates are:
+Credited to CMU 10601 ([[Block 2 Slides]], p. 100). The least-squares solution in [[Optimization]] needs $A^T A$ to be invertible. If it is not, the system has $r$ equations and $p$ unknowns and is underdetermined. It has many feasible solutions, so the solution must be constrained further. One constraint biases the solution toward small values of $\beta$, so that small changes in input do not give large changes in output. The two penalized estimates are:
 
 $$\hat{\beta}_{MAP} = \arg\min_\beta \sum_{i=1}^{n} (Y_i - X_i\beta)^2 + \lambda \lVert \beta \rVert_2^2 \quad \text{(ridge regression, L2 penalty)}$$
 
@@ -164,7 +164,7 @@ Block 7 tells the reader to "return to the gap between training and validation p
 
 ### Why it matters
 
-Regularization is the main tool in this lecture against [[Overfitting and Underfitting]]. Synthesis: a penalty puts Ockham's razor into the objective that Optimization minimizes. For linear least squares it also picks one answer when the normal equation has many. The training-randomness methods reach a similar goal without a penalty term: the network cannot depend on one unit, connection, layer, or image region.
+Regularization is the main tool in this lecture against [[Overfitting and Underfitting]]. Synthesis: a penalty puts Ockham's razor into the objective that [[Optimization]] minimizes. For linear least squares it also picks one answer when the normal equation has many. The training-randomness methods reach a similar goal without a penalty term: the network cannot depend on one unit, connection, layer, or image region.
 
 ## Related
 
@@ -172,7 +172,7 @@ Regularization is the main tool in this lecture against [[Overfitting and Underf
 - [[Dropout]]
 - [[Loss Functions]]
 - [[Overfitting and Underfitting]]
-- Optimization
+- [[Optimization]]
 - Model Selection
 - [[Linear Classification]]
 - [[Neural Networks]]

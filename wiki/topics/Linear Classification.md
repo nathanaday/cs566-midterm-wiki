@@ -82,7 +82,7 @@ The slides list these properties ([[Block 1 Slides]], pp. 344–346):
 
 ### Why it matters
 
-Synthesis: the [[Perceptron]] adds a sign function to this score. [[Loss Functions]] and Optimization choose $W$ and $b$. [[Linear Separability]] shows what a linear boundary cannot do, which motivates [[Deep Learning]].
+Synthesis: the [[Perceptron]] adds a sign function to this score. [[Loss Functions]] and [[Optimization]] choose $W$ and $b$. [[Linear Separability]] shows what a linear boundary cannot do, which motivates [[Deep Learning]].
 
 ## Related
 
@@ -91,7 +91,7 @@ Synthesis: the [[Perceptron]] adds a sign function to this score. [[Loss Functio
 - [[Perceptron]]
 - [[Linear Separability]]
 - [[Loss Functions]]
-- Optimization
+- [[Optimization]]
 - [[Regularization]]
 - [[Neural Networks]]
 

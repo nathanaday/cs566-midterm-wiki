@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["Neural Network Training"]
+up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training
+> Up: [[Neural Network Training]]
 
 ## Definition
 
@@ -176,7 +176,7 @@ The slide "Initialization Helps Gradient Flow" (p. 83) puts initialization next 
 - [[Dying ReLU]]: a different failure in which ReLU units stop learning
 - [[Transfer Learning]]
 - Pretrained Visual Encoders
-- Optimization
+- [[Optimization]]
 - [[Gradient Descent]]: the SGD step in the symmetry example
 
 ## Sources

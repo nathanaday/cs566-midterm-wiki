@@ -21,12 +21,12 @@ sources:
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
 up:
-  - "Neural Network Training"
+  - "[[Neural Network Training]]"
 ---
 
 > [!concept] Concept
 > 6 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Neural Network Training
+> Up: [[Neural Network Training]]
 
 ## Definition
 
