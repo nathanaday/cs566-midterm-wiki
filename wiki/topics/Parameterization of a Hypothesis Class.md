@@ -4,10 +4,6 @@ aliases: [Hypothesis class, Hypothesis space, Model family, Reparameterization, 
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[Block 3 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[Function Approximation]]
-
 ## Definition
 
 A hypothesis class is the set of functions a model can represent. The slides write it as "Set, ℋ, of candidate hypothesis functions, h : 𝒳→ 𝒴" and give "all possible decision trees" as the example ([[Block 1 Slides]], p. 250). A parametric model such as $f(x; W) = Wx$ names that set through its weights: each choice of $W$ picks one function, and the class is every function some $W$ can produce ([[Block 1 Slides]], p. 231). The parameterization is the rule that turns parameter values into a function. Synthesis: two rules can produce the same class, and a rule can produce only part of a class that looks the same on paper. That is what the sample midterm tests in Q37 and Q38.

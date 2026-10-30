@@ -4,10 +4,6 @@ aliases: [transfer learning with CNNs, frozen backbone, frozen backbone with a n
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]", "Block 8 Slides"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Training from scratch learns all representations from the target dataset. Transfer learning starts with representations learned from other data ([[Block 7 Slides]], p. 192). The deck calls this other data the source data and describes it as "not directly related to the task" ([[Block 7 Slides]], p. 211). "The source and target data determine how useful transfer is." ([[Block 7 Slides]], p. 192) [[F26-midterm-review-234p]] repeats the slide of p. 192 (p. 141). Its lead line gives the motive: "Our flower dataset is small. A pretrained model already encodes visual patterns." ([[F26-midterm-review-234p]], p. 141)

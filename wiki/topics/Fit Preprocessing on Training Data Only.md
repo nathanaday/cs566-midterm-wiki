@@ -4,10 +4,6 @@ aliases: [Split the data before fitting preprocessing or models, "Fit preprocess
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!policy] Should · holds for repositories tagged #machine-learning/cs566-deeplearning
-> 2 sources · refreshed 2026-10-19
-> Up: [[Data Preprocessing]]
-
 ## Rule
 
 1. Split the data into training, validation, and test sets before you fit any preprocessing or model. The slide: "Split the flower photos before fitting preprocessing or models" ([[Block 7 Slides]], p. 17). The same slide adds: "Keep near-duplicate photos in the same split" (p. 17).

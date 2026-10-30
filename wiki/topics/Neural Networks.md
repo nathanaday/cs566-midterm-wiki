@@ -4,10 +4,6 @@ aliases: [Fully Connected Network, Multi-Layer Perceptron, MLP, Neural Network D
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[Block 4 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[CS566-DeepLearning]] · Machine Learning
-
 ## Definition
 
 A neural network is "a set of neurons (atomic functions) connected in a non-linear way" ([[Block 3 Slides]], p. 28).

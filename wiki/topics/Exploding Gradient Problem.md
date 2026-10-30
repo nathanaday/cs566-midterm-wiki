@@ -9,10 +9,6 @@ sources:
   - "[[Block 5 Slides]]"
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 The exploding gradient problem occurs when the gradient becomes too large. "If the gradient becomes too big, then the SGD update step becomes too big", with $\theta^{new} = \theta^{old} - \alpha \nabla_\theta J(\theta)$ ([[Block 3 Slides]], p. 234). The effects (p. 234):

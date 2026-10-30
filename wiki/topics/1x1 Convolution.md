@@ -4,10 +4,6 @@ aliases: [1×1 Convolution, 1x1 Conv, Pointwise Convolution, 1x1 Bottleneck]
 sources: ["[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 1 source · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Layer]]
-
 ## Definition
 
 A 1x1 convolution is a standard dense convolution with a 1x1 kernel ([[F26-midterm-review-234p]], pp. 70-71). "The 1×1 filter never reads neighboring positions; it only forms a learned combination of the channels stacked at one spot" (p. 71).

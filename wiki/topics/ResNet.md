@@ -4,10 +4,6 @@ aliases: [Residual Network, Residual Networks, ResNet-18, ResNet-34, ResNet-50, 
 sources: ["[[Block 4 Slides]]", "[[Block 7 Slides]]"]
 ---
 
-> [!entity] Entity
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Neural Networks (CNN)]]
-
 ## What it is
 
 ResNet is a family of very deep CNNs built by stacking residual blocks ([[Block 4 Slides]], pp. 201, 211; see [[Residual Connections]]). Every ResNet slide in the deck cites He et al., 2015 (pp. 201-220). A 152-layer ResNet won ILSVRC 2015 classification with 3.57% top-5 error (p. 201). The deck marks ResNet as the start of the "Revolution of Depth" (p. 200).

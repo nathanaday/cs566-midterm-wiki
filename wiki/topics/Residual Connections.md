@@ -4,10 +4,6 @@ aliases: [Skip Connection, Residual Path, Residual Block, Identity Shortcut, Sho
 sources: ["[[Block 3 Slides]]", "[[Block 4 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Vanishing Gradient Problem]]
-
 ## Definition
 
 A residual connection adds a block's input to its output: $y = x + f(x)$. Then $\dfrac{dy}{dx} = I + J_f$, where $I$ is the identity and $J_f$ is the Jacobian of $f$ ([[Block 3 Slides]], p. 233, citing He et al., CVPR 2016; [[Block 4 Slides]], p. 210). The $I$ term gives the gradient a direct route around $f$.

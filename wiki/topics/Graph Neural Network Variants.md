@@ -4,10 +4,6 @@ aliases: [Graph Attention Network, GAT, Graph Autoencoder, GAE, Directed Graphs 
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[Graph Neural Networks]]
-
 ## Definition
 
 The GCN of the slides updates a node from the plain mean of its neighbors with two shared matrices, $W_k$ for the neighbor mean and $B_k$ for the node itself ([[Block 6 Slides]], pp. 89, 98). The slides say that GNN approaches differ mainly in what goes in the aggregation box ([[Block 6 Slides]], p. 87). This page covers three variants that the sample midterm asks about: how the update treats a directed edge, how an attention weight replaces the uniform $1/|N(v)|$, and how an autoencoder trains the encoder from the graph structure alone, with no labels.

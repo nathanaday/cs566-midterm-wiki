@@ -4,10 +4,6 @@ aliases: [CNN, CNNs, ConvNet, Convolutional Neural Network, Components of CNNs, 
 sources: ["Topic Note - Convolutional Neural Networks (CNN)", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[Block 3 Slides]]", "An Image is Worth 16x16 Words (note)", "FastVLM (note)", "Topic Note - Sequence Transduction", "Fall 2026 Reading List", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 10 sources · refreshed 2026-10-19 · #machine-learning
-> Up: [[Neural Networks]] · Machine Learning
-
 ## Definition
 
 A CNN is a classic deep learning architecture for computer vision, in use from about 1980 on (Topic Note - Convolutional Neural Networks (CNN)). The note describes the flow like this: the network can split an image into channels, and passes it through convolutional layers. At the end, a fully connected layer flattens the data and feeds an output layer, usually a classifier (Topic Note - Convolutional Neural Networks (CNN)).

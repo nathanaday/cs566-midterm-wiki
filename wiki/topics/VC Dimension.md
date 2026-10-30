@@ -4,10 +4,6 @@ aliases: [Vapnik-Chervonenkis Dimension, Shattering, Model Capacity Measure]
 sources: ["[[Block 2 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[Overfitting and Underfitting]]
-
 ## Definition
 
 The VC dimension is the slides' "More precisely measure of complexity": "VC dim for classification model: the maximum number of examples the model can shatter" ([[Block 2 Slides]], p. 89). Synthesis: a hypothesis class shatters a set of $n$ points when, for each of the $2^n$ ways to assign binary labels to them, some hypothesis in the class predicts every label correctly. The VC dimension is the largest $n$ for which some set of $n$ points is shattered. One shattered set is enough; the class does not have to shatter every set of that size.

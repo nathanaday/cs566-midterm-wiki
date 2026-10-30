@@ -4,10 +4,6 @@ aliases: [LayerNorm, Layer Norm, LN]
 sources: ["[[Block 7 Slides]]", "[[Block 5 Slides]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Layer normalization (LayerNorm) normalizes activations, as [[Batch Normalization]] does, but it uses a different group of values. LayerNorm compares "features within one example or token". BatchNorm compares "one feature across examples in a mini-batch" ([[Block 7 Slides]], p. 35).

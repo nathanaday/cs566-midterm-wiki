@@ -4,10 +4,6 @@ aliases: [FC Layer, FC, Dense Layer]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Neural Networks (CNN)]]
-
 ## Definition
 
 A fully connected (FC) layer maps an $M \times N \times P$ input to a $Q \times 1$ output ([[Block 4 Slides]], p. 50). It stretches the input into a vector $x$ of size $(M \cdot N \cdot P) \times 1$ (p. 51). The output is $Wx$, where $W$ is a $Q \times (M \cdot N \cdot P)$ matrix (pp. 52-53). The layer learns $W$ (p. 54).

@@ -4,10 +4,6 @@ aliases: [Aggregate Neighbors, Message Passing, Node Computation Graph, GNN Comp
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Graph Neural Networks]]
-
 ## Definition
 
 Neighborhood aggregation is the step in which a node combines information from its neighbors to compute its next embedding. The key idea is to generate node embeddings from local network neighborhoods ([[Block 6 Slides]], p. 83; [[Block 6 Slides Extended]], p. 78; [[F26-midterm-review-234p]], p. 223). Nodes aggregate information from their neighbors with neural networks ([[Block 6 Slides]], p. 84; [[Block 6 Slides Extended]], p. 79). Different approaches differ mainly in how they aggregate information across the layers. The slides ask: "What is in the box?" ([[Block 6 Slides]], p. 87; [[Block 6 Slides Extended]], p. 82).

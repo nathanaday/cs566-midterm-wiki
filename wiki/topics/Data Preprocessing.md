@@ -4,10 +4,6 @@ aliases: [Input preprocessing, Zero-centering, Zero-center data, Mean subtractio
 sources: ["[[Block 7 Slides]]"]
 ---
 
-> [!concept] Concept
-> 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Data preprocessing is the set of transformations applied to input data before training. The Block 7 deck lists three steps: zero-center data, normalize data, and PCA whitening ([[Block 7 Slides]], pp. 19-20). The deck also covers missing values and the input convention of a pretrained model under the same subject (pp. 38-39).

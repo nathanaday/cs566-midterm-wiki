@@ -4,10 +4,6 @@ aliases: [Adapter, Adapter Layer, Adapter Module, Adapter Modules]
 sources: ["[[Block 7 Slides]]"]
 ---
 
-> [!concept] Concept
-> 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Parameter-Efficient Fine-Tuning]]
-
 ## Definition
 
 Adapters are a [[Parameter-Efficient Fine-Tuning]] approach: "add additional layers that have few parameters and tune only the parameters of those layers, keeping all others fixed" ([[Block 7 Slides]], p. 236). Another slide describes adapter modules as "Add small trainable transformations inside the model" (p. 237).

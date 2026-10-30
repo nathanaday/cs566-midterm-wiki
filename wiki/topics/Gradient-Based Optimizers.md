@@ -4,10 +4,6 @@ aliases: [Optimizer, SGD + Momentum, SGD with momentum, Momentum, AdaGrad, Adagr
 sources: ["[[Block 7 Slides]]", "[[Block 3 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]] · [[Optimization]]
-
 ## Definition
 
 An optimizer is the rule that turns a gradient into a parameter update. "Optimizers consume gradients; they do not produce them" ([[Block 3 Slides]], p. 16). [[Backpropagation]] produces the gradients. The midterm review says the same: "The optimizer is a separate step that uses the computed gradients to update parameters" ([[F26-midterm-review-234p]], p. 78). The base rule is SGD, $x_{t+1} = x_t - \alpha \nabla f(x_t)$ ([[Block 7 Slides]], p. 101). The other optimizers in the course change two things: what the rule remembers from past steps, and how it scales each step ([[Block 7 Slides]], p. 116).

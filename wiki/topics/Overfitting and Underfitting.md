@@ -24,10 +24,6 @@ sources:
   - "[[F26-midterm-review-234p]]"
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Model Evaluation]]
-
 ## Definition
 
 A figure with two classes (X and O) shows three decision boundaries ([[Block 1 Slides]], p. 292; repeated in [[Block 2 Slides]], p. 82, and in [[F26-midterm-review-234p]], p. 12):

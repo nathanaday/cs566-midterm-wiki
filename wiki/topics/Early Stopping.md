@@ -4,10 +4,6 @@ aliases: [Checkpoint selection, Best checkpoint, Patience window, Patience, Earl
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Early stopping uses a held-out validation metric to decide when training ends and which checkpoint to keep. The deck's slide "Checkpoint Selection and Early Stopping" treats the two decisions together ([[Block 7 Slides]], p. 135).

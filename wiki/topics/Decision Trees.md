@@ -4,10 +4,6 @@ aliases: [Decision tree, DT, Decision tree classifier, Decision tree learning, G
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Classical Machine Learning
-
 ## Definition
 
 A decision tree is a classifier that sends an input through a tree of feature tests. Each test picks a branch, and the leaf at the end gives the predicted class ([[Block 2 Slides]], pp. 36–38). Decision trees are the first topic in the Classical ML Algorithms section of CSCI 566, and the slides credit the material to Stanford CS 229 ([[Block 2 Slides]], pp. 30–60).

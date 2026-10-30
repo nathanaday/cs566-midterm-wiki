@@ -4,10 +4,6 @@ aliases: [Activation Function, Nonlinearity, Nonlinear Activation, ReLU, Rectifi
 sources: ["[[Block 3 Slides]]", "CSCI 566 Syllabus", "Sep 14 Lecture Account", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 6 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Networks]]
-
 ## Definition
 
 An activation function $f$ is a non-linear function that a neural network applies to each unit's weighted sum. A layer computes $h = f(Wx + b)$. The slides draw the analogy to a neuron: inputs $w_i x_i$ sum in the cell body, and $f(\sum_i w_i x_i + b)$ is the output on the axon ([[Block 3 Slides]], p. 239).

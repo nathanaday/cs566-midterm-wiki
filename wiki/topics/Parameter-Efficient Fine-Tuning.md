@@ -4,10 +4,6 @@ aliases: [PEFT, Parameter Efficient Fine-Tuning, Prefix Tuning, Top-K Layer Fine
 sources: ["[[Block 7 Slides]]", "[[Block 3 Slides]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Fine-Tuning]]
-
 ## Definition
 
 Parameter-efficient fine-tuning (PEFT) adapts a pretrained model by training a small set of parameters. The other parameters stay frozen. The Block 7 deck states the goal: "perform fine-tuning of fewer parameters, but achieve performance on a downstream task that is comparable to fine-tuning of all parameters" ([[Block 7 Slides]], p. 236).

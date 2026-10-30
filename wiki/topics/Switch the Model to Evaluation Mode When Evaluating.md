@@ -4,10 +4,6 @@ aliases: [Eval mode, Evaluation mode, Call model.eval() before inference, Mode i
 sources: ["[[F26-midterm-review-234p]]", "[[Block 7 Slides]]", "[[Block 4 Slides]]"]
 ---
 
-> [!policy] Must · holds for repositories tagged #machine-learning/cs566-deeplearning
-> 3 sources · refreshed 2026-10-19
-> Up: [[Model Evaluation]]
-
 ## Rule
 
 Put the model in evaluation mode before you evaluate, validate, test, or run inference with it. The slide: "Switch the model to evaluation mode when evaluating" ([[F26-midterm-review-234p]], p. 122; [[Block 7 Slides]], p. 34). Block 4 gives the PyTorch form: "Mode is part of the function. Call model.eval() before inference." ([[Block 4 Slides]], p. 176).

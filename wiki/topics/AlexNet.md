@@ -11,10 +11,6 @@ sources:
   - "[[Block 7 Slides]]"
 ---
 
-> [!entity] Contested · Entity
-> 5 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Neural Networks (CNN)]] · [[Deep Learning]]
-
 ## What it is
 
 AlexNet is the convolutional network from Krizhevsky et al., "ImageNet Classification with Deep Convolutional Neural Networks", NeurIPS 2012 ([[Block 1 Slides]], pp. 40, 71; [[Block 4 Slides]], p. 29). Alex Krizhevsky designed it with Ilya Sutskever and Geoffrey Hinton ([[Block 4 Slides]], p. 22). It has 8 layers and won ILSVRC 2012. It was the first CNN-based winner of the challenge ([[Block 4 Slides]], p. 182; see ImageNet Large Scale Visual Recognition Challenge).

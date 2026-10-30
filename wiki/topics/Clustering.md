@@ -4,10 +4,6 @@ aliases: [cluster analysis, unsupervised clustering, Unsupervised learning, Semi
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Classical Machine Learning
-
 ## Definition
 
 Clustering discovers groups (clusters) of related items, for example Sports and World News articles ([[Block 2 Slides]], pp. 184-185). It is an unsupervised learning task: it uses inputs X only, with no labels Y ([[Block 2 Slides]], p. 188). In the words of the slide: "No labels provided", "uncover cluster structure from input alone" ([[Block 2 Slides]], p. 189; repeated in [[F26-midterm-review-234p]], p. 29). The input is documents as vectors $x_i$, and the output is cluster labels $z_i$ ([[Block 2 Slides]], p. 189; [[F26-midterm-review-234p]], p. 29, credited to Stanford CS 229). When the labels are known, the task becomes classification on a labeled training set ([[Block 2 Slides]], p. 188).

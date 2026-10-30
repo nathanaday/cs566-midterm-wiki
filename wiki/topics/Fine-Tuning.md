@@ -4,10 +4,6 @@ aliases: [finetuning, fine-tune, model fine-tuning, partial fine-tuning, full fi
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Transfer Learning]]
-
 ## Definition
 
 Fine-tuning updates the parameters of a pretrained model for a target task. The deck defines it as follows: "Use training examples and loss to update selected parameters before later inference." ([[Block 7 Slides]], p. 229) The idea is to train a model on the source data, then fine-tune the model on the target data ([[Block 7 Slides]], p. 212). "Fine-tuning changes selected pretrained parameters." ([[Block 7 Slides]], p. 201; repeated in [[F26-midterm-review-234p]], p. 144)

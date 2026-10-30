@@ -4,9 +4,6 @@ aliases: [Transformer, Decoder-only Transformer, GPT-style Transformer, Text-gen
 sources: ["Attention Is All You Need (note)", "Topic Note - Transformers", "Topic Note - Sequence Transduction", "An Image is Worth 16x16 Words (note)", "Fall 2026 Reading List", "[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 11 sources · refreshed 2026-10-19 · #machine-learning
-
 ## Definition
 
 The Attention note says the Transformer is a sequence model built only from attention and feed-forward layers. It removes recurrence and convolution entirely (Attention Is All You Need (note)). The Transformers note dates it to about 2017. It says the model does not track hidden states the way RNNs and LSTMs do. At each step it looks over the whole sequence and finds associations between each step and the rest of the sequence (Topic Note - Transformers).

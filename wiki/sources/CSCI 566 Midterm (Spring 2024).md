@@ -3,10 +3,7 @@ description: "The CSCI 566 midterm exam from Spring 2024 (10 pages, 50 questions
 aliases: [Spring 2024 Midterm, Sample Midterm]
 ---
 
-> [!source] PDF · 10 pages · official
-> Captured 2026-10-29 from `midterm.pdf` (ingest) · mapped onto the topics of this vault by hand
-
-![[internal/wiki/originals/74d697f77a62282e.pdf]]
+The original is [[attachments/CSCI 566 Midterm (Spring 2024).pdf|CSCI 566 Midterm (Spring 2024).pdf]], 10 pages, an official course document saved as `midterm.pdf` on 2026-10-29.
 
 ## Summary
 

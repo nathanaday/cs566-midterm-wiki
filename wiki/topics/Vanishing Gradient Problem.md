@@ -4,10 +4,6 @@ aliases: [Vanishing Gradients]
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 4 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 In backpropagation, the gradient for an early layer is a product of local derivatives, with one factor for each later layer (Computational Graphs). [[Block 3 Slides]] writes it for four layers (pp. 224–229):

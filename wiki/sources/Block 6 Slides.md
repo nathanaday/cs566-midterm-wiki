@@ -2,10 +2,7 @@
 description: "The CSCI 566 Block 6 slide deck by Yue Zhao on graph neural networks: graph types and tasks, applications and TDC, node embeddings, permutation invariance and equivariance, the GCN, GNNs compared with CNNs and Transformers, and LLMs combined with graphs."
 ---
 
-> [!source] PDF · 133 pages · official
-> Captured 2026-09-28 from `Block 6 Slides.pdf` (ingest) · absorbed by 2026-09-28 Ingest the CS566 Block 5 and Block 6 slides (2)
-
-![[internal/wiki/originals/479da34f4887d5ac.pdf]]
+The original is [[attachments/Block 6 Slides.pdf|Block 6 Slides.pdf]], 133 pages, an official course document saved as `Block 6 Slides.pdf` on 2026-09-28.
 
 ## Summary
 

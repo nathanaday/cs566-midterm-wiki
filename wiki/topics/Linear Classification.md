@@ -12,10 +12,6 @@ sources:
   - "[[Block 4 Slides]]"
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Function Approximation]]
-
 ## Definition
 
 Linear classification is the first simple function the lecture learns ([[Block 1 Slides]], p. 229).

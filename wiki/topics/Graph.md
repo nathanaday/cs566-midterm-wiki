@@ -4,10 +4,6 @@ aliases: [Graphs, Network, Relational graph, Machine learning on graphs, Graph M
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Graph Neural Networks]]
-
 ## Definition
 
 The slides call graphs "a general language to describe and analyze entities with relations/interactions" ([[Block 6 Slides]], p. 3). A graph has nodes (also called vertices, the set $V$ or $N$) and edges (also called links, the set $E$).

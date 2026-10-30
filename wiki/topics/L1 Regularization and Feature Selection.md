@@ -4,10 +4,6 @@ aliases: [Lasso, Ridge vs Lasso, L1 Penalty, Sparsity, Sparse Weights]
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[Regularization]]
-
 ## Definition
 
 The L1 penalty is the sum of the absolute values of the weights, $R(W) = \sum_{k,l} \lvert W_{k,l} \rvert$, and the L2 penalty is the sum of their squares, $R(W) = \sum_{k,l} W_{k,l}^2$ ([[Block 1 Slides]], p. 296). In least squares the L1 form is called Lasso and the L2 form is called Ridge regression ([[Block 2 Slides]], p. 100). The two penalties shrink the weights in different ways: "Lasso (l1 penalty) results in sparse solutions – vector with more zero coordinates" ([[Block 1 Slides]], p. 298). A weight that is exactly zero removes its feature from the model, so Lasso performs feature selection and Ridge does not.

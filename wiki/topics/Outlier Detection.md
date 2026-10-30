@@ -4,10 +4,6 @@ aliases: [Anomaly Detection, Outlier, Anomaly, OD, kNN outlier detection, k-th n
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[Block 6 Slides]]", "[[Block 7 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[k-Nearest Neighbors]]
-
 ## Definition
 
 Outlier detection (OD) finds "observations unusual relative to a reference dataset" ([[Block 7 Slides]], p. 355). The sample midterm defines an outlier the same way: a data point that differs significantly from the other observations in the dataset ([[CSCI 566 Midterm (Spring 2024)]], Q39). The decks file the task under unsupervised learning, next to clustering and compression ([[Block 1 Slides]], p. 58), and the detector they describe is the kNN detector, which uses the "$k$-th nearest neighbor distance as the outlier score" ([[Block 7 Slides]], p. 290).

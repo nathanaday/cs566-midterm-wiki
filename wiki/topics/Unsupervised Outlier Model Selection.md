@@ -4,10 +4,6 @@ aliases: [Unsupervised OD model selection, UOMS, Unsupervised model selection, M
 sources: ["[[Block 7 Slides]]"]
 ---
 
-> [!concept] Concept
-> 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: AutoML
-
 ## Definition
 
 Unsupervised outlier model selection chooses a detector for a new dataset that has no labels. The Block 7 deck defines the terms in one table ([[Block 7 Slides]], p. 355):

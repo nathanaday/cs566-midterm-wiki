@@ -4,10 +4,6 @@ aliases: [Dead ReLU, Dead Neurons]
 sources: ["[[Block 3 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Activation Functions]]
-
 ## Definition
 
 ReLU "can suffer from 'dying ReLU' problem, where neurons can become inactive on all current training examples" ([[Block 3 Slides]], p. 77). The midterm review repeats this sentence ([[F26-midterm-review-234p]], p. 50).

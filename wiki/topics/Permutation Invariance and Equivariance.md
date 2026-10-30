@@ -4,10 +4,6 @@ aliases: [Permutation Invariance, Permutation Equivariance, Permutation-Invarian
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Graph Neural Networks]]
-
 ## Definition
 
 A graph has no canonical order of its nodes ([[Block 6 Slides]], p. 67). Node numbering is arbitrary ([[Block 6 Slides Extended]], p. 66). Permutation invariance and permutation equivariance state how a function on a graph must behave when the node order changes ([[Block 6 Slides]], p. 77):

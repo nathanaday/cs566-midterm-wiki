@@ -4,10 +4,6 @@ aliases: [k-Means Local Minimum, Centroid Initialization, k-means++, Random Rest
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[Block 7 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[k-Means]]
-
 ## Definition
 
 A centroid is the center of a cluster: in [[k-Means]], the mean of the observations assigned to that cluster ([[Block 2 Slides]], p. 197). The algorithm starts from k centers chosen before any assignment ([[Block 2 Slides]], p. 195) and then repeats assignment and revision "until convergence" ([[Block 2 Slides]], p. 198). Where it stops depends on where it started: the review deck shows two finished runs on the same data with different centers and different totals ([[F26-midterm-review-234p]], p. 36).

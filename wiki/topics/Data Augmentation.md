@@ -4,10 +4,6 @@ aliases: [Augmentation, Label-preserving augmentation, Augment only with label-p
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Data augmentation transforms each training image after it is loaded and before the network sees it. The label does not change. The slides present it as a form of regularization ("Regularization: Data Augmentation") ([[Block 7 Slides]], pp. 154-155).

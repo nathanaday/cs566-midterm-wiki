@@ -4,10 +4,6 @@ aliases: [Node embedding, Graph representation learning, Representation learning
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Graph Neural Networks]]
-
 ## Definition
 
 A node embedding is a vector $z_u \in \mathbb{R}^d$ for a node $u$ of a [[Graph]]. The goal is "efficient task-independent feature learning for machine learning with graphs": learn a map $f: u \to \mathbb{R}^d$ from each node to its feature representation, or embedding ([[Block 6 Slides]], p. 43).

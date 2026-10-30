@@ -4,10 +4,6 @@ aliases: [Dropout regularization, Classic dropout, Inverted dropout, Dropout tes
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]] · [[Regularization]]
-
 ## Definition
 
 "During training, some hidden activations are randomly set to zero" ([[Block 7 Slides]], p. 140; [[F26-midterm-review-234p]], p. 128). In each forward pass, dropout sets some neurons to zero at random. The probability of dropping is a hyperparameter, and 0.5 is common ([[Block 7 Slides]], p. 141, citing Srivastava et al., "Dropout: A simple way to prevent neural networks from overfitting", JMLR 2014).

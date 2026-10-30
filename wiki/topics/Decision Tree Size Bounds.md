@@ -4,10 +4,6 @@ aliases: [Maximum depth of a decision tree, Maximum number of leaves, Decision t
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[Decision Trees]]
-
 ## Definition
 
 The size of a decision tree is its number of leaves and its depth. The sample midterm defines depth as "the maximum number of nodes between the root and any of the leaf nodes (including the leaf, not the root)" ([[CSCI 566 Midterm (Spring 2024)]], Q27), so a decision stump has depth 1. With $k$ binary attributes, a tree has at most $2^k$ leaves and depth at most $k$. With continuous attributes and $N$ training samples, a tree has at most $N$ leaves and depth at most $N - 1$. The decks give the facts these bounds rest on, and this topic derives the bounds from them.

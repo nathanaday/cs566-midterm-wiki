@@ -11,10 +11,6 @@ sources:
   - "Block 8 Slides"
 ---
 
-> [!concept] Concept
-> 6 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[CS566-DeepLearning]] · Machine Learning
-
 ## Definition
 
 Deep learning is a "Subset of ML which make the computation of multi-layer neural network feasible". ML is in turn a subset of AI ([[Block 1 Slides]], p. 65).

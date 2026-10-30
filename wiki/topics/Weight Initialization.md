@@ -4,10 +4,6 @@ aliases: [Initialization, Weight W Initialization, Xavier initialization, Glorot
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Weight initialization is the choice of a network's starting weights. "Initialization sets the starting scale of weights" ([[Block 7 Slides]], p. 83). "Initialization gives optimization a usable starting point" (p. 62).

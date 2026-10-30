@@ -16,10 +16,6 @@ sources:
   - "[[Block 7 Slides]]"
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Function Approximation]]
-
 ## Definition
 
 Optimization finds the $W$ that minimizes a loss function $L$ ([[Block 1 Slides]], pp. 300, 339; [[Block 2 Slides]], p. 27). "Note that we are finding W based on L!" ([[Block 1 Slides]], p. 301). The worked example uses a model $f(x; W)$, an ideal output $y^*$, and the simple loss $L(W) = \lVert f(x; W) - y^* \rVert_2$ ([[Block 1 Slides]], pp. 302–308).

@@ -4,10 +4,6 @@ aliases: [RNN, GRU, Gated Recurrent Unit, Recurrent Neural Network, Vanilla RNN,
 sources: ["Topic Note - Recurrent Neural Networks (RNN)", "Topic Note - Long Short-Term Memory Networks (LSTM)", "Topic Note - Sequence Transduction", "Topic Note - Transformers", "Attention Is All You Need (note)", "World Models, Ha & Schmidhuber (note)", "DreamerV3 (note)", "Fall 2026 Reading List", "[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 11 sources · refreshed 2026-10-19 · #machine-learning
-> Up: [[Neural Networks]] · Machine Learning
-
 ## Definition
 
 A typical neural network receives all input features at once and produces one output. An RNN receives each feature of the input at a different time step. At each step it receives both the output of the last step and the next input feature (Topic Note - Recurrent Neural Networks (RNN)). The note dates the architecture from about 1986 and says it is most common in NLP.

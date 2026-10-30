@@ -4,10 +4,6 @@ aliases: [k-means, K-Means, KMeans, k-means clustering, k-means algorithm, k-mea
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Clustering]]
-
 ## Definition
 
 k-means is a [[Clustering]] algorithm. It scores each observation by its distance to a cluster center, and a smaller score is better ([[Block 2 Slides]], p. 194; repeated in [[F26-midterm-review-234p]], p. 30). It repeats two steps: assign each point to a center, then revise the centers. The deck calls this "assign, revise, repeat" ([[Block 2 Slides]], p. 211). The midterm review states the goal: "k-means clusters by minimizing a squared distance objective." ([[F26-midterm-review-234p]], p. 4)

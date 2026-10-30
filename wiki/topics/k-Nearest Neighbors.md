@@ -4,10 +4,6 @@ aliases: [kNN, KNN, k-NN, k Nearest Neighbor, k-nearest neighbors, k Nearest Nei
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: Classical Machine Learning
-
 ## Definition
 
 k-nearest neighbors (kNN) is a classifier that labels a new point by majority vote over its k nearest training points ([[Block 2 Slides]], p. 182). The midterm review puts it in one line: "kNN predicts by a vote among nearby labels." ([[F26-midterm-review-234p]], p. 4). The user must pick two things: k and the distance metric ([[Block 2 Slides]], p. 182). The cost of kNN is in prediction, not training ([[Block 2 Slides]], p. 182).

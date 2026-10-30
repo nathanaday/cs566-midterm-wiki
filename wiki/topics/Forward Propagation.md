@@ -4,10 +4,6 @@ aliases: [Forward Pass]
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Networks]]
-
 ## Definition
 
 Forward propagation computes a network's output from its input, one layer at a time, from left to right. Each layer's outputs feed the units of the next layer. The slides build one network (input X, three hidden layers, output Y) one unit at a time ([[Block 3 Slides]], pp. 36-55). The user's lecture notes put it this way: "The forward pass is quite simple: all calculations from each layer are passed to the next layer" (Lecture 3, § Forward Propagation).

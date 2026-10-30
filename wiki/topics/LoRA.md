@@ -4,10 +4,6 @@ aliases: [Low-Rank Adaptation, LoRA Updates]
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 7 Slides]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: Updating LLMs · [[Parameter-Efficient Fine-Tuning]]
-
 ## Definition
 
 LoRA (low-rank adaptation) is a [[Parameter-Efficient Fine-Tuning]] method: "learn a small delta for the each of the parameter matrices with the delta chosen to be low rank" ([[Block 7 Slides]], p. 236). It is one of the four ways in Updating LLMs that the Sep 14 lecture listed (Sep 14 Lecture Account, § Updating LLMs).

@@ -4,10 +4,6 @@ aliases: [Convolution Layer, Conv Layer, CONV layer, Conv, Locally Connected Lay
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Neural Networks (CNN)]]
-
 ## Definition
 
 A convolutional layer applies a set of learned filters (kernels) to an input volume. Each filter slides over the input and computes one dot product at each position. The layer keeps the spatial structure of the input and uses the same parameters at every location ([[Block 4 Slides]], pp. 67-70; [[F26-midterm-review-234p]], pp. 51-53).

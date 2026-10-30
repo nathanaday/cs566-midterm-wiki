@@ -4,10 +4,6 @@ aliases: [k-Nearest Neighbors Regression, Nearest Neighbor Regression]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-29 · #machine-learning/cs566-deeplearning
-> Up: [[k-Nearest Neighbors]]
-
 ## Definition
 
 kNN regression is [[k-Nearest Neighbors]] with a continuous target. The classifier returns `majority_vote(S)` over the set S of the k training points nearest to the query ([[Block 2 Slides]], p. 148). The regressor keeps the same S and returns the mean of the neighbors' target values. Synthesis: the decks teach kNN as a classifier only. The regression form appears once by name, as the method CARROT uses to route requests, "kNN classification and kNN regression over cost" ([[Block 2 Slides]], p. 212), with no definition.

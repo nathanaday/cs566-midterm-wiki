@@ -4,10 +4,6 @@ aliases: [GCN, GCNs, Graph Convolutional Networks, GCN Layer Update, Deep Encode
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Graph Neural Networks]]
-
 ## Definition
 
 A graph convolutional network (GCN) is a [[Graph Neural Networks|graph neural network]] that learns how to propagate information across a graph to compute node features ([[Block 6 Slides]], p. 82; [[Block 6 Slides Extended]], p. 77). Each node's neighborhood defines a computation graph. The GCN first determines the node computation graph, then propagates and transforms information along it ([[Block 6 Slides]], p. 82; [[Block 6 Slides Extended]], p. 77). The GCN aggregates neighbors by the mean, which can be expressed in matrix form ([[Block 6 Slides]], p. 133).

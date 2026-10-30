@@ -9,9 +9,6 @@ sources:
   - "[[Block 3 Slides]]"
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-09-28 · #machine-learning/cs566-deeplearning
-
 ## Definition
 
 The lecture treats many ML tasks as one function $f(X) \to Y$ ([[Block 1 Slides]], p. 209):

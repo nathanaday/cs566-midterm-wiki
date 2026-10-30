@@ -3,9 +3,6 @@ description: "The USC CSCI 566 deep learning course, Fall 2026: lectures, readin
 aliases: ["CSCI 566: Deep Learning and its Applications"]
 ---
 
-> [!overview] The page of #machine-learning/cs566-deeplearning · under Machine Learning
-> 0 sources · refreshed 2026-10-12 · #machine-learning
-
 ## Summary
 
 The USC CSCI 566 deep learning course, Fall 2026: lectures, readings, slides, and topic notes.

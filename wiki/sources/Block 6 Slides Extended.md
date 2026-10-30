@@ -2,10 +2,7 @@
 description: "The extended CSCI 566 Block 6 deck on graph neural networks by Yue Zhao (176 pages, Oct 4, 2026): it follows one road network through graph basics, GNN training, invariance, and depth, then adds drug-discovery tasks with TDC, attention as a graph, LLM enhancer and predictor routes, a worked GraphRAG example, and graphs of agents (GRADE, MAMA)."
 ---
 
-> [!source] PDF · 176 pages · official
-> Captured 2026-10-05 from `Block 6 Slides Extended.pdf` (ingest) · absorbed by 2026-10-05 Ingest the extended CS566 Block 6 slides
-
-![[internal/wiki/originals/178b26a7c05bf0d6.pdf]]
+The original is [[attachments/Block 6 Slides Extended.pdf|Block 6 Slides Extended.pdf]], 176 pages, an official course document saved as `Block 6 Slides Extended.pdf` on 2026-10-05.
 
 ## Summary
 

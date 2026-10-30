@@ -4,10 +4,6 @@ aliases: [GNN, GNNs, Graph Neural Network, Graph Deep Learning, Deep Learning fo
 sources: ["[[Block 6 Slides]]", "[[Block 5 Slides]]", "[[Block 6 Slides Extended]]", "What a GNN Outputs", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning
-> Up: [[Neural Networks]] · Machine Learning
-
 ## Definition
 
 A graph neural network (GNN) is a deep learning model for data in the form of a graph. Block 6 of CSCI 566 covers GNNs ([[Block 6 Slides]], p. 2). The extended deck states the job in one line: a GNN learns predictions by combining neighboring information ([[Block 6 Slides Extended]], p. 5). A GNN is a deep node encoder: ENC(v) is "multiple layers of non-linear transformations based on graph structure" (p. 56). Each layer takes the previous layer's embeddings as input, and aggregates the neighbor embeddings and the node's own embedding (p. 133).

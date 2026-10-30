@@ -9,10 +9,6 @@ sources:
   - "[[Block 3 Slides]]"
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Linear Classification]]
-
 ## Definition
 
 "For a binary classification problem, a set of examples S is linearly separable if there exists a linear decision boundary that can separate the points" ([[Block 1 Slides]], p. 342, credited to CMU 10601). The slide shows four cases. In the last one the + and − points mix, and no line separates them.

@@ -23,10 +23,6 @@ sources:
   - "[[F26-midterm-review-234p]]"
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Function Approximation]]
-
 ## Definition
 
 A loss function $L$ measures how well a learned $W$ maps $X$ to $Y$, compared with the ground truth $y^*$. Optimization finds the $W$ that minimizes $L$ ([[Block 1 Slides]], pp. 258–259, 339; [[Block 2 Slides]], p. 27).

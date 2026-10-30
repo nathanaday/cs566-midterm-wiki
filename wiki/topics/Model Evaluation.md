@@ -44,10 +44,6 @@ sources:
   - "[[F26-midterm-review-234p]]"
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Function Approximation]]
-
 ## Definition
 
 To evaluate a machine learning algorithm, check its error rate on a separate test dataset $D_{test}$ ([[Block 1 Slides]], p. 253). The slides build this from a medical-diagnosis example credited to CMU 10601 (pp. 238–256).

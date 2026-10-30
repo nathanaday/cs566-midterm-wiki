@@ -4,10 +4,6 @@ aliases: [Softmax, Softmax Function]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Neural Networks (CNN)]]
-
 ## Definition
 
 The softmax layer maps the unnormalized output of a network (logits) to a probability distribution over the predicted output classes ([[Block 4 Slides]], p. 151; Lecture 3 Notes - Convolutional and Pooling Layers). For class $i$ of $K$ classes ([[Block 4 Slides]], p. 151):

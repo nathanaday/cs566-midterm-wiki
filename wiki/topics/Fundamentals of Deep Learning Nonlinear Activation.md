@@ -4,10 +4,6 @@ aliases: [Why nonlinear activation, Nonlinear Activation Fundamentals, ReLU bend
 sources: ["Nonlinear activation from a Socratic session", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Activation Functions]]
-
 ## Definition
 
 A nonlinear activation is the step between layers that is not "multiply and add." Without it, any number of layers simplifies to one linear function. With it, each neuron can put a bend in the function the network computes (Nonlinear activation from a Socratic session). [[Activation Functions]] lists the common choices.

@@ -9,10 +9,6 @@ sources:
   - "CSCI 566 Syllabus"
 ---
 
-> [!concept] Concept
-> 4 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Linear Classification]] · [[Neural Networks]]
-
 ## Definition
 
 The perceptron is a linear model. It computes a weighted sum of the inputs plus a bias, then applies a step function ([[Block 1 Slides]], p. 341):

@@ -4,10 +4,6 @@ aliases: [Norm Clipping, Global gradient norm clipping]
 sources: ["[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Exploding Gradient Problem]]
-
 ## Definition
 
 Gradient clipping scales the gradient down before the SGD update when its norm is greater than a threshold ([[Block 3 Slides]], p. 235, citing Pascanu et al. 2013, "On the difficulty of training recurrent neural networks"):

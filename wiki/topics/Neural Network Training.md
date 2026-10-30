@@ -3,10 +3,6 @@ description: "The CSCI 566 practice of training a neural network: gradient probl
 sources: ["[[Vanishing Gradient Problem]]", "[[Exploding Gradient Problem]]", "[[Weight Initialization]]", "[[Batch Normalization]]", "[[Layer Normalization]]", "[[Data Preprocessing]]", "[[Data Augmentation]]", "[[Gradient-Based Optimizers]]", "[[Dropout]]", "[[Early Stopping]]", "[[Transfer Learning]]", "Change One Factor per Experiment"]
 ---
 
-> [!concept] Concept
-> 12 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Networks]] · Machine Learning
-
 ## Definition
 
 Training a neural network chooses its weights by gradient-based optimization of a loss over the training data ([[Gradient Descent]], [[Loss Functions]]). CSCI 566 teaches it as a set of problems that stop training from working or from generalizing, each with the methods that answer it. This page gathers them; each linked topic holds the claims and their citations.

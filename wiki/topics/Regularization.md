@@ -25,10 +25,6 @@ sources:
   - "[[F26-midterm-review-234p]]"
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Function Approximation]]
-
 ## Definition
 
 Regularization adds a penalty to the loss so the model does not fit the training data too well ([[Block 1 Slides]], pp. 293–296):

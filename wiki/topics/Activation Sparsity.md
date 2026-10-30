@@ -4,10 +4,6 @@ aliases: [Sparse Activation, ReLU Strikes Back]
 sources: ["[[Block 3 Slides]]"]
 ---
 
-> [!concept] Concept
-> 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Activation Functions]]
-
 ## Definition
 
 Activation sparsity is the share of units in a layer that output exactly 0 for an input. ReLU outputs 0 for any negative input, "leading to a portion of neurons in the network not activating" ([[Block 3 Slides]], p. 262). A chart on p. 83 shows activation sparsity by layer: OPT 6.7B (ReLU) stays near 90-100%, while Llama 7B (SiLU) and Falcon 7B (GELU) stay near 0%. The caption says "ReLU-based OPTs show significantly higher sparsity" (p. 83).

@@ -4,10 +4,6 @@ aliases: [Backprop, Backward Pass]
 sources: ["[[Block 3 Slides]]", "[[Block 4 Slides]]", "[[Block 6 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Networks]]
-
 ## Definition
 
 "backpropagation = recursive application of the chain rule along a computational graph to compute the gradients of all inputs/ parameters/ intermediates" ([[Block 3 Slides]], p. 207). It has two passes (p. 207):

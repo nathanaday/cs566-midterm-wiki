@@ -13,10 +13,6 @@ sources:
   - "[[F26-midterm-review-234p]]"
 ---
 
-> [!concept] Concept
-> 6 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
-
 ## Definition
 
 Batch normalization (BN) normalizes each dimension of a batch of activations to zero mean and unit variance, then applies a learned scale and shift ([[Block 4 Slides]], pp. 169-172, citing Ioffe and Szegedy, 2015).

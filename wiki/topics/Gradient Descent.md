@@ -17,10 +17,6 @@ sources:
   - "[[F26-midterm-review-234p]]"
 ---
 
-> [!concept] Concept
-> 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Optimization]]
-
 ## Definition
 
 Gradient descent finds a low-loss $W$ by repeated small steps against the gradient ([[Block 1 Slides]], pp. 317–338).

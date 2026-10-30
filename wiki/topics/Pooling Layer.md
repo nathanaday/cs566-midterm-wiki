@@ -4,10 +4,6 @@ aliases: [Pool Layer, Pooling, Max Pooling, Max Pool, Average Pooling, Mean Pool
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
 ---
 
-> [!concept] Concept
-> 3 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Convolutional Neural Networks (CNN)]]
-
 ## Definition
 
 A pooling layer makes representations smaller and easier to manage. It operates on each activation map independently ([[Block 4 Slides]], p. 133; Lecture 3 Notes - Convolutional and Pooling Layers). It maps an $M \times N \times P$ input to an $m \times n \times P$ output, so only the spatial size shrinks ([[Block 4 Slides]], pp. 138, 141). Example: a 224x224x64 volume becomes 112x112x64 (p. 133).
