@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Obsidian per-machine state; keep app, appearance, core-plugins and graph settings
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/
+.trash/
+
+# Python
+__pycache__/
