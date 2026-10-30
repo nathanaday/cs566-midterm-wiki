@@ -1,5 +1,5 @@
 ---
-description: "The CSCI 566 midterm exam from Spring 2024 (10 pages, 50 questions plus 6 bonus, answers marked): a sample of what the exam tests, mapped question by question onto the topics of this vault to rank them by relevance and to find what the vault lacks."
+description: "The CSCI 566 midterm exam from Spring 2024 (10 pages, 50 questions plus 6 bonus, answers marked): a sample of what the exam tests, mapped question by question onto the topics of this wiki to rank them by relevance and to show where the wiki had to grow."
 aliases: [Spring 2024 Midterm, Sample Midterm]
 ---
 
@@ -15,7 +15,7 @@ Most questions are short recall or a one-line calculation. The calculations are 
 
 ## Structure
 
-- p. 1, instructions and the answer sheet: [[CS566-DeepLearning]].
+- p. 1, instructions and the answer sheet: [[CSCI 566 Midterm Wiki]].
 - p. 2, Q1 to Q8, generalization gap, layer cost, zero initialization, the 1x1 filter, exploding gradients, tree pruning, NaN weights in an RNN, and L2 in GNNs: [[Overfitting and Underfitting]], [[Regularization]], [[Pooling Layer]], [[Weight Initialization]], [[Convolutional Layer]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Decision Trees]], [[Recurrent Neural Networks (RNN)]], [[Graph Neural Networks]].
 - p. 3, Q9 to Q15, aggregation in GNNs, pooling, why ReLU is nonlinear, a linear-network calculation, tree weaknesses, and graphs of varying size: [[Neighborhood Aggregation]], [[Pooling Layer]], [[Activation Functions]], [[Fundamentals of Deep Learning Nonlinear Activation]], [[Forward Propagation]], [[Decision Trees]], [[Graph Neural Networks]].
 - p. 4, Q16 to Q22, directed graphs, graph autoencoders, what counts as regularization, reading activation plots, and preprocessing statistics: [[Graph]], [[Regularization]], [[Activation Functions]], [[Fit Preprocessing on Training Data Only]].
@@ -24,11 +24,11 @@ Most questions are short recall or a one-line calculation. The calculations are 
 - p. 7, Q37 to Q42, two model-parameterization puzzles, outliers, kNN outlier detection, a circular classifier, and zero training error: [[Function Approximation]], [[Linear Classification]], [[k-Nearest Neighbors]], [[Linear Separability]], [[Model Evaluation]].
 - p. 8, Q43 to Q48, MLP parameters, an MLP with no activations, 0/1 loss under backprop, shuffle invariance of a 1x1 conv with global pooling, permutation-invariant functions, and a GNN aggregation design: [[Fully Connected Layer]], [[Loss Functions]], [[Pooling Layer]], [[Permutation Invariance and Equivariance]], [[Neighborhood Aggregation]].
 - p. 9, Q49 to Q54, centroids, k-means initialization, kNN regression, residual connections, gradient clipping, and why gradients vanish in deep nets: [[k-Means]], [[Clustering]], [[k-Nearest Neighbors]], [[Residual Connections]], [[Gradient Clipping]], [[Vanishing Gradient Problem]], [[Backpropagation]].
-- p. 10, Q55 and Q56, what deep means for a CNN, and the grade curve: [[Convolutional Neural Networks (CNN)]], [[CS566-DeepLearning]].
+- p. 10, Q55 and Q56, what deep means for a CNN, and the grade curve: [[Convolutional Neural Networks (CNN)]], [[CSCI 566 Midterm Wiki]].
 
 ## Question Map
 
-Each row links the topics a student would open to answer the question. Where the vault lacks the specific idea, the row says so, and the Gaps section below collects them.
+Each row links the topics a student would open to answer the question. The last link in a row is often a topic written for that question; the Gaps section below says why.
 
 | Q | Question | Answer | Topics |
 |---|---|---|---|
@@ -87,7 +87,7 @@ Each row links the topics a student would open to answer the question. Where the
 | 53 | Gradient clipping and vanishing gradients | D | [[Gradient Clipping]], [[Vanishing Gradient Problem]] |
 | 54 | Why vanishing gradients hit deep nets | C | [[Vanishing Gradient Problem]], [[Backpropagation]] |
 | 55 | What deep means for a CNN | C | [[Convolutional Neural Networks (CNN)]], [[Deep Learning]] |
-| 56 | Course logistics: grade curve | C | [[CS566-DeepLearning]] |
+| 56 | Course logistics: grade curve | C | [[CSCI 566 Midterm Wiki]] |
 
 ## Relevance
 
@@ -130,25 +130,23 @@ The count is the number of questions whose row links the topic. It measures how 
 | [[Function Approximation]] | 2 |
 | [[k-Means]] | 2 |
 
-**Touched once.** [[Forward Propagation]], [[Graph]], [[Data Augmentation]], [[Fit Preprocessing on Training Data Only]], [[Data Preprocessing]], [[Switch the Model to Evaluation Mode When Evaluating]], [[AlexNet]], [[Unsupervised Outlier Model Selection]], [[Linear Separability]], [[Model Evaluation]], [[Node Embeddings]], [[Clustering]], [[Residual Connections]], [[Backpropagation]], [[Deep Learning]], [[CS566-DeepLearning]].
+**Touched once.** [[Forward Propagation]], [[Graph]], [[Data Augmentation]], [[Fit Preprocessing on Training Data Only]], [[Data Preprocessing]], [[Switch the Model to Evaluation Mode When Evaluating]], [[AlexNet]], [[Unsupervised Outlier Model Selection]], [[Linear Separability]], [[Model Evaluation]], [[Node Embeddings]], [[Clustering]], [[Residual Connections]], [[Backpropagation]], [[Deep Learning]], [[CSCI 566 Midterm Wiki]].
 
-**Not touched by this exam.** 98 topics were untouched when the exam was first mapped. After review, 16 stayed in the vault for their relevance to the Fall 2026 material: Activation Sparsity, Adapters, Dropout, Dying ReLU, Early Stopping, Fine-Tuning, Gradient-Based Optimizers, Graph Convolutional Network, Layer Normalization, LoRA, Neural Network Training, Optimization, Parameter-Efficient Fine-Tuning, Softmax Layer, Transfer Learning, Transformers. The other 82 were dropped from this vault; their names survive only as plain text where a kept topic mentioned them. The kept 16 are left unlinked here so the graph keeps them at a distance from this page.
-
-The kept topics are where the vault is wider than this exam: Fall 2026 material the 2024 exam predates, such as Transformers and the fine-tuning family, plus training details such as dropout, early stopping, and normalization.
+**Not touched by this exam.** Sixteen topics in this wiki have no question in the 2024 exam: Activation Sparsity, Adapters, Dropout, Dying ReLU, Early Stopping, Fine-Tuning, Gradient-Based Optimizers, Graph Convolutional Network, Layer Normalization, LoRA, Neural Network Training, Optimization, Parameter-Efficient Fine-Tuning, Softmax Layer, Transfer Learning, Transformers. They are left unlinked here so the graph keeps them at a distance from this page. They are where the wiki is wider than this exam: Fall 2026 material the 2024 exam predates, such as Transformers and the fine-tuning family, plus training details such as dropout, early stopping, and normalization.
 
 ## Gaps
 
-Questions the vault answered only partly or not at all when the exam was first mapped, listed by how much the exam leaned on each. Every gap now has a topic, named in bold at the start of its entry; the entries keep the original finding so the reason for each topic stays on record.
+Questions the slide-based topics answered only partly or not at all, listed by how much the exam leaned on each. Each gap now has a topic, named at the start of its entry. The entries keep the original finding so the reason for each topic stays on record.
 
-- **1x1 convolution**, now [[1x1 Convolution]] (Q4, Q46). The main vault has a `1x1 Convolution` topic. This copy dropped it as a bridge to the project pages, because it links to HyDRa. It was restored from the main vault with that one link stripped.
+- **1x1 convolution**, now [[1x1 Convolution]] (Q4, Q46). Two questions count parameters of, or reason about, a 1x1 filter, and the Convolutional Layer page treats it only in passing.
 - **Decision tree size bounds**, now [[Decision Tree Size Bounds]] (Q27 to Q30, four questions). [[Decision Trees]] covers learning, stopping, and pruning, but not the maximum number of leaves or the maximum depth as a function of the number of attributes k and samples N, for binary and for continuous attributes. The exam spends four questions on exactly that.
-- **Outlier detection basics**, now [[Outlier Detection]] (Q39, Q40). The vault's outlier pages, [[Unsupervised Outlier Model Selection]], MetaOD, and TOD, are Block 7 research examples. Nothing defines an outlier or explains the kNN-distance detector, where points with few close neighbors are flagged.
+- **Outlier detection basics**, now [[Outlier Detection]] (Q39, Q40). The only outlier page from the slides, [[Unsupervised Outlier Model Selection]], is a Block 7 research example, as are MetaOD and TOD. Nothing defined an outlier or explains the kNN-distance detector, where points with few close neighbors are flagged.
 - **Parameterization of a hypothesis class**, now [[Parameterization of a Hypothesis Class]] (Q37, Q38). Why y = w²x can only fit non-negative slopes while y = tan(w)x + wx fits any slope. [[Function Approximation]] and [[Linear Classification]] do not discuss how the parameterization constrains the reachable functions.
-- **Graph autoencoder**, now in [[Graph Neural Network Variants]] (Q17). Absent. The autoencoder topics were Block 8 only and were pruned, and no graph page mentions the unsupervised variant.
+- **Graph autoencoder**, now in [[Graph Neural Network Variants]] (Q17). Autoencoders belong to Block 8, which the midterm does not cover, and no graph page mentioned the unsupervised variant.
 - **Directed graphs inside a GNN**, now in [[Graph Neural Network Variants]] (Q16). [[Graph]] defines directed graphs as data, but no page covers the modeling options the question lists: treating edges as undirected, separate weight matrices for in-edges and out-edges, or more flexible weights.
-- **Attention-weighted neighbor aggregation**, now in [[Graph Neural Network Variants]] (Q48). [[Neighborhood Aggregation]] and [[Permutation Invariance and Equivariance]] give the invariance argument, but the vault has no page on aggregators that weight neighbors by a learned or distance-based score, the graph attention network. The exam's own answer key hedges between A and C.
+- **Attention-weighted neighbor aggregation**, now in [[Graph Neural Network Variants]] (Q48). [[Neighborhood Aggregation]] and [[Permutation Invariance and Equivariance]] give the invariance argument, but no page covered aggregators that weight neighbors by a learned or distance-based score, the graph attention network. The exam's own answer key hedges between A and C.
 - **L1 sparsity and feature selection**, now [[L1 Regularization and Feature Selection]] (Q35). [[Regularization]] lists L1, Lasso, and Ridge as aliases and gives the L1 penalty formula, but does not state that the L1 penalty drives weights to exactly zero and so selects features.
-- **k-means local minima**, now [[k-Means Initialization and Local Minima]] (Q50). [[k-Means]] lists initialization as step one but does not say the algorithm converges to a local minimum that depends on it. Optimization mentions local minima in general.
+- **k-means local minima**, now [[k-Means Initialization and Local Minima]] (Q50). [[k-Means]] lists initialization as step one but does not say the algorithm converges to a local minimum that depends on it. [[Optimization]] mentions local minima in general.
 - **kNN regression**, now [[kNN Regression]] (Q51). [[k-Nearest Neighbors]] covers classification by majority vote only. The regression form averages the neighbors' values.
 - **VC dimension**, now [[VC Dimension]] (Q41). One sentence in [[Overfitting and Underfitting]]. The question needs the shattering argument for a circular boundary in the plane.
 

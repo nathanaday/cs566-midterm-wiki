@@ -22,7 +22,7 @@ Notes on reading the deck:
 
 ## Structure
 
-- pp. 1-3, title, the seven sections, and the core route: [[CS566-DeepLearning]], Yue Zhao.
+- pp. 1-3, title, the seven sections, and the core route: [[CSCI 566 Midterm Wiki]], Yue Zhao.
 - pp. 4-9, Evaluation: the three data splits, a split by plant, the choice between two trees, preprocessing fitted on training data, and a check question on the jobs of the splits: [[Model Evaluation]], [[Fit Preprocessing on Training Data Only]].
 - pp. 10-19, decision trees, overfitting and underfitting, model complexity, bias and variance, and ensemble averaging: [[Decision Trees]], [[Overfitting and Underfitting]], Tree Ensembles.
 - pp. 20-25, accuracy on imbalanced data, precision, recall, F1, the confusion matrix, the decision threshold, and a check question on metric choice: Classification Metrics.

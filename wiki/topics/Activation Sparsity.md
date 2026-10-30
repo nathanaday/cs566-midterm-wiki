@@ -23,7 +23,7 @@ The slides list the gains from higher sparsity (p. 86):
 
 ### The "ReLU Strikes Back" paper
 
-The slides present Mirzadeh et al., "ReLU Strikes Back: Exploiting Activation Sparsity in Large Language Models", ICLR 2024 (Apple) (p. 79). The vault has the slides' summary only, not the paper.
+The slides present Mirzadeh et al., "ReLU Strikes Back: Exploiting Activation Sparsity in Large Language Models", ICLR 2024 (Apple) (p. 79). This wiki has the slides' summary only, not the paper.
 
 - **Challenge:** "Can we bring back ReLU to improve LLM efficiency without losing performance?" (p. 83).
 - **Proposals:** reintroduce ReLU in LLMs; "relufication", which converts pretrained LLMs such as Llama and Falcon to ReLU; use ReLU sparsity to speed up speculative decoding; and "shifted ReLU", which improves sparsity further with simple changes (p. 84).
