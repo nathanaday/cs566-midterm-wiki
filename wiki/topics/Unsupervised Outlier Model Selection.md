@@ -10,12 +10,12 @@ updated: 2026-10-13T18:22:47
 refreshed: 2026-10-13T18:22:47
 status: stable
 sources: ["[[Block 7 Slides]]"]
-up: ["[[AutoML]]"]
+up: ["AutoML"]
 ---
 
 > [!concept] Concept
 > 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[AutoML]]
+> Up: AutoML
 
 ## Definition
 
@@ -37,7 +37,7 @@ The slide title is "The *Best* Algorithm Varies by Applications". The slide stat
 
 ### Without labels, evaluation-based search fails
 
-Supervised model selection uses the ground truth y to evaluate each candidate. The slide lists "grid & random search by evaluation" and "bandit-based algorithm by evaluation". Its figure also shows Bayesian search, and labels all three "Model evaluation w/ labels" ([[Block 7 Slides]], p. 358). The next slide adds: "For unsupervised ML, there is no labels for evaluation" (p. 359). Synthesis: the search methods in [[Model Selection]] and Bayesian Optimization need a score for each trial, and an unlabeled OD dataset cannot supply that score.
+Supervised model selection uses the ground truth y to evaluate each candidate. The slide lists "grid & random search by evaluation" and "bandit-based algorithm by evaluation". Its figure also shows Bayesian search, and labels all three "Model evaluation w/ labels" ([[Block 7 Slides]], p. 358). The next slide adds: "For unsupervised ML, there is no labels for evaluation" (p. 359). Synthesis: the search methods in Model Selection and Bayesian Optimization need a score for each trial, and an unlabeled OD dataset cannot supply that score.
 
 ### Meta-learning for model selection
 
@@ -59,7 +59,7 @@ The deck states the problem in two steps ([[Block 7 Slides]], pp. 365-369):
 1. **Training on historical datasets.** A meta-train database holds n datasets: D_train = {D_1, D_2, ..., D_n}, where D_i = (X_i, y_i) (p. 365). A predefined OD model set holds m models: ℳ = {M_1, M_2, ..., M_m} (p. 366). Pairing the n datasets with the m models "(by evaluation)" gives the performance matrix P ∈ ℝ^(n×m) (p. 367). Each entry is one model's performance on one dataset. In the slide's example, M_1 on D_2 scores 0.5 ("Model 1's perf. on dataset 2") (p. 368).
 2. **Model selection.** A new dataset D_test = (X_test, Ø) has no labels. The task is to select the model from ℳ with the highest performance (p. 368). Meta-learning transfers the knowledge in P to model selection on X_test (p. 369).
 
-[[MetaOD]] solves this problem. It factorizes P and predicts the embedding of the new dataset. Its successor, MetaOOD, replaces handcrafted meta-features with LLM embeddings; see [[MetaOD]], § MetaOOD.
+MetaOD solves this problem. It factorizes P and predicts the embedding of the new dataset. Its successor, MetaOOD, replaces handcrafted meta-features with LLM embeddings; see MetaOD, § MetaOOD.
 
 The recap lists three steps of the "1st OD/OOD Model Selection Framework": (1) the problem formulation of UOMS by meta-learning, (2) data embedding and OD meta-features, and (3) language embeddings for datasets and models ([[Block 7 Slides]], pp. 393-395). The title on p. 393 says "OD/OOD". The titles on pp. 394-395 say only "OD".
 
@@ -85,12 +85,12 @@ The outline names "Model Selection by LLMs" as the third section of the part: "L
 
 ## Related
 
-- [[MetaOD]]: the method that solves UOMS, and its successor MetaOOD
-- [[Model Selection]]: model selection when labels are available
-- [[AutoML]]
+- MetaOD: the method that solves UOMS, and its successor MetaOOD
+- Model Selection: model selection when labels are available
+- AutoML
 - [[Transfer Learning]] (synthesis: meta-learning here transfers the best models from similar datasets)
-- [[Machine Learning Task Types]]: lists outlier and out-of-distribution detection as uses of unsupervised learning
-- [[Visual Anomaly Detection]]: outlier detection on images
+- Machine Learning Task Types: lists outlier and out-of-distribution detection as uses of unsupervised learning
+- Visual Anomaly Detection: outlier detection on images
 - [[k-Nearest Neighbors]]: the slide lists kNN as an OD algorithm (p. 357)
 - Yue Zhao: the instructor, author of MetaOD, MetaOOD, and the PyOD library
 

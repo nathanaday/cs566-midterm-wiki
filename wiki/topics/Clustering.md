@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Classical Machine Learning]]"]
+up: ["Classical Machine Learning"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Classical Machine Learning]]
+> Up: Classical Machine Learning
 
 ## Definition
 
@@ -28,7 +28,7 @@ Clustering discovers groups (clusters) of related items, for example Sports and 
 - Unsupervised learning infers labels $z_i$. Supervised learning has given labels $y_i$ ([[Block 2 Slides]], p. 196).
 - Clustering and classification differ by what the task gives you. Clustering gets unlabeled observations and outputs labels ([[Block 2 Slides]], pp. 201, 211).
 
-See [[Machine Learning Task Types]] for the full list of task types.
+See Machine Learning Task Types for the full list of task types.
 
 ### What defines a cluster
 
@@ -67,7 +67,7 @@ The slide calls keyphrase generation the most effective approach and says it imp
 
 - [[Outlier Detection]]: the other unsupervised task on the same distances
 - [[k-Means]]: the standard clustering algorithm and the baseline above
-- [[Machine Learning Task Types]]: supervised, unsupervised, and semi-supervised learning
+- Machine Learning Task Types: supervised, unsupervised, and semi-supervised learning
 - [[k-Nearest Neighbors]]: the supervised counterpart that also relies on distance
 
 ## Sources

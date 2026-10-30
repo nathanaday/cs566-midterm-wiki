@@ -25,12 +25,12 @@ sources:
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
 up:
-  - "[[Optimization]]"
+  - "Optimization"
 ---
 
 > [!concept] Concept
 > 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Optimization]]
+> Up: Optimization
 
 ## Definition
 
@@ -86,12 +86,12 @@ The midterm review repeats this slide ([[F26-midterm-review-234p]], p. 105).
 
 In the vanilla loop, `step_size` is the learning rate ([[Block 7 Slides]], p. 118). The rate can be wrong in two ways ([[Block 7 Slides]], pp. 89–90):
 
-- **Too large:** an illustrative training-loss trace for the [[Flower Classifier Running Example|flower classifier]] goes up and down and then rises over 8 epochs. "Large jumps can make training unstable" (p. 89).
+- **Too large:** an illustrative training-loss trace for the flower classifier goes up and down and then rises over 8 epochs. "Large jumps can make training unstable" (p. 89).
 - **Too small:** "The same training budget can yield very little progress." "Slow progress motivates a controlled learning-rate check" (p. 90).
 
 A loss-versus-epoch plot shows four rates ([[Block 7 Slides]], p. 119). With a very high rate, the loss blows up. With a high rate, it falls fast and then stays at a high level. With a low rate, it falls slowly. With a good rate, it reaches the lowest loss. The slide asks, "Which one of these learning rates is best to use?"
 
-These slides agree with the Week 1 rule "Large: overshoot or diverge. Small: slow progress." ([[Block 1 Slides]], p. 336). [[Learning Rate Schedules]] covers how to change the rate during training.
+These slides agree with the Week 1 rule "Large: overshoot or diverge. Small: slow progress." ([[Block 1 Slides]], p. 336). Learning Rate Schedules covers how to change the rate during training.
 
 ### Reading the sign of a gradient
 
@@ -134,7 +134,7 @@ while True:
   weights += - step_size * weights_grad # perform parameter update
 ```
 
-In optimizer notation, SGD is $x_{t+1} = x_t - \alpha \nabla f(x_t)$ ([[Block 7 Slides]], p. 101). The midterm review repeats the SGD slide and this update ([[F26-midterm-review-234p]], pp. 108, 110). Minibatch gradients are noisy. Under poor conditioning, plain SGD zigzags, and where the gradient is zero, it gets stuck ([[Block 7 Slides]], pp. 92–97). [[Optimization]] explains these problems. [[Gradient-Based Optimizers]] covers the update rules built on SGD that address them.
+In optimizer notation, SGD is $x_{t+1} = x_t - \alpha \nabla f(x_t)$ ([[Block 7 Slides]], p. 101). The midterm review repeats the SGD slide and this update ([[F26-midterm-review-234p]], pp. 108, 110). Minibatch gradients are noisy. Under poor conditioning, plain SGD zigzags, and where the gradient is zero, it gets stuck ([[Block 7 Slides]], pp. 92–97). Optimization explains these problems. [[Gradient-Based Optimizers]] covers the update rules built on SGD that address them.
 
 ### Optimizers
 
@@ -142,22 +142,22 @@ In optimizer notation, SGD is $x_{t+1} = x_t - \alpha \nabla f(x_t)$ ([[Block 7 
 
 ### Why it matters
 
-Synthesis: the numerical method needs one extra loss computation for each weight, which is too slow for large models. [[Backpropagation]] computes the same gradient with one backward pass through a [[Computational Graphs|computational graph]]. The CSCI 566 Syllabus covers gradient descent in week 3 and backpropagation in week 4.
+Synthesis: the numerical method needs one extra loss computation for each weight, which is too slow for large models. [[Backpropagation]] computes the same gradient with one backward pass through a computational graph. The CSCI 566 Syllabus covers gradient descent in week 3 and backpropagation in week 4.
 
 ## Related
 
 - [[Gradient-Based Optimizers]]: SGD + Momentum, AdaGrad, RMSProp, Adam, and AdamW
-- [[Learning Rate Schedules]]: change the learning rate over training
-- [[Optimization]]
+- Learning Rate Schedules: change the learning rate over training
+- Optimization
 - [[Loss Functions]]
 - [[Perceptron]]
 - [[Backpropagation]]: computes $dW$ for every weight in one backward pass
-- [[Computational Graphs]]
+- Computational Graphs
 - [[Forward Propagation]]
 - [[Exploding Gradient Problem]]: a gradient that is too large gives a step that is too large
 - [[Gradient Clipping]]
 - [[Vanishing Gradient Problem]]: a gradient near 0 in early layers gives almost no step
-- [[Shortcut Learning]]: gradient descent picks the most predictive feature, even a surface cue
+- Shortcut Learning: gradient descent picks the most predictive feature, even a surface cue
 
 ## Sources
 

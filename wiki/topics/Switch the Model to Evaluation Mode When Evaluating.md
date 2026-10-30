@@ -29,7 +29,7 @@ In evaluation mode:
 
 ## Why
 
-- **One input at a time.** "The flower classifier may receive one new photo at a time" ([[F26-midterm-review-234p]], p. 122). See [[Flower Classifier Running Example]].
+- **One input at a time.** "The flower classifier may receive one new photo at a time" ([[F26-midterm-review-234p]], p. 122). See Flower Classifier Running Example.
 - **In training mode, the batch changes the output.** "Stored running statistics give one photo the same normalized activation, whatever else is in the batch" ([[F26-midterm-review-234p]], p. 124). In training mode, the same photo x = 7 normalizes to 1 in the batch [7, 3] and to −1 in the batch [7, 11]. In evaluation mode, with stored mean 3 and variance 4, it normalizes to 2 with either companion (p. 124).
 - **One layer gives different numbers.** With `bn = nn.BatchNorm1d(1)` and `x = [[1.],[3.]]`, train mode gives `[-1.0, 1.0]` and eval mode gives `[0.7628, 2.6697]` ([[Block 4 Slides]], p. 176). For a batch of 1, PyTorch `BatchNorm1d` raises an error on a `[1, C]` input in training mode (p. 177).
 - **Evaluation must be deterministic.** "evaluation should be deterministic, so no random dropout mask is applied" ([[F26-midterm-review-234p]], p. 133).

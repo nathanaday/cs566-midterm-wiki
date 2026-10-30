@@ -97,7 +97,7 @@ Credited to CMU 10701 ([[Block 1 Slides]], p. 298). Solve $\min_\beta (A\beta - 
 
 ### Linear models: when $A^T A$ is not invertible
 
-Credited to CMU 10601 ([[Block 2 Slides]], p. 100). The least-squares solution in [[Optimization]] needs $A^T A$ to be invertible. If it is not, the system has $r$ equations and $p$ unknowns and is underdetermined. It has many feasible solutions, so the solution must be constrained further. One constraint biases the solution toward small values of $\beta$, so that small changes in input do not give large changes in output. The two penalized estimates are:
+Credited to CMU 10601 ([[Block 2 Slides]], p. 100). The least-squares solution in Optimization needs $A^T A$ to be invertible. If it is not, the system has $r$ equations and $p$ unknowns and is underdetermined. It has many feasible solutions, so the solution must be constrained further. One constraint biases the solution toward small values of $\beta$, so that small changes in input do not give large changes in output. The two penalized estimates are:
 
 $$\hat{\beta}_{MAP} = \arg\min_\beta \sum_{i=1}^{n} (Y_i - X_i\beta)^2 + \lambda \lVert \beta \rVert_2^2 \quad \text{(ridge regression, L2 penalty)}$$
 
@@ -115,7 +115,7 @@ Also credited to CMU 10701 ([[Block 1 Slides]], p. 299):
 
 ### On a neural network
 
-[[Block 3 Slides]] shows the same formula on a neural network with $\lambda \in \{0.001, 0.01, 0.1\}$, under the title "Larger Model Capacity May Overfit – Need to Regularize them". A larger $\lambda$ gives a smoother decision boundary ([[Block 3 Slides]], p. 96). The next slides add the penalty for each weight matrix to a network's total loss ([[Block 3 Slides]], p. 102). See [[Neural Networks]]. Regularization is also a hyperparameter choice in [[Model Selection]] for neural networks ([[Block 2 Slides]], p. 94).
+[[Block 3 Slides]] shows the same formula on a neural network with $\lambda \in \{0.001, 0.01, 0.1\}$, under the title "Larger Model Capacity May Overfit – Need to Regularize them". A larger $\lambda$ gives a smoother decision boundary ([[Block 3 Slides]], p. 96). The next slides add the penalty for each weight matrix to a network's total loss ([[Block 3 Slides]], p. 102). See [[Neural Networks]]. Regularization is also a hyperparameter choice in Model Selection for neural networks ([[Block 2 Slides]], p. 94).
 
 ### Training randomness, full model at test
 
@@ -164,7 +164,7 @@ Block 7 tells the reader to "return to the gap between training and validation p
 
 ### Why it matters
 
-Regularization is the main tool in this lecture against [[Overfitting and Underfitting]]. Synthesis: a penalty puts Ockham's razor into the objective that [[Optimization]] minimizes. For linear least squares it also picks one answer when the normal equation has many. The training-randomness methods reach a similar goal without a penalty term: the network cannot depend on one unit, connection, layer, or image region.
+Regularization is the main tool in this lecture against [[Overfitting and Underfitting]]. Synthesis: a penalty puts Ockham's razor into the objective that Optimization minimizes. For linear least squares it also picks one answer when the normal equation has many. The training-randomness methods reach a similar goal without a penalty term: the network cannot depend on one unit, connection, layer, or image region.
 
 ## Related
 
@@ -172,8 +172,8 @@ Regularization is the main tool in this lecture against [[Overfitting and Underf
 - [[Dropout]]
 - [[Loss Functions]]
 - [[Overfitting and Underfitting]]
-- [[Optimization]]
-- [[Model Selection]]
+- Optimization
+- Model Selection
 - [[Linear Classification]]
 - [[Neural Networks]]
 - [[Batch Normalization]]

@@ -80,8 +80,8 @@ Synthesis: the given name "Kaiming" on p. 80 and the surname "He" in the p. 78 c
 - [[Residual Connections]]: the residual block, the degradation problem, and the gradient argument
 - [[Batch Normalization]]
 - [[Weight Initialization]]: He (Kaiming) initialization, named for the author of ResNet
-- [[ImageNet Large Scale Visual Recognition Challenge]]
-- [[VGGNet]]
+- ImageNet Large Scale Visual Recognition Challenge
+- VGGNet
 - [[AlexNet]]
 - [[Vanishing Gradient Problem]]
 - [[Convolutional Neural Networks (CNN)]]

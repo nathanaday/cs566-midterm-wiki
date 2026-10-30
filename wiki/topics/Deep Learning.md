@@ -20,12 +20,12 @@ sources:
   - "Block 8 Slides"
 up:
   - "[[CS566-DeepLearning]]"
-  - "[[Machine Learning]]"
+  - "Machine Learning"
 ---
 
 > [!concept] Concept
 > 6 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[CS566-DeepLearning]] · [[Machine Learning]]
+> Up: [[CS566-DeepLearning]] · Machine Learning
 
 ## Definition
 
@@ -88,20 +88,20 @@ The CSCI 566 Reading List names the *Deep Learning* textbook by Goodfellow.
 
 The notes date CNNs to 1998 and say many meaningful changes in ML come from data and compute, not new core algorithms (Lecture 1, § Background Topics). The slides also list "ConvNet (1998)" among research milestones ([[Block 1 Slides]], p. 28), and they add two earlier turning points (1980 and 1989).
 
-Synthesis: turning points 1 and 2 are ideas in architecture and training. Only turning point 3 is about data and hardware. After 2012, [[Scaling Laws]] made the effect of scale measurable.
+Synthesis: turning points 1 and 2 are ideas in architecture and training. Only turning point 3 is about data and hardware. After 2012, Scaling Laws made the effect of scale measurable.
 
 ## Related
 
 - [[Neural Networks]]
-- [[Machine Learning Task Types]]
+- Machine Learning Task Types
 - [[Function Approximation]]
 - [[Linear Separability]]
 - [[Activation Functions]]
 - [[Backpropagation]]
 - [[Convolutional Neural Networks (CNN)]]
-- [[Scaling Laws]]
-- [[Evolution of Machine Learning]]
-- [[Autoregressive Language Modeling]]
+- Scaling Laws
+- Evolution of Machine Learning
+- Autoregressive Language Modeling
 - [[AlexNet]]
 
 ## Sources

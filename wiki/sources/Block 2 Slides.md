@@ -29,13 +29,13 @@ The CSCI 566 deck "Block 2: Classical ML Algorithms", by the instructor Yue Zhao
 
 ## Structure
 
-- pp. 1–20, logistics and career advice: project teams, the pre-proposal, Piazza and Gradescope, office hours, the midterm, course goals, job search, and compute credits: [[CS566-DeepLearning]], Yue Zhao, [[Cloud Spending Safeguards]].
-- pp. 21–29, recap of the linear model, loss, and optimization: [[Linear Classification]], [[Loss Functions]], [[Optimization]].
+- pp. 1–20, logistics and career advice: project teams, the pre-proposal, Piazza and Gradescope, office hours, the midterm, course goals, job search, and compute credits: [[CS566-DeepLearning]], Yue Zhao, Cloud Spending Safeguards.
+- pp. 21–29, recap of the linear model, loss, and optimization: [[Linear Classification]], [[Loss Functions]], Optimization.
 - pp. 30–103, decision trees: the loan example, stumps, classification error, greedy learning, stopping conditions, threshold splits, splitting criteria, and pruning: [[Decision Trees]].
-- pp. 82–100, overfitting, model and data complexity, model selection, memorization, test set contamination, and ridge and lasso: [[Overfitting and Underfitting]], [[Model Selection]], [[Test Set Contamination]], [[Regularization]].
-- pp. 104–112, ensembles: bias and variance, bagging, random forests, gradient boosting, and tabular baselines: [[Tree Ensembles]], [[Gradient Boosting]].
-- pp. 113–134, optional detour on search inside a language model: [[Chain-of-Thought Prompting]], [[Tree of Thoughts]].
-- pp. 135–140, model metrics and guardrail classifiers: [[Model Evaluation]], [[Classification Metrics]].
+- pp. 82–100, overfitting, model and data complexity, model selection, memorization, test set contamination, and ridge and lasso: [[Overfitting and Underfitting]], Model Selection, Test Set Contamination, [[Regularization]].
+- pp. 104–112, ensembles: bias and variance, bagging, random forests, gradient boosting, and tabular baselines: Tree Ensembles, Gradient Boosting.
+- pp. 113–134, optional detour on search inside a language model: Chain-of-Thought Prompting, Tree of Thoughts.
+- pp. 135–140, model metrics and guardrail classifiers: [[Model Evaluation]], Classification Metrics.
 - pp. 141–182, k-nearest neighbors, hyperparameter selection, cross-validation, and nearest neighbors in LLM systems: [[k-Nearest Neighbors]], [[Model Evaluation]].
 - pp. 183–211, clustering, k-means, CuraWeb deduplication, and LLM-guided few-shot clustering: [[Clustering]], [[k-Means]].
-- pp. 212–213, classical ML in the agent loop, and the move to neural networks: [[Agent Loop]].
+- pp. 212–213, classical ML in the agent loop, and the move to neural networks: Agent Loop.

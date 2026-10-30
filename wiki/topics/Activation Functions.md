@@ -179,7 +179,7 @@ Synthesis: the saturation of sigmoid and tanh connects to vanishing gradients. R
 - [[Perceptron]]: uses the step function $\text{sign}$
 - [[Backpropagation]]: the sigmoid derivative in a worked example
 - [[Forward Propagation]]: the 2-2-1 ReLU example
-- [[Computational Graphs]]
+- Computational Graphs
 - [[Gradient Descent]]
 - [[Dying ReLU]]
 - [[Activation Sparsity]]

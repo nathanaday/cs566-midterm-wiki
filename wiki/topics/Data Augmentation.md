@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]"]
+up: ["Neural Network Training"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
+> Up: Neural Network Training
 
 ## Definition
 
@@ -34,7 +34,7 @@ Synthesis: each epoch sees a slightly different version of each image, so the ne
 
 ### Keep the label valid
 
-The slide title states the rule: "An Augmented Example Must Keep a Valid Label". The slide also says: "Choose transformations that preserve the task label." ([[Block 7 Slides]], p. 156). In the flower example, a mild crop or brightness change of a photo labeled daisy gives an altered photo that is still labeled daisy (p. 156). See [[Flower Classifier Running Example]].
+The slide title states the rule: "An Augmented Example Must Keep a Valid Label". The slide also says: "Choose transformations that preserve the task label." ([[Block 7 Slides]], p. 156). In the flower example, a mild crop or brightness change of a photo labeled daisy gives an altered photo that is still labeled daisy (p. 156). See Flower Classifier Running Example.
 
 The same transformation can be correct for one task and wrong for another (p. 163):
 
@@ -101,7 +101,7 @@ Open point: the slide's name "Random Crop" for Cutout is not the same method as 
 
 ### Evaluation
 
-Randomness in training needs a fixed rule at evaluation. For augmentation, the slides say: "Use a fixed evaluation transform, or a predefined averaging protocol." They also say: "Decide the evaluation protocol before comparing models." (p. 165). The same slide gives the evaluation rules for [[Dropout]] and [[Batch Normalization]]. The ResNet multi-crop test above is one example of a predefined averaging protocol (p. 159). Synthesis: two models compare fairly only when they use the same evaluation transform. See [[Model Evaluation]] and [[ImageNet Large Scale Visual Recognition Challenge]].
+Randomness in training needs a fixed rule at evaluation. For augmentation, the slides say: "Use a fixed evaluation transform, or a predefined averaging protocol." They also say: "Decide the evaluation protocol before comparing models." (p. 165). The same slide gives the evaluation rules for [[Dropout]] and [[Batch Normalization]]. The ResNet multi-crop test above is one example of a predefined averaging protocol (p. 159). Synthesis: two models compare fairly only when they use the same evaluation transform. See [[Model Evaluation]] and ImageNet Large Scale Visual Recognition Challenge.
 
 ## Related
 
@@ -110,7 +110,7 @@ Randomness in training needs a fixed rule at evaluation. For augmentation, the s
 - [[Dropout]]
 - [[Batch Normalization]]
 - [[Data Preprocessing]]: deterministic transforms applied to all data. Augmentation applies random transforms in training only.
-- [[Flower Classifier Running Example]]
+- Flower Classifier Running Example
 - [[ResNet]]
 - [[AlexNet]]
 - [[Model Evaluation]]

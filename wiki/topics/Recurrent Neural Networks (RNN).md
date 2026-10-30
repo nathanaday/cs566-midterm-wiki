@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["Topic Note - Recurrent Neural Networks (RNN)", "Topic Note - Long Short-Term Memory Networks (LSTM)", "Topic Note - Sequence Transduction", "Topic Note - Transformers", "Attention Is All You Need (note)", "World Models, Ha & Schmidhuber (note)", "DreamerV3 (note)", "Fall 2026 Reading List", "[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]", "[[Machine Learning]]"]
+up: ["[[Neural Networks]]", "Machine Learning"]
 ---
 
 > [!concept] Concept
 > 11 sources · refreshed 2026-10-19 · #machine-learning
-> Up: [[Neural Networks]] · [[Machine Learning]]
+> Up: [[Neural Networks]] · Machine Learning
 
 ## Definition
 
@@ -75,7 +75,7 @@ The common pattern is shared parameters, then structured computation, then task-
 
 ### Computational graph
 
-Unrolled over time, the RNN is a chain of $f_W$ blocks. $h_0$ and $x_1$ enter $f_W$ to give $h_1$. Then $h_1$ and $x_2$ give $h_2$, and so on to $h_T$ ([[Block 5 Slides]], pp. 54–56). One $W$ feeds every block (p. 57). In the many-to-many graph, each $h_t$ emits an output $y_t$. Each $y_t$ has its own loss $L_t$, computed against the true value, and the losses sum into one total loss $L$ (pp. 58–61). The slides credit these graphs to the Stanford CS231n lecture slides (pp. 42–69). See [[Computational Graphs]].
+Unrolled over time, the RNN is a chain of $f_W$ blocks. $h_0$ and $x_1$ enter $f_W$ to give $h_1$. Then $h_1$ and $x_2$ give $h_2$, and so on to $h_T$ ([[Block 5 Slides]], pp. 54–56). One $W$ feeds every block (p. 57). In the many-to-many graph, each $h_t$ emits an output $y_t$. Each $y_t$ has its own loss $L_t$, computed against the true value, and the losses sum into one total loss $L$ (pp. 58–61). The slides credit these graphs to the Stanford CS231n lecture slides (pp. 42–69). See Computational Graphs.
 
 ### Input and output configurations
 
@@ -92,7 +92,7 @@ Many to one encodes the input sequence in a single vector (p. 68). One to many p
 
 ### Training and gradient flow
 
-An RNN trains with [[Backpropagation Through Time]]: forward through the sequence to compute the loss, then backward through it to compute the gradient ([[Block 5 Slides]], p. 86). The total gradient is the sum of the per-step gradients (p. 97):
+An RNN trains with Backpropagation Through Time: forward through the sequence to compute the loss, then backward through it to compute the gradient ([[Block 5 Slides]], p. 86). The total gradient is the sum of the per-step gradients (p. 97):
 
 $$\frac{\partial L}{\partial W} = \sum_{t=1}^{T} \frac{\partial L_t}{\partial W}$$
 
@@ -117,7 +117,7 @@ A standard RNN uses a single recurrent hidden state $h_t$ to remember earlier co
 
 ### LSTM and GRU
 
-The LSTM (from about 1997) addresses part of the vanishing gradient problem in RNNs. It adds internal mechanisms that keep earlier input features effective over longer sequences (Topic Note - Long Short-Term Memory Networks (LSTM)). [[Block 5 Slides]] gives the LSTM equations and shows the vanilla update $h_t = \tanh(W [h_{t-1}; x_t])$ beside them for contrast (p. 205). See [[Long Short-Term Memory]].
+The LSTM (from about 1997) addresses part of the vanishing gradient problem in RNNs. It adds internal mechanisms that keep earlier input features effective over longer sequences (Topic Note - Long Short-Term Memory Networks (LSTM)). [[Block 5 Slides]] gives the LSTM equations and shows the vanilla update $h_t = \tanh(W [h_{t-1}; x_t])$ beside them for contrast (p. 205). See Long Short-Term Memory.
 
 The slides list the GRU under "Other variants", from Cho et al. 2014, "Learning phrase representations using RNN encoder-decoder for statistical machine translation" ([[Block 5 Slides]], p. 222):
 
@@ -162,13 +162,13 @@ The slides sum up RNNs and LSTMs in 2026 as shared parameters plus gated credit 
 
 ## Related
 
-- [[Backpropagation Through Time]]
-- [[Long Short-Term Memory]]
+- Backpropagation Through Time
+- Long Short-Term Memory
 - [[Transformers]]
-- [[World Models]]
+- World Models
 - [[Convolutional Neural Networks (CNN)]]
 - [[Convolutional Layer]]: parameter sharing across space
-- [[Computational Graphs]]
+- Computational Graphs
 - [[Backpropagation]]
 - [[Vanishing Gradient Problem]]
 - [[Exploding Gradient Problem]]

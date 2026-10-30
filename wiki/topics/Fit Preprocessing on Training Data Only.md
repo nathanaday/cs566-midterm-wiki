@@ -43,7 +43,7 @@ From the slide: this "prevents data leakage and ensures that the model's perform
 
 The midterm review's check question rejects a plan to "Compute normalization statistics from all data including test, then train and tune on validation." ([[F26-midterm-review-234p]], p. 8). Its reason: "Preprocessing is fitted on the training set only. Using test statistics leaks test information into the model." (p. 9).
 
-Synthesis: a statistic computed on validation or test data carries information about the held-out data into the model. The validation and test errors then no longer measure performance on unseen data. This is the same failure as [[Test Set Contamination]], in a smaller form. See [[Model Evaluation]] for the jobs of the three splits.
+Synthesis: a statistic computed on validation or test data carries information about the held-out data into the model. The validation and test errors then no longer measure performance on unseen data. This is the same failure as Test Set Contamination, in a smaller form. See [[Model Evaluation]] for the jobs of the three splits.
 
 ## Applies when
 

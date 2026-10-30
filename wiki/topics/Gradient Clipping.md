@@ -58,7 +58,7 @@ Synthesis: the $\min$ form is the pseudocode above written as one line. Coordina
 
 ### In recurrent networks
 
-In a vanilla RNN, gradients can explode when the largest singular value of $W_{hh}$ is greater than 1, because the backward pass multiplies by $W_{hh}^{T-1}$ ([[Block 5 Slides]], p. 103). The slides point from this case to gradient clipping (p. 104). Clipping does not help the opposite case: for vanishing gradients the slides change the RNN architecture instead (p. 105). See [[Recurrent Neural Networks (RNN)]] and [[Backpropagation Through Time]].
+In a vanilla RNN, gradients can explode when the largest singular value of $W_{hh}$ is greater than 1, because the backward pass multiplies by $W_{hh}^{T-1}$ ([[Block 5 Slides]], p. 103). The slides point from this case to gradient clipping (p. 104). Clipping does not help the opposite case: for vanishing gradients the slides change the RNN architecture instead (p. 105). See [[Recurrent Neural Networks (RNN)]] and Backpropagation Through Time.
 
 ### Clipping is training triage
 
@@ -78,7 +78,7 @@ From [[Block 3 Slides]], p. 237:
 - [[Gradient Descent]]
 - [[Gradient-Based Optimizers]]: the step that follows the clip
 - [[Recurrent Neural Networks (RNN)]]
-- [[Backpropagation Through Time]]
+- Backpropagation Through Time
 
 ## Sources
 

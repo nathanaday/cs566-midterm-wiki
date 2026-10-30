@@ -88,7 +88,7 @@ The pages in this table are in [[F26-midterm-review-234p]].
 - [[Backpropagation]]
 - [[Gradient Descent]]
 - [[Activation Functions]]: $\max(0, \cdot)$ is ReLU
-- [[Computational Graphs]]
+- Computational Graphs
 - [[Fundamentals of Deep Learning Nonlinear Activation]]: stacked affine layers collapse without a nonlinearity
 
 ## Sources

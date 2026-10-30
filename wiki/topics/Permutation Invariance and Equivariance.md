@@ -36,7 +36,7 @@ A graph $G = (A, X)$ has a vertex set $V$, a binary adjacency matrix $A$, and a 
 
 ### Adjacency matrix and feature matrix
 
-A row of the adjacency matrix tells which neighbors one node can read. The matrix and the drawing describe the same graph ([[Block 6 Slides Extended]], p. 54). The adjacency matrix says who is connected, and $X$ records the node inputs. The rows of $X$ follow the same node order as the rows of $A$ ([[Block 6 Slides Extended]], p. 55). [[Road Delay GNN Example]] gives both matrices for four roads.
+A row of the adjacency matrix tells which neighbors one node can read. The matrix and the drawing describe the same graph ([[Block 6 Slides Extended]], p. 54). The adjacency matrix says who is connected, and $X$ records the node inputs. The rows of $X$ follow the same node order as the rows of $A$ ([[Block 6 Slides Extended]], p. 55). Road Delay GNN Example gives both matrices for four roads.
 
 ### Keep A and X aligned
 
@@ -101,7 +101,7 @@ A GNN consists of multiple permutation-equivariant and permutation-invariant fun
 
 - **One node's embedding is invariant.** In a GCN, the weights are shared across neighbors, and the average of the neighbors' previous-layer embeddings is permutation invariant (p. 94). Summation is also a permutation-invariant aggregation (p. 89; [[Block 6 Slides Extended]], p. 84). Worked case: road A reads the mean 3 whether its neighbors are listed B, C or C, B, so its toy update is $0.5 \cdot 1 + 0.5 \cdot 3 = 2$ in both cases. A mean or a sum treats the neighbors as a set ([[Block 6 Slides Extended]], p. 92; [[F26-midterm-review-234p]], p. 208).
 - **All embeddings together are equivariant.** The rows of the input features and the output embeddings are aligned. Each node's computation is invariant. So after a permutation, a node's row moves, but its embedding stays the same (pp. 95-96). Worked case: the layer-1 outputs in file order A, B, C, D are 2, 1.5, 4.25, 6. In file order D, B, A, C they are 6, 1.5, 2, 4.25. Road A keeps output 2 after its row moves ([[Block 6 Slides Extended]], p. 93; [[F26-midterm-review-234p]], p. 209).
-- **Node outputs:** each node embedding passes through a shared head to its own label. Reordering the node inputs reorders the node outputs (p. 108; [[Block 6 Slides Extended]], p. 112). See [[Head (machine learning)]].
+- **Node outputs:** each node embedding passes through a shared head to its own label. Reordering the node inputs reorders the node outputs (p. 108; [[Block 6 Slides Extended]], p. 112). See Head (machine learning).
 - **Graph outputs:** a symmetric readout pools the node embeddings with sum or mean. It gives the same graph output after the nodes are reordered (p. 109; [[Block 6 Slides Extended]], p. 113; [[F26-midterm-review-234p]], p. 216). Worked case: the sum of the layer-1 values is $2 + 1.5 + 4.25 + 6 = 13.75$ in order A, B, C, D and in order D, B, A, C. The same set of node vectors gives the same pooled result ([[Block 6 Slides Extended]], p. 94; [[F26-midterm-review-234p]], p. 210).
 
 Node tasks keep one output per node. Graph tasks pool the node vectors into one graph vector. The output task decides whether the model keeps or pools the node vectors ([[Block 6 Slides Extended]], pp. 94, 114; [[F26-midterm-review-234p]], pp. 210, 217).
@@ -138,8 +138,8 @@ Synthesis: the 1x1 convolution is the grid form of the shared node MLP. It reads
 - [[Graph Convolutional Network]]
 - [[Neighborhood Aggregation]]
 - [[Graph]]
-- [[Road Delay GNN Example]]: the worked numbers for neighbor order, node order, and graph readout
-- [[Head (machine learning)]]: the shared node head and the graph head after the readout
+- Road Delay GNN Example: the worked numbers for neighbor order, node order, and graph readout
+- Head (machine learning): the shared node head and the graph head after the readout
 - [[Neural Networks]]: the MLP that a shared node MLP applies
 - [[Pooling Layer]]: shift invariance and equivariance on grids
 - [[Convolutional Layer]]: the fixed spatial offsets that a pixel permutation breaks

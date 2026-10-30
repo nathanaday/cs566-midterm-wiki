@@ -29,13 +29,13 @@ The CSCI 566 deck "Block 4: Convolutional Neural Networks", by the instructor Yu
 
 ## Structure
 
-- pp. 1–13, Ph.D. application advice and a neural network recap: [[CS566-DeepLearning]], Yue Zhao, [[Backpropagation]], [[Computational Graphs]], [[Neural Networks]].
+- pp. 1–13, Ph.D. application advice and a neural network recap: [[CS566-DeepLearning]], Yue Zhao, [[Backpropagation]], Computational Graphs, [[Neural Networks]].
 - pp. 14–44, CNN history (Hubel and Wiesel, Neocognitron, LeNet, AlexNet, VGGNet), applications, and the AlexNet walkthrough: [[AlexNet]], [[Convolutional Neural Networks (CNN)]].
 - pp. 45–132, layer types: fully connected, locally connected, and convolutional layers; filters, activation maps, stride, padding, and output size: [[Convolutional Layer]], [[Fully Connected Layer]].
 - pp. 133–152, pooling, equivariance and invariance, and the softmax layer: [[Pooling Layer]], [[Softmax Layer]].
 - pp. 153–178, activation functions, the vanishing gradient, and batch normalization: [[Activation Functions]], [[Vanishing Gradient Problem]], [[Batch Normalization]].
-- pp. 179–229, CNN architectures: ILSVRC, VGGNet, ResNet, MobileNets, EfficientNet: [[ImageNet Large Scale Visual Recognition Challenge]], [[VGGNet]], [[ResNet]], [[Residual Connections]], [[Depthwise Separable Convolution]].
-- pp. 230–235, pretrained encoders, model cards, and ViT patch tokens: [[Pretrained Visual Encoders]], [[Vision Transformer (ViT)]].
-- pp. 236–279, CLIP, its contrastive loss, zero-shot classification, evaluation, visual instruction tuning, and SigLIP 2: [[CLIP]], [[Contrastive Learning]], [[Vision Language Models (VLM)]].
-- pp. 280–300, agentic vision, image classification, and object detection: [[Vision Language Models (VLM)]], [[Convolutional Neural Networks (CNN)]].
+- pp. 179–229, CNN architectures: ILSVRC, VGGNet, ResNet, MobileNets, EfficientNet: ImageNet Large Scale Visual Recognition Challenge, VGGNet, [[ResNet]], [[Residual Connections]], Depthwise Separable Convolution.
+- pp. 230–235, pretrained encoders, model cards, and ViT patch tokens: Pretrained Visual Encoders, Vision Transformer (ViT).
+- pp. 236–279, CLIP, its contrastive loss, zero-shot classification, evaluation, visual instruction tuning, and SigLIP 2: CLIP, Contrastive Learning, Vision Language Models (VLM).
+- pp. 280–300, agentic vision, image classification, and object detection: Vision Language Models (VLM), [[Convolutional Neural Networks (CNN)]].
 - pp. 301–312, application demos (3D faces, virtual try-on, deepfakes) and the move to sequences and graphs: [[Convolutional Neural Networks (CNN)]].

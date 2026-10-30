@@ -105,7 +105,7 @@ The slides give an alternative view of fit as model complexity against data comp
 | **Model complexity low** | Normal | Underfitting |
 | **Model complexity high** | Overfitting | Normal |
 
-"Complex models need more data." At low data complexity, a simple (linear) model has lower generalization error. At higher data complexity, a complex model such as a deep neural network reaches a lower generalization error ([[Block 2 Slides]], p. 93). Matching the two complexities is [[Model Selection]] ([[Block 2 Slides]], p. 95).
+"Complex models need more data." At low data complexity, a simple (linear) model has lower generalization error. At higher data complexity, a complex model such as a deep neural network reaches a lower generalization error ([[Block 2 Slides]], p. 93). Matching the two complexities is Model Selection ([[Block 2 Slides]], p. 95).
 
 ### Memorization is not overfitting
 
@@ -136,7 +136,7 @@ The pages in the Source column are in [[Block 7 Slides]]. "Review p." marks the 
 Practical advice from the deck ([[Block 7 Slides]], pp. 183-185):
 
 - "Losses may be noisy, use a scatter plot and also plot moving average to see trends better" (p. 183). In that example, train accuracy reaches about 98 and validation accuracy about 95 after about 600,000 iterations (values read from the plot).
-- "You can plot all your loss curves for different HPs on a single plot" (p. 184). See [[Model Selection]].
+- "You can plot all your loss curves for different HPs on a single plot" (p. 184). See Model Selection.
 - A humorous slide warns: "Don't look at accuracy or loss curves for too long!" (p. 185).
 
 ### Train and validation errors as clues
@@ -168,15 +168,15 @@ Synthesis: the two rules on pp. 133 and 170 fit together. When both curves stay 
 
 ### Ensembles
 
-An ensemble combines the predictions of several trained models. In the slide's example, three trained classifiers disagree on one flower photo. The ensemble averages the class probabilities of Model 1, 2, and 3, and it chooses the class with the highest score. The slide's rule: "Measure any accuracy gain together with serving cost." ([[Block 7 Slides]], p. 136). See [[Flower Classifier Running Example]]. Synthesis: the deck puts this slide just before "How to improve single-model performance?" (p. 137). So the deck offers ensembles as one way to raise held-out accuracy and regularization as the way to improve a single model.
+An ensemble combines the predictions of several trained models. In the slide's example, three trained classifiers disagree on one flower photo. The ensemble averages the class probabilities of Model 1, 2, and 3, and it chooses the class with the highest score. The slide's rule: "Measure any accuracy gain together with serving cost." ([[Block 7 Slides]], p. 136). See Flower Classifier Running Example. Synthesis: the deck puts this slide just before "How to improve single-model performance?" (p. 137). So the deck offers ensembles as one way to raise held-out accuracy and regularization as the way to improve a single model.
 
-The midterm review states the limit of this method on its diagnosis slide: "Averaging an ensemble may reduce variability, but correlated member errors limit the benefit." ([[F26-midterm-review-234p]], p. 18). See [[Tree Ensembles]] for its worked example and for bias and variance.
+The midterm review states the limit of this method on its diagnosis slide: "Averaging an ensemble may reduce variability, but correlated member errors limit the benefit." ([[F26-midterm-review-234p]], p. 18). See Tree Ensembles for its worked example and for bias and variance.
 
-Later, the deck names ensemble learning as an alternative to [[AutoML]]: "One may use stable & robust methods like ensemble learning to combine multiple models together." If you do not know which algorithm and hyperparameters to select, "It is possible to randomly build multiple models with different hyperparameters and then combine them, e.g., taking the average." The drawback: "building many diversified models may be slow for prediction." ([[Block 7 Slides]], p. 318). For ensembles of decision trees, see [[Tree Ensembles]].
+Later, the deck names ensemble learning as an alternative to AutoML: "One may use stable & robust methods like ensemble learning to combine multiple models together." If you do not know which algorithm and hyperparameters to select, "It is possible to randomly build multiple models with different hyperparameters and then combine them, e.g., taking the average." The drawback: "building many diversified models may be slow for prediction." ([[Block 7 Slides]], p. 318). For ensembles of decision trees, see Tree Ensembles.
 
 ### Why it matters
 
-Synthesis: only data the model did not train on shows overfitting, because training error falls with complexity in every figure above. That held-out data must stay unseen; see [[Test Set Contamination]]. [[Regularization]] reduces overfitting by preferring simple models, [[Early Stopping]] keeps the checkpoint with the best validation metric, and [[Model Selection]] picks the complexity with the lowest generalization error.
+Synthesis: only data the model did not train on shows overfitting, because training error falls with complexity in every figure above. That held-out data must stay unseen; see Test Set Contamination. [[Regularization]] reduces overfitting by preferring simple models, [[Early Stopping]] keeps the checkpoint with the best validation metric, and Model Selection picks the complexity with the lowest generalization error.
 
 ## Related
 
@@ -185,12 +185,12 @@ Synthesis: only data the model did not train on shows overfitting, because train
 - [[Early Stopping]]: checkpoint selection when validation loss turns up
 - [[Dropout]]
 - [[Data Augmentation]]
-- [[Model Selection]]
+- Model Selection
 - [[Model Evaluation]]
-- [[Tree Ensembles]]: ensembles of decision trees, and bias and variance measured across refits
-- [[AutoML]]: ensemble learning as an alternative
+- Tree Ensembles: ensembles of decision trees, and bias and variance measured across refits
+- AutoML: ensemble learning as an alternative
 - [[k-Nearest Neighbors]]: k as a capacity setting
-- [[Test Set Contamination]]
+- Test Set Contamination
 - [[Neural Networks]]
 - [[Linear Separability]]: when a linear boundary underfits; class separability is also a factor of data complexity
 

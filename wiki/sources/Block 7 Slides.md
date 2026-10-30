@@ -27,7 +27,7 @@ captured: 2026-10-12T15:30:15
 
 The CSCI 566 deck "Block 7: Training a Model That Works", by the instructor Yue Zhao. The file name in the course repository says "432p", but the PDF has 400 pages. The deck has no date. It credits earlier versions of USC CSCI566, Stanford CS 229 and 231n, and CMU 10-623.
 
-The deck follows one small image-classification project, the [[Flower Classifier Running Example]], in three parts (p. 11):
+The deck follows one small image-classification project, the Flower Classifier Running Example, in three parts (p. 11):
 
 - Make learning work: data preprocessing, normalization layers, activations, weight initialization, optimizers, and learning rate schedules.
 - Check generalization: training and validation curves, early stopping, regularization, data augmentation, and the choice of hyperparameters.
@@ -43,24 +43,24 @@ Notes on reading the deck:
 
 ## Structure
 
-- pp. 1–12, title, a recap of earlier blocks, the lecture plan, and the flower example: [[CS566-DeepLearning]], [[Flower Classifier Running Example]].
+- pp. 1–12, title, a recap of earlier blocks, the lecture plan, and the flower example: [[CS566-DeepLearning]], Flower Classifier Running Example.
 - pp. 13–18, cross-entropy, one training step, mini-batches and epochs, the three data splits, and feature scales: [[Loss Functions]], [[Backpropagation]], [[Model Evaluation]].
-- pp. 19–41, data preprocessing, batch and layer normalization, the input convention of a pretrained model, missing data, and StandardScaler: [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Batch Normalization]], [[Layer Normalization]], [[Test Set Contamination]].
+- pp. 19–41, data preprocessing, batch and layer normalization, the input convention of a pretrained model, missing data, and StandardScaler: [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Batch Normalization]], [[Layer Normalization]], Test Set Contamination.
 - pp. 42–55, a recap of activation functions and how to choose one: [[Activation Functions]], [[Dying ReLU]].
 - pp. 56–83, weight initialization: zero, small random, Xavier, and He/Kaiming: [[Weight Initialization]], [[ResNet]].
-- pp. 84–117, gradient descent, the learning rate, SGD and its problems, momentum, AdaGrad, RMSProp, Adam, and AdamW: [[Gradient Descent]], [[Optimization]], [[Gradient-Based Optimizers]].
-- pp. 118–129, learning rate schedules, warmup, cyclical rates, and PyTorch schedulers: [[Learning Rate Schedules]].
+- pp. 84–117, gradient descent, the learning rate, SGD and its problems, momentum, AdaGrad, RMSProp, Adam, and AdamW: [[Gradient Descent]], Optimization, [[Gradient-Based Optimizers]].
+- pp. 118–129, learning rate schedules, warmup, cyclical rates, and PyTorch schedulers: Learning Rate Schedules.
 - pp. 130–137, training and validation curves, checkpoint selection, early stopping, and ensembles: [[Overfitting and Underfitting]], [[Early Stopping]].
 - pp. 138–170, weight penalties, dropout, data augmentation, DropConnect, stochastic depth, cutout, mixup, and evaluation rules: [[Regularization]], [[Dropout]], [[Data Augmentation]].
-- pp. 171–190, controlled experiments and the procedure for choosing hyperparameters: [[Model Selection]], [[Change One Factor per Experiment]], [[Model Evaluation]].
-- pp. 191–210, transfer learning with CNNs: a frozen backbone, DeCAF, the size-and-similarity guide, and pretraining as the norm: [[Transfer Learning]], [[Fine-Tuning]], [[AlexNet]], [[Convolutional Neural Networks (CNN)]], [[Image Captioning]], [[ImageNet Large Scale Visual Recognition Challenge]], [[Pretrained Visual Encoders]].
-- pp. 211–226, the transfer taxonomy, layer transfer, domain shift, multitask learning, domain-adversarial training, and zero-shot learning: [[Transfer Learning]], [[Multitask Learning]], [[Domain-Adversarial Training]], [[Machine Learning Task Types]].
-- pp. 227–240, fine-tuning LLMs against in-context learning, and the PEFT approaches: [[In-Context Learning]], [[Fine-Tuning]], [[Parameter-Efficient Fine-Tuning]].
-- pp. 241–263, the Transformer recap, encoder-only models and BERT, adapters, LoRA, LLM sizes, and intrinsic dimension: [[Transformers]], [[Adapters]], [[LoRA]], [[Parameter-Efficient Fine-Tuning]]
-- pp. 264–271, HyperTuning and the complete flower workflow: [[HyperTuning]], [[Updating LLMs]], [[Flower Classifier Running Example]].
-- pp. 272–287, optional research example: the LLM election simulation: [[LLM Election Simulation]].
-- pp. 288–310, optional research example: TOD and provable quantization: [[TOD]].
-- pp. 311–340, AutoML, model search, hyperparameter optimization, grid and random search, search budgets, and prediction-based tuning: [[AutoML]], [[Model Selection]], Bayesian Optimization.
+- pp. 171–190, controlled experiments and the procedure for choosing hyperparameters: Model Selection, Change One Factor per Experiment, [[Model Evaluation]].
+- pp. 191–210, transfer learning with CNNs: a frozen backbone, DeCAF, the size-and-similarity guide, and pretraining as the norm: [[Transfer Learning]], [[Fine-Tuning]], [[AlexNet]], [[Convolutional Neural Networks (CNN)]], Image Captioning, ImageNet Large Scale Visual Recognition Challenge, Pretrained Visual Encoders.
+- pp. 211–226, the transfer taxonomy, layer transfer, domain shift, multitask learning, domain-adversarial training, and zero-shot learning: [[Transfer Learning]], Multitask Learning, Domain-Adversarial Training, Machine Learning Task Types.
+- pp. 227–240, fine-tuning LLMs against in-context learning, and the PEFT approaches: In-Context Learning, [[Fine-Tuning]], Parameter-Efficient Fine-Tuning.
+- pp. 241–263, the Transformer recap, encoder-only models and BERT, adapters, LoRA, LLM sizes, and intrinsic dimension: [[Transformers]], [[Adapters]], [[LoRA]], Parameter-Efficient Fine-Tuning
+- pp. 264–271, HyperTuning and the complete flower workflow: HyperTuning, Updating LLMs, Flower Classifier Running Example.
+- pp. 272–287, optional research example: the LLM election simulation: LLM Election Simulation.
+- pp. 288–310, optional research example: TOD and provable quantization: TOD.
+- pp. 311–340, AutoML, model search, hyperparameter optimization, grid and random search, search budgets, and prediction-based tuning: AutoML, Model Selection, Bayesian Optimization.
 - pp. 341–351, the Bayesian optimization walkthrough on the flower learning rate: Bayesian Optimization.
-- pp. 352–396, meta-learning, unsupervised outlier model selection, MetaOD, MetaOOD, and the table of automated OD/OOD methods: [[Unsupervised Outlier Model Selection]], [[MetaOD]].
-- pp. 397–400, neural architecture search, NAS benchmarks, and training choices for the project: [[AutoML]], [[Flower Classifier Running Example]].
+- pp. 352–396, meta-learning, unsupervised outlier model selection, MetaOD, MetaOOD, and the table of automated OD/OOD methods: [[Unsupervised Outlier Model Selection]], MetaOD.
+- pp. 397–400, neural architecture search, NAS benchmarks, and training choices for the project: AutoML, Flower Classifier Running Example.

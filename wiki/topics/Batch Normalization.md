@@ -21,12 +21,12 @@ sources:
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
 up:
-  - "[[Neural Network Training]]"
+  - "Neural Network Training"
 ---
 
 > [!concept] Concept
 > 6 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
+> Up: Neural Network Training
 
 ## Definition
 
@@ -93,7 +93,7 @@ At test time, $\mu$ and $\sigma^2$ are running averages of values seen during tr
 - During training: use mini-batch statistics, update the running estimates, and learn the scale and shift.
 - During evaluation: "usually use stored running statistics", and keep the same learned scale and shift.
 
-The deck's reason: "The flower classifier may receive one new photo at a time" (p. 34; see [[Flower Classifier Running Example]]). Its rule: "Switch the model to evaluation mode when evaluating" (p. 34). Later the deck lists BN with [[Dropout]] and [[Data Augmentation]]. "Each method has its own evaluation rule." For BN: "Use stored training statistics in the usual running-statistics mode." "Decide the evaluation protocol before comparing models" (p. 165).
+The deck's reason: "The flower classifier may receive one new photo at a time" (p. 34; see Flower Classifier Running Example). Its rule: "Switch the model to evaluation mode when evaluating" (p. 34). Later the deck lists BN with [[Dropout]] and [[Data Augmentation]]. "Each method has its own evaluation rule." For BN: "Use stored training statistics in the usual running-statistics mode." "Decide the evaluation protocol before comparing models" (p. 165).
 
 [[F26-midterm-review-234p]] repeats the slides of pp. 32 and 34 (pp. 121-122). It adds: "In standard evaluation, stored running mean and variance replace the batch statistics; γ and β stay" (p. 123). Its summary of Block 7 states: "Normalization layers can behave differently in training mode and evaluation mode" (p. 112). See [[Switch the Model to Evaluation Mode When Evaluating]].
 
@@ -163,7 +163,7 @@ BN behaves differently during training and testing. The slides call this a very 
 - [[Dropout]]: another layer with its own evaluation rule
 - [[Activation Functions]]
 - [[Data Preprocessing]]: input normalization, done once
-- [[Flower Classifier Running Example]]
+- Flower Classifier Running Example
 - [[Gradient Descent]]: mini-batch methods
 
 ## Sources

@@ -110,7 +110,7 @@ The observed token "red" is the target: $L = -\ln 0.5 = 0.693$ ([[Block 3 Slides
 
 ### Worked example: one flower prediction
 
-[[Block 7 Slides]] recaps cross-entropy with the course's flower classifier (p. 13; see [[Flower Classifier Running Example]]). The true label is rose. Cross-entropy is $-\ln P(\text{rose})$, the negative log of the probability assigned to the true label (p. 13). The slide calls both predictions illustrative.
+[[Block 7 Slides]] recaps cross-entropy with the course's flower classifier (p. 13; see Flower Classifier Running Example). The true label is rose. Cross-entropy is $-\ln P(\text{rose})$, the negative log of the probability assigned to the true label (p. 13). The slide calls both predictions illustrative.
 
 | Prediction | Daisy | Rose | Tulip | Loss |
 | --- | --- | --- | --- | --- |
@@ -152,20 +152,20 @@ L1 prefers $W_1$. L2 prefers $W_2$. "Loss function matters!" ([[Block 1 Slides]]
 
 ### Why it matters
 
-Synthesis: the loss defines what "better" means before training starts. Two losses can rank the same models in opposite order. Minimizing a loss also rewards any feature that lowers it, including a surface cue; see [[Shortcut Learning]].
+Synthesis: the loss defines what "better" means before training starts. Two losses can rank the same models in opposite order. Minimizing a loss also rewards any feature that lowers it, including a surface cue; see Shortcut Learning.
 
 ## Related
 
-- [[Optimization]]
+- Optimization
 - [[Gradient Descent]]
 - [[Backpropagation]]: the backward pass starts from $\partial L / \partial \hat{y}$
 - [[Forward Propagation]]: the Block 3 network behind the squared-loss example
 - [[Regularization]]
 - [[Perceptron]]
 - [[Model Evaluation]]: 0-1 and squared loss for evaluation
-- [[Classification Metrics]]: accuracy is one minus the mean 0/1 loss
-- [[Autoregressive Language Modeling]]: the next token as a classification
-- [[Flower Classifier Running Example]]: the course example behind the flower loss table
+- Classification Metrics: accuracy is one minus the mean 0/1 loss
+- Autoregressive Language Modeling: the next token as a classification
+- Flower Classifier Running Example: the course example behind the flower loss table
 
 ## Sources
 

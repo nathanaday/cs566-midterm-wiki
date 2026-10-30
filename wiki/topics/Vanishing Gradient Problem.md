@@ -10,16 +10,16 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 4 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]"]
+up: ["Neural Network Training"]
 ---
 
 > [!concept] Concept
 > 5 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
+> Up: Neural Network Training
 
 ## Definition
 
-In backpropagation, the gradient for an early layer is a product of local derivatives, with one factor for each later layer ([[Computational Graphs]]). [[Block 3 Slides]] writes it for four layers (pp. 224–229):
+In backpropagation, the gradient for an early layer is a product of local derivatives, with one factor for each later layer (Computational Graphs). [[Block 3 Slides]] writes it for four layers (pp. 224–229):
 
 $$\frac{\partial J^{(4)}}{\partial h^{(1)}} = \frac{\partial h^{(2)}}{\partial h^{(1)}} \times \frac{\partial h^{(3)}}{\partial h^{(2)}} \times \frac{\partial h^{(4)}}{\partial h^{(3)}} \times \frac{\partial J^{(4)}}{\partial h^{(4)}}$$
 
@@ -48,7 +48,7 @@ Two factors shrink it:
 - $\tanh' \le 1$ at every step, so the product of $\tanh'$ terms makes the gradient vanish (p. 101).
 - With no non-linearity, the gradient is $\frac{\partial L_T}{\partial h_T} W_{hh}^{T-1} \frac{\partial h_1}{\partial W}$. It vanishes when the largest singular value of $W_{hh}$ is less than 1 (pp. 102–103).
 
-The slides cite Bengio et al. (1994) and Pascanu et al. (ICML 2013) (pp. 94–105). See [[Recurrent Neural Networks (RNN)]] and [[Backpropagation Through Time]].
+The slides cite Bengio et al. (1994) and Pascanu et al. (ICML 2013) (pp. 94–105). See [[Recurrent Neural Networks (RNN)]] and Backpropagation Through Time.
 
 ### Why it is a problem
 
@@ -84,7 +84,7 @@ The table and bullets below are general background, consistent with the slides:
 
 **Fix 3: residual connections.** A residual path $y = x + f(x)$ gives the gradient an identity route around a block ([[Block 3 Slides]], p. 233). See [[Residual Connections]].
 
-**For RNNs: change the architecture.** For vanishing gradients in a vanilla RNN, the slides' remedy is to change the RNN architecture ([[Block 5 Slides]], p. 105). The deck then moves to the LSTM; see [[Long Short-Term Memory]].
+**For RNNs: change the architecture.** For vanishing gradients in a vanilla RNN, the slides' remedy is to change the RNN architecture ([[Block 5 Slides]], p. 105). The deck then moves to the LSTM; see Long Short-Term Memory.
 
 ## Related
 
@@ -94,11 +94,11 @@ The table and bullets below are general background, consistent with the slides:
 - [[Residual Connections]]
 - [[Dying ReLU]]
 - [[Backpropagation]]
-- [[Backpropagation Through Time]]
-- [[Computational Graphs]]
+- Backpropagation Through Time
+- Computational Graphs
 - [[Gradient Descent]]
 - [[Recurrent Neural Networks (RNN)]]
-- [[Long Short-Term Memory]]
+- Long Short-Term Memory
 
 ## Sources
 

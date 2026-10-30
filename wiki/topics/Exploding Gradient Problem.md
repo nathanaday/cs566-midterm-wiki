@@ -17,12 +17,12 @@ sources:
   - "Sep 14 Lecture Account"
   - "[[Block 5 Slides]]"
 up:
-  - "[[Neural Network Training]]"
+  - "Neural Network Training"
 ---
 
 > [!concept] Concept
 > 4 sources · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
+> Up: Neural Network Training
 
 ## Definition
 
@@ -51,7 +51,7 @@ A vanilla RNN multiplies by the same $W_{hh}$ once for each time step on the way
 
 $$\frac{\partial L_T}{\partial W} = \frac{\partial L_T}{\partial h_T} W_{hh}^{T-1} \frac{\partial h_1}{\partial W}$$
 
-When the largest singular value of $W_{hh}$ is greater than 1, gradients can explode (p. 103). The slides' fix is gradient clipping (p. 104). They cite Bengio et al. (1994) and Pascanu et al. (ICML 2013) (pp. 94–105). See [[Recurrent Neural Networks (RNN)]] and [[Backpropagation Through Time]].
+When the largest singular value of $W_{hh}$ is greater than 1, gradients can explode (p. 103). The slides' fix is gradient clipping (p. 104). They cite Bengio et al. (1994) and Pascanu et al. (ICML 2013) (pp. 94–105). See [[Recurrent Neural Networks (RNN)]] and Backpropagation Through Time.
 
 ### Gradient clipping
 
@@ -61,7 +61,7 @@ The slides give gradient clipping as the "solution for exploding gradient" (pp. 
 
 General background, not from a course source:
 
-- **Cause:** the opposite of the [[Vanishing Gradient Problem]]. The backward pass multiplies factors layer by layer ([[Computational Graphs]]). If most factors are above 1, the gradient grows exponentially with depth. The RNN case above is one example.
+- **Cause:** the opposite of the [[Vanishing Gradient Problem]]. The backward pass multiplies factors layer by layer (Computational Graphs). If most factors are above 1, the gradient grows exponentially with depth. The RNN case above is one example.
 - A smaller learning rate, careful weight initialization, and [[Batch Normalization]] also help.
 - **Checkpoints:** save the weights and the optimizer state at regular steps. A run that reaches `NaN` can then restart from the last good copy.
 
@@ -77,10 +77,10 @@ Synthesis: one bad update can undo many good ones. Any calculation with `NaN` gi
 - [[Gradient Clipping]]
 - [[Gradient Descent]]
 - [[Batch Normalization]]
-- [[Computational Graphs]]
-- [[Optimization]]
+- Computational Graphs
+- Optimization
 - [[Recurrent Neural Networks (RNN)]]
-- [[Backpropagation Through Time]]
+- Backpropagation Through Time
 
 ## Sources
 

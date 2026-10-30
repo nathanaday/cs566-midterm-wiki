@@ -25,11 +25,11 @@ The extended deck opens the block with a shorter statement: "A graph describes w
 
 - graph representation: choose the objects, the connections, and the input features
 - [[Graph Neural Networks|graph neural network]]: learn predictions by combining neighboring information
-- [[Graphs of Agents|graphs of agents]]: study communication paths and execution dependencies
+- graphs of agents: study communication paths and execution dependencies
 
 The same abstract graph can describe different domains. Actors linked by movies, people linked by relationships, and proteins linked by interactions all give one graph with $|N| = 4$ and $|E| = 4$ ([[Block 6 Slides]], p. 11).
 
-This page is about graphs as data. A [[Computational Graphs|computational graph]] is a different use of the word: it records the operations of a calculation so that backpropagation can run on it.
+This page is about graphs as data. A computational graph is a different use of the word: it records the operations of a calculation so that backpropagation can run on it.
 
 On this page, a bare page number refers to [[Block 6 Slides]]. Claims from the extended deck name [[Block 6 Slides Extended]].
 
@@ -139,18 +139,18 @@ The traditional pipeline has four steps: input graph, structured features, learn
 
 [[Node Embeddings|Graph representation learning]] replaces the hand-designed features with learned features (p. 41).
 
-Synthesis: this graph task list is a different axis from [[Machine Learning Task Types]]. That page groups tasks by how much of the label $Y$ the training data holds. This page groups tasks by which part of the graph gets the prediction. For example, node classification is usually supervised, and learning [[Node Embeddings]] is self-supervised.
+Synthesis: this graph task list is a different axis from Machine Learning Task Types. That page groups tasks by how much of the label $Y$ the training data holds. This page groups tasks by which part of the graph gets the prediction. For example, node classification is usually supervised, and learning [[Node Embeddings]] is self-supervised.
 
 ## Related
 
 - [[Node Embeddings]]: learned features for nodes, in place of feature engineering
-- [[Road Delay GNN Example]]: the road graph of the extended deck, with its nodes, edges, and features
-- [[Graphs of Agents]]: graphs whose nodes are agents or agent actions, and what an edge means
+- Road Delay GNN Example: the road graph of the extended deck, with its nodes, edges, and features
+- Graphs of Agents: graphs whose nodes are agents or agent actions, and what an edge means
 - [[Graph Neural Networks]]: deep encoders that work on graph structure
-- [[GNN Applications]]: link prediction and graph-level prediction in use
+- GNN Applications: link prediction and graph-level prediction in use
 - [[Permutation Invariance and Equivariance]]: why a model on $A$ and $X$ must not depend on the node order
-- [[Machine Learning Task Types]]: tasks grouped by supervision, not by graph level
-- [[Computational Graphs]]: a different kind of graph, used for backpropagation
+- Machine Learning Task Types: tasks grouped by supervision, not by graph level
+- Computational Graphs: a different kind of graph, used for backpropagation
 - [[Convolutional Neural Networks (CNN)]]: the grid case that GNNs generalize
 - [[Recurrent Neural Networks (RNN)]]: the sequence case
 

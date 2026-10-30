@@ -55,7 +55,7 @@ With the first weights, each image gets its correct class: "Looks perfect! Doesn
 
 ### Why it matters
 
-The example sets up the next question: which $W$ is better? [[Loss Functions]] answer it with a number, and [[Optimization]] searches for the $W$ with the lowest loss ([[Block 1 Slides]], pp. 275–276).
+The example sets up the next question: which $W$ is better? [[Loss Functions]] answer it with a number, and Optimization searches for the $W$ with the lowest loss ([[Block 1 Slides]], pp. 275–276).
 
 A perceptron draws a linear boundary, so it fails on data that is not linearly separable ([[Block 1 Slides]], pp. 341–343). See [[Linear Separability]].
 
@@ -68,9 +68,9 @@ The slides date the perceptron algorithm to 1958, in a timeline credited to CMU 
 - [[Linear Classification]]
 - [[Neural Networks]]
 - [[Loss Functions]]
-- [[Optimization]]
+- Optimization
 - [[Linear Separability]]
-- [[Evolution of Machine Learning]]
+- Evolution of Machine Learning
 
 ## Sources
 

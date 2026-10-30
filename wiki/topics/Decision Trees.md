@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Classical Machine Learning]]"]
+up: ["Classical Machine Learning"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Classical Machine Learning]]
+> Up: Classical Machine Learning
 
 ## Definition
 
@@ -130,7 +130,7 @@ A second table gives the average difference in error between Gini and each other
 
 ### Overfitting control
 
-A single deep tree has high variance: its predictions change a lot when the training sample changes ([[Block 2 Slides]], p. 106). See [[Tree Ensembles]] for how averaging many trees reduces it.
+A single deep tree has high variance: its predictions change a lot when the training sample changes ([[Block 2 Slides]], p. 106). See Tree Ensembles for how averaging many trees reduces it.
 
 A figure from Tom Mitchell, credited to CMU 10601, plots accuracy against tree size. Accuracy on training data keeps rising to about 0.86 near 90 nodes. Accuracy on test data peaks near 0.75 and falls to about 0.69 ([[Block 2 Slides]], p. 86; repeated in [[F26-midterm-review-234p]], p. 13; values read from the plot).
 
@@ -160,7 +160,7 @@ Synthesis: unlike [[Linear Classification]], a tree does not use the form $Wx + 
 ## Related
 
 - [[Decision Tree Size Bounds]]: the maximum leaves and depth as a function of attributes and samples
-- [[Tree Ensembles]]: averaging many trees to lower the variance of a single tree
+- Tree Ensembles: averaging many trees to lower the variance of a single tree
 - [[Linear Classification]]
 - [[Linear Separability]]
 - [[Model Evaluation]]

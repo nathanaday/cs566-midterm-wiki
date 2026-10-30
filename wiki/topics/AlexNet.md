@@ -29,7 +29,7 @@ up:
 
 ## What it is
 
-AlexNet is the convolutional network from Krizhevsky et al., "ImageNet Classification with Deep Convolutional Neural Networks", NeurIPS 2012 ([[Block 1 Slides]], pp. 40, 71; [[Block 4 Slides]], p. 29). Alex Krizhevsky designed it with Ilya Sutskever and Geoffrey Hinton ([[Block 4 Slides]], p. 22). It has 8 layers and won ILSVRC 2012. It was the first CNN-based winner of the challenge ([[Block 4 Slides]], p. 182; see [[ImageNet Large Scale Visual Recognition Challenge]]).
+AlexNet is the convolutional network from Krizhevsky et al., "ImageNet Classification with Deep Convolutional Neural Networks", NeurIPS 2012 ([[Block 1 Slides]], pp. 40, 71; [[Block 4 Slides]], p. 29). Alex Krizhevsky designed it with Ilya Sutskever and Geoffrey Hinton ([[Block 4 Slides]], p. 22). It has 8 layers and won ILSVRC 2012. It was the first CNN-based winner of the challenge ([[Block 4 Slides]], p. 182; see ImageNet Large Scale Visual Recognition Challenge).
 
 The sources give two top-5 error rates:
 
@@ -91,15 +91,15 @@ The slides do not explain the difference. General background, not from a course 
 - **Brain inspiration.** The slide title says deep learning "may" be motivated by the human brain. It shows the visual pathway with timings, from the retina (20-40 ms) through V1 (edges, corners), V4 (feature groups), and AIT (80-100 ms; faces, objects) to a finger muscle (180-260 ms) (p. 20).
 - **Neocognitron (Fukushima).** A "sandwich" architecture that alternates simple and complex cell layers. Simple cells have modifiable parameters; complex cells perform pooling. The slide labels it 1980 and cites a 1982 publication (p. 17).
 - **LeNet (LeCun et al., NIPS 1989).** A handwritten digit recognizer. A 32x32 input goes through C1 (6@28x28), S2 (6@14x14), C3 (16@10x10), S4 (16@5x5), C5 (120 units), F6 (84 units), and an output of 10. It alternates convolution and subsampling, then uses full connections (p. 21).
-- After AlexNet, the deck shows [[VGGNet]] (p. 23).
+- After AlexNet, the deck shows VGGNet (p. 23).
 
 ## Related
 
 - [[Deep Learning]]: the third turning point
-- [[Evolution of Machine Learning]]: first node of the capability track
-- [[What Counts as Solved]]: example of a scoped claim
-- [[ImageNet Large Scale Visual Recognition Challenge]]: the 2012 win
-- [[VGGNet]]
+- Evolution of Machine Learning: first node of the capability track
+- What Counts as Solved: example of a scoped claim
+- ImageNet Large Scale Visual Recognition Challenge: the 2012 win
+- VGGNet
 - [[ResNet]]
 - [[Convolutional Neural Networks (CNN)]]
 - [[Activation Functions]]

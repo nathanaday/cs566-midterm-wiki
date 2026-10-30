@@ -53,7 +53,7 @@ flowchart RL
   D1 --> A2
 ```
 
-Synthesis: this is not the same thing as a [[Computational Graphs|computational graph]] in backpropagation. There, a node is one arithmetic operation, and the graph carries values forward and gradients backward. Here, a node is the embedding of one graph node at one layer, and each box is a learned aggregation. The two meet in training: backpropagation runs through the computational graph of the whole GNN computation.
+Synthesis: this is not the same thing as a computational graph in backpropagation. There, a node is one arithmetic operation, and the graph carries values forward and gradients backward. Here, a node is the embedding of one graph node at one layer, and each box is a learned aggregation. The two meet in training: backpropagation runs through the computational graph of the whole GNN computation.
 
 ### The basic approach
 
@@ -83,7 +83,7 @@ The slides trace a toy rule with fixed weights on the path graph B-A-C-D. They s
 
 $$h_v^{(k+1)} = 0.5\, h_v^{(k)} + 0.5 \cdot \text{mean}\{h_u^{(k)} : u \text{ is a neighbor of } v\}$$
 
-[[Road Delay GNN Example]] holds the values layer by layer. The trace shows three rules:
+Road Delay GNN Example holds the values layer by layer. The trace shows three rules:
 
 - Every new value uses only the previous layer ([[Block 6 Slides]], p. 91; [[Block 6 Slides Extended]], p. 87; [[F26-midterm-review-234p]], p. 203).
 - Two layers let information travel two graph edges ([[Block 6 Slides]], p. 92; [[Block 6 Slides Extended]], p. 88; [[F26-midterm-review-234p]], p. 204).
@@ -96,8 +96,8 @@ Synthesis: an in-place schedule would make the result depend on the node order, 
 - [[Graph Neural Networks]]
 - [[Graph Convolutional Network]]: the update rule, the shared parameters, and training on batches of compute graphs
 - [[Permutation Invariance and Equivariance]]
-- [[Road Delay GNN Example]]: the toy values layer by layer
-- [[Computational Graphs]]: the backpropagation graph, a different idea
+- Road Delay GNN Example: the toy values layer by layer
+- Computational Graphs: the backpropagation graph, a different idea
 - [[Graph]]
 - [[Pooling Layer]]: aggregation over a grid window in a CNN
 

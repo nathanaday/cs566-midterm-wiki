@@ -143,7 +143,7 @@ $$\text{ENC}(v) = \text{multiple layers of non-linear transformations based on g
 
 These deep encoders can use the same node similarity functions ([[Block 6 Slides]], p. 56). They output node embeddings, and they can also embed subgraphs and whole graphs ([[Block 6 Slides]], p. 57; [[Block 6 Slides Extended]], p. 62). Unlike the shallow method, GNNs aim to use node features or attributes such as text and images ([[Block 6 Slides]], p. 65).
 
-Synthesis: the decoder objective resembles [[Contrastive Learning]]. Both pull the embeddings of similar pairs together in a shared space. The slides do not make this comparison.
+Synthesis: the decoder objective resembles Contrastive Learning. Both pull the embeddings of similar pairs together in a shared space. The slides do not make this comparison.
 
 ## Related
 
@@ -154,8 +154,8 @@ Synthesis: the decoder objective resembles [[Contrastive Learning]]. Both pull t
 - [[Convolutional Neural Networks (CNN)]]: the same reuse of learned weights on new inputs
 - [[Overfitting and Underfitting]]: generalization to new data
 - [[Deep Learning]]: learned features in place of hand-designed ones
-- [[Contrastive Learning]]
-- [[Machine Learning Task Types]]: self-supervised learning
+- Contrastive Learning
+- Machine Learning Task Types: self-supervised learning
 
 ## Sources
 

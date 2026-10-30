@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Classical Machine Learning]]"]
+up: ["Classical Machine Learning"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Classical Machine Learning]]
+> Up: Classical Machine Learning
 
 ## Definition
 
@@ -86,9 +86,9 @@ Synthesis: semantic caching, kNN-LM, and RAG all run the same nearest-neighbor l
 - [[Linear Classification]]: a parametric classifier, in contrast to kNN, which stores the data
 - [[Model Evaluation]]: why zero training error for 1-NN says little about true error, and how validation data chooses k
 - [[k-Means]]: also assigns points by distance, but without labels
-- [[Autoregressive Language Modeling]]: the model that kNN-LM interpolates with
-- [[KV Cache]]: a different cache, inside one generation
-- [[Agent Memory]]: retrieval into context
+- Autoregressive Language Modeling: the model that kNN-LM interpolates with
+- KV Cache: a different cache, inside one generation
+- Agent Memory: retrieval into context
 
 ## Sources
 

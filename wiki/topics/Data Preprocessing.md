@@ -10,12 +10,12 @@ updated: 2026-10-13T18:22:47
 refreshed: 2026-10-13T18:22:47
 status: stable
 sources: ["[[Block 7 Slides]]"]
-up: ["[[Neural Network Training]]"]
+up: ["Neural Network Training"]
 ---
 
 > [!concept] Concept
 > 1 source · refreshed 2026-10-13 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
+> Up: Neural Network Training
 
 ## Definition
 
@@ -110,7 +110,7 @@ Synthesis: here the mean and scale come from the model specification, not from y
 - [[Layer Normalization]]
 - [[Activation Functions]]: ReLU and input offsets
 - [[Transfer Learning]]: inputs for a pretrained model
-- [[Flower Classifier Running Example]]
+- Flower Classifier Running Example
 - [[Model Evaluation]]: the train, validation, and test splits
 
 ## Sources

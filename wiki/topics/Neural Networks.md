@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[Block 4 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[CS566-DeepLearning]]", "[[Machine Learning]]"]
+up: ["[[CS566-DeepLearning]]", "Machine Learning"]
 ---
 
 > [!concept] Concept
 > 4 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[CS566-DeepLearning]] · [[Machine Learning]]
+> Up: [[CS566-DeepLearning]] · Machine Learning
 
 ## Definition
 

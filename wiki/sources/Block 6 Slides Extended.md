@@ -42,16 +42,16 @@ The text of this deck does not hold some slides of the first version: the four L
 
 ## Structure
 
-- pp. 1–5, title, the Oct 4 course updates, and the plan of the block: [[CS566-DeepLearning]], [[Graphs of Agents]].
-- pp. 6–23, why graphs, the road example, nodes, edges, and features, heterogeneous, directed, and bipartite graphs, and the choice of representation: [[Graph]], [[Road Delay GNN Example]].
-- pp. 24–40, training on the road example, graph task levels, where the prediction head attaches, and applications (PinSage, polypharmacy, Google Maps ETA, antibiotic discovery): [[Graph Neural Networks]], [[GNN Applications]].
-- pp. 41–46, graph tasks in drug discovery and TDC: the GNN head must match the scientific question: [[GNN Applications]], [[Therapeutics Data Commons]].
+- pp. 1–5, title, the Oct 4 course updates, and the plan of the block: [[CS566-DeepLearning]], Graphs of Agents.
+- pp. 6–23, why graphs, the road example, nodes, edges, and features, heterogeneous, directed, and bipartite graphs, and the choice of representation: [[Graph]], Road Delay GNN Example.
+- pp. 24–40, training on the road example, graph task levels, where the prediction head attaches, and applications (PinSage, polypharmacy, Google Maps ETA, antibiotic discovery): [[Graph Neural Networks]], GNN Applications.
+- pp. 41–46, graph tasks in drug discovery and TDC: the GNN head must match the scientific question: GNN Applications, Therapeutics Data Commons.
 - pp. 47–62, traditional graph ML, representation learning, node embeddings, the adjacency and feature matrices, and an embedding lookup compared with a GNN encoder: [[Node Embeddings]], [[Permutation Invariance and Equivariance]].
 - pp. 63–80, notation, the naive approach, node ordering, invariance and equivariance, the shared node MLP, message passing, and computation graphs: [[Permutation Invariance and Equivariance]], [[Neighborhood Aggregation]], [[Graph Convolutional Network]].
-- pp. 81–100, the deep encoder update rule, the 0.5/0.5 toy update, synchronous updates, pooling, an added edge, the prediction head, and training: [[Graph Convolutional Network]], [[Neighborhood Aggregation]], [[Road Delay GNN Example]].
+- pp. 81–100, the deep encoder update rule, the 0.5/0.5 toy update, synchronous updates, pooling, an added edge, the prediction head, and training: [[Graph Convolutional Network]], [[Neighborhood Aggregation]], Road Delay GNN Example.
 - pp. 101–120, supervised training, model design, weight sharing, inductive use, readout, depth, and GNNs compared with CNNs: [[Graph Convolutional Network]], [[Node Embeddings]], [[Graph Neural Networks]].
-- pp. 121–125, self-attention as a token graph and the causal mask: [[Attention]], [[Causal Mask]], [[Transformers]].
-- pp. 126–134, paper classification with the LLM as enhancer or as predictor, and matched comparisons: [[LLMs and Graphs]].
-- pp. 135–153, retrieval-augmented generation and a worked GraphRAG example with failure modes and tests: [[Retrieval-Augmented Generation]], [[GraphRAG]].
-- pp. 154–168, what an edge means, and GRADE run graphs: [[Graphs of Agents]], [[GRADE]].
-- pp. 168–176, MAMA communication topology and leakage, the closing comparison, and the pointer to Block 7: [[MAMA]], [[Graphs of Agents]].
+- pp. 121–125, self-attention as a token graph and the causal mask: Attention, Causal Mask, [[Transformers]].
+- pp. 126–134, paper classification with the LLM as enhancer or as predictor, and matched comparisons: LLMs and Graphs.
+- pp. 135–153, retrieval-augmented generation and a worked GraphRAG example with failure modes and tests: Retrieval-Augmented Generation, GraphRAG.
+- pp. 154–168, what an edge means, and GRADE run graphs: Graphs of Agents, GRADE.
+- pp. 168–176, MAMA communication topology and leakage, the closing comparison, and the pointer to Block 7: MAMA, Graphs of Agents.

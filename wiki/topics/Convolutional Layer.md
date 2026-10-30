@@ -155,7 +155,7 @@ Synthesis: with shared weights, the parameter count depends on the filter size a
 
 - [[Convolutional Neural Networks (CNN)]]
 - 1x1 Convolution
-- [[Depthwise Separable Convolution]]
+- Depthwise Separable Convolution
 - [[Pooling Layer]]
 - [[Fully Connected Layer]]
 - [[Softmax Layer]]

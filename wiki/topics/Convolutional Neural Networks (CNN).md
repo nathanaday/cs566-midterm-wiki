@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["Topic Note - Convolutional Neural Networks (CNN)", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[Block 3 Slides]]", "An Image is Worth 16x16 Words (note)", "FastVLM (note)", "Topic Note - Sequence Transduction", "Fall 2026 Reading List", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]", "[[Machine Learning]]"]
+up: ["[[Neural Networks]]", "Machine Learning"]
 ---
 
 > [!concept] Concept
 > 10 sources · refreshed 2026-10-19 · #machine-learning
-> Up: [[Neural Networks]] · [[Machine Learning]]
+> Up: [[Neural Networks]] · Machine Learning
 
 ## Definition
 
@@ -81,7 +81,7 @@ Slide credit for pp. 26-28 goes to CS 231N. A later slide adds object segmentati
 [[Block 7 Slides]] says "Transfer learning with CNNs is pervasive… (it's the norm, not an exception)" (pp. 205-207). See [[Transfer Learning]]. Its examples:
 
 - **Object detection with Fast R-CNN** (Girshick, "Fast R-CNN", ICCV 2015; p. 205). A ConvNet is "applied to entire image". An external proposal algorithm (for example, selective search) gives regions, and RoI pooling reads features for each region. FC layers feed a linear + softmax proposal classifier and linear bounding-box regressors. The loss is "Log loss + smooth L1 loss" (p. 205). The ConvNet is a "CNN pretrained on ImageNet" (p. 206).
-- **Image captioning with CNN + RNN** (Karpathy and Fei-Fei, CVPR 2015; p. 205). The CNN is pretrained on ImageNet (p. 206), and the word vectors are "pretrained with word2vec" (p. 207). See [[Image Captioning]].
+- **Image captioning with CNN + RNN** (Karpathy and Fei-Fei, CVPR 2015; p. 205). The CNN is pretrained on ImageNet (p. 206), and the word vectors are "pretrained with word2vec" (p. 207). See Image Captioning.
 - **Architecture matters.** "Object detection on MSCOCO" (Girshick, "The Generalized R-CNN Framework for Object Detection", ICCV 2017 Tutorial; p. 208):
 
 | Detector (backbone) | Score |
@@ -95,7 +95,7 @@ Slide credit for pp. 26-28 goes to CS 231N. A later slide adds object segmentati
 | Mask R-CNN FPN (ResNet-101) | 46 |
 
   The chart does not name the metric on its y-axis.
-- **Pretraining against training from scratch.** He et al., "Rethinking ImageNet Pre-training" (ICCV 2019), finds that detection from scratch can match ImageNet pretraining but takes 2-3x as long to train (p. 209). See [[ImageNet Large Scale Visual Recognition Challenge]] for the details.
+- **Pretraining against training from scratch.** He et al., "Rethinking ImageNet Pre-training" (ICCV 2019), finds that detection from scratch can match ImageNet pretraining but takes 2-3x as long to train (p. 209). See ImageNet Large Scale Visual Recognition Challenge for the details.
 
 Synthesis: within one detector, a stronger pretrained backbone gives a higher score. The score goes from 15 to 19 for Fast R-CNN (AlexNet to VGG-16), and from 29 to 39 for Faster R-CNN (VGG-16 to ResNet-101).
 
@@ -131,7 +131,7 @@ Synthesis: ViT drops convolution when data is plentiful, and FastVLM brings it b
 - [[Fully Connected Layer]]
 - [[Softmax Layer]]
 - [[Transformers]]
-- [[Visual Token Count]]
+- Visual Token Count
 - [[Recurrent Neural Networks (RNN)]]
 - [[Graph Neural Networks]]: the same weights at every node
 - [[AlexNet]]
@@ -141,8 +141,8 @@ Synthesis: ViT drops convolution when data is plentiful, and FastVLM brings it b
 - [[Overfitting and Underfitting]]
 - [[Residual Connections]]
 - [[Transfer Learning]]: pretrained CNN backbones are the norm
-- [[Image Captioning]]
-- [[ImageNet Large Scale Visual Recognition Challenge]]: ImageNet as the pretraining source
+- Image Captioning
+- ImageNet Large Scale Visual Recognition Challenge: ImageNet as the pretraining source
 
 ## Sources
 

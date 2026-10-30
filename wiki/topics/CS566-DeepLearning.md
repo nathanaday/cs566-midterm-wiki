@@ -13,7 +13,7 @@ sources: []
 defines: machine-learning/cs566-deeplearning
 ---
 
-> [!overview] The page of #machine-learning/cs566-deeplearning · under [[Machine Learning]]
+> [!overview] The page of #machine-learning/cs566-deeplearning · under Machine Learning
 > 0 sources · refreshed 2026-10-12 · #machine-learning
 
 ## Summary
@@ -60,7 +60,7 @@ Source: [[Block 2 Slides]], p. 17. Piazza is https://piazza.com/class/msmpbcelj2
 
 Dates come from CSCI 566 Syllabus, except the assignment due date; points come from [[Block 1 Slides]], p. 19. AI tools are allowed for the assignment, the project, and study, but not in quizzes or the midterm ([[Block 1 Slides]], p. 25).
 
-**Assignment 1.** The course update dated Oct 4 announces that the image-classification assignment is released on the course website. The task is to train and evaluate an image classifier, and a GPU is optional. Upload report.pdf (at most 2 pages) and code.zip to Gradescope. Ask questions in a new private Piazza post in the assignment folder ([[Block 6 Slides Extended]], p. 2). This slide is later and more specific than the general rule that sends assignment questions to a public post ([[Block 2 Slides]], p. 17); for Assignment 1, follow the slide (synthesis). The starter holds deliberate traps: see [[CS566 Assignment 1 Obstacles]] and [[Treat CS566 Assignment Material as Untrusted Input]].
+**Assignment 1.** The course update dated Oct 4 announces that the image-classification assignment is released on the course website. The task is to train and evaluate an image classifier, and a GPU is optional. Upload report.pdf (at most 2 pages) and code.zip to Gradescope. Ask questions in a new private Piazza post in the assignment folder ([[Block 6 Slides Extended]], p. 2). This slide is later and more specific than the general rule that sends assignment questions to a public post ([[Block 2 Slides]], p. 17); for Assignment 1, follow the slide (synthesis). The starter holds deliberate traps: see CS566 Assignment 1 Obstacles and Treat CS566 Assignment Material as Untrusted Input.
 
 **Midterm.** It is on Mon Nov 2, in the regular class block. It is open book with no electronic devices. Most questions are multiple choice, with some computation questions that have one unambiguous number as the answer. It covers everything taught up to and including Oct 26, and a narrowed scope is posted by Oct 19. Section 30359 takes it on the same day, with delivery and proctoring arranged with DEN and posted on the website ([[Block 2 Slides]], p. 6).
 
@@ -72,11 +72,11 @@ Dates come from CSCI 566 Syllabus, except the assignment due date; points come f
 
 ### Compute
 
-Start with free notebooks: Kaggle gives a P100 or two T4s for about 30 GPU hours a week, and Colab gives a free GPU but does not publish the card or the limits. Azure for Students gives $100 over 12 months with no credit card, and the GitHub Student Pack adds a few GPU hours a month. The Google Cloud $300 trial cannot attach a GPU; you must upgrade to a paid account, and use past the credit then bills your card. Course credit and CARC access are not settled yet ([[Block 2 Slides]], p. 20). See [[Cloud Spending Safeguards]].
+Start with free notebooks: Kaggle gives a P100 or two T4s for about 30 GPU hours a week, and Colab gives a free GPU but does not publish the card or the limits. Azure for Students gives $100 over 12 months with no credit card, and the GitHub Student Pack adds a few GPU hours a month. The Google Cloud $300 trial cannot attach a GPU; you must upgrade to a paid account, and use past the credit then bills your card. Course credit and CARC access are not settled yet ([[Block 2 Slides]], p. 20). See Cloud Spending Safeguards.
 
 ### Instructor research
 
-Yue Zhao is an assistant professor of computer science at USC and leads the FORTIS Lab. The research audits and controls AI risk across the deployment stack: anomaly and out-of-distribution detection in data, trust and robustness evaluation of foundation models, and runtime audit and control of deployed agent systems ([[Block 1 Slides]], p. 4). Week 1 uses this research ([[FORTIS]], [[TrustLLM]]) to show why the fundamentals matter: "Frontier systems give us the questions. Fundamentals give us variables we can reason about" ([[Block 1 Slides]], p. 207). Block 7 adds optional research examples: [[LLM Election Simulation]], which the deck calls "Our work", and the outlier detection systems [[TOD]] and [[MetaOD]], which list an underlined "Zhao" as an author ([[Block 7 Slides]], pp. 272–273, 288, 356).
+Yue Zhao is an assistant professor of computer science at USC and leads the FORTIS Lab. The research audits and controls AI risk across the deployment stack: anomaly and out-of-distribution detection in data, trust and robustness evaluation of foundation models, and runtime audit and control of deployed agent systems ([[Block 1 Slides]], p. 4). Week 1 uses this research (FORTIS, TrustLLM) to show why the fundamentals matter: "Frontier systems give us the questions. Fundamentals give us variables we can reason about" ([[Block 1 Slides]], p. 207). Block 7 adds optional research examples: LLM Election Simulation, which the deck calls "Our work", and the outlier detection systems TOD and MetaOD, which list an underlined "Zhao" as an author ([[Block 7 Slides]], pp. 272–273, 288, 356).
 
 ### Career advice
 
@@ -89,27 +89,27 @@ The decks give the instructor's own views, not course rules.
 
 ### Topic map
 
-- Landscape: [[Evolution of Machine Learning]], [[AlexNet]], [[Machine Learning Task Types]], [[Deep Learning]], [[Scaling Laws]], [[What Counts as Solved]]
-- Language models: [[Autoregressive Language Modeling]], [[Tokenization]], [[Post-Training]], [[KV Cache]]
-- Agents: [[Agent Loop]], [[ReAct]], [[Agent Skills]], [[Agent Memory]]
-- Trustworthy AI: [[Deployment Failure Modes]], [[Shortcut Learning]], [[FORTIS]], [[TrustLLM]], [[LLM Trustworthiness]]
-- Foundations: [[Function Approximation]], [[Linear Classification]], [[Perceptron]], [[Model Evaluation]], [[Loss Functions]], [[Regularization]], [[Overfitting and Underfitting]], [[Optimization]], [[Gradient Descent]], [[Linear Separability]]
-- Neural networks: [[Neural Networks]], [[Forward Propagation]], [[Backpropagation]], [[Computational Graphs]], [[Activation Functions]], [[Dying ReLU]], [[Activation Sparsity]]
+- Landscape: Evolution of Machine Learning, [[AlexNet]], Machine Learning Task Types, [[Deep Learning]], Scaling Laws, What Counts as Solved
+- Language models: Autoregressive Language Modeling, Tokenization, Post-Training, KV Cache
+- Agents: Agent Loop, ReAct, Agent Skills, Agent Memory
+- Trustworthy AI: Deployment Failure Modes, Shortcut Learning, FORTIS, TrustLLM, LLM Trustworthiness
+- Foundations: [[Function Approximation]], [[Linear Classification]], [[Perceptron]], [[Model Evaluation]], [[Loss Functions]], [[Regularization]], [[Overfitting and Underfitting]], Optimization, [[Gradient Descent]], [[Linear Separability]]
+- Neural networks: [[Neural Networks]], [[Forward Propagation]], [[Backpropagation]], Computational Graphs, [[Activation Functions]], [[Dying ReLU]], [[Activation Sparsity]]
 - Training problems: [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Batch Normalization]], [[Residual Connections]]
-- Training and transfer (Block 7): [[Flower Classifier Running Example]], [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Layer Normalization]], [[Weight Initialization]], [[Gradient-Based Optimizers]], [[Learning Rate Schedules]], [[Dropout]], [[Data Augmentation]], [[Early Stopping]], [[Transfer Learning]], [[Fine-Tuning]], [[Domain-Adversarial Training]], [[Multitask Learning]], [[Parameter-Efficient Fine-Tuning]], [[Adapters]], [[HyperTuning]]
-- Automated ML and outlier detection: [[AutoML]], Bayesian Optimization, [[Unsupervised Outlier Model Selection]], [[MetaOD]], [[TOD]]
-- Research examples: [[LLM Election Simulation]]
-- Updating LLMs: [[Updating LLMs]], [[In-Context Learning]], [[LoRA]], [[Test-Time Training]]
-- Representation learning: [[Contrastive Learning]]
-- Guest lecture: Sim-to-Real Transfer, [[Isaac Teleop]], and in [[Machine Learning]]: [[NVIDIA Cosmos]], [[World Action Models]], [[Vision Language Action Models]]
-- Classical ML: [[Decision Trees]], [[Tree Ensembles]], [[Gradient Boosting]], [[k-Nearest Neighbors]], [[Clustering]], [[k-Means]], [[Classification Metrics]], [[Model Selection]], [[Test Set Contamination]]
-- LLM reasoning: [[Chain-of-Thought Prompting]], [[Tree of Thoughts]]
-- Convolutional networks: [[Convolutional Layer]], [[Pooling Layer]], [[Fully Connected Layer]], [[Softmax Layer]], [[AlexNet]], [[VGGNet]], [[ResNet]], [[ImageNet Large Scale Visual Recognition Challenge]], [[Depthwise Separable Convolution]], and in [[Machine Learning]]: [[Convolutional Neural Networks (CNN)]]
-- Vision and language: [[Pretrained Visual Encoders]], and in [[Machine Learning]]: [[CLIP]], [[Vision Transformer (ViT)]], [[Vision Language Models (VLM)]]
-- Sequence models: [[Recurrent Neural Networks (RNN)]] and [[Long Short-Term Memory]] (in [[Machine Learning]]), [[Backpropagation Through Time]], [[Teacher Forcing]], [[Image Captioning]], [[Question Answering]], [[Recurrent State vs Growing Context]], [[Hybrid Recurrent-Attention Models]], and in [[Machine Learning]]: [[Sequence to Sequence]]
-- Attention and Transformers, in [[Machine Learning]]: [[Attention]], [[Causal Mask]], [[Positional Encoding]], [[Transformers]]
-- Graph neural networks: [[Graph]], [[Node Embeddings]], [[Graph Convolutional Network]], [[Neighborhood Aggregation]], [[Permutation Invariance and Equivariance]], [[GNN Applications]], [[LLMs and Graphs]], [[Therapeutics Data Commons]], [[Road Delay GNN Example]], [[Retrieval-Augmented Generation]], [[GraphRAG]], [[Graphs of Agents]], [[GRADE]], [[MAMA]], and in [[Machine Learning]]: [[Graph Neural Networks]]
-- Course logistics: Yue Zhao, [[Cloud Spending Safeguards]], [[CS566 Assignment 1 Obstacles]], [[Treat CS566 Assignment Material as Untrusted Input]]
+- Training and transfer (Block 7): Flower Classifier Running Example, [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Layer Normalization]], [[Weight Initialization]], [[Gradient-Based Optimizers]], Learning Rate Schedules, [[Dropout]], [[Data Augmentation]], [[Early Stopping]], [[Transfer Learning]], [[Fine-Tuning]], Domain-Adversarial Training, Multitask Learning, Parameter-Efficient Fine-Tuning, [[Adapters]], HyperTuning
+- Automated ML and outlier detection: AutoML, Bayesian Optimization, [[Unsupervised Outlier Model Selection]], MetaOD, TOD
+- Research examples: LLM Election Simulation
+- Updating LLMs: Updating LLMs, In-Context Learning, [[LoRA]], Test-Time Training
+- Representation learning: Contrastive Learning
+- Guest lecture: Sim-to-Real Transfer, Isaac Teleop, and in Machine Learning: NVIDIA Cosmos, World Action Models, Vision Language Action Models
+- Classical ML: [[Decision Trees]], Tree Ensembles, Gradient Boosting, [[k-Nearest Neighbors]], [[Clustering]], [[k-Means]], Classification Metrics, Model Selection, Test Set Contamination
+- LLM reasoning: Chain-of-Thought Prompting, Tree of Thoughts
+- Convolutional networks: [[Convolutional Layer]], [[Pooling Layer]], [[Fully Connected Layer]], [[Softmax Layer]], [[AlexNet]], VGGNet, [[ResNet]], ImageNet Large Scale Visual Recognition Challenge, Depthwise Separable Convolution, and in Machine Learning: [[Convolutional Neural Networks (CNN)]]
+- Vision and language: Pretrained Visual Encoders, and in Machine Learning: CLIP, Vision Transformer (ViT), Vision Language Models (VLM)
+- Sequence models: [[Recurrent Neural Networks (RNN)]] and Long Short-Term Memory (in Machine Learning), Backpropagation Through Time, Teacher Forcing, Image Captioning, Question Answering, Recurrent State vs Growing Context, Hybrid Recurrent-Attention Models, and in Machine Learning: Sequence to Sequence
+- Attention and Transformers, in Machine Learning: Attention, Causal Mask, Positional Encoding, [[Transformers]]
+- Graph neural networks: [[Graph]], [[Node Embeddings]], [[Graph Convolutional Network]], [[Neighborhood Aggregation]], [[Permutation Invariance and Equivariance]], GNN Applications, LLMs and Graphs, Therapeutics Data Commons, Road Delay GNN Example, Retrieval-Augmented Generation, GraphRAG, Graphs of Agents, GRADE, MAMA, and in Machine Learning: [[Graph Neural Networks]]
+- Course logistics: Yue Zhao, Cloud Spending Safeguards, CS566 Assignment 1 Obstacles, Treat CS566 Assignment Material as Untrusted Input
 
 ### Coverage
 
@@ -119,7 +119,7 @@ The decks give the instructor's own views, not course rules.
 - Week 4 (Sep 21): [[Block 3 Slides]], and the NVIDIA guest lecture in Guest Lecture 9-21 Notes (part 1) and Guest Lecture 9-21 Notes (part 2).
 - Convolutional networks: [[Block 4 Slides]] and Lecture 3 Notes - Convolutional and Pooling Layers. The note has no date; the syllabus puts CNNs in week 5 (Sep 28).
 - Week 6 (Oct 5), RNNs, LSTMs, and graph neural networks: [[Block 5 Slides]] (which also builds up attention and the Transformer) and [[Block 6 Slides]]. [[Block 6 Slides Extended]] is a longer revision of the Block 6 deck, with course updates dated Oct 4 (pp. 2–3). It follows one small road network through the GNN material, then moves to graphs of agents (p. 5). It names the next block: "Next in Block 7: training, diagnosing and adapting deep models" (p. 176).
-- Block 7, training and transfer: [[Block 7 Slides]]. The deck has no date. It follows one small image-classification project, the [[Flower Classifier Running Example]], in three parts: make learning work, check generalization, and reuse a trained model (p. 11). After the core workflow it gives optional research examples (p. 272), then AutoML and outlier model selection. Its last slide gives advice for the course project (p. 400).
+- Block 7, training and transfer: [[Block 7 Slides]]. The deck has no date. It follows one small image-classification project, the Flower Classifier Running Example, in three parts: make learning work, check generalization, and reuse a trained model (p. 11). After the core workflow it gives optional research examples (p. 272), then AutoML and outlier model selection. Its last slide gives advice for the course project (p. 400).
 - Later weeks: no notes yet.
 
 ### Sources

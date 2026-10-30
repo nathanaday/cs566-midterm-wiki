@@ -62,7 +62,7 @@ Each row of $W$ scores one class, so a linear classifier learns one template per
 
 ### Place in the course
 
-In the Week 1 recap, data is the experience, the linear model is the learning algorithm, and the output is knowledge measured as performance on a task ([[Block 2 Slides]], p. 22). See [[Machine Learning Task Types]]. Linear models are parametric, and "there are more approaches beyond linear models", such as decision trees ([[Block 2 Slides]], p. 29).
+In the Week 1 recap, data is the experience, the linear model is the learning algorithm, and the output is knowledge measured as performance on a task ([[Block 2 Slides]], p. 22). See Machine Learning Task Types. Linear models are parametric, and "there are more approaches beyond linear models", such as decision trees ([[Block 2 Slides]], p. 29).
 
 ### From linear classification to deep learning
 
@@ -82,16 +82,16 @@ The slides list these properties ([[Block 1 Slides]], pp. 344–346):
 
 ### Why it matters
 
-Synthesis: the [[Perceptron]] adds a sign function to this score. [[Loss Functions]] and [[Optimization]] choose $W$ and $b$. [[Linear Separability]] shows what a linear boundary cannot do, which motivates [[Deep Learning]].
+Synthesis: the [[Perceptron]] adds a sign function to this score. [[Loss Functions]] and Optimization choose $W$ and $b$. [[Linear Separability]] shows what a linear boundary cannot do, which motivates [[Deep Learning]].
 
 ## Related
 
 - [[Function Approximation]]
-- [[Machine Learning Task Types]]
+- Machine Learning Task Types
 - [[Perceptron]]
 - [[Linear Separability]]
 - [[Loss Functions]]
-- [[Optimization]]
+- Optimization
 - [[Regularization]]
 - [[Neural Networks]]
 

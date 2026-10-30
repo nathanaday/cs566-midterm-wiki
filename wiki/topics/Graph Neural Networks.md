@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 6 Slides]]", "[[Block 5 Slides]]", "[[Block 6 Slides Extended]]", "What a GNN Outputs", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]", "[[Machine Learning]]"]
+up: ["[[Neural Networks]]", "Machine Learning"]
 ---
 
 > [!concept] Concept
 > 5 sources · refreshed 2026-10-19 · #machine-learning
-> Up: [[Neural Networks]] · [[Machine Learning]]
+> Up: [[Neural Networks]] · Machine Learning
 
 ## Definition
 
@@ -33,7 +33,7 @@ After Bronstein's ICLR 2021 keynote, the slides describe a GNN as a stack of per
 
 The extended deck shows a GNN as the middle stage of a pipeline. Graph and node features go in, the GNN gives node embeddings, and the embeddings give task predictions ([[Block 6 Slides Extended]], p. 48). "The graph gives the model structure. The task gives it a learning goal." ([[Block 6 Slides Extended]], p. 48). An embedding is a numeric vector that the prediction head uses ([[Block 6 Slides Extended]], p. 48). Its hidden coordinates need not have a fixed human meaning. The task trains the encoder to produce useful vectors ([[Block 6 Slides Extended]], p. 56).
 
-The extended deck follows one small road network. The task is to predict whether road A will be delayed in the next 5 minutes, from the current traffic loads and the road connections ([[Block 6 Slides Extended]], p. 13). Road A has load 1. Alone, A sees only 1. With its neighbors, A also sees B = 2 and C = 4. A GNN lets A use its own input and the nearby inputs ([[Block 6 Slides Extended]], p. 16). A shared node MLP applies the same function to each road's own features. A GNN at road A also reads the neighbor inputs, and the mean of 2 and 4 is 3 in either listing order ([[Block 6 Slides Extended]], p. 74; [[F26-midterm-review-234p]], p. 199). For the adjacency and feature matrices of this example, see [[Permutation Invariance and Equivariance]]; for the values layer by layer, see [[Road Delay GNN Example]].
+The extended deck follows one small road network. The task is to predict whether road A will be delayed in the next 5 minutes, from the current traffic loads and the road connections ([[Block 6 Slides Extended]], p. 13). Road A has load 1. Alone, A sees only 1. With its neighbors, A also sees B = 2 and C = 4. A GNN lets A use its own input and the nearby inputs ([[Block 6 Slides Extended]], p. 16). A shared node MLP applies the same function to each road's own features. A GNN at road A also reads the neighbor inputs, and the mean of 2 and 4 is 3 in either listing order ([[Block 6 Slides Extended]], p. 74; [[F26-midterm-review-234p]], p. 199). For the adjacency and feature matrices of this example, see [[Permutation Invariance and Equivariance]]; for the values layer by layer, see Road Delay GNN Example.
 
 The values at layer 0 are observed inputs. After an update, the number at a node is a hidden value that the model uses: layer 1 and later hold computed hidden values, not observed inputs ([[F26-midterm-review-234p]], p. 201).
 
@@ -75,7 +75,7 @@ The required output tells where to attach the prediction head ([[Block 6 Slides 
 
 Node tasks keep one output per node. Graph tasks pool the node vectors. The output task decides which of the two the model does ([[Block 6 Slides Extended]], p. 114; [[F26-midterm-review-234p]], p. 217). The review draws the full pipeline: graph and node features, then GNN layers 1, 2, and so on, then either node heads that give labels A, B, and so on, or a pool and a graph head that give one graph label ([[F26-midterm-review-234p]], p. 217).
 
-The extended deck applies this to the [[Therapeutics Data Commons]] problems. It groups them by required output: one molecule, a drug-protein pair, or a generated molecule ([[Block 6 Slides Extended]], p. 45). "Our GNN head must match the scientific question." ([[Block 6 Slides Extended]], p. 45). A molecule property pools the atom vectors, then predicts one property. A drug-protein interaction combines the drug vector and the protein vector, then predicts the interaction. Road delay passes the vector of road A through a prediction head ([[Block 6 Slides Extended]], p. 46).
+The extended deck applies this to the Therapeutics Data Commons problems. It groups them by required output: one molecule, a drug-protein pair, or a generated molecule ([[Block 6 Slides Extended]], p. 45). "Our GNN head must match the scientific question." ([[Block 6 Slides Extended]], p. 45). A molecule property pools the atom vectors, then predicts one property. A drug-protein interaction combines the drug vector and the protein vector, then predicts the interaction. Road delay passes the vector of road A through a prediction head ([[Block 6 Slides Extended]], p. 46).
 
 #### Choose the output first
 
@@ -120,7 +120,7 @@ $$\mathcal{L} = -\sum_{v \in V} \Big[ y_v \log \sigma(z_v^\top \theta) + (1 - y_
 
 All nodes share the same aggregation parameters (p. 105). The parameter count depends on the width and depth, not on $|V|$, so the parameters work on new nodes (p. 105). A model trained on one graph can embed an unseen graph. Example: train on a protein interaction graph of organism A, then embed new data about organism B (p. 106). Reddit, YouTube, and Google Scholar meet new nodes all the time: train on a snapshot, then embed each new node when it arrives (p. 107).
 
-The midterm review states the condition: "Shared per-node updates with a mean or sum over neighbors respect node reordering and apply to new graphs with compatible features." ([[F26-midterm-review-234p]], p. 197). Its slide title is "Inductive Means Applying the Learned Rule to Unseen Nodes". Training fits the encoder, and inference computes outputs for new compatible inputs. In the training city, the road inputs, the links, and the observed delay labels fit the weights. In a new city, the model keeps the weights and computes vectors from the new road inputs and links. To check generalization, test the accuracy, the feature units, the edge meanings, and the traffic conditions. "Computing an output and predicting accurately are separate checks." ([[F26-midterm-review-234p]], p. 215). The review shows the same update rule on an unseen 3-road graph: it "Runs without retraining, but accuracy must be evaluated; outputs are not probabilities" ([[F26-midterm-review-234p]], p. 219). [[Road Delay GNN Example]] holds the numbers.
+The midterm review states the condition: "Shared per-node updates with a mean or sum over neighbors respect node reordering and apply to new graphs with compatible features." ([[F26-midterm-review-234p]], p. 197). Its slide title is "Inductive Means Applying the Learned Rule to Unseen Nodes". Training fits the encoder, and inference computes outputs for new compatible inputs. In the training city, the road inputs, the links, and the observed delay labels fit the weights. In a new city, the model keeps the weights and computes vectors from the new road inputs and links. To check generalization, test the accuracy, the feature units, the edge meanings, and the traffic conditions. "Computing an output and predicting accurately are separate checks." ([[F26-midterm-review-234p]], p. 215). The review shows the same update rule on an unseen 3-road graph: it "Runs without retraining, but accuracy must be evaluated; outputs are not probabilities" ([[F26-midterm-review-234p]], p. 219). Road Delay GNN Example holds the numbers.
 
 Synthesis: shared parameters remove two problems of the naive approach. The parameter count no longer grows with $|V|$, and the model accepts graphs of other sizes. A compatible input lets the model compute an output, but only an evaluation on the new graph shows whether the output is accurate.
 
@@ -152,9 +152,9 @@ A CNN can learn a different $W_l^u$ for each neighbor, because it can order the 
 - [[Neighborhood Aggregation]]: the per-node computation graph and the aggregation step
 - [[Graph Convolutional Network]]: the basic GNN update rule and its training
 - [[Permutation Invariance and Equivariance]]: the road-delay example as matrices
-- [[Road Delay GNN Example]]: the running toy example, layer by layer and on an unseen graph
-- [[GNN Applications]]
-- [[Therapeutics Data Commons]]: problems grouped by required output
+- Road Delay GNN Example: the running toy example, layer by layer and on an unseen graph
+- GNN Applications
+- Therapeutics Data Commons: problems grouped by required output
 - [[Convolutional Neural Networks (CNN)]]: a special GNN on a grid
 - [[Recurrent Neural Networks (RNN)]]
 - [[Transformers]]

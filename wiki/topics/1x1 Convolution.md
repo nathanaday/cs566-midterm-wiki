@@ -56,7 +56,7 @@ Synthesis: the 1x1 path uses about 31% of the parameters of the direct path (5,6
 ## Related
 
 - [[Convolutional Layer]]
-- [[Depthwise Separable Convolution]]: its pointwise step is a 1x1 convolution that mixes the channels
+- Depthwise Separable Convolution: its pointwise step is a 1x1 convolution that mixes the channels
 - [[ResNet]]: its bottleneck block uses 1x1 convolutions to project down and back up
 - HyDRa: a 1x1 Channel-to-Height convolution for occupancy
 - [[Convolutional Neural Networks (CNN)]]

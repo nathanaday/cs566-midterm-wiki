@@ -32,7 +32,7 @@ The midterm review puts backpropagation in the training loop: "Training turns a 
 - "When a value feeds several branches, its gradient is the sum of the branch contributions."
 - "The optimizer is a separate step that uses the computed gradients to update parameters." See [[Gradient-Based Optimizers]].
 
-The slides start from the goal: "If we can compute $\partial L/\partial W_1, \partial L/\partial W_2$ then we can learn $W_1$ and $W_2$" ([[Block 3 Slides]], p. 103). Deriving $\nabla_W L$ on paper is "very tedious". A new loss, such as L2 in place of L1, means a new derivation from scratch, and the method is "not feasible for complex models" (p. 104). The "better idea" is a [[Computational Graphs|computational graph]] plus backpropagation (p. 105).
+The slides start from the goal: "If we can compute $\partial L/\partial W_1, \partial L/\partial W_2$ then we can learn $W_1$ and $W_2$" ([[Block 3 Slides]], p. 103). Deriving $\nabla_W L$ on paper is "very tedious". A new loss, such as L2 in place of L1, means a new derivation from scratch, and the method is "not feasible for complex models" (p. 104). The "better idea" is a computational graph plus backpropagation (p. 105).
 
 ## Explanation
 
@@ -50,7 +50,7 @@ For one node with inputs $x, y$, output $z$, and a scalar loss $L$ after it (pp.
 - **Upstream gradient:** $\partial L / \partial z$, from the node that uses $z$.
 - **Downstream gradient:** $\partial L / \partial x = \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial x}$, sent to the node that made $x$.
 
-Each node needs only its own local gradient. The first example is $f = (x + y)z$ with $x = -2$, $y = 5$, $z = -4$ (pp. 108-133, credited to Stanford CS231n); it is worked on [[Computational Graphs]]. The midterm review repeats it and gets $\partial f/\partial q = -4$, $\partial f/\partial z = 3$, $\partial f/\partial y = -4$, and $\partial f/\partial x = -4$ ([[F26-midterm-review-234p]], pp. 83-86). A vectorized example from [[Block 4 Slides]], p. 10, is also on that page.
+Each node needs only its own local gradient. The first example is $f = (x + y)z$ with $x = -2$, $y = 5$, $z = -4$ (pp. 108-133, credited to Stanford CS231n); it is worked on Computational Graphs. The midterm review repeats it and gets $\partial f/\partial q = -4$, $\partial f/\partial z = 3$, $\partial f/\partial y = -4$, and $\partial f/\partial x = -4$ ([[F26-midterm-review-234p]], pp. 83-86). A vectorized example from [[Block 4 Slides]], p. 10, is also on that page.
 
 ### Patterns in gradient flow
 
@@ -184,7 +184,7 @@ Synthesis: the tiny network above uses $L = (\hat y - t)^2$, so its first factor
 
 "Forward computes the loss. Backward computes gradients." ([[Block 7 Slides]], p. 14). The update in step 3 is the optimizer's job; see [[Gradient Descent]] and [[Gradient-Based Optimizers]].
 
-The deck then counts steps on a flower training split (p. 15; see [[Flower Classifier Running Example]]):
+The deck then counts steps on a flower training split (p. 15; see Flower Classifier Running Example):
 
 - The training split has 320 flower photos. A mini-batch contains 32 photos, and one update uses that group.
 - 10 mini-batches cover 320 photos: one epoch.
@@ -207,11 +207,11 @@ From p. 215:
 - Checkpointing keeps a few boundary activations and recomputes the rest during the backward pass: "Less memory, more compute. Exact recomputation leaves the gradient unchanged."
 - Korthikanti et al. (MLSys 2023) measure this at scale; Adacc (arXiv:2508.00806) tunes it per tensor.
 
-Synthesis: [[LoRA]] and [[Test-Time Training]] still run backprop, so they pay this memory cost. Context-only updates and [[Agent Memory]] do not ([[Updating LLMs]]). In a recurrent network the stored activations also grow with sequence length; [[Backpropagation Through Time]] covers that case and its truncated form.
+Synthesis: [[LoRA]] and Test-Time Training still run backprop, so they pay this memory cost. Context-only updates and Agent Memory do not (Updating LLMs). In a recurrent network the stored activations also grow with sequence length; Backpropagation Through Time covers that case and its truncated form.
 
 ## Related
 
-- [[Computational Graphs]]
+- Computational Graphs
 - [[Forward Propagation]]
 - [[Neural Networks]]
 - [[Gradient Descent]]
@@ -220,9 +220,9 @@ Synthesis: [[LoRA]] and [[Test-Time Training]] still run backprop, so they pay t
 - [[Activation Functions]]
 - [[Vanishing Gradient Problem]]: a product of many small local gradients
 - [[Exploding Gradient Problem]]
-- [[Backpropagation Through Time]]: backpropagation through an RNN unrolled over time
-- [[Updating LLMs]]
-- [[Flower Classifier Running Example]]: the 320-photo split behind the epoch count
+- Backpropagation Through Time: backpropagation through an RNN unrolled over time
+- Updating LLMs
+- Flower Classifier Running Example: the 320-photo split behind the epoch count
 
 ## Sources
 

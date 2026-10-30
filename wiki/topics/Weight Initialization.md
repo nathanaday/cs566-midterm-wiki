@@ -10,12 +10,12 @@ updated: 2026-10-19T17:48:15
 refreshed: 2026-10-19T17:48:15
 status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]"]
+up: ["Neural Network Training"]
 ---
 
 > [!concept] Concept
 > 2 sources · refreshed 2026-10-19 · #machine-learning/cs566-deeplearning
-> Up: [[Neural Network Training]]
+> Up: Neural Network Training
 
 ## Definition
 
@@ -143,7 +143,7 @@ The slides state these rules:
 3. "Use the model or library initialization intended for that architecture" (p. 81):
    - ReLU-family layer: "He / Kaiming scaling is a common choice."
    - Other feed-forward layers: "Xavier scaling can be appropriate."
-   - Pretrained backbone: "Start from its learned weights when transferring." See [[Transfer Learning]] and [[Pretrained Visual Encoders]].
+   - Pretrained backbone: "Start from its learned weights when transferring." See [[Transfer Learning]] and Pretrained Visual Encoders.
 4. "Changing an activation may require changing initialization" (p. 81). "The activation affects the suitable weight scale" (p. 82). "Choose a starting scale that matches the layer width and activation" (p. 82).
 5. "Before useful learning begins, check the scale of activations" (p. 62).
 
@@ -175,8 +175,8 @@ The slide "Initialization Helps Gradient Flow" (p. 83) puts initialization next 
 - [[LoRA]]: starts one factor at zero
 - [[Dying ReLU]]: a different failure in which ReLU units stop learning
 - [[Transfer Learning]]
-- [[Pretrained Visual Encoders]]
-- [[Optimization]]
+- Pretrained Visual Encoders
+- Optimization
 - [[Gradient Descent]]: the SGD step in the symmetry example
 
 ## Sources

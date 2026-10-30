@@ -30,9 +30,9 @@ The CSCI 566 deck "Block 6: Graph Neural Networks", by the instructor Yue Zhao. 
 ## Structure
 
 - pp. 1–20, why graphs, graph types, and graph ML task levels: [[Graph]].
-- pp. 21–38, link-level and graph-level applications, TDC, and DrugAgent: [[GNN Applications]], [[Therapeutics Data Commons]].
+- pp. 21–38, link-level and graph-level applications, TDC, and DrugAgent: GNN Applications, Therapeutics Data Commons.
 - pp. 39–58, traditional graph ML, graph representation learning, the encoder-decoder framework, shallow encoders, and deep encoders: [[Node Embeddings]], [[Graph Neural Networks]].
 - pp. 59–81, the training loop recap, graph notation, why naive methods fail, and permutation invariance and equivariance: [[Permutation Invariance and Equivariance]].
 - pp. 82–110, the GCN: computation graphs, neighborhood aggregation, the update rule, synchronous updates, training, and inductive capability: [[Graph Convolutional Network]], [[Neighborhood Aggregation]], [[Graph Neural Networks]].
-- pp. 111–118, GNNs compared with CNNs and with self-attention: [[Graph Neural Networks]], [[Attention]], [[Causal Mask]].
-- pp. 119–133, LLMs and graphs: enhancer and predictor pipelines, the four system families, the GPT-3.5 case, evaluation rules, and the summary: [[LLMs and Graphs]].
+- pp. 111–118, GNNs compared with CNNs and with self-attention: [[Graph Neural Networks]], Attention, Causal Mask.
+- pp. 119–133, LLMs and graphs: enhancer and predictor pipelines, the four system families, the GPT-3.5 case, evaluation rules, and the summary: LLMs and Graphs.

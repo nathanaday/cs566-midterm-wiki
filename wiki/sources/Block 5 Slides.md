@@ -29,12 +29,12 @@ The CSCI 566 deck "Block 5: RNN, LSTM, and Transformer", by the instructor Yue Z
 
 ## Structure
 
-- pp. 1–20, logistics and motivation: parameter sharing across CNN, RNN, and GNN; sequential data; autoregression: [[CS566-DeepLearning]], [[Recurrent Neural Networks (RNN)]], [[Autoregressive Language Modeling]].
-- pp. 21–69, RNN basics: input/output configurations, the recurrence formula, the vanilla RNN, computational graphs, and sequence to sequence: [[Recurrent Neural Networks (RNN)]], [[Sequence to Sequence]].
-- pp. 70–85, character-level language models, test-time sampling, and training with the observed next input: [[Autoregressive Language Modeling]], [[Teacher Forcing]].
-- pp. 86–105, backpropagation through time, truncation, and vanilla RNN gradient flow: [[Backpropagation Through Time]], [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]].
-- pp. 106–122, the LSTM as memory with learned gates, and the limit of a compact state: [[Long Short-Term Memory]].
-- pp. 123–152, attention over image regions, self-attention, the causal mask, and the decoder-only Transformer: [[Attention]], [[Causal Mask]], [[Positional Encoding]], [[Transformers]].
-- pp. 153–200, RNN applications: image captioning, question answering, and VQA; what survives across architecture generations: [[Image Captioning]], [[Question Answering]].
-- pp. 201–222, optional LSTM details: equations, gradient path, worked example, GRU and variants: [[Long Short-Term Memory]], [[Recurrent Neural Networks (RNN)]].
-- pp. 223–231, optional: the KV cache, fixed state against growing history, hybrid and stronger recurrence, and bidirectional RNNs: [[KV Cache]], [[Recurrent State vs Growing Context]], [[Hybrid Recurrent-Attention Models]].
+- pp. 1–20, logistics and motivation: parameter sharing across CNN, RNN, and GNN; sequential data; autoregression: [[CS566-DeepLearning]], [[Recurrent Neural Networks (RNN)]], Autoregressive Language Modeling.
+- pp. 21–69, RNN basics: input/output configurations, the recurrence formula, the vanilla RNN, computational graphs, and sequence to sequence: [[Recurrent Neural Networks (RNN)]], Sequence to Sequence.
+- pp. 70–85, character-level language models, test-time sampling, and training with the observed next input: Autoregressive Language Modeling, Teacher Forcing.
+- pp. 86–105, backpropagation through time, truncation, and vanilla RNN gradient flow: Backpropagation Through Time, [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]].
+- pp. 106–122, the LSTM as memory with learned gates, and the limit of a compact state: Long Short-Term Memory.
+- pp. 123–152, attention over image regions, self-attention, the causal mask, and the decoder-only Transformer: Attention, Causal Mask, Positional Encoding, [[Transformers]].
+- pp. 153–200, RNN applications: image captioning, question answering, and VQA; what survives across architecture generations: Image Captioning, Question Answering.
+- pp. 201–222, optional LSTM details: equations, gradient path, worked example, GRU and variants: Long Short-Term Memory, [[Recurrent Neural Networks (RNN)]].
+- pp. 223–231, optional: the KV cache, fixed state against growing history, hybrid and stronger recurrence, and bidirectional RNNs: KV Cache, Recurrent State vs Growing Context, Hybrid Recurrent-Attention Models.

@@ -112,7 +112,7 @@ Loss and other metrics do different jobs ([[Block 2 Slides]], p. 136):
 - Other metrics are model specific (accuracy for classification, mAP for object detection) or business specific (revenue, inference latency).
 - We select models by several metrics, as we choose a car.
 
-The Block 2 metric slides are adapted from Stanford CS 329P (2021 Fall) (pp. 136–138). For the formulas of accuracy, precision, recall, F1, ROC-AUC, and PR-AUC, see [[Classification Metrics]].
+The Block 2 metric slides are adapted from Stanford CS 329P (2021 Fall) (pp. 136–138). For the formulas of accuracy, precision, recall, F1, ROC-AUC, and PR-AUC, see Classification Metrics.
 
 ### Three data splits
 
@@ -124,14 +124,14 @@ The Block 7 slide "Three Data Splits, Three Jobs" gives each split one job ([[Bl
 | Validation | "Choose settings and a checkpoint (saved model weights)." |
 | Test | "Evaluate the final selected model." |
 
-The slide uses the [[Flower Classifier Running Example]] and gives two rules (p. 17):
+The slide uses the Flower Classifier Running Example and gives two rules (p. 17):
 
 - "Split the flower photos before fitting preprocessing or models."
 - "Keep near-duplicate photos in the same split."
 
 The midterm review states the three jobs in one line: "Training data fits parameters, validation data selects settings, and test data gives a final check." ([[F26-midterm-review-234p]], p. 4).
 
-Synthesis: if a near-duplicate of a test photo is in the training split, the model has seen the test item in another form. This is a form of [[Test Set Contamination]]. The training split alone supplies the preprocessing statistics; see [[Fit Preprocessing on Training Data Only]].
+Synthesis: if a near-duplicate of a test photo is in the training split, the model has seen the test item in another form. This is a form of Test Set Contamination. The training split alone supplies the preprocessing statistics; see [[Fit Preprocessing on Training Data Only]].
 
 #### Worked example: splitting by plant
 
@@ -202,8 +202,8 @@ Rule from these slides: choose hyperparameters on a validation split, and evalua
 
 Block 7 applies the same rule to every choice made during training:
 
-- **Repeated validation.** The slide "Repeated Validation Can Overfit the Selection Process" says: "Trying many settings also uses information from the validation set." The flow is: many training runs, then choose with validation data, then "Evaluate once on held-out test data". "Model selection is part of the learning process." ([[Block 7 Slides]], p. 190). See [[Model Selection]].
-- **Hyperparameter search.** Fit each candidate model on the training data. "Compare candidate settings under the same metric and budget" on the validation data. Use the test data to "Evaluate the selected procedure after tuning is complete." "The test score remains outside the search loop." (p. 326). See [[Model Selection]].
+- **Repeated validation.** The slide "Repeated Validation Can Overfit the Selection Process" says: "Trying many settings also uses information from the validation set." The flow is: many training runs, then choose with validation data, then "Evaluate once on held-out test data". "Model selection is part of the learning process." ([[Block 7 Slides]], p. 190). See Model Selection.
+- **Hyperparameter search.** Fit each candidate model on the training data. "Compare candidate settings under the same metric and budget" on the validation data. Use the test data to "Evaluate the selected procedure after tuning is complete." "The test score remains outside the search loop." (p. 326). See Model Selection.
 - **Stopping.** "Use a fixed protocol": "Keep the test set out of stopping decisions." "Choose the stopping rule before inspecting test performance." The same slide keeps the checkpoint with the best value of the selected validation metric (p. 135). The midterm review repeats this slide ([[F26-midterm-review-234p]], p. 139) and adds: "Test set: evaluate once, after all choices are fixed." (p. 140). See [[Early Stopping]].
 - **Regularization strength.** For a weight penalty, "λ controls the tradeoff. Choose it using validation data." ([[F26-midterm-review-234p]], p. 125). See [[Regularization]].
 - **Training and transfer.** The same classifier can start from random or pretrained weights. In both cases the evaluation rule is: "Select by validation performance and test the final choice." ([[F26-midterm-review-234p]], p. 145). See [[Transfer Learning]].
@@ -215,27 +215,27 @@ Synthesis: when a score drives a choice, the data behind that score becomes part
 
 In the slides' example of 5-fold cross-validation over k, each point is a single outcome, the line goes through the mean, and the bars show the standard deviation. For that data, k of about 7 works best ([[Block 2 Slides]], p. 174). Cross-validation is one systematic way to choose k. Automated ML and Bayesian optimization are others (p. 180).
 
-Synthesis: test error estimates the true error, which matters most and which no one can measure directly. A low training error alone can hide [[Overfitting and Underfitting]]. If you tune on the test set, the test error no longer estimates the true error, which is why the validation split exists. For agents, a single test error is not enough; see [[What Counts as Solved]].
+Synthesis: test error estimates the true error, which matters most and which no one can measure directly. A low training error alone can hide [[Overfitting and Underfitting]]. If you tune on the test set, the test error no longer estimates the true error, which is why the validation split exists. For agents, a single test error is not enough; see What Counts as Solved.
 
 The CSCI 566 Syllabus covers model metrics in week 2.
 
 ## Related
 
 - [[Function Approximation]]: $c^*$ here plays the role of the $f^*$ that $f$ approximates
-- [[Machine Learning Task Types]]
+- Machine Learning Task Types
 - [[Loss Functions]]
-- [[Classification Metrics]]
+- Classification Metrics
 - [[Overfitting and Underfitting]]
-- [[Model Selection]]
-- [[Test Set Contamination]]: what happens when test items reach training
+- Model Selection
+- Test Set Contamination: what happens when test items reach training
 - [[Fit Preprocessing on Training Data Only]]
 - [[Early Stopping]]
 - [[Regularization]]: choose the penalty strength on validation data
 - [[Transfer Learning]]: the same evaluation rule for pretrained starts
 - [[Batch Normalization]]: different behavior in training and evaluation mode
-- [[Tree Ensembles]]: out-of-bag rows give free validation data
-- [[Flower Classifier Running Example]]
-- [[What Counts as Solved]]
+- Tree Ensembles: out-of-bag rows give free validation data
+- Flower Classifier Running Example
+- What Counts as Solved
 
 ## Sources
 

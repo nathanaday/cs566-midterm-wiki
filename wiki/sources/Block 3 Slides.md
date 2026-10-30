@@ -30,8 +30,8 @@ The CSCI 566 deck "Block 3: Neural Networks", by the instructor Yue Zhao. It has
 ## Structure
 
 - pp. 1–35, motivation: one function, recap of loss and gradient descent, neurons, from linear classifiers to networks, why deep: [[Function Approximation]], [[Gradient Descent]], [[Neural Networks]], [[Deep Learning]], [[Perceptron]].
-- pp. 36–74, forward propagation, an LLM aside on the KV cache, data shapes, fully connected layers, a tiny worked network: [[Forward Propagation]], [[KV Cache]], [[Neural Networks]].
-- pp. 75–101, activation choice, "ReLU Strikes Back" and GELU, capacity, the next token as classification: [[Activation Functions]], [[Activation Sparsity]], [[Dying ReLU]], [[Loss Functions]], [[Autoregressive Language Modeling]].
-- pp. 102–180, backpropagation on computational graphs: scalar examples, gate patterns, vector derivatives, Jacobians: [[Backpropagation]], [[Computational Graphs]].
-- pp. 181–223, backpropagation through a full network, GPU memory, and four ways to update an LLM: [[Backpropagation]], [[Updating LLMs]], [[In-Context Learning]], [[LoRA]], [[Test-Time Training]], [[Agent Memory]].
+- pp. 36–74, forward propagation, an LLM aside on the KV cache, data shapes, fully connected layers, a tiny worked network: [[Forward Propagation]], KV Cache, [[Neural Networks]].
+- pp. 75–101, activation choice, "ReLU Strikes Back" and GELU, capacity, the next token as classification: [[Activation Functions]], [[Activation Sparsity]], [[Dying ReLU]], [[Loss Functions]], Autoregressive Language Modeling.
+- pp. 102–180, backpropagation on computational graphs: scalar examples, gate patterns, vector derivatives, Jacobians: [[Backpropagation]], Computational Graphs.
+- pp. 181–223, backpropagation through a full network, GPU memory, and four ways to update an LLM: [[Backpropagation]], Updating LLMs, In-Context Learning, [[LoRA]], Test-Time Training, Agent Memory.
 - pp. 224–272, vanishing and exploding gradients, residual paths, clipping, activation functions in depth, next blocks: [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Residual Connections]], [[Batch Normalization]], [[Activation Functions]].
