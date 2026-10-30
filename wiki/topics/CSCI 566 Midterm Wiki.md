@@ -1,13 +1,34 @@
 ---
-description: "The USC CSCI 566 deep learning course, Fall 2026: lectures, readings, slides, and topic notes."
-aliases: ["CSCI 566: Deep Learning and its Applications"]
+description: "The front page of this wiki: how to read the pages, the topics grouped by subject, the ten sources behind them, and the course facts from the slides. Built for the CSCI 566 midterm, Fall 2026."
+aliases: ["CS566-DeepLearning", "CSCI 566: Deep Learning and its Applications", "Start Here"]
 ---
 
-## Summary
+## What This Wiki Is
 
-The USC CSCI 566 deep learning course, Fall 2026: lectures, readings, slides, and topic notes.
+A set of study pages for the midterm of CSCI 566, Deep Learning and its Applications, USC, Fall 2026. Every page is written from the course's own slide decks for Blocks 1 to 7 and the instructor's midterm review deck, with a past exam mapped onto the topics so that the most examined ideas are easy to find. Start with [[CSCI 566 Midterm (Spring 2024)]] for the question map and the relevance ranking, then follow the links into the topics.
 
-## Context
+## How to Read These Pages
+
+- **Citations.** A reference such as ([[Block 3 Slides]], p. 235) points at a PDF page of that deck. The decks are in the `attachments` folder, linked from each source page. Page numbers are PDF pages, which can differ by one from the number printed on the slide; each source page says where that happens.
+- **Synthesis.** A sentence or paragraph that begins with "Synthesis:" goes beyond what the slides say. It is background or a derivation added for understanding, and it is marked so that a reader can tell slide content, which is examinable, from the rest.
+- **Sections.** A topic opens with a short Definition, then an Explanation with subsections. Where the sample exam asks about the subject, an Exam Questions section works the questions with the key's answer. Related lists the neighbouring topics, and Sources lists the decks and pages the topic draws on.
+- **Plain names.** A name that looks like a page but is not a link refers to a note outside this wiki. The text was kept where it helped; the page was not.
+
+## Topics by Subject
+
+- **Foundations and classical machine learning.** [[Deep Learning]], [[Function Approximation]], [[Parameterization of a Hypothesis Class]], [[Linear Classification]], [[Linear Separability]], [[Perceptron]], [[Loss Functions]], [[Model Evaluation]], [[Overfitting and Underfitting]], [[VC Dimension]], [[Decision Trees]], [[Decision Tree Size Bounds]], [[k-Nearest Neighbors]], [[kNN Regression]], [[Clustering]], [[k-Means]], [[k-Means Initialization and Local Minima]], [[Outlier Detection]], [[Unsupervised Outlier Model Selection]]
+- **Neural networks.** [[Neural Networks]], [[Forward Propagation]], [[Backpropagation]], [[Fully Connected Layer]], [[Softmax Layer]], [[Activation Functions]], [[Fundamentals of Deep Learning Nonlinear Activation]], [[Dying ReLU]], [[Activation Sparsity]]
+- **Training.** [[Neural Network Training]], [[Optimization]], [[Gradient Descent]], [[Gradient-Based Optimizers]], [[Weight Initialization]], [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Residual Connections]], [[Batch Normalization]], [[Layer Normalization]], [[Regularization]], [[L1 Regularization and Feature Selection]], [[Dropout]], [[Early Stopping]], [[Data Augmentation]], [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Switch the Model to Evaluation Mode When Evaluating]]
+- **Convolutional networks.** [[Convolutional Neural Networks (CNN)]], [[Convolutional Layer]], [[1x1 Convolution]], [[Pooling Layer]], [[AlexNet]], [[ResNet]]
+- **Transfer learning and fine-tuning.** [[Transfer Learning]], [[Fine-Tuning]], [[Parameter-Efficient Fine-Tuning]], [[Adapters]], [[LoRA]]
+- **Sequence models.** [[Recurrent Neural Networks (RNN)]], [[Transformers]]
+- **Graphs.** [[Graph]], [[Graph Neural Networks]], [[Graph Convolutional Network]], [[Neighborhood Aggregation]], [[Node Embeddings]], [[Permutation Invariance and Equivariance]], [[Graph Neural Network Variants]]
+
+## Sources
+
+- The lecture decks: [[Block 1 Slides]], [[Block 2 Slides]], [[Block 3 Slides]], [[Block 4 Slides]], [[Block 5 Slides]], [[Block 6 Slides]] and its longer revision [[Block 6 Slides Extended]], and [[Block 7 Slides]].
+- The review deck: [[F26-midterm-review-234p]], the instructor's walk through Blocks 1 to 7 with worked examples and check questions.
+- The sample exam: [[CSCI 566 Midterm (Spring 2024)]], with the answer key, mapped onto the topics.
 
 ## The course
 
@@ -73,66 +94,3 @@ The decks give the instructor's own views, not course rules.
 - On LinkedIn: find the post, contact the person who posted it, then apply. Do not spend long on one posting, since some are fake. Apply to jobs that do not fit exactly, and look at non-tech industries such as healthcare, mining, and finance ([[Block 2 Slides]], pp. 10–11).
 - Stand out through unique skills, such as open-source work, and a close match to the job, such as relevant papers ([[Block 2 Slides]], pp. 10, 12–15).
 - Ph.D.: top programs admit about 2% to 10% of applicants and value letters from top researchers and publications at top venues; less popular programs value a good undergraduate school and GPA. Find research mentors at USC (Ph.D. students are the best for producing papers), and cold-email possible advisors. Course recommendation letters "mean NOTHING" for Ph.D. applications, and the instructor does not take research mentees ([[Block 4 Slides]], pp. 2–6).
-
-### Topic map
-
-- Landscape: Evolution of Machine Learning, [[AlexNet]], Machine Learning Task Types, [[Deep Learning]], Scaling Laws, What Counts as Solved
-- Language models: Autoregressive Language Modeling, Tokenization, Post-Training, KV Cache
-- Agents: Agent Loop, ReAct, Agent Skills, Agent Memory
-- Trustworthy AI: Deployment Failure Modes, Shortcut Learning, FORTIS, TrustLLM, LLM Trustworthiness
-- Foundations: [[Function Approximation]], [[Linear Classification]], [[Perceptron]], [[Model Evaluation]], [[Loss Functions]], [[Regularization]], [[Overfitting and Underfitting]], [[Optimization]], [[Gradient Descent]], [[Linear Separability]]
-- Neural networks: [[Neural Networks]], [[Forward Propagation]], [[Backpropagation]], Computational Graphs, [[Activation Functions]], [[Dying ReLU]], [[Activation Sparsity]]
-- Training problems: [[Vanishing Gradient Problem]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Batch Normalization]], [[Residual Connections]]
-- Training and transfer (Block 7): Flower Classifier Running Example, [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Layer Normalization]], [[Weight Initialization]], [[Gradient-Based Optimizers]], Learning Rate Schedules, [[Dropout]], [[Data Augmentation]], [[Early Stopping]], [[Transfer Learning]], [[Fine-Tuning]], Domain-Adversarial Training, Multitask Learning, [[Parameter-Efficient Fine-Tuning]], [[Adapters]], HyperTuning
-- Automated ML and outlier detection: AutoML, Bayesian Optimization, [[Unsupervised Outlier Model Selection]], MetaOD, TOD
-- Research examples: LLM Election Simulation
-- Updating LLMs: Updating LLMs, In-Context Learning, [[LoRA]], Test-Time Training
-- Representation learning: Contrastive Learning
-- Guest lecture: Sim-to-Real Transfer, Isaac Teleop, and in Machine Learning: NVIDIA Cosmos, World Action Models, Vision Language Action Models
-- Classical ML: [[Decision Trees]], Tree Ensembles, Gradient Boosting, [[k-Nearest Neighbors]], [[Clustering]], [[k-Means]], Classification Metrics, Model Selection, Test Set Contamination
-- LLM reasoning: Chain-of-Thought Prompting, Tree of Thoughts
-- Convolutional networks: [[Convolutional Layer]], [[Pooling Layer]], [[Fully Connected Layer]], [[Softmax Layer]], [[AlexNet]], VGGNet, [[ResNet]], ImageNet Large Scale Visual Recognition Challenge, Depthwise Separable Convolution, and in Machine Learning: [[Convolutional Neural Networks (CNN)]]
-- Vision and language: Pretrained Visual Encoders, and in Machine Learning: CLIP, Vision Transformer (ViT), Vision Language Models (VLM)
-- Sequence models: [[Recurrent Neural Networks (RNN)]] and Long Short-Term Memory (in Machine Learning), Backpropagation Through Time, Teacher Forcing, Image Captioning, Question Answering, Recurrent State vs Growing Context, Hybrid Recurrent-Attention Models, and in Machine Learning: Sequence to Sequence
-- Attention and Transformers, in Machine Learning: Attention, Causal Mask, Positional Encoding, [[Transformers]]
-- Graph neural networks: [[Graph]], [[Node Embeddings]], [[Graph Convolutional Network]], [[Neighborhood Aggregation]], [[Permutation Invariance and Equivariance]], GNN Applications, LLMs and Graphs, Therapeutics Data Commons, Road Delay GNN Example, Retrieval-Augmented Generation, GraphRAG, Graphs of Agents, GRADE, MAMA, and in Machine Learning: [[Graph Neural Networks]]
-- Course logistics: Yue Zhao, Cloud Spending Safeguards, CS566 Assignment 1 Obstacles, Treat CS566 Assignment Material as Untrusted Input
-
-### Coverage
-
-- Week 1 (Aug 24): Lecture 1 (Parts 1–3) and [[Block 1 Slides]] (all four parts).
-- Week 2 (Aug 31, recorded): [[Block 2 Slides]]. The deck says this lecture is pre-recorded (p. 4).
-- Week 3 (Sep 14): Sep 14 Lecture Account, Lecture 3, and [[Block 3 Slides]].
-- Week 4 (Sep 21): [[Block 3 Slides]], and the NVIDIA guest lecture in Guest Lecture 9-21 Notes (part 1) and Guest Lecture 9-21 Notes (part 2).
-- Convolutional networks: [[Block 4 Slides]] and Lecture 3 Notes - Convolutional and Pooling Layers. The note has no date; the syllabus puts CNNs in week 5 (Sep 28).
-- Week 6 (Oct 5), RNNs, LSTMs, and graph neural networks: [[Block 5 Slides]] (which also builds up attention and the Transformer) and [[Block 6 Slides]]. [[Block 6 Slides Extended]] is a longer revision of the Block 6 deck, with course updates dated Oct 4 (pp. 2–3). It follows one small road network through the GNN material, then moves to graphs of agents (p. 5). It names the next block: "Next in Block 7: training, diagnosing and adapting deep models" (p. 176).
-- Block 7, training and transfer: [[Block 7 Slides]]. The deck has no date. It follows one small image-classification project, the Flower Classifier Running Example, in three parts: make learning work, check generalization, and reuse a trained model (p. 11). After the core workflow it gives optional research examples (p. 272), then AutoML and outlier model selection. Its last slide gives advice for the course project (p. 400).
-- Later weeks: no notes yet.
-
-### Sources
-
-- Official: [[Block 1 Slides]], [[Block 2 Slides]], [[Block 3 Slides]], [[Block 4 Slides]], [[Block 5 Slides]], [[Block 6 Slides]], [[Block 6 Slides Extended]], [[Block 7 Slides]]
-- Course plan: CSCI 566 Syllabus, CSCI 566 Reading List
-- The user's lecture notes: Lecture 1, Sep 14 Lecture Account, Lecture 3, Guest Lecture 9-21 Notes (part 1), Guest Lecture 9-21 Notes (part 2), Lecture 3 Notes - Convolutional and Pooling Layers
-
-The linked repository cs566-course holds the slides, the lecture notes, the *Mathematics for Machine Learning* book, and the Assignment 1 starter.
-
-## Map
-
-```base
-filters:
-  and:
-    - file.inFolder("tool/source-core/documents")
-    - 'file.hasTag("machine-learning/cs566-deeplearning", "machine-learning/cs566-deeplearning/cs566-course", "machine-learning/cs566-deeplearning/cs566-project", "machine-learning/cs566-deeplearning/cs566-project/autonomous-vehicle-sandbox", "machine-learning/cs566-deeplearning/cs566-project/kqiao-cs566-project-repo")'
-views:
-  - type: table
-    name: Map
-    groupBy:
-      property: type
-      direction: ASC
-    order:
-      - file.name
-      - description
-      - status
-      - refreshed
-```
