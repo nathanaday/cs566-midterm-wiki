@@ -1,26 +1,15 @@
 ---
-id: con-ebq6j5
-type: topic
-kind: concept
 description: A parametric classifier that scores each class with f(x; W, b) = Wx + b, the first learned function in CSCI 566 and the unit that deep networks stack.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Linear classifier
   - Linear models
   - Wx + b
   - Linear model
   - Parametric function
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 4 Slides]]"
-up:
-  - "[[Function Approximation]]"
 ---
 
 > [!concept] Concept

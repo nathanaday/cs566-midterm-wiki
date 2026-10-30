@@ -1,23 +1,12 @@
 ---
-id: con-409zjq
-type: topic
-kind: concept
 description: When the gradient becomes too large, a gradient descent step overshoots to a high-loss configuration or fills the network with Inf or NaN values.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Exploding Gradients
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources:
   - "[[Block 3 Slides]]"
   - "[[Block 1 Slides]]"
   - "Sep 14 Lecture Account"
   - "[[Block 5 Slides]]"
-up:
-  - "[[Neural Network Training]]"
 ---
 
 > [!concept] Concept

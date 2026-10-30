@@ -1,16 +1,7 @@
 ---
-id: doc-25zs6s
-type: topic
-kind: concept
 description: A normalization layer that normalizes the features within one example or token, not one feature across a mini-batch as batch normalization does; it is the common choice in Transformers.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [LayerNorm, Layer Norm, LN]
-created: 2026-10-12T16:58:10
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 7 Slides]]", "[[Block 5 Slides]]"]
-up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept

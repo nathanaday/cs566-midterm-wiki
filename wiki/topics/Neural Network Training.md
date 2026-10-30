@@ -1,16 +1,6 @@
 ---
-id: doc-xydemc
-type: topic
-kind: concept
 description: "The CSCI 566 practice of training a neural network: gradient problems, normalization and initialization, data preparation, optimizers, regularization, and transfer from trained models."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-10-13T18:20:09
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Vanishing Gradient Problem]]", "[[Exploding Gradient Problem]]", "[[Weight Initialization]]", "[[Batch Normalization]]", "[[Layer Normalization]]", "[[Data Preprocessing]]", "[[Data Augmentation]]", "[[Gradient-Based Optimizers]]", "[[Dropout]]", "[[Early Stopping]]", "[[Transfer Learning]]", "Change One Factor per Experiment"]
-up: ["[[Neural Networks]]", "Machine Learning"]
 ---
 
 > [!concept] Concept

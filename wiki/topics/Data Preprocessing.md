@@ -1,16 +1,7 @@
 ---
-id: doc-jvcwqn
-type: topic
-kind: concept
 description: Data preprocessing transforms input data before training; CSCI 566 Block 7 covers zero-centering, normalization, PCA whitening, missing values, and the input convention of a pretrained model, with statistics fitted on the training split only.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Input preprocessing, Zero-centering, Zero-center data, Mean subtraction, Input normalization, Normalize data, Standardization, Feature scaling, PCA whitening, Whitening, Handling missing data, Missing data, Imputation, StandardScaler, sklearn.preprocessing.StandardScaler, Image preprocessing follows the model]
-created: 2026-10-12T16:58:10
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 7 Slides]]"]
-up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept

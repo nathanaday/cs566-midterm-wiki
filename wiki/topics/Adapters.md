@@ -1,16 +1,7 @@
 ---
-id: doc-7bnvet
-type: topic
-kind: concept
 description: Adapters are small bottleneck feed-forward layers with a residual connection, inserted into a frozen pretrained network so that only their parameters are fine-tuned.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Adapter, Adapter Layer, Adapter Module, Adapter Modules]
-created: 2026-10-12T16:58:10
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 7 Slides]]"]
-up: ["[[Parameter-Efficient Fine-Tuning]]"]
 ---
 
 > [!concept] Concept

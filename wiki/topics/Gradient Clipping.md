@@ -1,16 +1,7 @@
 ---
-id: con-ah76fv
-type: topic
-kind: concept
 description: Gradient clipping rescales the gradient to a threshold norm before the optimizer step, so one large gradient cannot cause a huge update.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Norm Clipping, Global gradient norm clipping]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Exploding Gradient Problem]]"]
 ---
 
 > [!concept] Concept

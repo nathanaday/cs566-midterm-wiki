@@ -1,16 +1,7 @@
 ---
-id: ent-zkq1tw
-type: topic
-kind: entity
 description: The residual network family of He et al. (2015), 18 to 152 layers deep, whose 152-layer model won ILSVRC 2015 classification with 3.57% top-5 error.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Residual Network, Residual Networks, ResNet-18, ResNet-34, ResNet-50, ResNet-101, ResNet-152, He et al. 2015, Deep Residual Learning for Image Recognition]
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 4 Slides]]", "[[Block 7 Slides]]"]
-up: ["[[Convolutional Neural Networks (CNN)]]"]
 ---
 
 > [!entity] Entity

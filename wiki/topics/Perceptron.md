@@ -1,24 +1,12 @@
 ---
-id: con-yeg8t8
-type: topic
-kind: concept
 description: A linear model that applies a step function to a weighted sum plus bias, f(x; W) = sign(Wx + b); alone it solves only linearly separable problems.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Perceptron algorithm
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
   - "Lecture 1"
   - "CSCI 566 Syllabus"
-up:
-  - "[[Linear Classification]]"
-  - "[[Neural Networks]]"
 ---
 
 > [!concept] Concept

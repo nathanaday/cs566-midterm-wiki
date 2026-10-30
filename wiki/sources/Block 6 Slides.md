@@ -1,21 +1,5 @@
 ---
-id: src-kd8yw8
-type: source
 description: "The CSCI 566 Block 6 slide deck by Yue Zhao on graph neural networks: graph types and tasks, applications and TDC, node embeddings, permutation invariance and equivariance, the GCN, GNNs compared with CNNs and Transformers, and LLMs combined with graphs."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/479da34f4887d5ac.pdf]]"
-media: pdf
-sha256: 479da34f4887d5ac26504121da2cd282dc8a334cab6946083e4641bfd698ebf1
-origin: ingest
-locator: Block 6 Slides.pdf
-measure: 133 pages
-captured: 2026-09-28T00:00:00
 ---
 
 > [!source] PDF · 133 pages · official

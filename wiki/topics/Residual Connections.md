@@ -1,16 +1,7 @@
 ---
-id: con-76x1ny
-type: topic
-kind: concept
 description: A residual connection adds a block's input to its output, y = x + f(x), so the layers learn only the residual and the gradient gets an identity route around the block.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Skip Connection, Residual Path, Residual Block, Identity Shortcut, Shortcut Connection, Residual Learning]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "[[Block 4 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Vanishing Gradient Problem]]"]
 ---
 
 > [!concept] Concept

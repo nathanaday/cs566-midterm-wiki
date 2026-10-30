@@ -1,16 +1,7 @@
 ---
-id: doc-01vx2b
-type: topic
-kind: concept
 description: A regularizer that applies random, label-preserving transformations (flips, crops and scales, color jitter, learned AutoAugment policies) to each training image before the network sees it, while the label stays the same.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Augmentation, Label-preserving augmentation, Augment only with label-preserving transformations, Horizontal flip, Random crops and scales, Color jitter, PCA color augmentation, AutoAugment, Automatic data augmentation]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept

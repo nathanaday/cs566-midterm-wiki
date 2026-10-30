@@ -1,16 +1,7 @@
 ---
-id: con-b2ncgt
-type: topic
-kind: concept
 description: The share of units in a layer that output exactly zero for an input, high in ReLU models, which sparsity-aware kernels can use to cut LLM inference compute.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Sparse Activation, ReLU Strikes Back]
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 3 Slides]]"]
-up: ["[[Activation Functions]]"]
 ---
 
 > [!concept] Concept

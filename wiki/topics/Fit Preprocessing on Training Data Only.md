@@ -1,17 +1,7 @@
 ---
-id: doc-94j4sz
-type: topic
-kind: policy
 description: Split the data first, fit every preprocessing statistic (such as a mean, a standard deviation, or an imputation value) on the training split only, and apply that fitted transformation unchanged to validation and test data.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Split the data before fitting preprocessing or models, "Fit preprocessing on training data, then reuse it", "Fit the transformation on training data, then reuse it", Validation set uses training statistics, Preprocessing data leakage, "Fit once, apply everywhere"]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-strength: should
-up: ["[[Data Preprocessing]]"]
 ---
 
 > [!policy] Should · holds for repositories tagged #machine-learning/cs566-deeplearning

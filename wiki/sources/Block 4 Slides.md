@@ -1,21 +1,5 @@
 ---
-id: src-8x9xd4
-type: source
 description: "The CSCI 566 Block 4 slide deck on convolutional neural networks by Yue Zhao: CNN history and layers, batch normalization, ILSVRC architectures (AlexNet, VGGNet, ResNet, MobileNets), pretrained encoders, ViT patches, CLIP, and agentic vision."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/f9949eb2ca924c5f.pdf]]"
-media: pdf
-sha256: f9949eb2ca924c5f031b5499868b8058d7fd969397ca38c1d3da8756c5b4037f
-origin: ingest
-locator: Block 4 Slides.pdf
-measure: 312 pages
-captured: 2026-09-28T00:00:00
 ---
 
 > [!source] PDF · 312 pages · official

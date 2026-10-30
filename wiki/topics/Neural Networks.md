@@ -1,16 +1,7 @@
 ---
-id: con-0znvdc
-type: topic
-kind: concept
 description: A model built from layers of simple units, each a weighted sum followed by a non-linear activation function, with much more representational power than a linear classifier.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Fully Connected Network, Multi-Layer Perceptron, MLP, Neural Network Data Shape]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[Block 4 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[CS566-DeepLearning]]", "Machine Learning"]
 ---
 
 > [!concept] Concept

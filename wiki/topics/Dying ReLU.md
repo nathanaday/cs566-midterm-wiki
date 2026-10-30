@@ -1,16 +1,7 @@
 ---
-id: con-kxe8z7
-type: topic
-kind: concept
 description: The failure in which a ReLU unit's pre-activation is negative on every training example, so it outputs zero, gets a zero gradient, and stops learning.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Dead ReLU, Dead Neurons]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Activation Functions]]"]
 ---
 
 > [!concept] Concept

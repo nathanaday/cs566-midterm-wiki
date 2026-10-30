@@ -1,21 +1,5 @@
 ---
-id: src-2vfn29
-type: source
 description: "The CSCI 566 Block 3 slide deck on neural networks by Yue Zhao, for weeks 3 and 4: neurons, forward propagation, activations, backpropagation, ways to update an LLM, and gradient problems."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/10ea1101df5966c8.pdf]]"
-media: pdf
-sha256: 10ea1101df5966c8e639fcd54e755bb2b30827ecdccf46a8f6f964bd90793025
-origin: ingest
-locator: Block 3 Slides.pdf
-measure: 272 pages
-captured: 2026-09-28T00:00:00
 ---
 
 > [!source] PDF · 272 pages · official

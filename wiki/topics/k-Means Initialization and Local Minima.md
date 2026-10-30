@@ -1,16 +1,7 @@
 ---
-id: con-k7m2qa
-type: topic
-kind: concept
 description: k-means lowers its squared-distance objective at every step and so converges, but only to a local minimum fixed by the starting centers; random restarts and k-means++ seeding are the standard remedies.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [k-Means Local Minimum, Centroid Initialization, k-means++, Random Restarts]
-created: 2026-10-29T22:30:00
-updated: 2026-10-29T22:30:00
-refreshed: 2026-10-29T22:30:00
-status: draft
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[Block 7 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
-up: ["[[k-Means]]"]
 ---
 
 > [!concept] Concept

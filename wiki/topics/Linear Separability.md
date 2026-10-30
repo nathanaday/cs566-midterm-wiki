@@ -1,23 +1,12 @@
 ---
-id: con-rsk1tg
-type: topic
-kind: concept
 description: A binary data set is linearly separable if a linear decision boundary separates its classes; data that is not motivates feature transforms and non-linear deep learning.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Linearly separable
   - Non-separability
   - Why nonlinearity
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
-up:
-  - "[[Linear Classification]]"
 ---
 
 > [!concept] Concept

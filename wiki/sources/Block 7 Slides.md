@@ -1,21 +1,5 @@
 ---
-id: doc-dwhmj6
-type: source
 description: "The CSCI 566 Block 7 deck by Yue Zhao on training and transfer (400 PDF pages): preprocessing, activations, initialization, optimizers, learning rate schedules, regularization, hyperparameter choice, transfer learning, fine-tuning and PEFT, then optional research examples (an LLM election study, TOD) and AutoML with Bayesian optimization and MetaOD."
-tags: [machine-learning/cs566-deeplearning/cs566-course]
-aliases: []
-created: 2026-10-12T15:30:15
-updated: 2026-10-12T16:59:46
-refreshed: 2026-10-12T16:59:46
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/33a91ec2d18df0a3.pdf]]"
-media: pdf
-sha256: 33a91ec2d18df0a3d28c4b319dd790406056b1f14c4c95eb283b88c63cd72680
-origin: ingest
-locator: F26-block7-training-transfer-432p.pdf
-measure: 400 pages
-captured: 2026-10-12T15:30:15
 ---
 
 > [!source] PDF · 400 pages · official

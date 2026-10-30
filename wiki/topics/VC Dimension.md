@@ -1,16 +1,7 @@
 ---
-id: con-v3d9hs
-type: topic
-kind: concept
 description: The VC dimension of a classifier family is the largest number of points it can shatter, which is label in every possible way; a line or a disc in the plane has VC dimension 3, so four points can defeat either.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Vapnik-Chervonenkis Dimension, Shattering, Model Capacity Measure]
-created: 2026-10-29T22:50:00
-updated: 2026-10-29T22:50:00
-refreshed: 2026-10-29T22:50:00
-status: draft
 sources: ["[[Block 2 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
-up: ["[[Overfitting and Underfitting]]"]
 ---
 
 > [!concept] Concept

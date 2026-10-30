@@ -1,26 +1,14 @@
 ---
-id: ent-n5p03c
-type: topic
-kind: entity
 description: The 8-layer convolutional network of Krizhevsky et al. that won ILSVRC 2012 as the first CNN-based winner, which CSCI 566 uses as the case study of methods, data, and compute coming together.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Krizhevsky et al. 2012
   - ImageNet Classification with Deep Convolutional Neural Networks
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: contested
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
   - "Lecture 1"
   - "[[Block 4 Slides]]"
   - "[[Block 7 Slides]]"
-up:
-  - "[[Convolutional Neural Networks (CNN)]]"
-  - "[[Deep Learning]]"
 ---
 
 > [!entity] Contested · Entity

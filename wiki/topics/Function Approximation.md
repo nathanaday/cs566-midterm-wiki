@@ -1,18 +1,9 @@
 ---
-id: con-mt0r5z
-type: topic
-kind: concept
 description: The CSCI 566 framing of ML as learning a function f(X) that approximates an unknown exact function f*(X) mapping inputs to outputs, with deep networks as a high-capacity choice of f.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - ML as function approximation
   - One function f(X)
   - Universal approximation
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"

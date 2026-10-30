@@ -1,21 +1,5 @@
 ---
-id: src-fzm5xz
-type: source
 description: "The slide deck for the first CSCI 566 lecture (Aug 24, 2026) by Yue Zhao: course logistics, the ML and deep learning landscape, LLMs and agents, two trustworthy-AI case studies, and linear-model foundations."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/8e874eac0f38ccb0.pdf]]"
-media: pdf
-sha256: 8e874eac0f38ccb032b34419c577d9ae78035a0b433dc0aab6ffa4180e609b21
-origin: ingest
-locator: Week 1 Slides.pdf
-measure: 351 pages
-captured: 2026-09-28T00:00:00
 ---
 
 > [!source] PDF · 351 pages · official

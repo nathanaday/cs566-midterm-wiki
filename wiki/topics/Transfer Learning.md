@@ -1,16 +1,7 @@
 ---
-id: doc-gavtrk
-type: topic
-kind: concept
 description: Transfer learning starts a model from representations learned on other (source) data instead of training from scratch; CSCI 566 sorts its methods by whether the source and target data have labels, and chooses how much of a pretrained network to train from the amount of target data and its similarity to the source.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [transfer learning with CNNs, frozen backbone, frozen backbone with a new head, frozen features, pretrained feature extractor, feature extraction, Stage 1 transfer, layer transfer, transfer strategy by dataset size and similarity, feature generality across CNN layers]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T18:32:33
-refreshed: 2026-10-19T18:32:33
-status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]", "Block 8 Slides"]
-up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept

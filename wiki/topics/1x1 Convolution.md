@@ -1,16 +1,7 @@
 ---
-id: doc-mxad45
-type: topic
-kind: concept
 description: A convolution with a 1x1 kernel that forms a learned combination of the channels at each position without reading neighboring positions, often used to shrink the channel count before a costlier layer.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [1×1 Convolution, 1x1 Conv, Pointwise Convolution, 1x1 Bottleneck]
-created: 2026-10-19T17:47:21
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[F26-midterm-review-234p]]"]
-up: ["[[Convolutional Layer]]"]
 ---
 
 > [!concept] Concept

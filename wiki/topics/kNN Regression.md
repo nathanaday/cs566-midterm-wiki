@@ -1,16 +1,7 @@
 ---
-id: con-nr3x8d
-type: topic
-kind: concept
 description: kNN regression predicts a continuous target as the mean, or distance-weighted mean, of the k nearest training points' values; it learns no parameters and pays its whole cost at prediction time, like the kNN classifier.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [k-Nearest Neighbors Regression, Nearest Neighbor Regression]
-created: 2026-10-29T22:30:00
-updated: 2026-10-29T22:30:00
-refreshed: 2026-10-29T22:30:00
-status: draft
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
-up: ["[[k-Nearest Neighbors]]"]
 ---
 
 > [!concept] Concept

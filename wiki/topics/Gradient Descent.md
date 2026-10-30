@@ -1,10 +1,5 @@
 ---
-id: con-xn2kh3
-type: topic
-kind: concept
 description: The numerical optimization method that lowers the loss by repeated steps W ← W − η·dW against the gradient; CSCI 566 works it by finite differences and hand-derived gradients, and trains with its minibatch form, SGD.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Numerical solution
   - Stochastic gradient descent
@@ -14,18 +9,12 @@ aliases:
   - Vanilla gradient descent
   - Minibatch gradient descent
   - Step size
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
   - "CSCI 566 Syllabus"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
-up:
-  - "[[Optimization]]"
 ---
 
 > [!concept] Concept

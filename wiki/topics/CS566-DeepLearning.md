@@ -1,16 +1,6 @@
 ---
-id: are-f1jsnv
-type: topic
-kind: overview
 description: "The USC CSCI 566 deep learning course, Fall 2026: lectures, readings, slides, and topic notes."
-tags: [machine-learning]
 aliases: ["CSCI 566: Deep Learning and its Applications"]
-created: 2026-09-28T00:00:00
-updated: 2026-10-12T16:59:46
-refreshed: 2026-10-12T16:59:46
-status: stable
-sources: []
-defines: machine-learning/cs566-deeplearning
 ---
 
 > [!overview] The page of #machine-learning/cs566-deeplearning · under Machine Learning

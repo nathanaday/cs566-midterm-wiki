@@ -1,16 +1,7 @@
 ---
-id: con-jyf2ak
-type: topic
-kind: concept
 description: A CNN layer that slides a set of learned filters over an input volume, computes one dot product plus bias at each position, and stacks the resulting activation maps; its weights are shared across locations.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Convolution Layer, Conv Layer, CONV layer, Conv, Locally Connected Layer, Weight Sharing, Parameter Sharing, Shared Weights, Convolution Filter, Kernel, Activation Map, Feature Map, Stride, Zero Padding, Padding, Standard Dense 2D Convolution, Convolution Output Size, Counting Convolution Parameters]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
-up: ["[[Convolutional Neural Networks (CNN)]]"]
 ---
 
 > [!concept] Concept

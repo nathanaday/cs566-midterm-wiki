@@ -1,16 +1,7 @@
 ---
-id: doc-bbkhmz
-type: topic
-kind: concept
 description: Fine-tuning trains a model on source data and then uses training examples and a loss on the target data to update selected pretrained parameters; partial fine-tuning adapts some layers, full fine-tuning can change every weight, and about 1/10 of the original learning rate is a good starting point.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [finetuning, fine-tune, model fine-tuning, partial fine-tuning, full fine-tuning, FT, Stage 2 transfer, Lower learning rate for fine-tuning]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Transfer Learning]]"]
 ---
 
 > [!concept] Concept

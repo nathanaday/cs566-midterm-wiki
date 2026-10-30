@@ -1,16 +1,7 @@
 ---
-id: con-79xskw
-type: topic
-kind: concept
 description: The non-linear function a neural network applies to each unit's weighted sum, such as sigmoid, tanh, ReLU, Leaky ReLU, PReLU, Maxout, ELU, or GELU, without which stacked layers collapse to one linear map.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Activation Function, Nonlinearity, Nonlinear Activation, ReLU, Rectified Linear Unit, Sigmoid, Logistic Function, tanh, Leaky ReLU, PReLU, Parametric ReLU, Parametric Rectifier, ELU, Exponential Linear Unit, Maxout, Activation Saturation, Saturated Neurons]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "CSCI 566 Syllabus", "Sep 14 Lecture Account", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]"]
 ---
 
 > [!concept] Concept

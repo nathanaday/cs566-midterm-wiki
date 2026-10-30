@@ -1,16 +1,7 @@
 ---
-id: con-p4trfx
-type: topic
-kind: concept
 description: A node embedding is a learned low-dimensional vector for a graph node that a prediction head uses; a shallow embedding lookup stores one vector per node ID (DeepWalk, node2vec), while a GNN encoder computes the vector from the node's features and neighbors, so it can also embed new nodes and new graphs with compatible inputs.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Node embedding, Graph representation learning, Representation learning on graphs, Encoder-decoder framework, Shallow encoding, Shallow encoder, Shallow embedding, Embedding lookup, Lookup matrix Z, GNN encoder, Embedding space, Node similarity, DeepWalk, node2vec, Traditional ML for graphs, Feature engineering for graphs, Inductive capability of GNNs]
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]"]
-up: ["[[Graph Neural Networks]]"]
 ---
 
 > [!concept] Concept

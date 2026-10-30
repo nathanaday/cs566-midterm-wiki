@@ -1,10 +1,5 @@
 ---
-id: con-mq9wak
-type: topic
-kind: concept
 description: A loss function L converts a model's scores into one number that training reduces, measuring how well learned weights W map X to Y against the ground truth; CSCI 566 covers hinge, L1, L2 (squared), cross-entropy, and 0/1 loss, shows that the choice of loss changes which W wins, and shows why a 0/1 mistake count gives no gradient.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Loss function
   - Hinge loss
@@ -20,18 +15,12 @@ aliases:
   - 0/1 mistake loss
   - Mistake count
   - Hard loss
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
-up:
-  - "[[Function Approximation]]"
 ---
 
 > [!concept] Concept

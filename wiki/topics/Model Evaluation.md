@@ -1,10 +1,5 @@
 ---
-id: con-f8wqky
-type: topic
-kind: concept
 description: "How CSCI 566 evaluates supervised models: test error estimates the unknown true error, the training, validation, and test splits each have one job, hyperparameters are chosen on validation data or by cross-validation, and the test set stays outside every selection loop."
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Evaluation of ML Algorithms
   - Error rate
@@ -41,18 +36,12 @@ aliases:
   - Keep grouped samples in the same split
   - Split by plant
   - Group split
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "CSCI 566 Syllabus"
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
-up:
-  - "[[Function Approximation]]"
 ---
 
 > [!concept] Concept

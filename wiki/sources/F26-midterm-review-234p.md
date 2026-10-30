@@ -1,21 +1,5 @@
 ---
-id: doc-3w03d8
-type: source
 description: "The CSCI 566 Midterm Review deck by Yue Zhao, Fall 2026 (234 PDF pages): core material of Blocks 1-7 traced through small worked examples and check questions, in seven sections: evaluation and classical ML, forward computation and CNNs, losses and gradients, reliable training and transfer, recurrent memory, attention and Transformers, and graphs."
-tags: [machine-learning/cs566-deeplearning/cs566-course]
-aliases: []
-created: 2026-10-19T17:32:46
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/ba0a06b4dbe8c5d8.pdf]]"
-media: pdf
-sha256: ba0a06b4dbe8c5d8ae02947b15786cbd48ff020fa9055efdc7b2d0a77107396f
-origin: ingest
-locator: F26-midterm-review-234p.pdf
-measure: 234 pages
-captured: 2026-10-19T17:32:46
 ---
 
 > [!source] PDF · 234 pages · official

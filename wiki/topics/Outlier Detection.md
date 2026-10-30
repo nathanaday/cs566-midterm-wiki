@@ -1,16 +1,7 @@
 ---
-id: con-q4m8zt
-type: topic
-kind: concept
 description: Outlier detection finds the observations that differ significantly from the rest of a dataset, usually without labels; the kNN detector scores each point by the distance to its k-th nearest neighbor and flags the points with the largest scores, the points with the fewest close neighbors.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Anomaly Detection, Outlier, Anomaly, OD, kNN outlier detection, k-th nearest neighbor distance, Outlier score, Out-of-distribution detection, OOD detection, Novelty detection]
-created: 2026-10-29T22:30:00
-updated: 2026-10-29T22:30:00
-refreshed: 2026-10-29T22:30:00
-status: draft
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[Block 6 Slides]]", "[[Block 7 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
-up: ["[[k-Nearest Neighbors]]"]
 ---
 
 > [!concept] Concept

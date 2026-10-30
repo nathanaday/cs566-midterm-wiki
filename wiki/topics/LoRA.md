@@ -1,16 +1,7 @@
 ---
-id: con-m9qcqh
-type: topic
-kind: concept
 description: LoRA (low-rank adaptation) keeps a pretrained weight matrix W frozen and trains a low-rank update ΔW = BA, so the layer computes (W + BA)x.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Low-Rank Adaptation, LoRA Updates]
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:42
-refreshed: 2026-10-13T18:22:42
-status: stable
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 7 Slides]]"]
-up: ["Updating LLMs", "[[Parameter-Efficient Fine-Tuning]]"]
 ---
 
 > [!concept] Concept

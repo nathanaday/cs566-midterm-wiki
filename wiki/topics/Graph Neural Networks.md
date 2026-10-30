@@ -1,16 +1,7 @@
 ---
-id: con-cw1hzm
-type: topic
-kind: concept
 description: A deep learning model for graph data that computes node embeddings through layers of neighborhood aggregation with shared weights, built from permutation-equivariant layers and an invariant readout, with a prediction head matched to the node, pair, or graph output; a CNN is a special case.
-tags: [machine-learning]
 aliases: [GNN, GNNs, Graph Neural Network, Graph Deep Learning, Deep Learning for Graphs, Deep Graph Encoders, GNN Training, Graph Network, Inductive GNN Inference]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 6 Slides]]", "[[Block 5 Slides]]", "[[Block 6 Slides Extended]]", "What a GNN Outputs", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]", "Machine Learning"]
 ---
 
 > [!concept] Concept

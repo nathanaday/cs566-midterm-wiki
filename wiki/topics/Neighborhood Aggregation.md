@@ -1,16 +1,7 @@
 ---
-id: con-3dghgd
-type: topic
-kind: concept
 description: The GNN step in which each node combines its neighbors' previous-layer embeddings along its own computation graph, a tree unrolled from its neighborhood; each layer moves information one graph edge, and GNN variants differ mainly in how they do this step.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Aggregate Neighbors, Message Passing, Node Computation Graph, GNN Computation Graph, Compute Graph (GNN), Synchronous Layer Updates, Synchronous GNN Updates, Neighbor Aggregation, Message Aggregation, GNN Depth, GNN Receptive Field, k-Hop Neighborhood, Synchronous Layer-Wise Update, "Read Layer k, Write Layer k+1", Multi-Hop Aggregation, GNN Layer Depth]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Graph Neural Networks]]"]
 ---
 
 > [!concept] Concept

@@ -1,21 +1,6 @@
 ---
-id: src-mexyc1
-type: source
 description: "The CSCI 566 midterm exam from Spring 2024 (10 pages, 50 questions plus 6 bonus, answers marked): a sample of what the exam tests, mapped question by question onto the topics of this vault to rank them by relevance and to find what the vault lacks."
-tags: [machine-learning/cs566-deeplearning/cs566-course]
 aliases: [Spring 2024 Midterm, Sample Midterm]
-created: 2026-10-29T22:37:11
-updated: 2026-10-29T22:37:11
-refreshed: 2026-10-29T22:37:11
-authority: official
-status: captured
-file: "[[internal/wiki/originals/74d697f77a62282e.pdf]]"
-media: pdf
-sha256: 74d697f77a62282ed8db2012bead9af1fabcf6da98f191bdd8460903a0f45e3e
-origin: ingest
-locator: midterm.pdf
-measure: 10 pages
-captured: 2026-10-29T22:37:11
 ---
 
 > [!source] PDF · 10 pages · official

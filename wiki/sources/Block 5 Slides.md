@@ -1,21 +1,5 @@
 ---
-id: src-p9ayrd
-type: source
 description: "The CSCI 566 Block 5 slide deck by Yue Zhao on sequence models: RNNs, backpropagation through time, vanishing and exploding gradients, LSTMs, attention, the decoder-only Transformer, RNN applications, and optional material on the KV cache and modern recurrence."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/0a94275989111d63.pdf]]"
-media: pdf
-sha256: 0a94275989111d63eef3587ba269b663e05d94ac5c1641cbecff3eb623494da9
-origin: ingest
-locator: Block 5 Slides.pdf
-measure: 231 pages
-captured: 2026-09-28T00:00:00
 ---
 
 > [!source] PDF · 231 pages · official

@@ -1,10 +1,5 @@
 ---
-id: con-5nn1ba
-type: topic
-kind: concept
 description: Underfitting is a model too simple for its data (high training and generalization error), and overfitting is a model that fits noise (low training error, high generalization error); CSCI 566 frames both as a mismatch between model complexity and data complexity and diagnoses them from training and validation curves.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Overfitting
   - Underfitting
@@ -21,18 +16,12 @@ aliases:
   - Loss curves
   - Accuracy curves
   - Train and validation errors as clues
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
-up:
-  - "[[Model Evaluation]]"
 ---
 
 > [!concept] Concept

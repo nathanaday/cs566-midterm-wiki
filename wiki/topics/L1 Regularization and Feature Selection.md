@@ -1,16 +1,7 @@
 ---
-id: con-k7q2mx
-type: topic
-kind: concept
 description: The L1 penalty (Lasso) drives some weights to exactly zero and so selects features, while the L2 penalty (Ridge) shrinks all weights toward zero without removing any.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Lasso, Ridge vs Lasso, L1 Penalty, Sparsity, Sparse Weights]
-created: 2026-10-29T22:50:00
-updated: 2026-10-29T22:50:00
-refreshed: 2026-10-29T22:50:00
-status: stable
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
-up: ["[[Regularization]]"]
 ---
 
 > [!concept] Concept

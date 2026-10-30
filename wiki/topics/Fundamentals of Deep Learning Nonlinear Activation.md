@@ -1,16 +1,7 @@
 ---
-id: doc-a3cfvj
-type: topic
-kind: concept
 description: "Why a neural network needs a nonlinear activation, built up from one neuron: stacked linear layers collapse to one ax + b, and each ReLU neuron adds one bend whose place its bias sets and whose size its outgoing weight sets."
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Why nonlinear activation, Nonlinear Activation Fundamentals, ReLU bends, Stacked Affine Layers Collapse, Need for Nonlinearity]
-created: 2026-10-05T19:20:16
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["Nonlinear activation from a Socratic session", "[[F26-midterm-review-234p]]"]
-up: ["[[Activation Functions]]"]
 ---
 
 > [!concept] Concept

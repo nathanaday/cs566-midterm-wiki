@@ -1,16 +1,7 @@
 ---
-id: con-1wpe44
-type: topic
-kind: concept
 description: A CNN layer with no learned parameters that downsamples each activation map on its own, most often by max pooling, so the width and height shrink and the depth stays the same.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Pool Layer, Pooling, Max Pooling, Max Pool, Average Pooling, Mean Pooling, L2-norm Pooling, Global Average Pooling, GAP]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
-up: ["[[Convolutional Neural Networks (CNN)]]"]
 ---
 
 > [!concept] Concept

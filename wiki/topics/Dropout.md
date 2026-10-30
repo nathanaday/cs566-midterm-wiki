@@ -1,16 +1,7 @@
 ---
-id: doc-gr6dv6
-type: topic
-kind: concept
 description: A regularizer that sets a random subset of hidden activations to zero in each training forward pass, then turns the mask off at evaluation and uses a classic or inverted scaling convention so that training and evaluation scales match.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Dropout regularization, Classic dropout, Inverted dropout, Dropout test-time scaling, Dropout scaling conventions]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]", "[[Regularization]]"]
 ---
 
 > [!concept] Concept

@@ -1,16 +1,7 @@
 ---
-id: con-n38v95
-type: topic
-kind: concept
 description: The subset of ML that makes multi-layer neural networks feasible; CSCI 566 describes it as non-linear, hierarchical, and often end-to-end, and traces it through three turning points from 1980 to 2012.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - DL
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T18:32:33
-refreshed: 2026-10-19T18:32:33
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
@@ -18,9 +9,6 @@ sources:
   - "CSCI 566 Syllabus"
   - "CSCI 566 Reading List"
   - "Block 8 Slides"
-up:
-  - "[[CS566-DeepLearning]]"
-  - "Machine Learning"
 ---
 
 > [!concept] Concept

@@ -1,16 +1,7 @@
 ---
-id: con-a1g9v8
-type: topic
-kind: concept
 description: In backpropagation, the gradient for early layers shrinks toward zero when many small local derivatives multiply, so those layers learn slowly or not at all.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Vanishing Gradients]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 4 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept

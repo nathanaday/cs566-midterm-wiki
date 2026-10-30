@@ -1,18 +1,9 @@
 ---
-id: con-an15dx
-type: topic
-kind: concept
 description: A layer that normalizes each channel of a batch to zero mean and unit variance and then applies a learned scale and shift; it makes deep networks easier to train, and it computes a different function in training and eval mode.
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - BatchNorm
   - Batch Norm
   - BN
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources:
   - "[[Block 3 Slides]]"
   - "[[Block 1 Slides]]"
@@ -20,8 +11,6 @@ sources:
   - "[[Block 4 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
-up:
-  - "[[Neural Network Training]]"
 ---
 
 > [!concept] Concept

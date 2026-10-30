@@ -1,16 +1,7 @@
 ---
-id: con-218fzg
-type: topic
-kind: concept
 description: k-means clusters unlabeled points by repeating two steps, assign each point to its nearest center and move each center to the mean of its points, which lowers the total squared distance from points to their centers; it assumes spherical clusters of similar size, and different runs can stop at different answers.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [k-means, K-Means, KMeans, k-means clustering, k-means algorithm, k-means objective, CuraWeb, Semantic deduplication, semantic dedup, MinHash deduplication]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Clustering]]"]
 ---
 
 > [!concept] Concept

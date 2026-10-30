@@ -1,16 +1,7 @@
 ---
-id: doc-29tdb2
-type: topic
-kind: concept
 description: Early stopping keeps the checkpoint with the best value of a chosen validation metric instead of the last training checkpoint; CSCI 566 tells students to wait for a pattern with a patience window and to keep the test set out of stopping decisions.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Checkpoint selection, Best checkpoint, Patience window, Patience, Early stopping with checkpoints]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]"]
 ---
 
 > [!concept] Concept

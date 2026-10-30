@@ -1,21 +1,5 @@
 ---
-id: src-yb39t5
-type: source
 description: "The CSCI 566 Block 2 slide deck on classical ML by Yue Zhao, for week 2: decision trees, tree ensembles, k-nearest neighbors, clustering, and model metrics, with detours to chain-of-thought, Tree of Thoughts, and classical ML inside LLM agents."
-tags: [machine-learning/cs566-deeplearning]
-aliases: []
-created: 2026-09-28T00:00:00
-updated: 2026-09-28T00:00:00
-refreshed: 2026-09-28T00:00:00
-authority: official
-status: absorbed
-file: "[[internal/wiki/originals/c33d56ad8e5837ca.pdf]]"
-media: pdf
-sha256: c33d56ad8e5837ca2b7c642342da0c3afc5148f2cc52d5e10a08bc6f810990be
-origin: ingest
-locator: Block 2 Slides.pdf
-measure: 213 pages
-captured: 2026-09-28T00:00:00
 ---
 
 > [!source] PDF · 213 pages · official

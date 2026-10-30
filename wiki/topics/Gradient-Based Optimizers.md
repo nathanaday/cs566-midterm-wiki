@@ -1,16 +1,7 @@
 ---
-id: doc-bn9htg
-type: topic
-kind: concept
 description: The update rules that turn gradients into parameter steps (SGD, SGD + Momentum, AdaGrad, RMSProp, Adam, and AdamW), compared by what each remembers and how it scales each step.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Optimizer, SGD + Momentum, SGD with momentum, Momentum, AdaGrad, Adagrad, RMSProp, Leaky AdaGrad, Adam, Adam optimizer, AdamW, Decoupled weight decay, Adaptive optimizers, Adaptive learning rates, Per-parameter learning rates]
-created: 2026-10-12T16:58:10
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 7 Slides]]", "[[Block 3 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Network Training]]", "[[Optimization]]"]
 ---
 
 > [!concept] Concept

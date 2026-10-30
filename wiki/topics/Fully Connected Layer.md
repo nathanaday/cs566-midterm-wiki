@@ -1,16 +1,7 @@
 ---
-id: con-2zny14
-type: topic
-kind: concept
 description: A layer that flattens its input to a vector and multiplies it by a learned weight matrix, so every output connects to every input; CNNs use it near the output because it costs too many parameters on raw images.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [FC Layer, FC, Dense Layer]
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers"]
-up: ["[[Convolutional Neural Networks (CNN)]]"]
 ---
 
 > [!concept] Concept

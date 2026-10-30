@@ -1,16 +1,7 @@
 ---
-id: con-7ty437
-type: topic
-kind: concept
 description: "A deep learning architecture for images and video: convolutional and pooling layers extract feature maps, then a flatten step, fully connected layers, and softmax classify them."
-tags: [machine-learning]
 aliases: [CNN, CNNs, ConvNet, Convolutional Neural Network, Components of CNNs, CNN Layer Types, CNN Applications]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["Topic Note - Convolutional Neural Networks (CNN)", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[Block 3 Slides]]", "An Image is Worth 16x16 Words (note)", "FastVLM (note)", "Topic Note - Sequence Transduction", "Fall 2026 Reading List", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]", "Machine Learning"]
 ---
 
 > [!concept] Concept

@@ -1,16 +1,7 @@
 ---
-id: con-0tp56w
-type: topic
-kind: concept
 description: The recursive application of the chain rule along a computational graph, which gives the gradient of the loss for every parameter in one backward pass.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Backprop, Backward Pass]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "[[Block 4 Slides]]", "[[Block 6 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]"]
 ---
 
 > [!concept] Concept

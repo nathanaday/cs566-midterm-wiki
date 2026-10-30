@@ -1,16 +1,7 @@
 ---
-id: con-7kqrrf
-type: topic
-kind: concept
 description: k-nearest neighbors (kNN) stores the training set and labels a new point by majority vote over its k nearest training points under a chosen distance function; k sets the model's capacity, and all the cost is at prediction time.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [kNN, KNN, k-NN, k Nearest Neighbor, k-nearest neighbors, k Nearest Neighbor Algorithm, Nearest Neighbor Algorithm, 1-NN, nearest neighbor classifier, Voronoi diagram, kNN-LM, Nearest Neighbor Language Models, Semantic caching with kNN, semantic cache, Approximate nearest neighbor search, ANN search, Distance function, k-nearest neighbor voting]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
-up: ["Classical Machine Learning"]
 ---
 
 > [!concept] Concept

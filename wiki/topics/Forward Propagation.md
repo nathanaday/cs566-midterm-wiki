@@ -1,16 +1,7 @@
 ---
-id: con-4cc83q
-type: topic
-kind: concept
 description: Computing a neural network's output from its input one layer at a time, and saving the intermediate values that backpropagation needs.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Forward Pass]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[F26-midterm-review-234p]]"]
-up: ["[[Neural Networks]]"]
 ---
 
 > [!concept] Concept

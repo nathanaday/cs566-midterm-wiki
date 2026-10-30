@@ -1,17 +1,7 @@
 ---
-id: doc-63476b
-type: topic
-kind: policy
 description: Before evaluation, validation, or inference, put the model in evaluation mode, so BatchNorm uses stored running statistics and dropout turns off its random mask.
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Eval mode, Evaluation mode, Call model.eval() before inference, Mode is part of the function]
-created: 2026-10-19T17:47:21
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[F26-midterm-review-234p]]", "[[Block 7 Slides]]", "[[Block 4 Slides]]"]
-strength: must
-up: ["[[Model Evaluation]]"]
 ---
 
 > [!policy] Must · holds for repositories tagged #machine-learning/cs566-deeplearning

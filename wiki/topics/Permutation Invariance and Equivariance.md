@@ -1,16 +1,7 @@
 ---
-id: con-37q99h
-type: topic
-kind: concept
 description: "The two properties a function on a graph needs because the nodes have no fixed order: an invariant function gives the same graph output for every node order, and an equivariant function reorders its node outputs with the nodes."
-tags: [machine-learning/cs566-deeplearning]
 aliases: [Permutation Invariance, Permutation Equivariance, Permutation-Invariant Function, Permutation-Equivariant Function, Permutation Invariant, Permutation Equivariant, Order Plan, Node Ordering, Graph Readout, Symmetric Readout, Node Renumbering, Whole-Graph Pooling, Shared Node MLP, Node Reordering, Node Permutation, Graph Relabeling, Graph Pooling]
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
-up: ["[[Graph Neural Networks]]"]
 ---
 
 > [!concept] Concept

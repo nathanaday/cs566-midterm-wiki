@@ -1,10 +1,5 @@
 ---
-id: con-5me5tv
-type: topic
-kind: concept
 description: "Finding the weights W that minimize a loss function L; CSCI 566 compares random search, the analytic least-squares solution, and gradient descent, and names the loss-surface problems that slow SGD: poor conditioning, local minima, saddle points, and noisy gradients."
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - Loss minimization
   - Random search
@@ -15,16 +10,10 @@ aliases:
   - Local minimum
   - Local minima
   - Saddle point
-created: 2026-09-28T00:00:00
-updated: 2026-10-13T18:22:47
-refreshed: 2026-10-13T18:22:47
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
-up:
-  - "[[Function Approximation]]"
 ---
 
 > [!concept] Concept

@@ -1,10 +1,5 @@
 ---
-id: con-j2j00f
-type: topic
-kind: concept
 description: "Methods that keep a model from fitting noise in the training data: a penalty term λR(W) added to the data loss (L2, L1, elastic net), or randomness during training that evaluation removes (dropout, DropConnect, stochastic depth, cutout, mixup)."
-tags:
-  - machine-learning/cs566-deeplearning
 aliases:
   - L1 regularization
   - L2 regularization
@@ -22,18 +17,12 @@ aliases:
   - Cutout
   - Mixup
   - Fractional Max Pooling
-created: 2026-09-28T00:00:00
-updated: 2026-10-19T17:48:15
-refreshed: 2026-10-19T17:48:15
-status: stable
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
-up:
-  - "[[Function Approximation]]"
 ---
 
 > [!concept] Concept
