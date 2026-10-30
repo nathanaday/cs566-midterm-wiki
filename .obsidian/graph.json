@@ -5,8 +5,65 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "[subject:\"1 Foundations and classical machine learning\"]",
+      "color": {
+        "a": 1,
+        "rgb": 5011624
+      }
+    },
+    {
+      "query": "[subject:\"2 Neural networks\"]",
+      "color": {
+        "a": 1,
+        "rgb": 16090392
+      }
+    },
+    {
+      "query": "[subject:\"3 Training\"]",
+      "color": {
+        "a": 1,
+        "rgb": 14964566
+      }
+    },
+    {
+      "query": "[subject:\"4 Convolutional networks\"]",
+      "color": {
+        "a": 1,
+        "rgb": 7518130
+      }
+    },
+    {
+      "query": "[subject:\"5 Transfer learning and fine-tuning\"]",
+      "color": {
+        "a": 1,
+        "rgb": 5546571
+      }
+    },
+    {
+      "query": "[subject:\"6 Sequence models\"]",
+      "color": {
+        "a": 1,
+        "rgb": 15649339
+      }
+    },
+    {
+      "query": "[subject:\"7 Graphs\"]",
+      "color": {
+        "a": 1,
+        "rgb": 11696546
+      }
+    },
+    {
+      "query": "path:\"wiki/sources\"",
+      "color": {
+        "a": 1,
+        "rgb": 10319197
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
