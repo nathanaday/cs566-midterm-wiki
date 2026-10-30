@@ -11,56 +11,56 @@
       "query": "[subject:\"1 Foundations and classical machine learning\"]",
       "color": {
         "a": 1,
-        "rgb": 5011624
+        "rgb": 15708
       }
     },
     {
       "query": "[subject:\"2 Neural networks\"]",
       "color": {
         "a": 1,
-        "rgb": 16090392
+        "rgb": 3230078
       }
     },
     {
       "query": "[subject:\"3 Training\"]",
       "color": {
         "a": 1,
-        "rgb": 14964566
+        "rgb": 6770581
       }
     },
     {
       "query": "[subject:\"4 Convolutional networks\"]",
       "color": {
         "a": 1,
-        "rgb": 7518130
+        "rgb": 10571418
       }
     },
     {
       "query": "[subject:\"5 Transfer learning and fine-tuning\"]",
       "color": {
         "a": 1,
-        "rgb": 5546571
+        "rgb": 13913229
       }
     },
     {
       "query": "[subject:\"6 Sequence models\"]",
       "color": {
         "a": 1,
-        "rgb": 15649339
+        "rgb": 16341359
       }
     },
     {
       "query": "[subject:\"7 Graphs\"]",
       "color": {
         "a": 1,
-        "rgb": 11696546
+        "rgb": 16742983
       }
     },
     {
       "query": "path:\"wiki/sources\"",
       "color": {
         "a": 1,
-        "rgb": 10319197
+        "rgb": 16754176
       }
     }
   ],
@@ -74,6 +74,6 @@
   "repelStrength": 8.05518319928508,
   "linkStrength": 0.764577747989276,
   "linkDistance": 166,
-  "scale": 0.9583976303922094,
+  "scale": 1.189764672744667,
   "close": false
 }
