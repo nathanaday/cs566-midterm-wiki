@@ -168,6 +168,7 @@ Regularization is the main tool in this lecture against [[Overfitting and Underf
 
 ## Related
 
+- [[L1 Regularization and Feature Selection]]: why the L1 penalty zeroes weights and the L2 penalty only shrinks them
 - [[Dropout]]
 - [[Loss Functions]]
 - [[Overfitting and Underfitting]]

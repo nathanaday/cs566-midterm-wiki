@@ -80,6 +80,8 @@ Synthesis: semantic caching, kNN-LM, and RAG all run the same nearest-neighbor l
 
 ## Related
 
+- [[kNN Regression]]: the same neighbors, averaged instead of voted
+- [[Outlier Detection]]: the k-th neighbor distance as an outlier score
 - [[Overfitting and Underfitting]]: k sets where kNN falls between the two
 - [[Linear Classification]]: a parametric classifier, in contrast to kNN, which stores the data
 - [[Model Evaluation]]: why zero training error for 1-NN says little about true error, and how validation data chooses k

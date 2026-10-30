@@ -78,6 +78,7 @@ In the few-shot clustering results, plain KMeans averages 76.7 on OPIEC59k and 8
 
 ## Related
 
+- [[k-Means Initialization and Local Minima]]: why the start decides which converged answer you get
 - [[Clustering]]: the task k-means solves
 - [[k-Nearest Neighbors]]: also uses distance to points, but with given labels
 - [[Machine Learning Task Types]]: supervised and unsupervised learning

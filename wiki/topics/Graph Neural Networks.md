@@ -146,6 +146,7 @@ A CNN can learn a different $W_l^u$ for each neighbor, because it can order the 
 
 ## Related
 
+- [[Graph Neural Network Variants]]: directed edges, attention-weighted aggregation, and graph autoencoders
 - [[Graph]]: vertices, edges, and the adjacency matrix
 - [[Node Embeddings]]: the shallow encoders that GNNs replace with deep encoders
 - [[Neighborhood Aggregation]]: the per-node computation graph and the aggregation step

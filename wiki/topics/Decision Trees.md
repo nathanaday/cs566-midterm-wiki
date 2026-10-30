@@ -159,6 +159,7 @@ Synthesis: unlike [[Linear Classification]], a tree does not use the form $Wx + 
 
 ## Related
 
+- [[Decision Tree Size Bounds]]: the maximum leaves and depth as a function of attributes and samples
 - [[Tree Ensembles]]: averaging many trees to lower the variance of a single tree
 - [[Linear Classification]]
 - [[Linear Separability]]

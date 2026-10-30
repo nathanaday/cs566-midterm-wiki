@@ -180,6 +180,7 @@ Synthesis: only data the model did not train on shows overfitting, because train
 
 ## Related
 
+- [[VC Dimension]]: the shattering measure of capacity
 - [[Regularization]]
 - [[Early Stopping]]: checkpoint selection when validation loss turns up
 - [[Dropout]]

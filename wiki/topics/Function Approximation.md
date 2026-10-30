@@ -59,6 +59,7 @@ Synthesis: [[Linear Classification]] is the simplest $f$. [[Loss Functions]] mea
 
 ## Related
 
+- [[Parameterization of a Hypothesis Class]]: how the parameters enter the function decides which functions are reachable
 - [[Deep Learning]]
 - [[Neural Networks]]
 - [[Linear Classification]]

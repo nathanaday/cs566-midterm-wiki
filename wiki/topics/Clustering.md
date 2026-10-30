@@ -65,6 +65,7 @@ The slide calls keyphrase generation the most effective approach and says it imp
 
 ## Related
 
+- [[Outlier Detection]]: the other unsupervised task on the same distances
 - [[k-Means]]: the standard clustering algorithm and the baseline above
 - [[Machine Learning Task Types]]: supervised, unsupervised, and semi-supervised learning
 - [[k-Nearest Neighbors]]: the supervised counterpart that also relies on distance

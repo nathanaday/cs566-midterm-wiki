@@ -37,7 +37,7 @@ Max pooling with 2x2 filters and stride 2 on one 4x4 depth slice ([[Block 4 Slid
 
 $$\begin{bmatrix} 1 & 1 & 2 & 4 \\ 5 & 6 & 7 & 8 \\ 3 & 2 & 1 & 0 \\ 1 & 2 & 3 & 4 \end{bmatrix} \rightarrow \begin{bmatrix} 6 & 8 \\ 3 & 4 \end{bmatrix}$$
 
-A 3x3 max pool with stride 2 on a 5x5 input gives the 2x2 output [[8, 7], [8, 9]] ([[Block 4 Slides]], pp. 138-143). Each input depth slice gives one output slice (p. 144).
+A 3x3 max pool with stride 2 on a 5x5 input gives the 2x2 output `[8, 7]`, `[8, 9]` ([[Block 4 Slides]], pp. 138-143). Each input depth slice gives one output slice (p. 144).
 
 Max pooling has no learnable parameters and gives some invariance to small shifts (p. 135; [[F26-midterm-review-234p]], p. 76). It is nonlinear ([[Block 4 Slides]], p. 152; Lecture 3 Notes - Convolutional and Pooling Layers). It still loses information, because it is a form of compression (Lecture 3 Notes - Convolutional and Pooling Layers).
 
