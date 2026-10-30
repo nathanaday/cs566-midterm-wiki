@@ -2,6 +2,7 @@
 description: kNN regression predicts a continuous target as the mean, or distance-weighted mean, of the k nearest training points' values; it learns no parameters and pays its whole cost at prediction time, like the kNN classifier.
 aliases: [k-Nearest Neighbors Regression, Nearest Neighbor Regression]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

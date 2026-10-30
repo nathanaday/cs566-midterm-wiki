@@ -2,6 +2,7 @@
 description: k-means clusters unlabeled points by repeating two steps, assign each point to its nearest center and move each center to the mean of its points, which lowers the total squared distance from points to their centers; it assumes spherical clusters of similar size, and different runs can stop at different answers.
 aliases: [k-means, K-Means, KMeans, k-means clustering, k-means algorithm, k-means objective, CuraWeb, Semantic deduplication, semantic dedup, MinHash deduplication]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

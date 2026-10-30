@@ -2,6 +2,7 @@
 description: Split the data first, fit every preprocessing statistic (such as a mean, a standard deviation, or an imputation value) on the training split only, and apply that fitted transformation unchanged to validation and test data.
 aliases: [Split the data before fitting preprocessing or models, "Fit preprocessing on training data, then reuse it", "Fit the transformation on training data, then reuse it", Validation set uses training statistics, Preprocessing data leakage, "Fit once, apply everywhere"]
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 3 Training
 ---
 
 ## Rule

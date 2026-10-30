@@ -10,6 +10,7 @@ sources:
   - "[[Block 1 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 4 Slides]]"
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

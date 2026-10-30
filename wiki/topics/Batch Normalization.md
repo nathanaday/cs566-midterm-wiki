@@ -11,6 +11,7 @@ sources:
   - "[[Block 4 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
+subject: 3 Training
 ---
 
 ## Definition

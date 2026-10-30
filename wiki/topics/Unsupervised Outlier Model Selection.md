@@ -2,6 +2,7 @@
 description: Unsupervised outlier model selection picks an outlier or out-of-distribution detector for a new dataset that has no labels, by meta-learning from historical labeled datasets; CSCI 566 Block 7 teaches it through MetaOD and MetaOOD.
 aliases: [Unsupervised OD model selection, UOMS, Unsupervised model selection, Meta-learning for model selection, OD/OOD model selection]
 sources: ["[[Block 7 Slides]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

@@ -2,6 +2,7 @@
 description: "Why a neural network needs a nonlinear activation, built up from one neuron: stacked linear layers collapse to one ax + b, and each ReLU neuron adds one bend whose place its bias sets and whose size its outgoing weight sets."
 aliases: [Why nonlinear activation, Nonlinear Activation Fundamentals, ReLU bends, Stacked Affine Layers Collapse, Need for Nonlinearity]
 sources: ["Nonlinear activation from a Socratic session", "[[F26-midterm-review-234p]]"]
+subject: 2 Neural networks
 ---
 
 ## Definition

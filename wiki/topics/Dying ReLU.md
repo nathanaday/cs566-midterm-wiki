@@ -2,6 +2,7 @@
 description: The failure in which a ReLU unit's pre-activation is negative on every training example, so it outputs zero, gets a zero gradient, and stops learning.
 aliases: [Dead ReLU, Dead Neurons]
 sources: ["[[Block 3 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 2 Neural networks
 ---
 
 ## Definition

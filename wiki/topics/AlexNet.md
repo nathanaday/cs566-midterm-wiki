@@ -9,6 +9,7 @@ sources:
   - "Lecture 1"
   - "[[Block 4 Slides]]"
   - "[[Block 7 Slides]]"
+subject: 4 Convolutional networks
 ---
 
 ## What it is

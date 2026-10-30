@@ -2,6 +2,7 @@
 description: The last layer of a classification network, which maps the raw class scores (logits) to a probability distribution with sigma(z)_i = e^{z_i} / sum_j e^{z_j}.
 aliases: [Softmax, Softmax Function]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers"]
+subject: 2 Neural networks
 ---
 
 ## Definition

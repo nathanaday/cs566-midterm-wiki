@@ -2,6 +2,7 @@
 description: A classical ML classifier that tests one feature at each node and predicts the majority class at a leaf. CSCI 566 teaches greedy learning with decision stumps, the choice of splitting criteria, stopping conditions, and pruning to control overfitting.
 aliases: [Decision tree, DT, Decision tree classifier, Decision tree learning, Greedy decision tree learning, Decision stump, Decision tree splitting criteria, Gini gain, Information gain, Decision tree stopping conditions, Decision tree pruning, Reduced-error pruning]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

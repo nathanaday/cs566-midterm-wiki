@@ -22,6 +22,7 @@ sources:
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

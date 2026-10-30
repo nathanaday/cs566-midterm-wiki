@@ -15,6 +15,7 @@ sources:
   - "CSCI 566 Syllabus"
   - "[[Block 7 Slides]]"
   - "[[F26-midterm-review-234p]]"
+subject: 3 Training
 ---
 
 ## Definition

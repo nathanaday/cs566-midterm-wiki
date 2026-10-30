@@ -2,6 +2,7 @@
 description: A convolution with a 1x1 kernel that forms a learned combination of the channels at each position without reading neighboring positions, often used to shrink the channel count before a costlier layer.
 aliases: [1×1 Convolution, 1x1 Conv, Pointwise Convolution, 1x1 Bottleneck]
 sources: ["[[F26-midterm-review-234p]]"]
+subject: 4 Convolutional networks
 ---
 
 ## Definition

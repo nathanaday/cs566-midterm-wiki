@@ -7,6 +7,7 @@ aliases:
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

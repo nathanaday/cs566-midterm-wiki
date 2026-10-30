@@ -2,6 +2,7 @@
 description: k-nearest neighbors (kNN) stores the training set and labels a new point by majority vote over its k nearest training points under a chosen distance function; k sets the model's capacity, and all the cost is at prediction time.
 aliases: [kNN, KNN, k-NN, k Nearest Neighbor, k-nearest neighbors, k Nearest Neighbor Algorithm, Nearest Neighbor Algorithm, 1-NN, nearest neighbor classifier, Voronoi diagram, kNN-LM, Nearest Neighbor Language Models, Semantic caching with kNN, semantic cache, Approximate nearest neighbor search, ANN search, Distance function, k-nearest neighbor voting]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

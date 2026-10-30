@@ -2,6 +2,7 @@
 description: The basic graph neural network, which updates each node embedding from the mean of its neighbors' previous-layer embeddings plus its own embedding, with weight matrices shared by all nodes at each layer, trained end to end from a loss on the final node embeddings.
 aliases: [GCN, GCNs, Graph Convolutional Networks, GCN Layer Update, Deep Encoder Update Rule, "The Math: Deep Encoder", Mean-Aggregation GNN Update, W_self, W_neighbor, GNN Weight Sharing, Training the GCN, GNN Training Step, GNN Model Design, Weight Sharing in GNNs, Feature Column Order, Input Feature Order]
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
+subject: 7 Graphs
 ---
 
 ## Definition

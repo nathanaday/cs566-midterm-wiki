@@ -2,6 +2,7 @@
 description: "A deep learning architecture for images and video: convolutional and pooling layers extract feature maps, then a flatten step, fully connected layers, and softmax classify them."
 aliases: [CNN, CNNs, ConvNet, Convolutional Neural Network, Components of CNNs, CNN Layer Types, CNN Applications]
 sources: ["Topic Note - Convolutional Neural Networks (CNN)", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[Block 3 Slides]]", "An Image is Worth 16x16 Words (note)", "FastVLM (note)", "Topic Note - Sequence Transduction", "Fall 2026 Reading List", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 4 Convolutional networks
 ---
 
 ## Definition

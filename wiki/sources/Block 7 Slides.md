@@ -24,7 +24,7 @@ Notes on reading the deck:
 
 ## Structure
 
-- pp. 1–12, title, a recap of earlier blocks, the lecture plan, and the flower example: [[CSCI 566 Midterm Wiki]], Flower Classifier Running Example.
+- pp. 1–12, title, a recap of earlier blocks, the lecture plan, and the flower example: [[_index|CSCI 566 Midterm Wiki]], Flower Classifier Running Example.
 - pp. 13–18, cross-entropy, one training step, mini-batches and epochs, the three data splits, and feature scales: [[Loss Functions]], [[Backpropagation]], [[Model Evaluation]].
 - pp. 19–41, data preprocessing, batch and layer normalization, the input convention of a pretrained model, missing data, and StandardScaler: [[Data Preprocessing]], [[Fit Preprocessing on Training Data Only]], [[Batch Normalization]], [[Layer Normalization]], Test Set Contamination.
 - pp. 42–55, a recap of activation functions and how to choose one: [[Activation Functions]], [[Dying ReLU]].

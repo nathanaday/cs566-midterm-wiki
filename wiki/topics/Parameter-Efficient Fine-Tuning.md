@@ -2,6 +2,7 @@
 description: Parameter-efficient fine-tuning (PEFT) adapts a pretrained model by training a small set of parameters (a top-layer subset, adapters, a prefix, or a low-rank update) while the other parameters stay frozen.
 aliases: [PEFT, Parameter Efficient Fine-Tuning, Prefix Tuning, Top-K Layer Fine-Tuning, Subset Fine-Tuning, Intrinsic Dimension, Intrinsic Dimensionality]
 sources: ["[[Block 7 Slides]]", "[[Block 3 Slides]]"]
+subject: 5 Transfer learning and fine-tuning
 ---
 
 ## Definition

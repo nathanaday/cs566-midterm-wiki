@@ -2,6 +2,7 @@
 description: A layer that flattens its input to a vector and multiplies it by a learned weight matrix, so every output connects to every input; CNNs use it near the output because it costs too many parameters on raw images.
 aliases: [FC Layer, FC, Dense Layer]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers"]
+subject: 2 Neural networks
 ---
 
 ## Definition

@@ -2,6 +2,7 @@
 description: Computing a neural network's output from its input one layer at a time, and saving the intermediate values that backpropagation needs.
 aliases: [Forward Pass]
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[F26-midterm-review-234p]]"]
+subject: 2 Neural networks
 ---
 
 ## Definition

@@ -2,6 +2,7 @@
 description: The share of units in a layer that output exactly zero for an input, high in ReLU models, which sparsity-aware kernels can use to cut LLM inference compute.
 aliases: [Sparse Activation, ReLU Strikes Back]
 sources: ["[[Block 3 Slides]]"]
+subject: 2 Neural networks
 ---
 
 ## Definition

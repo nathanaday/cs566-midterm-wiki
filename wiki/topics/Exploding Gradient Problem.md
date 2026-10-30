@@ -7,6 +7,7 @@ sources:
   - "[[Block 1 Slides]]"
   - "Sep 14 Lecture Account"
   - "[[Block 5 Slides]]"
+subject: 3 Training
 ---
 
 ## Definition

@@ -2,6 +2,7 @@
 description: Adapters are small bottleneck feed-forward layers with a residual connection, inserted into a frozen pretrained network so that only their parameters are fine-tuned.
 aliases: [Adapter, Adapter Layer, Adapter Module, Adapter Modules]
 sources: ["[[Block 7 Slides]]"]
+subject: 5 Transfer learning and fine-tuning
 ---
 
 ## Definition

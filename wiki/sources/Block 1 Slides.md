@@ -10,7 +10,7 @@ The slide deck for the first CSCI 566 lecture, by the instructor Yue Zhao. It ha
 
 ## Structure
 
-- pp. 1–25, course intro and logistics (staff, grading, schedule, books, AI-use policy): [[CSCI 566 Midterm Wiki]]; the schedule matches CSCI 566 Syllabus and the books match CSCI 566 Reading List.
+- pp. 1–25, course intro and logistics (staff, grading, schedule, books, AI-use policy): [[_index|CSCI 566 Midterm Wiki]]; the schedule matches CSCI 566 Syllabus and the books match CSCI 566 Reading List.
 - pp. 26–79, Part 1, machine learning and deep learning: Evolution of Machine Learning, [[AlexNet]], Machine Learning Task Types, [[Deep Learning]], Scaling Laws, What Counts as Solved.
 - pp. 80–101, Part 2, one task in three layers (LLM, agent, skill): Autoregressive Language Modeling, Tokenization, Post-Training, Agent Loop, ReAct, Agent Skills.
 - pp. 101–171, Part 3, case study 1, what breaks after deployment: Deployment Failure Modes, Shortcut Learning, FORTIS.

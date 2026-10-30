@@ -15,7 +15,7 @@ Most questions are short recall or a one-line calculation. The calculations are 
 
 ## Structure
 
-- p. 1, instructions and the answer sheet: [[CSCI 566 Midterm Wiki]].
+- p. 1, instructions and the answer sheet: [[_index|CSCI 566 Midterm Wiki]].
 - p. 2, Q1 to Q8, generalization gap, layer cost, zero initialization, the 1x1 filter, exploding gradients, tree pruning, NaN weights in an RNN, and L2 in GNNs: [[Overfitting and Underfitting]], [[Regularization]], [[Pooling Layer]], [[Weight Initialization]], [[Convolutional Layer]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Decision Trees]], [[Recurrent Neural Networks (RNN)]], [[Graph Neural Networks]].
 - p. 3, Q9 to Q15, aggregation in GNNs, pooling, why ReLU is nonlinear, a linear-network calculation, tree weaknesses, and graphs of varying size: [[Neighborhood Aggregation]], [[Pooling Layer]], [[Activation Functions]], [[Fundamentals of Deep Learning Nonlinear Activation]], [[Forward Propagation]], [[Decision Trees]], [[Graph Neural Networks]].
 - p. 4, Q16 to Q22, directed graphs, graph autoencoders, what counts as regularization, reading activation plots, and preprocessing statistics: [[Graph]], [[Regularization]], [[Activation Functions]], [[Fit Preprocessing on Training Data Only]].
@@ -24,7 +24,7 @@ Most questions are short recall or a one-line calculation. The calculations are 
 - p. 7, Q37 to Q42, two model-parameterization puzzles, outliers, kNN outlier detection, a circular classifier, and zero training error: [[Function Approximation]], [[Linear Classification]], [[k-Nearest Neighbors]], [[Linear Separability]], [[Model Evaluation]].
 - p. 8, Q43 to Q48, MLP parameters, an MLP with no activations, 0/1 loss under backprop, shuffle invariance of a 1x1 conv with global pooling, permutation-invariant functions, and a GNN aggregation design: [[Fully Connected Layer]], [[Loss Functions]], [[Pooling Layer]], [[Permutation Invariance and Equivariance]], [[Neighborhood Aggregation]].
 - p. 9, Q49 to Q54, centroids, k-means initialization, kNN regression, residual connections, gradient clipping, and why gradients vanish in deep nets: [[k-Means]], [[Clustering]], [[k-Nearest Neighbors]], [[Residual Connections]], [[Gradient Clipping]], [[Vanishing Gradient Problem]], [[Backpropagation]].
-- p. 10, Q55 and Q56, what deep means for a CNN, and the grade curve: [[Convolutional Neural Networks (CNN)]], [[CSCI 566 Midterm Wiki]].
+- p. 10, Q55 and Q56, what deep means for a CNN, and the grade curve: [[Convolutional Neural Networks (CNN)]], [[_index|CSCI 566 Midterm Wiki]].
 
 ## Question Map
 
@@ -87,7 +87,7 @@ Each row links the topics a student would open to answer the question. The last 
 | 53 | Gradient clipping and vanishing gradients | D | [[Gradient Clipping]], [[Vanishing Gradient Problem]] |
 | 54 | Why vanishing gradients hit deep nets | C | [[Vanishing Gradient Problem]], [[Backpropagation]] |
 | 55 | What deep means for a CNN | C | [[Convolutional Neural Networks (CNN)]], [[Deep Learning]] |
-| 56 | Course logistics: grade curve | C | [[CSCI 566 Midterm Wiki]] |
+| 56 | Course logistics: grade curve | C | [[_index|CSCI 566 Midterm Wiki]] |
 
 ## Relevance
 
@@ -130,7 +130,7 @@ The count is the number of questions whose row links the topic. It measures how 
 | [[Function Approximation]] | 2 |
 | [[k-Means]] | 2 |
 
-**Touched once.** [[Forward Propagation]], [[Graph]], [[Data Augmentation]], [[Fit Preprocessing on Training Data Only]], [[Data Preprocessing]], [[Switch the Model to Evaluation Mode When Evaluating]], [[AlexNet]], [[Unsupervised Outlier Model Selection]], [[Linear Separability]], [[Model Evaluation]], [[Node Embeddings]], [[Clustering]], [[Residual Connections]], [[Backpropagation]], [[Deep Learning]], [[CSCI 566 Midterm Wiki]].
+**Touched once.** [[Forward Propagation]], [[Graph]], [[Data Augmentation]], [[Fit Preprocessing on Training Data Only]], [[Data Preprocessing]], [[Switch the Model to Evaluation Mode When Evaluating]], [[AlexNet]], [[Unsupervised Outlier Model Selection]], [[Linear Separability]], [[Model Evaluation]], [[Node Embeddings]], [[Clustering]], [[Residual Connections]], [[Backpropagation]], [[Deep Learning]], [[_index|CSCI 566 Midterm Wiki]].
 
 **Not touched by this exam.** Sixteen topics in this wiki have no question in the 2024 exam: Activation Sparsity, Adapters, Dropout, Dying ReLU, Early Stopping, Fine-Tuning, Gradient-Based Optimizers, Graph Convolutional Network, Layer Normalization, LoRA, Neural Network Training, Optimization, Parameter-Efficient Fine-Tuning, Softmax Layer, Transfer Learning, Transformers. They are left unlinked here so the graph keeps them at a distance from this page. They are where the wiki is wider than this exam: Fall 2026 material the 2024 exam predates, such as Transformers and the fine-tuning family, plus training details such as dropout, early stopping, and normalization.
 

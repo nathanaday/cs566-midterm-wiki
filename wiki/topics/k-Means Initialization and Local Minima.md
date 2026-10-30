@@ -2,6 +2,7 @@
 description: k-means lowers its squared-distance objective at every step and so converges, but only to a local minimum fixed by the starting centers; random restarts and k-means++ seeding are the standard remedies.
 aliases: [k-Means Local Minimum, Centroid Initialization, k-means++, Random Restarts]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[Block 7 Slides]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

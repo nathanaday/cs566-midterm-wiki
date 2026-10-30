@@ -1,6 +1,7 @@
 ---
 description: "The CSCI 566 practice of training a neural network: gradient problems, normalization and initialization, data preparation, optimizers, regularization, and transfer from trained models."
 sources: ["[[Vanishing Gradient Problem]]", "[[Exploding Gradient Problem]]", "[[Weight Initialization]]", "[[Batch Normalization]]", "[[Layer Normalization]]", "[[Data Preprocessing]]", "[[Data Augmentation]]", "[[Gradient-Based Optimizers]]", "[[Dropout]]", "[[Early Stopping]]", "[[Transfer Learning]]", "Change One Factor per Experiment"]
+subject: 3 Training
 ---
 
 ## Definition

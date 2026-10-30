@@ -2,6 +2,7 @@
 description: A sequence model that applies one recurrence h_t = f_W(h_{t-1}, x_t) at every time step, so it carries a hidden state forward and reuses the same weights at every step.
 aliases: [RNN, GRU, Gated Recurrent Unit, Recurrent Neural Network, Vanilla RNN, Many-to-many RNN, Weight sharing across time steps, RNN applications, Parameter sharing across time, RNN parameter sharing]
 sources: ["Topic Note - Recurrent Neural Networks (RNN)", "Topic Note - Long Short-Term Memory Networks (LSTM)", "Topic Note - Sequence Transduction", "Topic Note - Transformers", "Attention Is All You Need (note)", "World Models, Ha & Schmidhuber (note)", "DreamerV3 (note)", "Fall 2026 Reading List", "[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 6 Sequence models
 ---
 
 ## Definition

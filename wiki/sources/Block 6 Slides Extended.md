@@ -23,7 +23,7 @@ The text of this deck does not hold some slides of the first version: the four L
 
 ## Structure
 
-- pp. 1–5, title, the Oct 4 course updates, and the plan of the block: [[CSCI 566 Midterm Wiki]], Graphs of Agents.
+- pp. 1–5, title, the Oct 4 course updates, and the plan of the block: [[_index|CSCI 566 Midterm Wiki]], Graphs of Agents.
 - pp. 6–23, why graphs, the road example, nodes, edges, and features, heterogeneous, directed, and bipartite graphs, and the choice of representation: [[Graph]], Road Delay GNN Example.
 - pp. 24–40, training on the road example, graph task levels, where the prediction head attaches, and applications (PinSage, polypharmacy, Google Maps ETA, antibiotic discovery): [[Graph Neural Networks]], GNN Applications.
 - pp. 41–46, graph tasks in drug discovery and TDC: the GNN head must match the scientific question: GNN Applications, Therapeutics Data Commons.

@@ -2,6 +2,7 @@
 description: Gradient clipping rescales the gradient to a threshold norm before the optimizer step, so one large gradient cannot cause a huge update.
 aliases: [Norm Clipping, Global gradient norm clipping]
 sources: ["[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 3 Training
 ---
 
 ## Definition

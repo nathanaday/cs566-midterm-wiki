@@ -2,6 +2,7 @@
 description: The update rules that turn gradients into parameter steps (SGD, SGD + Momentum, AdaGrad, RMSProp, Adam, and AdamW), compared by what each remembers and how it scales each step.
 aliases: [Optimizer, SGD + Momentum, SGD with momentum, Momentum, AdaGrad, Adagrad, RMSProp, Leaky AdaGrad, Adam, Adam optimizer, AdamW, Decoupled weight decay, Adaptive optimizers, Adaptive learning rates, Per-parameter learning rates]
 sources: ["[[Block 7 Slides]]", "[[Block 3 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 3 Training
 ---
 
 ## Definition

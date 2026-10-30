@@ -2,6 +2,7 @@
 description: A residual connection adds a block's input to its output, y = x + f(x), so the layers learn only the residual and the gradient gets an identity route around the block.
 aliases: [Skip Connection, Residual Path, Residual Block, Identity Shortcut, Shortcut Connection, Residual Learning]
 sources: ["[[Block 3 Slides]]", "[[Block 4 Slides]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 3 Training
 ---
 
 ## Definition

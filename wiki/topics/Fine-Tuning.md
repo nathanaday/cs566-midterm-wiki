@@ -2,6 +2,7 @@
 description: Fine-tuning trains a model on source data and then uses training examples and a loss on the target data to update selected pretrained parameters; partial fine-tuning adapts some layers, full fine-tuning can change every weight, and about 1/10 of the original learning rate is a good starting point.
 aliases: [finetuning, fine-tune, model fine-tuning, partial fine-tuning, full fine-tuning, FT, Stage 2 transfer, Lower learning rate for fine-tuning]
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 5 Transfer learning and fine-tuning
 ---
 
 ## Definition

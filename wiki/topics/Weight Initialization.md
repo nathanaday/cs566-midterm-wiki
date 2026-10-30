@@ -2,6 +2,7 @@
 description: "Weight initialization sets the starting values of a network's weights: random starts break the symmetry between hidden units, and a scale such as small random numbers, Xavier (std = 1/sqrt(Din)), or He/Kaiming (std = sqrt(2/Din)) keeps activations and gradients usable across layers."
 aliases: [Initialization, Weight W Initialization, Xavier initialization, Glorot initialization, He initialization, Kaiming initialization, MSRA initialization, He scaling, Xavier scaling, Zero initialization, Small random number initialization, Hidden-unit symmetry, Symmetry breaking]
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 3 Training
 ---
 
 ## Definition

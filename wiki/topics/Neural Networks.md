@@ -2,6 +2,7 @@
 description: A model built from layers of simple units, each a weighted sum followed by a non-linear activation function, with much more representational power than a linear classifier.
 aliases: [Fully Connected Network, Multi-Layer Perceptron, MLP, Neural Network Data Shape]
 sources: ["[[Block 3 Slides]]", "Lecture 3", "[[Block 4 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 2 Neural networks
 ---
 
 ## Definition

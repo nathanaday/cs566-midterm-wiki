@@ -2,6 +2,7 @@
 description: Early stopping keeps the checkpoint with the best value of a chosen validation metric instead of the last training checkpoint; CSCI 566 tells students to wait for a pattern with a patience window and to keep the test set out of stopping decisions.
 aliases: [Checkpoint selection, Best checkpoint, Patience window, Patience, Early stopping with checkpoints]
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 3 Training
 ---
 
 ## Definition

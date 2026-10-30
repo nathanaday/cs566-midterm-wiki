@@ -2,6 +2,7 @@
 description: How many leaves and how much depth a decision tree can have as a function of the number of attributes k and the number of training samples N, for binary attributes (2^k leaves, depth k) and for continuous attributes (N leaves, depth N-1), and why those sizes matter for overfitting, stopping, and pruning.
 aliases: [Maximum depth of a decision tree, Maximum number of leaves, Decision tree depth, Decision tree capacity, Tree size, Tree size bounds]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

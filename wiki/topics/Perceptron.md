@@ -7,6 +7,7 @@ sources:
   - "[[Block 3 Slides]]"
   - "Lecture 1"
   - "CSCI 566 Syllabus"
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

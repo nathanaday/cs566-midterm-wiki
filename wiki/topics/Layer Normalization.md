@@ -2,6 +2,7 @@
 description: A normalization layer that normalizes the features within one example or token, not one feature across a mini-batch as batch normalization does; it is the common choice in Transformers.
 aliases: [LayerNorm, Layer Norm, LN]
 sources: ["[[Block 7 Slides]]", "[[Block 5 Slides]]"]
+subject: 3 Training
 ---
 
 ## Definition

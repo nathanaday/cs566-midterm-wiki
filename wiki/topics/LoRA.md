@@ -2,6 +2,7 @@
 description: LoRA (low-rank adaptation) keeps a pretrained weight matrix W frozen and trains a low-rank update ΔW = BA, so the layer computes (W + BA)x.
 aliases: [Low-Rank Adaptation, LoRA Updates]
 sources: ["[[Block 3 Slides]]", "Sep 14 Lecture Account", "[[Block 7 Slides]]"]
+subject: 5 Transfer learning and fine-tuning
 ---
 
 ## Definition

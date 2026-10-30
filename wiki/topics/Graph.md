@@ -2,6 +2,7 @@
 description: A graph is data made of nodes and the edges between them, and it records which objects can exchange information. CSCI 566 covers directed, bipartite, and heterogeneous graphs, the choice of nodes, edges, and features, and the node, link, community, and graph levels of graph ML tasks.
 aliases: [Graphs, Network, Relational graph, Machine learning on graphs, Graph ML, Graph ML task levels, Graph machine learning task levels, Heterogeneous graph, Bipartite graph, Knowledge graph, Directed graph, Undirected graph, Link prediction, Node classification, Graph-level prediction, Graph representation, "Nodes, edges, and features", Node-level network structure, Graph notation]
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]"]
+subject: 7 Graphs
 ---
 
 ## Definition

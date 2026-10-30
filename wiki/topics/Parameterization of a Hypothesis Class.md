@@ -2,6 +2,7 @@
 description: A model is a family of functions indexed by its parameters, and the way the parameters enter the formula decides which functions the family contains and how hard they are to find; two formulas with different parameters can name the same set of functions, and a formula can name a strict subset of another.
 aliases: [Hypothesis class, Hypothesis space, Model family, Reparameterization, Over-parameterization, Reachable functions]
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[Block 3 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

@@ -14,6 +14,7 @@ sources:
   - "[[Block 1 Slides]]"
   - "[[Block 2 Slides]]"
   - "[[Block 7 Slides]]"
+subject: 3 Training
 ---
 
 ## Definition

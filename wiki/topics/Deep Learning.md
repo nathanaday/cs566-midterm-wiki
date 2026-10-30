@@ -9,6 +9,7 @@ sources:
   - "CSCI 566 Syllabus"
   - "CSCI 566 Reading List"
   - "Block 8 Slides"
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

@@ -2,6 +2,7 @@
 description: Transfer learning starts a model from representations learned on other (source) data instead of training from scratch; CSCI 566 sorts its methods by whether the source and target data have labels, and chooses how much of a pretrained network to train from the amount of target data and its similarity to the source.
 aliases: [transfer learning with CNNs, frozen backbone, frozen backbone with a new head, frozen features, pretrained feature extractor, feature extraction, Stage 1 transfer, layer transfer, transfer strategy by dataset size and similarity, feature generality across CNN layers]
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]", "Block 8 Slides"]
+subject: 5 Transfer learning and fine-tuning
 ---
 
 ## Definition

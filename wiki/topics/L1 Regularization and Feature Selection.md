@@ -2,6 +2,7 @@
 description: The L1 penalty (Lasso) drives some weights to exactly zero and so selects features, while the L2 penalty (Ridge) shrinks all weights toward zero without removing any.
 aliases: [Lasso, Ridge vs Lasso, L1 Penalty, Sparsity, Sparse Weights]
 sources: ["[[Block 1 Slides]]", "[[Block 2 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
+subject: 3 Training
 ---
 
 ## Definition

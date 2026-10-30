@@ -2,6 +2,7 @@
 description: Three ways a GNN departs from the basic mean-aggregation GCN, which the sample midterm tests and the decks only touch: edge direction in the update rule, attention weights on the neighbors (GAT), and an unsupervised graph autoencoder that reconstructs the adjacency.
 aliases: [Graph Attention Network, GAT, Graph Autoencoder, GAE, Directed Graphs in GNNs, Attention-Weighted Aggregation, Edge Direction in GNNs, Link Reconstruction]
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
+subject: 7 Graphs
 ---
 
 ## Definition

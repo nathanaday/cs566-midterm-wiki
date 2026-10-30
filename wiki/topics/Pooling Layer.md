@@ -2,6 +2,7 @@
 description: A CNN layer with no learned parameters that downsamples each activation map on its own, most often by max pooling, so the width and height shrink and the depth stays the same.
 aliases: [Pool Layer, Pooling, Max Pooling, Max Pool, Average Pooling, Mean Pooling, L2-norm Pooling, Global Average Pooling, GAP]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
+subject: 4 Convolutional networks
 ---
 
 ## Definition

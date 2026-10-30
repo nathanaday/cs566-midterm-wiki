@@ -2,6 +2,7 @@
 description: A sequence model built only from attention and feed-forward layers, with no recurrence or convolution; decoder-only variants such as GPT predict the next word, and encoder-only variants such as BERT are pretrained as masked language models.
 aliases: [Transformer, Decoder-only Transformer, GPT-style Transformer, Text-generating Transformer, Autoregressive Transformer, Transformer block, Transformer layer, Transformer LM, Encoder-only Transformer, Masked language model, Masked language modeling, MLM, MLM pretraining, BERT, BERT-Base, BERT-Large]
 sources: ["Attention Is All You Need (note)", "Topic Note - Transformers", "Topic Note - Sequence Transduction", "An Image is Worth 16x16 Words (note)", "Fall 2026 Reading List", "[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 6 Sequence models
 ---
 
 ## Definition

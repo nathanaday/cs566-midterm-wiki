@@ -2,6 +2,7 @@
 description: "The two properties a function on a graph needs because the nodes have no fixed order: an invariant function gives the same graph output for every node order, and an equivariant function reorders its node outputs with the nodes."
 aliases: [Permutation Invariance, Permutation Equivariance, Permutation-Invariant Function, Permutation-Equivariant Function, Permutation Invariant, Permutation Equivariant, Order Plan, Node Ordering, Graph Readout, Symmetric Readout, Node Renumbering, Whole-Graph Pooling, Shared Node MLP, Node Reordering, Node Permutation, Graph Relabeling, Graph Pooling]
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[F26-midterm-review-234p]]"]
+subject: 7 Graphs
 ---
 
 ## Definition

@@ -2,6 +2,7 @@
 description: Clustering is the unsupervised task of grouping unlabeled observations by their inputs alone; CSCI 566 covers the center-and-spread view of a cluster, the clusters that are hard to find, and how an LLM can replace most of the human feedback in semi-supervised clustering.
 aliases: [cluster analysis, unsupervised clustering, Unsupervised learning, Semi-supervised clustering, constrained clustering, LLM-guided few-shot clustering, few-shot clustering, LLMs for clustering, Keyphrase Clustering, LLM Correction, PCKMeans, Large language models enable few-shot clustering]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
+subject: 1 Foundations and classical machine learning
 ---
 
 ## Definition

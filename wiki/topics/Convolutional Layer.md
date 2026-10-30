@@ -2,6 +2,7 @@
 description: A CNN layer that slides a set of learned filters over an input volume, computes one dot product plus bias at each position, and stacks the resulting activation maps; its weights are shared across locations.
 aliases: [Convolution Layer, Conv Layer, CONV layer, Conv, Locally Connected Layer, Weight Sharing, Parameter Sharing, Shared Weights, Convolution Filter, Kernel, Activation Map, Feature Map, Stride, Zero Padding, Padding, Standard Dense 2D Convolution, Convolution Output Size, Counting Convolution Parameters]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
+subject: 4 Convolutional networks
 ---
 
 ## Definition

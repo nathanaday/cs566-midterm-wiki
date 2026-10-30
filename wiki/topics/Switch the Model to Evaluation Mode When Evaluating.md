@@ -2,6 +2,7 @@
 description: Before evaluation, validation, or inference, put the model in evaluation mode, so BatchNorm uses stored running statistics and dropout turns off its random mask.
 aliases: [Eval mode, Evaluation mode, Call model.eval() before inference, Mode is part of the function]
 sources: ["[[F26-midterm-review-234p]]", "[[Block 7 Slides]]", "[[Block 4 Slides]]"]
+subject: 3 Training
 ---
 
 ## Rule
