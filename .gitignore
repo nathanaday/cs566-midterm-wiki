@@ -10,3 +10,8 @@
 
 # Python
 __pycache__/
+
+# User specific
+TODO.md
+cheatsheet/
+
