@@ -7,48 +7,64 @@ subject: 4 Convolutional networks
 
 ## Definition
 
-A 1x1 convolution is a standard dense convolution with a 1x1 kernel ([[F26-midterm-review-234p]], pp. 70-71). "The 1×1 filter never reads neighboring positions; it only forms a learned combination of the channels stacked at one spot" (p. 71).
+A 1x1 convolution is a dense convolution with a 1x1 kernel. At each position it forms a learned linear combination of the input channels and never reads neighboring positions.
 
-## Explanation
+### Computation
 
-### Worked example
+**Output of filter $k$ at position $(i, j)$.**
 
-Take a 1x1 convolution with 2 input channels, 1 output channel, weights (1, 2), and bias −1. Here x1 and x2 are the channel entries at one position ([[F26-midterm-review-234p]], p. 71):
+$$
+y_k(i, j) = \sum_{c=1}^{C_{in}} w_{k,c} \, x_c(i, j) + b_k
+$$
 
-| Position | Channels (x1, x2) | Computation | Output |
-|---|---|---|---|
-| 1 | (2, 5) | 1×2 + 2×5 − 1 | 11 |
-| 2 | (4, 1) | 1×4 + 2×1 − 1 | 5 |
+The same weights apply at every position. Each output reads only its own position.
 
-The same weights apply at every position, and each output reads only its own position.
+**Quick check.** Weights $(1, 2)$, bias $-1$, channels $(2, 5)$ at one site:
+$1 \cdot 2 + 2 \cdot 5 - 1 = 11$.
 
-### Parameters
+### Shapes and Parameters
 
-Each 1x1 filter has one weight per input channel and one bias. With 3 input channels and 2 filters, a 1x1 kernel has 8 parameters, against 56 for a 3x3 kernel and 152 for a 5x5 kernel. The 1x1 kernel reads the "channels at one site" ([[F26-midterm-review-234p]], p. 70). See [[Convolutional Layer]] for the general count.
+**Shape.** $H \times W \times C_{in} \to H \times W \times C_{out}$ with stride 1 and padding 0. Spatial size is unchanged: $(H + 0 - 1)/1 + 1 = H$.
 
-### Shrinking channels first
+**Parameter count for $C_{out}$ filters of size $k \times k$.**
 
-An 8x8x64 feature map (H x W x C) passes through 16 filters of size 1x1x64, with stride 1 and padding 0. The output is 8x8x16: 64 features become 16 per site ([[F26-midterm-review-234p]], p. 72).
+$$
+\text{params} = C_{out} \,(k^2 C_{in} + 1)
+$$
 
-The review compares two paths from 64 to 32 channels, with biases included (p. 72):
-
-| Path to 32 channels | Parameters |
+| Kernel, 3 in, 2 out | Parameters |
 |---|---|
-| Direct 3x3: 64 → 32 | 18,464 |
-| 1x1: 64 → 16, then 3x3: 16 → 32 | 1,040 + 4,640 = 5,680 |
+| 1x1 | 8 |
+| 3x3 | 56 |
+| 5x5 | 152 |
 
-"Fewer parameters; the two paths can represent different functions" (p. 72).
+See [[Convolutional Layer]] for the general count.
 
-Synthesis: the 1x1 path uses about 31% of the parameters of the direct path (5,680 / 18,464). The 1x1 step keeps the 8x8 spatial size, because (8 + 0 − 1)/1 + 1 = 8.
+### Bottleneck: Shrink Channels First
+
+Example: 8x8x64 map through 16 filters of 1x1x64 gives 8x8x16.
+
+| Path from 64 to 32 channels | Parameters |
+|---|---|
+| Direct 3x3: 64 to 32 | 18,464 |
+| 1x1: 64 to 16, then 3x3: 16 to 32 | 1,040 + 4,640 = 5,680 |
+
+The bottleneck path uses about 31% of the parameters of the direct path.
+
+> [!warning] Exam trap
+> Fewer parameters does not mean the same function. The two paths can represent different functions.
+
+> [!tip]
+> A 1x1 convolution changes only the channel count. If a question asks for the output height or width, copy the input.
 
 ## Related
 
 - [[Convolutional Layer]]
-- Depthwise Separable Convolution: its pointwise step is a 1x1 convolution that mixes the channels
-- [[ResNet]]: its bottleneck block uses 1x1 convolutions to project down and back up
-- HyDRa: a 1x1 Channel-to-Height convolution for occupancy
+- Depthwise Separable Convolution: its pointwise step is a 1x1 convolution
+- [[ResNet]]: bottleneck blocks project down and back up with 1x1 convolutions
+- HyDRa: a 1x1 Channel-to-Height convolution
 - [[Convolutional Neural Networks (CNN)]]
 
 ## Sources
 
-- [[F26-midterm-review-234p]], pp. 70-72
+- [[F26-midterm-review-234p]]

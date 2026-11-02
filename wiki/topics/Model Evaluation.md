@@ -51,85 +51,110 @@ sources:
 subject: 1 Foundations and classical machine learning
 ---
 
-### Error
+## Definition
 
-A loss function $\ell: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}$ defines how bad a prediction $\hat{y}$ is compared to the true label $y$. Squared loss $(y - \hat{y})^2$ is for regression. Binary or 0-1 loss $\mathbb{1}(y \neq \hat{y})$ is for classification (p. 253). See [[Loss Functions]].
+Model evaluation measures how well a hypothesis $h$ predicts unseen data. The test error estimates the true error, which is the quantity we care about but cannot measure. Hyperparameters are chosen on validation data, and the test set is touched once, after every choice is final.
+
+### Error Rate
+
+A loss $\ell(y, \hat{y})$ scores a prediction: squared loss $(y - \hat{y})^2$ for regression, 0-1 loss $\mathbb{1}(y \neq \hat{y})$ for classification. See [[Loss Functions]].
+
+**Error rate on a dataset.**
 
 $$err(h, \mathcal{D}) = \frac{1}{N} \sum_{n=1}^{N} \mathbb{1}\left(y^{(n)} \neq \hat{y}^{(n)}\right)$$
 
-The test error rate compares the predictions on $D_{test}$ with their true labels (pp. 252–254).
+| Error | Measured on | Role |
+| --- | --- | --- |
+| $err(h, D_{train})$ | training data | fit; low value can hide [[Overfitting and Underfitting]] |
+| $err(h, D_{test})$ | held-out test data | estimate of true error |
+| $err_{true}(h)$ | all possible data | the target; unknown in practice |
 
-Three errors for a hypothesis $h$ (p. 255):
-
-- $error(h, D_{train})$: error rate over all training data
-- $error(h, D_{test})$: error rate over all test data
-- $error_{true}(h)$: true error over all data. "This is the quantity we care most about! But, in practice, error_true(h) is unknown."
-
-### Metrics
+### Metrics by Task
 
 | Task | Metrics |
 | --- | --- |
-| Regression | MSPE, MSAE, R², adjusted R² |
-| Classification | precision-recall, ROC-AUC, accuracy, log-loss |
-| Unsupervised models | Rand index, mutual information |
-| Others | CV error, heuristic methods to find K, BLEU score (NLP) |
+| Regression | MSPE, MSAE, $R^2$, adjusted $R^2$ |
+| Classification | accuracy, precision-recall, ROC-AUC, log-loss |
+| Object detection | mAP |
+| Unsupervised | Rand index, mutual information |
+| Other | CV error, BLEU (NLP), revenue, latency |
 
-- Loss measures how well the model predicts the outcome in supervised learning.
-- Other metrics are model specific (accuracy for classification, mAP for object detection) or business specific (revenue, inference latency).
-- We select models by several metrics, as we choose a car.
+Loss is the training signal; the other metrics are model specific or business specific.
 
-### Metrics for binary classification
+### Binary Classification Metrics
 
-| Metric    | Definition                                             | Formula               | Description                                                                           |
-| --------- | ------------------------------------------------------ | --------------------- | ------------------------------------------------------------------------------------- |
-| Accuracy  | "# correct predictions / # examples"                   | $\dfrac{TP + TN}{N}$  | `sum(y == y_hat) / y.size`                                                            |
-| Precision | "# True positive / # (True positive + False positive)" | $\dfrac{TP}{TP + FP}$ | when the model says yes, how often is it right? Its enemy is the false positive.      |
-| Recall    | "# True positive / # Positive examples"                | $\dfrac{TP}{TP + FN}$ | of the real positives, how many did the model catch? Its enemy is the false negative. |
-| F1        | "the harmonic mean of precision and recall"            | $\dfrac{2pr}{p + r}$  |                                                                                       |
+**Confusion matrix.** $N = TP + TN + FP + FN$.
 
-- A model that predicts positive for every example has recall 1 and precision equal to the base rate. 
-- A model that predicts positive only when it is certain has high precision and low recall. 
-- The harmonic mean punishes the imbalance: F1 is low when either $p$ or $r$ is low, where the arithmetic mean would hide it. 
-- Accuracy alone misleads on imbalanced data, since predicting the majority class for every example scores the base rate without finding any positive.
+| | Predicted positive | Predicted negative |
+| --- | --- | --- |
+| Actual positive | $TP$ | $FN$ |
+| Actual negative | $FP$ | $TN$ |
 
-### Hyperparameters
+**Accuracy.**
 
-A hyperparameter is a choice about the algorithm itself. Hyperparameters depend heavily on the problem and the dataset, so you must try them and see what works best.
-- Hyperparameters: "usually set beforehand".
-- Parameters: "learnable, e.g., model weights".
+$$\text{Accuracy} = \frac{TP + TN}{N}$$
+
+**Precision.** Enemy: the false positive.
+
+$$p = \frac{TP}{TP + FP}$$
+
+**Recall.** Enemy: the false negative.
+
+$$r = \frac{TP}{TP + FN}$$
+
+**F1 score.** Harmonic mean of precision and recall.
+
+$$F_1 = \frac{2pr}{p + r}$$
+
+| Model | Precision | Recall |
+| --- | --- | --- |
+| Predicts positive for everyone | base rate | 1 |
+| Predicts positive only when certain | high | low |
+
+> [!warning] Exam trap
+> Accuracy misleads on imbalanced data: the majority-class model scores the base rate while finding no positive. F1 is low when either $p$ or $r$ is low; the arithmetic mean would hide the gap.
+
+### Hyperparameters and Data Splits
+
+| | Set | Chosen by |
+| --- | --- | --- |
+| Hyperparameters | before training ($k$ in kNN, learning rate) | trying values and measuring |
+| Parameters | during training (weights) | the learning algorithm |
 
 | Idea | Method | Verdict |
 | --- | --- | --- |
-| #1 | Choose what works best on the training data | Bad: k = 1 always works perfectly on training data (pp. 166–167) |
-| #2 | Choose what works best on the test data | Bad: you then have no idea how the algorithm will perform on new data. "Never do this!" (pp. 168–169) |
-| #3 | Split data into train, validation, and test. Choose on validation, evaluate on test | "Better!" (p. 170, credit Stanford CS 229) |
-| #4 | Cross-validation: split data into folds, try each fold as validation, and average the results. The test set stays separate | Useful for small datasets, but not used often in deep learning (p. 171) |
+| 1 | Pick what works best on training data | Bad: $k = 1$ is perfect on training data |
+| 2 | Pick what works best on test data | Never: no estimate of performance on new data |
+| 3 | Train, validation, test split; pick on validation, report on test | Good |
+| 4 | Cross-validation: rotate folds as validation, average; test stays separate | Good for small data; rare in deep learning |
 
-### Cross-validation
+> [!warning] Exam trap
+> Any choice made with the test score, including when to stop training, turns the test error into a training signal. It then no longer estimates the true error. Pick on validation, test the final model once.
 
-Synthesis: test error estimates the true error, which matters most and which no one can measure directly. A low training error alone can hide [[Overfitting and Underfitting]]. If you tune on the test set, the test error no longer estimates the true error, which is why the validation split exists. For agents, a single test error is not enough; see What Counts as Solved.
+> [!tip]
+> Keep grouped or near-duplicate samples (photos of the same plant) in the same split, or the validation score is inflated.
 
 ## Related
 
-- [[Function Approximation]]: $c^*$ here plays the role of the $f^*$ that $f$ approximates
+- [[Function Approximation]]
 - Machine Learning Task Types
 - [[Loss Functions]]
 - [[Overfitting and Underfitting]]
 - Model Selection
-- Test Set Contamination: what happens when test items reach training
+- Test Set Contamination
 - [[Fit Preprocessing on Training Data Only]]
 - [[Early Stopping]]
-- [[Regularization]]: choose the penalty strength on validation data
-- [[Transfer Learning]]: the same evaluation rule for pretrained starts
-- [[Batch Normalization]]: different behavior in training and evaluation mode
-- Tree Ensembles: out-of-bag rows give free validation data
+- [[Regularization]]
+- [[Transfer Learning]]
+- [[Batch Normalization]]
+- Tree Ensembles
 - Flower Classifier Running Example
 - What Counts as Solved
 
 ## Sources
 
-- [[Block 1 Slides]], pp. 238–256
-- CSCI 566 Syllabus, schedule
-- [[Block 2 Slides]], pp. 136–138, 165–171, 174, 180
-- [[Block 7 Slides]], pp. 17, 34, 135, 173, 190, 315, 319, 326
-- [[F26-midterm-review-234p]], pp. 4–9, 21, 125, 139–140, 145
+- [[Block 1 Slides]]
+- CSCI 566 Syllabus
+- [[Block 2 Slides]]
+- [[Block 7 Slides]]
+- [[F26-midterm-review-234p]]

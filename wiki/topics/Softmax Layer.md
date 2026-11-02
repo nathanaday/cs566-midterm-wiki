@@ -7,20 +7,39 @@ subject: 2 Neural networks
 
 ## Definition
 
-The softmax layer maps the unnormalized output of a network (logits) to a probability distribution over the predicted output classes ([[Block 4 Slides]], p. 151; Lecture 3 Notes - Convolutional and Pooling Layers). For class $i$ of $K$ classes ([[Block 4 Slides]], p. 151):
+The softmax layer maps the raw class scores (logits) of a network to a probability distribution over the $K$ output classes. It is the last layer of a classification network, and its output feeds the cross-entropy loss, so the course also calls it the loss layer.
+
+### Formulas
+
+**Softmax.** For class $i$ of $K$, with logit vector $z$:
 
 $$\sigma(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}$$
 
-Here $z$ is the vector of raw class scores and $\sigma(z)_i$ is the probability of class $i$.
+**Cross-entropy loss.** With one-hot target $y$, prediction $p = \sigma(z)$, and true class $c$:
 
-## Explanation
+$$L = -\sum_{i=1}^{K} y_i \log p_i = -\log p_c$$
 
-- Softmax is implemented as a neural network layer just before the output layer. It must have the same number of nodes as the output layer ([[Block 4 Slides]], p. 150).
-- In [[AlexNet]], the softmax follows the last [[Fully Connected Layer|FC layer]] and gives a probability for each class. The class with the top score is the prediction (pp. 43-44).
-- The softmax layer is one of the four CNN layer types, with the convolutional, pool, and FC layers (p. 46).
-- It is nonlinear (p. 152; Lecture 3 Notes - Convolutional and Pooling Layers). The slides also call it the loss layer, with a reference to Lecture 1 ([[Block 4 Slides]], p. 152).
+**Combined gradient.** Softmax and cross-entropy together give a gradient with respect to the logits of
 
-Synthesis: softmax is the loss layer because its probabilities feed the cross-entropy loss. [[Loss Functions]] has a worked example: logits $(\ln 2, 0, 0)$ give probabilities $(0.5, 0.25, 0.25)$.
+$$\frac{\partial L}{\partial z} = p - y$$
+
+**Numerical stability.** Subtract the largest logit before exponentiating. The shift cancels in the ratio, so the probabilities do not change:
+
+$$\sigma(z)_i = \frac{e^{z_i - \max_j z_j}}{\sum_{j=1}^{K} e^{z_j - \max_j z_j}}$$
+
+### Facts to Recall
+
+- Outputs are positive and sum to one; the class with the top probability is the prediction.
+- The layer is nonlinear and has one node per class.
+- It is one of the four CNN layer types, with the convolutional, pooling, and [[Fully Connected Layer|FC]] layers.
+- In [[AlexNet]] the softmax follows the last FC layer.
+- Quick check from [[Loss Functions]]: logits $(\ln 2, 0, 0)$ give probabilities $(0.5, 0.25, 0.25)$.
+
+> [!warning] Exam trap
+> Softmax is a layer, not a loss. The loss is cross-entropy applied to its output; the course names the pair the loss layer.
+
+> [!tip]
+> Without the max shift, a large logit overflows $e^{z_i}$.
 
 ## Related
 
@@ -32,5 +51,5 @@ Synthesis: softmax is the loss layer because its probabilities feed the cross-en
 
 ## Sources
 
-- [[Block 4 Slides]], pp. 43-46, 150-152
-- Lecture 3 Notes - Convolutional and Pooling Layers, § Softmax Layer, § Layer Summary
+- [[Block 4 Slides]]
+- Lecture 3 Notes - Convolutional and Pooling Layers

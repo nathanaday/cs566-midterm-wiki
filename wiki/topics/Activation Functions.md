@@ -7,117 +7,78 @@ subject: 2 Neural networks
 
 ## Definition
 
-A layer computes $h = f(Wx + b)$. 
-- inputs $w_i x_i$ sum in the cell body
-- $f(\sum_i w_i x_i + b)$ is the output on the axon ([[Block 3 Slides]], p. 239).
+A layer computes $h = f(Wx + b)$, where $f$ is the activation function applied to each unit's weighted sum. Without $f$, stacked layers collapse into one linear map.
 
-## Explanation
+### Why a Network Needs One
 
-### Why a network needs one
-
-Without $f$, two layers collapse into one linear layer:
+**Collapse without non-linearity.**
 
 $$W_2(W_1 x + b_1) + b_2 = (W_2 W_1)x + (W_2 b_1 + b_2)$$
 
-So a stack of linear layers still draws only a linear boundary. Without non-linearity "the neural network would essentially become a linear regression model, incapable of handling complex data patterns"
+- $Y = H(G(F(X)))$ becomes $Y = (HGF)(X)$: one matrix multiplication, a linear boundary only. See [[Linear Separability]].
 
-$Y = H(G(F(X)))$ becomes $Y = (HGF)(X)$. 
-
-"Without nonlinear activation, multiple layers are reduced to one matrix multiplication" (p. 153). "Nonlinearity makes a neural network deeper and more expressive" (p. 154).
-
-### Common functions
-
+### Comparison Table
 
 ![[graph.png]]
 
+| Function | Formula | Derivative | Range | Main drawback |
+| --- | --- | --- | --- | --- |
+| Sigmoid | $\sigma(x) = \dfrac{1}{1 + e^{-x}}$ | $\sigma(x)(1 - \sigma(x))$, max 0.25 | $(0, 1)$ | saturates, not zero-centered, exp() |
+| tanh | $\tanh(x) = 2\sigma(2x) - 1$ | $1 - \tanh^2(x)$, max 1 | $(-1, 1)$ | saturates |
+| ReLU | $\max(0, x)$ | 1 if $x > 0$, 0 if $x < 0$ | $[0, \infty)$ | [[Dying ReLU]], not zero-centered |
+| Leaky ReLU | $\max(0.1x, x)$ | 1 if $x > 0$, 0.1 if $x < 0$ | $(-\infty, \infty)$ | gain over ReLU inconsistent |
+| PReLU | $\max(\alpha x, x)$, $\alpha$ learned | 1 if $x > 0$, $\alpha$ if $x < 0$ | $(-\infty, \infty)$ | one extra parameter |
+| ELU | $x$ if $x \geq 0$; $\alpha(e^x - 1)$ if $x < 0$ | 1 if $x > 0$; $\alpha e^x$ if $x < 0$ | $(-\alpha, \infty)$ | exp() |
+| Maxout | $\max(w_1^T x + b_1,\ w_2^T x + b_2)$ | from the larger piece | depends on weights | doubles the weights |
+| GELU | $x \cdot \Phi(x)$, Gaussian CDF weighting | smooth everywhere | $\approx (-0.17, \infty)$ | compute |
 
-![[a6c898f4-42b7-4f81-a3ff-b46cf0a50e3e_Frame+1000001937.png.avif]]
-
-
-| Function | Formula | Output range | Derivative |
-| --- | --- | --- | --- |
-| Sigmoid | $\sigma(x) = \dfrac{1}{1 + e^{-x}}$ | $(0, 1)$ | $\sigma(x)(1 - \sigma(x))$, at most 0.25 |
-| tanh | $\tanh(x)$ | $(-1, 1)$ | $1 - \tanh^2(x)$, at most 1 |
-| ReLU | $\max(0, x)$ | $[0, \infty)$ | 1 if $x > 0$, 0 if $x < 0$ |
-| Leaky ReLU | $\max(0.1x, x)$ | $(-\infty, \infty)$ | 0.1 if $x < 0$, 1 if $x > 0$ |
-| Maxout | $\max(w_1^T x + b_1,\ w_2^T x + b_2)$ | depends on the weights | from the larger piece |
-| ELU | $x$ if $x \geq 0$; $\alpha(e^x - 1)$ if $x < 0$ | $(-\alpha, \infty)$ | 1 if $x > 0$; $\alpha e^x$ if $x < 0$ |
+- ReLU is the Maxout special case $w_1 = 0$, $b_1 = 0$, so Maxout has no zero-gradient region.
+- ELU's negative saturation adds some robustness to noise over Leaky ReLU.
 
 ### Saturation
 
-A unit saturates when its input falls in a flat region of the activation, where the local derivative is near 0. "The local derivative tells us how much gradient passes through this gate" 
+A unit saturates when its input falls in a flat region of $f$: the local derivative is near 0 and little gradient passes backward. One cause of the [[Vanishing Gradient Problem]].
 
-| Input $x$ | Sigmoid output | Local derivative |
+| Input $x$ | $\sigma(x)$ | $\sigma'(x)$ |
 | --- | --- | --- |
-| −10 | ≈ 0.000045 | ≈ 0.000045 |
-| 0 | 0.50 | 0.25 |
-| 10 | ≈ 0.999955 | ≈ 0.000045 |
+| $-10$ | $\approx 0.000045$ | $\approx 0.000045$ |
+| $0$ | $0.50$ | $0.25$ |
+| $10$ | $\approx 0.999955$ | $\approx 0.000045$ |
 
-"Near saturation, very little gradient passes backward" (p. 48). "A saturated sigmoid passes a very small gradient, making upstream updates slow" (p. 49). 
+> [!warning] Exam trap
+> Each sigmoid layer multiplies the backward gradient by at most 0.25; tanh by at most 1. ReLU does not saturate for $x > 0$ but passes zero gradient for $x < 0$.
 
-Synthesis: saturation is one cause of the [[Vanishing Gradient Problem]]. The sigmoid derivative is at most 0.25, so each sigmoid layer multiplies the backward gradient by at most 0.25. [[Dying ReLU]] is a related failure: a ReLU unit whose inputs are all negative passes no gradient.
+### Sigmoid Is Not Zero-Centered
 
-### Sigmoid
+**Gradient on a weight.**
 
-- "squashes numbers to range (0,1)"
-- "similar to step functions, but differentiable"
-- Use it "in the output layer for binary classification tasks", when outputs must be probabilities
+$$\frac{\partial L}{\partial w_i} = \sigma(z)(1 - \sigma(z))\, x_i \cdot \frac{\partial L}{\partial h}, \quad z = \sum_i w_i x_i + b$$
 
-**Problems**
+- The local sigmoid gradient is always positive, so if every $x_i > 0$, all $\partial L / \partial w_i$ share the sign of the upstream gradient.
+- All weights move in the same direction and the path to the optimum zig-zags.
+- tanh is zero-centered but still saturates for large $|x|$.
 
-1. **Saturated neurons shrink the gradients.*
-2. **Outputs are not zero-centered.** If the input $x$ to a neuron is always positive, $\partial L / \partial w = \sigma(\sum_i w_i x_i + b)(1 - \sigma(\sum_i w_i x_i + b))\, x \times \text{upstream gradient}$. The local sigmoid gradient is always positive, so the sign of the gradient for all $w_i$ is the sign of the upstream gradient ([[Block 3 Slides]], pp. 251-255). All weights move in the same direction, and the path to the optimum zig-zags (p. 256).
-3. **"exp() is a bit compute expensive"** (p. 257).
+### ReLU in Practice
 
-### tanh
+- Does not saturate for $x > 0$; cheap; converges about 6x faster than sigmoid or tanh.
+- Good default for hidden layers; eases the vanishing gradient problem.
+- Sparse activation (many units output 0); see [[Activation Sparsity]].
+- Leaky ReLU keeps a small gradient for $x < 0$, so it is less prone to [[Dying ReLU]].
+- Pair with He scaling ([[Weight Initialization]]).
 
-- tanh "is similar but outputs values between -1 and 1, making it zero-centered and thus, in some cases, more efficient than sigmoid" 
-- $\tanh(x) = 2\sigma(2x) - 1$, its maximum gradient is 1, and it still saturates for large $|x|$.
+> [!tip]
+> Use ReLU. Watch the learning rate. Try Leaky ReLU, Maxout, or ELU for marginal gains. Do not default to sigmoid or tanh in hidden layers.
 
-### ReLU
+### Where Each Is Used
 
-- ReLU "outputs the input directly if positive, otherwise, it will output zero"
-- Use it "in most hidden layers, as it helps with the vanishing gradient problem and speeds up training. Good default choice for deep neural networks" (p. 77)
-- It "does not saturate (in +region)", is "very computationally efficient"
-- "Converges much faster than sigmoid/tanh in practice (e.g. 6x)" 
-- Its output is not zero-centered;  it still loses the gradient when $x < 0$ 
-- It "can suffer from 'dying ReLU' problem, where neurons can become inactive on all current training examples" 
-- "ReLU has no trainable parameters" Synthesis: PReLU, below, adds one, $\alpha$.
-
-Why ReLU still learns with no negative response:
-
-- **Sparse activation:** some neurons output 0. "Realizing a speedup from that sparsity requires kernels that exploit it; effects on regularization are empirical." See [[Activation Sparsity]].
-- **Non-saturation** for positive inputs, unlike sigmoid or tanh.
-- **Enhancement of positive features:** the learned weights can emphasize positive features.
-- **Collaboration in multilayer networks:** many layers of ReLU units together can abstract features that one unit cannot.
-
-### Leaky ReLU, PReLU, and ELU
-
-- **Leaky ReLU** allows "a small, non-zero gradient when the unit is not active", to combat dying ReLU (p. 78). It "performs about the same as ReLU in the cited experiments" and is "less prone to 'dying'" (p. 264). "The performance gain over ReLU can be inconsistent" (p. 78).
-- **PReLU**: $f(x) = \max(\alpha x, x)$, with backprop into the parameter $\alpha$ (p. 265).
-- **ELU**: non-saturating for $x > 0$, closer to zero-mean outputs, and a negative saturation regime that "adds some robustness to noise" compared with Leaky ReLU. Its computation requires exp() (p. 266).
-
-### Maxout
-
-- Maxout takes the larger of two linear functions of the input: $\max(w_1^T x + b_1,\ w_2^T x + b_2)$  
-- Synthesis: ReLU is the special case $w_1 = 0$, $b_1 = 0$, so Maxout does not have a zero-gradient region. The cost is a second set of weights for each unit.
-
-
-### GELU and transformers
-
-- BERT (Devlin et al., NAACL 2019) and GPT-3 (Brown et al., NeurIPS 2020) use GELU; GELU "is smooth everywhere and has a Gaussian CDF weighting of the input" 
-- GELU "has a soft threshold", so neurons "have a chance of recovering instead of being stuck at zero output" (p. 82). A 2024 paper argues for ReLU in LLMs again; see [[Activation Sparsity]].
-
-### Practice
-
-"Use ReLU. Be careful with your learning rates. Try out Leaky ReLU / Maxout / ELU to squeeze out some marginal gains. Don't default to sigmoid or tanh in hidden layers" ([[Block 3 Slides]], p. 267).
-
-| Layer | Common choice (p. 55) |
+| Layer | Common choice |
 | --- | --- |
-| CNN / MLP hidden layers | "ReLU-family activations are common starting points." |
-| Transformer hidden layers | "GELU or gated SiLU variants are common choices." |
-| Outputs and gates | "Sigmoid or tanh can still have specific roles." |
+| CNN / MLP hidden layers | ReLU family |
+| Transformer hidden layers | GELU or gated SiLU variants (BERT, GPT-3 use GELU) |
+| Binary classification output | sigmoid (outputs are probabilities) |
+| Gates (LSTM, GRU) | sigmoid or tanh |
 
+GELU's soft threshold lets a unit recover instead of sticking at zero output.
 
 ## Related
 
@@ -142,9 +103,9 @@ Why ReLU still learns with no negative response:
 
 ## Sources
 
-- [[Block 3 Slides]], pp. 65-66, 75-92, 232, 239-269
-- [[Block 4 Slides]], pp. 86, 153-165, 167, 174, 178. The recap figures are credited to Stanford CS231n.
-- CSCI 566 Syllabus, schedule, week 4
-- Sep 14 Lecture Account, § Vanishing gradients
-- [[Block 7 Slides]], pp. 42-55, 77-79
-- [[F26-midterm-review-234p]], pp. 41-44, 49-50, 91, 97-100
+- [[Block 3 Slides]]
+- [[Block 4 Slides]]
+- CSCI 566 Syllabus
+- Sep 14 Lecture Account
+- [[Block 7 Slides]]
+- [[F26-midterm-review-234p]]

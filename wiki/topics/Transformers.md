@@ -7,132 +7,126 @@ subject: 6 Sequence models
 
 ## Definition
 
-The Attention note says the Transformer is a sequence model built only from attention and feed-forward layers. It removes recurrence and convolution entirely (Attention Is All You Need (note)). The Transformers note dates it to about 2017. It says the model does not track hidden states the way RNNs and LSTMs do. At each step it looks over the whole sequence and finds associations between each step and the rest of the sequence (Topic Note - Transformers).
-
-Block 6 calls the Transformer one of the most popular architectures, with strong results on many sequence modeling tasks. It names self-attention as the key component ([[Block 6 Slides]], p. 115; [[Block 6 Slides Extended]], p. 122).
+A Transformer is a sequence model built from attention and position-wise feed-forward layers only, with no recurrence or convolution. Every position reads every allowed position in one matrix step, so training runs in parallel over the sequence instead of stepping through it like an [[Recurrent Neural Networks (RNN)]]. The decoder-only variant (GPT) predicts the next token under a Causal Mask; the encoder-only variant (BERT) uses no mask and is pretrained as a masked language model.
 
 ## Explanation
 
-### Mechanics
+### Scaled Dot-Product Attention
 
-- **Parallel training.** Scaled dot-product attention lets every position read every other position in one step, so training runs in parallel across the sequence instead of stepping through it (Attention Is All You Need (note)). Block 5 makes the same contrast. An RNN updates its state one step at a time (h1 -> h2 -> h3 -> h4), so each step waits for the previous state. A Transformer processes positions in parallel as batched matrix operations on a GPU ([[Block 5 Slides]], p. 151).
-- **Multi-head attention** is the same attention operation run in parallel on lower-dimensional projections. The note points to Section 3 of the paper and the Q/K/V matrix shapes as the part to study (Attention Is All You Need (note)).
-- **Shared parts.** Multi-head attention, positional encodings, and the residual plus layer-norm block are the parts that every model on the Fall 2026 Reading List reuses (Attention Is All You Need (note); Fall 2026 Reading List, item 1).
+Each input row $x_i \in \mathbb{R}^{d_{\text{model}}}$ (token vector plus position vector) is projected three ways with learned matrices: queries $Q = XW_Q$, keys $K = XW_K$, values $V = XW_V$.
 
-### Decoder-only text generation
+**Attention.**
+$$
+\operatorname{Attention}(Q, K, V) = \operatorname{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_k}}\right) V
+$$
 
-Block 5 builds a decoder-only, GPT-style Transformer that continues "The dog chased the ball. It ...". It cites Vaswani et al. (2017) and Radford et al. (2019) ([[Block 5 Slides]], pp. 129–150). The midterm review repeats slides 129–149 of this sequence as its pp. 175–194, and it labels each page with its Block 5 slide number ([[F26-midterm-review-234p]], pp. 175–194). The whole model is ([[Block 5 Slides]], p. 149; [[F26-midterm-review-234p]], p. 194):
+- Row $i$ of $QK^{\top}$ scores how well query $i$ matches every key. The softmax turns the row into weights that sum to one, and the output is the weighted sum of the values.
+- Why $\sqrt{d_k}$: if the entries of $q$ and $k$ have unit variance, their dot product has variance $d_k$. Large scores push the softmax into saturation, where gradients vanish. Dividing by $\sqrt{d_k}$ restores unit variance.
+- Self-attention: $Q$, $K$, $V$ all come from the same sequence. Cross-attention: $Q$ from the decoder, $K$ and $V$ from the encoder output.
 
-Tokens + position -> Transformer block x L -> Prediction head -> Next token
+**Shapes through one head**, for a sequence of $n$ tokens:
 
-The opening slide follows one path: token + position, then attention reads context, then the MLP processes features, then the prediction of the next token. Attention and the MLP repeat in several layers ([[Block 5 Slides]], p. 129; [[F26-midterm-review-234p]], p. 175). The deck names four pieces to remember: position tracks word order, attention mixes context, the MLP transforms each vector, and the prediction head scores the next token ([[Block 5 Slides]], p. 150).
+| Tensor | Shape | Note |
+| --- | --- | --- |
+| $X$ | $n \times d_{\text{model}}$ | input |
+| $W_Q, W_K$ | $d_{\text{model}} \times d_k$ | learned |
+| $W_V$ | $d_{\text{model}} \times d_v$ | learned |
+| $Q, K$ | $n \times d_k$ | |
+| $V$ | $n \times d_v$ | |
+| $QK^{\top}$ | $n \times n$ | one score per (query, key) pair |
+| softmax rows | $n \times n$ | each row sums to 1 |
+| head output | $n \times d_v$ | |
 
-The midterm review sums up two rules of the model. Weights are shared across positions within a layer, while different layers have distinct weights. In training, all target positions are known; in generation, each step sees only the generated prefix ([[F26-midterm-review-234p]], p. 174).
+**Multi-head attention.** Run $h$ heads in parallel on lower-dimensional projections, concatenate, and mix with $W_O$:
 
-**Token vectors.** Each token begins as a learned vector of feature values ([[Block 5 Slides]], p. 130; [[F26-midterm-review-234p]], p. 176). Multiplication of a one-hot vector by a weight matrix picks out one column of the matrix, and models put an embedding layer between the input and the hidden layer ([[Block 5 Slides]], p. 78). Token vectors alone do not give word order: "dog bites man" and "man bites dog" use the same words ([[Block 5 Slides]], p. 131; [[F26-midterm-review-234p]], p. 177). See Tokenization.
+$$
+\operatorname{MultiHead}(X) = \operatorname{Concat}(\text{head}_1, \ldots, \text{head}_h)\, W_O, \qquad \text{head}_i = \operatorname{Attention}(XW_Q^{(i)}, XW_K^{(i)}, XW_V^{(i)})
+$$
 
-**Position.** The model adds a position vector to each token vector, so the input keeps word order ([[Block 5 Slides]], p. 132; [[F26-midterm-review-234p]], p. 178). See Positional Encoding.
+With $d_k = d_v = d_{\text{model}}/h$, the concatenation is $n \times d_{\text{model}}$ and $W_O$ is $d_{\text{model}} \times d_{\text{model}}$, so $h$ heads cost about the same as one full-width head. The original paper uses $d_{\text{model}} = 512$, $h = 8$, $d_k = 64$.
 
-**Attention.** Attention reads context from other positions ([[Block 5 Slides]], p. 129). In a text generator, a Causal Mask limits each position to itself and earlier tokens ([[Block 5 Slides]], pp. 137–138; [[F26-midterm-review-234p]], pp. 183–184). Our reading: the phrase "every position reads every other position" holds for unmasked attention. In the decoder, each position reads only its allowed prefix.
+**Complexity.** Per layer, self-attention costs $O(n^2 d)$ time and $O(n^2)$ memory for the score matrix, with $O(1)$ sequential steps and a path of length 1 between any two positions. An RNN layer costs $O(n d^2)$ but takes $n$ sequential steps. The quadratic term dominates on long sequences; for ViT, patch size sets token count, and token count sets cost (Visual Token Count).
 
-Position, the causal mask, and the attention weights answer three separate questions: where a token is, which tokens are visible, and how much each token contributes ([[Block 5 Slides]], p. 139; [[F26-midterm-review-234p]], p. 185).
+> [!warning] Exam trap
+> Divide the scores by $\sqrt{d_k}$, not $d_k$, and $d_k$ is the per-head key width ($d_{\text{model}}/h$), not $d_{\text{model}}$.
 
-**Token MLP.** After attention gathers context, a position-wise MLP learns new combinations of the features: Linear, then a nonlinearity, then Linear ([[Block 5 Slides]], p. 141; [[F26-midterm-review-234p]], p. 187). It is a familiar feedforward network applied to one position, and its output is another feature vector for that token (same pages). The layer uses the same MLP weights at every position: "A shared MLP transforms each contextualized vector separately" ([[Block 5 Slides]], p. 142; [[F26-midterm-review-234p]], p. 188). "Attention gathers context; the MLP learns new feature combinations" ([[Block 5 Slides]], p. 141; [[F26-midterm-review-234p]], p. 187).
+### Positional Encoding
 
-**Transformer block.** One block maps input vectors through causal attention, then the token MLP, to output vectors. Attention exchanges information across positions, and the MLP transforms the features within each position ([[Block 5 Slides]], p. 143; [[F26-midterm-review-234p]], p. 189). That slide leaves out the residual connections and LayerNorm for clarity ([[F26-midterm-review-234p]], p. 189). The full block is causal multi-head attention, then "+ input -> LayerNorm", then the MLP at each position, then "+ input -> LayerNorm" ([[Block 5 Slides]], p. 149; [[F26-midterm-review-234p]], p. 194). The shortcuts ([[Residual Connections]]) and the normalization help train the stack (same pages).
+Attention is permutation invariant: "dog bites man" and "man bites dog" give the same bag of token vectors. The model adds a position vector to each token embedding before the first block.
 
-**Stacking.** A deeper model stacks L blocks. Later blocks work on features that earlier blocks already processed ([[Block 5 Slides]], p. 144). One attention layer can already read the whole allowed prefix; more blocks add learned processing steps at the cost of extra computation (p. 144). Each block has its own attention and MLP weights: same architecture, different weights, one jointly trained model ([[Block 5 Slides]], p. 145; [[F26-midterm-review-234p]], p. 190). "Depth counts blocks; generation length counts tokens" (same pages).
+**Sinusoidal encoding.**
+$$
+PE_{(pos,\, 2i)} = \sin\!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right), \qquad
+PE_{(pos,\, 2i+1)} = \cos\!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
+$$
 
-**Prediction head.** The prediction head turns the final transformed vector into scores for the next word ([[Block 5 Slides]], p. 146; [[F26-midterm-review-234p]], p. 191). Generation then follows Autoregressive Language Modeling.
+Learned position embeddings (GPT, BERT) work as well at fixed lengths. See Positional Encoding and Tokenization.
 
-**The Block 7 recall.** Block 7 calls the same model a "Transformer LM" ([[Block 7 Slides]], p. 241). Each layer has four sublayers: attention, a feed-forward neural network, layer normalization, and residual connections. "Each hidden vector looks back at the hidden vectors of the current and previous timesteps in the previous layer." "The language model part is just like an RNN-LM": at each position t, the figure shows a distribution p(w_t | h_t) over words (p. 241). See [[Recurrent Neural Networks (RNN)]] and [[Layer Normalization]].
+### Block Layout
 
-### Encoder-only Transformers and masked language modeling
+Every block has two sublayers, each wrapped as $\text{LayerNorm}(x + \text{Sublayer}(x))$ ([[Residual Connections]], [[Layer Normalization]]). The feed-forward sublayer is one MLP applied to each position separately with shared weights.
 
-Block 7 sets an encoder-only Transformer next to the decoder-only model ([[Block 7 Slides]], p. 242). Each layer has four sublayers: non-causal attention, a feed-forward neural network, layer normalization, and residual connections. Each hidden vector looks at the hidden vectors of all timesteps in the previous layer (p. 242).
+**Position-wise feed-forward.**
+$$
+\operatorname{FFN}(x) = \max(0,\, xW_1 + b_1)\, W_2 + b_2, \qquad W_1 : d_{\text{model}} \times d_{\text{ff}}, \quad d_{\text{ff}} = 4\, d_{\text{model}} \text{ (typical)}
+$$
 
-Synthesis: the two variants use the same layer. The difference is the mask. The decoder applies a Causal Mask, and the encoder applies none. So in the encoder, the phrase "every position reads every other position" holds.
+| Block | Sublayers in order | Mask |
+| --- | --- | --- |
+| Encoder | self-attention, add & norm, FFN, add & norm | none |
+| Decoder (encoder-decoder) | masked self-attention, add & norm, cross-attention, add & norm, FFN, add & norm | causal on self-attention |
+| Decoder-only (GPT) | masked self-attention, add & norm, FFN, add & norm | causal |
+| Encoder-only (BERT) | self-attention, add & norm, FFN, add & norm | none |
 
-**Masked language model (MLM) pretraining.** The encoder uses its distribution over words for MLM pretraining (p. 242). The slide gives the objective in two steps: "Rather than trying to predict the next word from the previous ones…" "…mask out a word (or a few words) and predict the missing words from the remaining ones" (p. 242). In the figure, the input is [CLS] [MASK] cat sat. The output at the masked position is p(w1 | h2), its target is "The", and the objective is J = log p(w1 | w2, w3) (p. 242).
+- Attention mixes information across positions; the FFN transforms features within one position.
+- Weights are shared across positions within a layer; each of the $L$ stacked layers has its own weights.
+- Full model: tokens + positions -> block x $L$ -> prediction head (linear to vocabulary, softmax) -> next token.
+- BERT and GPT-3 use GELU in the FFN instead of ReLU ([[Activation Functions]], [[Activation Sparsity]]).
 
-Open point: the slide does not define its indices. It calls the masked word w1 but reads it from h2, the second position after [CLS]. The context words w2 and w3 are probably "cat" and "sat", but the slide does not say so.
+> [!tip]
+> Depth counts blocks; generation length counts tokens. One attention layer already reads the whole allowed prefix; more blocks add processing steps, not reach.
 
-Synthesis: next-word prediction (Autoregressive Language Modeling) uses only the words to the left. MLM predicts a masked word from the words on both sides. That is why the encoder needs non-causal attention.
+### Masking in the Decoder
 
-**BERT.** "BERT popularized this encoder-only Transformer architecture and style of pretraining" ([[Block 7 Slides]], p. 242). BERT-Base has 110 million parameters, and BERT-Large has 340 million. A slide on the intrinsic dimension of fine-tuning (Aghajanyan et al., 2020) gives these numbers (p. 259). The deck uses BERT-Large as the pretrained model in its adapter results. The baseline fine-tunes only the top K layers of BERT-Large (pp. 246–248). See [[Adapters]] and [[Fine-Tuning]].
+The causal mask adds $-\infty$ to every score $s_{ij}$ with $j > i$ before the softmax, so those weights become exactly zero and position $i$ reads only itself and earlier positions. Position, mask, and attention weights answer three separate questions: where a token is, which tokens are visible, and how much each contributes.
 
-Open point: the text on pp. 246–248 names BERT-Large on all three pages. Only the plot on p. 246 has the label BERT_LARGE (GLUE). The plots on p. 247 (MNLI_m) and p. 248 (CoLA) have the label BERT_BASE.
+- Training: all target positions are known, so one pass scores every position at once (Teacher Forcing).
+- Generation: each step sees only the generated prefix (Autoregressive Language Modeling); a KV Cache reuses past keys and values.
+- Padding mask: the same trick hides padded positions in a batch, in encoder or decoder.
+- Graph view: unmasked self-attention is a complete graph over tokens with input-dependent edge weights; the causal mask makes the edges directional ([[Graph Neural Networks]]).
 
-Block 3 notes that BERT uses GELU; see Activation choice below.
+> [!warning] Exam trap
+> The causal mask is the only difference between the decoder-only and encoder-only layers. Masked language modeling (BERT) hides a token and predicts it from both sides, so it needs unmasked attention; next-token prediction (GPT) uses left context only. The MLM [MASK] token and the causal attention mask are different things.
 
-### Scaling training
+### Variants and Scale
 
-Parallel positions plus adjustable width and depth support large training runs ([[Block 5 Slides]], p. 151). Block 5 shows two ways to spread training over GPUs (p. 152):
-
-- **Data parallelism**, for more data. Copy the model to each GPU, split the examples into batches, and synchronize the gradients so every copy gets the same update. The method also applies to other architectures. The slide cites the PyTorch DDP tutorial.
-- **Model parallelism**, for a bigger model. Split large computations across GPUs as matrix shards, then combine the results. The slide cites Shoeybi et al. (2019), Megatron-LM.
-
-Both methods need communication between GPUs (p. 152).
-
-### Model sizes
-
-Block 7 recalls a comparison of some large language models (LLMs) ([[Block 7 Slides]], p. 254):
-
-| Model | Creators | Year | Training tokens | Parameters |
-| --- | --- | --- | --- | --- |
-| GPT-2 | OpenAI | 2019 | ~10 billion (40Gb) | 1.5 billion |
-| GPT-3 (cf. ChatGPT) | OpenAI | 2020 | 300 billion | 175 billion |
-| PaLM | Google | 2022 | 780 billion | 540 billion |
-| Chinchilla | DeepMind | 2022 | 1.4 trillion | 70 billion |
-| LaMDA (cf. Bard) | Google | 2022 | 1.56 trillion | 137 billion |
-| LLaMA | Meta | 2023 | 1.4 trillion | 65 billion |
-| LLaMA-2 | Meta | 2023 | 2 trillion | 70 billion |
-| GPT-4 | OpenAI | 2023 | ? | Not disclosed |
-| Gemini (Ultra) | Google | 2023 | ? | Not disclosed |
-| Llama 3.1 | Meta | 2024 | 15 trillion | 405 billion |
-
-Synthesis: size grows on two axes, parameters and training tokens. Chinchilla has 70 billion parameters, fewer than half of GPT-3's 175 billion. But it trains on about 4.7 times as many tokens (1.4 trillion against 300 billion). See Scaling Laws.
-
-### Self-attention as a graph
-
-Block 6 reads self-attention as a graph over tokens. The first version says every token attends to all other tokens through matrix calculation ([[Block 6 Slides]], p. 115). The extended version says each token attends to the allowed positions, and a causal mask excludes future tokens ([[Block 6 Slides Extended]], p. 122). Unmasked attention is a complete token graph. The causal mask makes the edges directional, so a query reads only its own and earlier positions ([[Block 6 Slides]], pp. 117–118; [[Block 6 Slides Extended]], pp. 124–125). The extended deck also compares the attention mask with a GNN neighborhood: both restrict information flow, but attention learns input-dependent mixing weights ([[Block 6 Slides Extended]], p. 121). See Attention and [[Graph Neural Networks]].
-
-### Sequence transduction
-
-The paper opens by contrasting itself with the dominant sequence transduction models, which use recurrent or convolutional networks with an encoder and a decoder (Topic Note - Sequence Transduction). A sequence transduction model converts one sequence into another; classification outputs one label instead. The encoder compresses the input into an internal representation, and the decoder generates the output one piece at a time (Topic Note - Sequence Transduction).
-
-### Images as tokens
-
-The ViT note says ViT cuts an image into fixed-size patches and treats each patch as a token, with no convolutions. With enough pre-training data it matches or beats CNNs (An Image is Worth 16x16 Words (note)). The reading list says VLMs, world models, and video models all inherit this tokenization (Fall 2026 Reading List, item 2).
-
-**Token count is cost.** Patch size sets token count, and token count sets cost and latency (An Image is Worth 16x16 Words (note)). See Visual Token Count.
-
-### Activation choice
-
-BERT (Devlin et al., NAACL 2019) and GPT-3 (Brown et al., NeurIPS 2020) use GELU, not ReLU. Neither runs an ablation against ReLU; the comparison is in the Hendrycks and Gimpel preprint ([[Block 3 Slides]], pp. 81–82). The slides say GELU is smooth everywhere, and that Transformers rely on stable gradient flow; smoothness is not shown to be the cause of the gains (p. 80). A paper in the same deck argues for bringing ReLU back into LLMs for activation sparsity (pp. 83–84); see [[Activation Sparsity]].
+- Encoder-only: BERT-Base 110M parameters, BERT-Large 340M; pretrained with MLM, then [[Fine-Tuning]] or [[Adapters]] ([[Transfer Learning]]).
+- Decoder-only: GPT-2 1.5B parameters on about 10B tokens; GPT-3 175B on 300B; Chinchilla 70B on 1.4T; Llama 3.1 405B on 15T. Size grows on two axes, parameters and tokens (Scaling Laws).
+- Vision: ViT cuts an image into fixed-size patches and treats each as a token, with no convolutions ([[Convolutional Neural Networks (CNN)]]); VLMs, world models, and video models inherit this tokenization.
+- Training at scale: data parallelism copies the model to each GPU and syncs gradients; model parallelism shards large matrices across GPUs. Both need communication between GPUs.
 
 ## Related
 
 - Attention
-- Causal Mask: the one difference between the decoder-only and encoder-only layers
+- Causal Mask: decoder-only vs encoder-only layers
 - Positional Encoding
-- Autoregressive Language Modeling: the decoder's objective; MLM is the encoder's alternative
-- Teacher Forcing: training scores all positions in one pass
+- Autoregressive Language Modeling: the decoder's objective; MLM is the encoder's
+- Teacher Forcing
 - Tokenization
 - [[Recurrent Neural Networks (RNN)]]
 - [[Convolutional Neural Networks (CNN)]]
 - [[Graph Neural Networks]]
 - Vision Language Models (VLM)
 - Visual Token Count
-- KV Cache: reuse of attention keys and values during decoding
+- KV Cache
 - [[Residual Connections]]
 - [[Layer Normalization]]
 - [[Activation Functions]]
 - [[Activation Sparsity]]
-- Scaling Laws: model size against training tokens
+- Scaling Laws
 - [[Transfer Learning]]
 - [[Fine-Tuning]]
-- [[Adapters]]: Block 7 tests adapters on BERT
+- [[Adapters]]
 - LLMs and Graphs
 
 ## Sources
@@ -141,10 +135,10 @@ BERT (Devlin et al., NAACL 2019) and GPT-3 (Brown et al., NeurIPS 2020) use GELU
 - Topic Note - Transformers
 - Topic Note - Sequence Transduction
 - An Image is Worth 16x16 Words (note)
-- Fall 2026 Reading List, items 1–2
-- [[Block 3 Slides]], pp. 80–84
-- [[Block 5 Slides]], pp. 78, 129–152
-- [[Block 6 Slides]], pp. 115–118
-- [[Block 6 Slides Extended]], pp. 121–125
-- [[Block 7 Slides]], pp. 241–242, 246–248, 254, 259
-- [[F26-midterm-review-234p]], pp. 174–194: the midterm recap of the Block 5 text-generating Transformer
+- Fall 2026 Reading List
+- [[Block 3 Slides]]
+- [[Block 5 Slides]]
+- [[Block 6 Slides]]
+- [[Block 6 Slides Extended]]
+- [[Block 7 Slides]]
+- [[F26-midterm-review-234p]]

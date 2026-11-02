@@ -12,50 +12,54 @@ subject: 3 Training
 
 ## Definition
 
-The exploding gradient problem occurs when the gradient becomes too large. "If the gradient becomes too big, then the SGD update step becomes too big", with $\theta^{new} = \theta^{old} - \alpha \nabla_\theta J(\theta)$ ([[Block 3 Slides]], p. 234). The effects (p. 234):
+The exploding gradient problem occurs when the gradient grows so large that one [[Gradient Descent]] step overshoots to a high-loss configuration or fills the network with `Inf` or `NaN`. It is the mirror image of the [[Vanishing Gradient Problem]]: the backward pass multiplies factors layer by layer, and when most factors exceed 1 the product grows exponentially with depth.
 
-1. The step reaches "a bad parameter configuration (with large loss)". This is a bad update.
-2. In the worst case, values in the network become `Inf` or `NaN`.
-3. Then you must restart training from an earlier checkpoint.
+### Cause
 
-The slides' summary: gradients "can become excessively large, leading to divergent behavior" (p. 269). The week 1 deck lists "Exploding gradient" as one of three issues with gradient descent, with local minima and inexact gradient ([[Block 1 Slides]], p. 338).
+**Update rule.** The step is the learning rate times the gradient, so a huge gradient acts like a huge learning rate.
 
-## Explanation
+$$\theta^{new} = \theta^{old} - \alpha \nabla_\theta J(\theta)$$
 
-### Why a large gradient gives a large step
+Example with $\alpha = 0.01$: $dW = 0.5$ gives a step of $0.005$; $dW = 5000$ gives a step of $50$, far past any nearby minimum.
 
-The update rule is $W \leftarrow W - \eta \cdot dW$ ([[Block 1 Slides]], p. 336; see [[Gradient Descent]]). The step is the learning rate times the gradient, so a large $dW$ has the same effect as a large $\eta$. The slides say a large learning rate can "overshoot or diverge" (p. 336).
-
-Example (general background), with $\eta = 0.01$:
-
-- $dW = 0.5$ gives a step of 0.005.
-- $dW =$ 5,000 gives a step of 50. The weight moves far past any nearby minimum.
-
-### In recurrent networks
-
-A vanilla RNN multiplies by the same $W_{hh}$ once for each time step on the way back. With no non-linearity, the gradient from the last loss is ([[Block 5 Slides]], pp. 102–103):
+**RNN case.** A vanilla RNN multiplies by the same $W_{hh}$ once per time step on the way back. With no non-linearity, the gradient from the last loss is
 
 $$\frac{\partial L_T}{\partial W} = \frac{\partial L_T}{\partial h_T} W_{hh}^{T-1} \frac{\partial h_1}{\partial W}$$
 
-When the largest singular value of $W_{hh}$ is greater than 1, gradients can explode (p. 103). The slides' fix is gradient clipping (p. 104). They cite Bengio et al. (1994) and Pascanu et al. (ICML 2013) (pp. 94–105). See [[Recurrent Neural Networks (RNN)]] and Backpropagation Through Time.
+Largest singular value of $W_{hh}$ above 1 gives explosion; below 1 gives vanishing. See [[Recurrent Neural Networks (RNN)]].
 
-### Gradient clipping
+### Symptoms
 
-The slides give gradient clipping as the "solution for exploding gradient" (pp. 235–237). If $\lVert g \rVert$ is at or above a threshold, rescale $g$ to the threshold. "Take a step in the same direction, but a smaller step" (p. 235, citing Pascanu et al. 2013). "Clipping limits the damage of one step. Finding the cause is a separate job" (p. 237). [[Block 5 Slides]] gives the same rule for RNNs: $n = \lVert g \rVert_2$; if $n > \tau$, $g \leftarrow (\tau / n)\, g$ (p. 104). See [[Gradient Clipping]].
+- One update jumps to a bad parameter configuration with large loss.
+- Loss diverges instead of decreasing.
+- Values become `Inf` or `NaN`; any arithmetic with `NaN` yields `NaN`, so it spreads through the whole network.
+- Training cannot recover on its own; restart from an earlier checkpoint.
 
-### Cause and other fixes
+> [!warning] Exam trap
+> One bad update can undo many good ones. The answer to a `NaN` run is restore a checkpoint, not keep training.
 
-General background, not from a course source:
+### Gradient Clipping
 
-- **Cause:** the opposite of the [[Vanishing Gradient Problem]]. The backward pass multiplies factors layer by layer (Computational Graphs). If most factors are above 1, the gradient grows exponentially with depth. The RNN case above is one example.
-- A smaller learning rate, careful weight initialization, and [[Batch Normalization]] also help.
-- **Checkpoints:** save the weights and the optimizer state at regular steps. A run that reaches `NaN` can then restart from the last good copy.
+The main fix (Pascanu et al. 2013). Keep the direction, shrink the step. See [[Gradient Clipping]].
 
-The slides' triage list says to skip a batch, restore a checkpoint, or check the data and the learning rate ([[Block 3 Slides]], p. 237).
+**Clipping rule.** With $n = \lVert g \rVert_2$ and threshold $\tau$:
 
-### Why it matters
+$$g \leftarrow \frac{\tau}{n}\, g \quad \text{if } n > \tau$$
 
-Synthesis: one bad update can undo many good ones. Any calculation with `NaN` gives `NaN`, so the value spreads through the network and training cannot recover by itself. That is why the lecture (Sep 14 Lecture Account, § Exploding gradients) and the slides (p. 234) say to restart from a checkpoint.
+> [!tip]
+> Clipping limits the damage of one step. Finding the cause is a separate job.
+
+### Remedies
+
+| Remedy | What it does |
+| --- | --- |
+| [[Gradient Clipping]] | Caps the step norm at $\tau$ |
+| Smaller learning rate | Scales every step down |
+| Careful weight initialization | Keeps factors near 1 |
+| [[Batch Normalization]] | Keeps activations in range |
+| Checkpoints | Restore weights and optimizer state after `NaN` |
+| Skip the batch | Drops one bad update |
+| Check data and learning rate | Finds the cause |
 
 ## Related
 
@@ -70,8 +74,7 @@ Synthesis: one bad update can undo many good ones. Any calculation with `NaN` gi
 
 ## Sources
 
-- [[Block 3 Slides]], pp. 234–237, 269
-- [[Block 5 Slides]], pp. 102–104, citing Bengio et al. (1994) and Pascanu et al. (2013)
-- [[Block 1 Slides]], p. 336 (learning rate) and p. 338 (issues with gradient descent)
-- Sep 14 Lecture Account, § Exploding gradients
-- The step-size example, the general cause, and the checkpoint details: general background, not from a course source
+- [[Block 3 Slides]]
+- [[Block 5 Slides]]
+- [[Block 1 Slides]]
+- Sep 14 Lecture Account

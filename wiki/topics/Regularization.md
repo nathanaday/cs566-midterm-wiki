@@ -28,139 +28,85 @@ subject: 3 Training
 
 ## Definition
 
-Regularization adds a penalty to the loss so the model does not fit the training data too well ([[Block 1 Slides]], pp. 293–296):
+Regularization keeps a model from fitting the training data too well. Two families: add a penalty $\lambda R(W)$ to the data loss, or add randomness during training that evaluation removes. $\lambda$ is a hyperparameter; pick it on validation data, since the training loss always prefers $\lambda = 0$.
+
+**Regularized loss.**
 
 $$L(W) = \frac{1}{N} \sum_{i=1}^{N} L_i(f(x_i, W), y_i) + \lambda R(W)$$
 
-- Regularization, "preferring a simple model": "Prevent the model from doing too well on training data."
-- $\lambda$ is the regularization strength, a hyperparameter. "Regularization strength is a hyperparameter, so validation data decides whether it helps generalization" ([[F26-midterm-review-234p]], p. 112).
-
-The gradient of this loss is the average gradient of the data loss plus $\lambda \nabla_W R(W)$ ([[F26-midterm-review-234p]], p. 108, a copy of Block 7 slide 88):
+**Gradient.**
 
 $$\nabla_W L(W) = \frac{1}{N} \sum_{i=1}^{N} \nabla_W L_i(x_i, y_i, W) + \lambda \nabla_W R(W)$$
 
-Block 7 states the purpose in one line: "The training loss rewards fitting labels. A penalty also constrains the weights." Objective = data loss + λ × weight penalty. "λ controls the tradeoff. Choose it using validation data" ([[Block 7 Slides]], p. 138). [[F26-midterm-review-234p]] repeats this slide (p. 125).
+### Weight Penalties
 
-A second family of regularizers adds randomness during training and uses the full model at test time. [[Dropout]] is the main example. See [Training randomness, full model at test](#Training randomness, full model at test).
-
-## Explanation
-
-
-### Common regularizers
-
-| Name                  | $R(W)$                                                  | $\frac{d}{dW} (\lambda \cdot R(W))$ |
-| --------------------- | ------------------------------------------------------- | ----------------------------------- |
-| L2                    | $\sum_k \sum_l W_{k,l}^2$                               | $2 \cdot \lambda W$                 |
-| L1                    | $\sum_k \sum_l \lvert W_{k,l} \rvert$                   | $\lambda \cdot sign(W)$             |
-| Elastic net (L1 + L2) | $\sum_k \sum_l \beta W_{k,l}^2 + \lvert W_{k,l} \rvert$ |                                     |
-|                       |                                                         |                                     |
-
-**L2**
-- Spread the weights evenly, shrink weights by a fraction and never quite land on zero
-
-**L1**
-- Indifferent between spreading vs. concentrating; if the loss function cannot overcome $\lambda$ the weights stay at 0
-- "Feature Selection"; does not just shrink features, it deletes them
-
-
-
-Source: [[Block 1 Slides]], p. 296. Block 7 gives the same three forms "in common use" and labels L2 "(Weight decay)". It adds $\lambda R(W)$ to the multiclass SVM loss $L = \frac{1}{N} \sum_{i=1}^{N} \sum_{j \neq y_i} \max(0, f(x_i; W)_j - f(x_i; W)_{y_i} + 1)$ ([[Block 7 Slides]], p. 139). It also states: "L2 penalty = sum of squared weights" (p. 138). [[F26-midterm-review-234p]] repeats both slides (pp. 125-126). The slides list more complex methods to revisit later: dropout, [[Batch Normalization|batch normalization]], stochastic depth, and fractional pooling ([[Block 1 Slides]], p. 297). Block 7 covers them below.
-
-### L2 example: equal data loss, different norms
-
-The midterm review adds a worked example: "With equal data loss, the L2 penalty separates two weight vectors by their squared norms" ([[F26-midterm-review-234p]], p. 127). The objective is $J(w) = \text{data loss} + \lambda \sum_i w_i^2$ with $\lambda = 0.2$ (p. 127):
-
-| Weights | Data loss | Squared norm | $J(w)$ |
+| Name | $R(W)$ | $\nabla_W(\lambda R)$ | Effect on weights |
 | --- | --- | --- | --- |
-| A = (3, 0) | 0.4 | 9 | 0.4 + 0.2 × 9 = 2.2 |
-| B = (2, 1) | 0.4 | 5 | 0.4 + 0.2 × 5 = 1.4 |
+| L2 (weight decay, ridge) | $\sum_{k,l} W_{k,l}^2$ | $2\lambda W$ | Shrinks all by a fraction; spreads weight evenly; never exactly zero |
+| L1 (lasso) | $\sum_{k,l} \lvert W_{k,l} \rvert$ | $\lambda\, \mathrm{sign}(W)$ | Constant pull to zero; weights the data loss cannot overcome stay at zero; sparse |
+| Elastic net | $\sum_{k,l} \beta W_{k,l}^2 + \lvert W_{k,l} \rvert$ | $2\lambda\beta W + \lambda\, \mathrm{sign}(W)$ | Both |
 
-The slide adds: "Read lambda and any factor of one half from the definition; validation judges generalization" (p. 127).
+**Ridge and lasso in least squares.** When $A^T A$ is not invertible the penalty picks one solution among many, biased toward small $\beta$:
 
-Synthesis: the L2 objective prefers B, which spreads the weight over both entries. An L1 penalty would not separate these two vectors: |3| + |0| = 3 and |2| + |1| = 3.
+$$\hat{\beta}_{\text{ridge}} = \arg\min_\beta \sum_{i=1}^{n} (Y_i - X_i\beta)^2 + \lambda \lVert \beta \rVert_2^2$$
 
-### L1 vs. L2
+$$\hat{\beta}_{\text{lasso}} = \arg\min_\beta \sum_{i=1}^{n} (Y_i - X_i\beta)^2 + \lambda \lVert \beta \rVert_1$$
 
-Credited to CMU 10701 ([[Block 1 Slides]], p. 298). Solve $\min_\beta (A\beta - Y)^T (A\beta - Y) + \lambda\, \text{pen}(\beta)$:
+- Constant L2 norm is a circle; constant L1 norm is a diamond, so lasso lands on corners and zeroes coordinates. See [[L1 Regularization and Feature Selection]].
+- An L0 penalty would be ideal but is non-convex.
+- Ridge (Tikhonov) equals weight decay under plain SGD, not under the decoupled form in AdamW.
+- Why regularize: express preferences over weights, keep the model simple for test data, add curvature for [[Optimization]].
+- On a [[Neural Networks|neural network]], sum the penalty over every weight matrix. Larger $\lambda$ gives a smoother decision boundary.
 
-- Ridge regression: $\text{pen}(\beta) = \lVert \beta \rVert_2^2$. The set of $\beta$ with constant L2 norm is a circle.
-- Lasso: $\text{pen}(\beta) = \lVert \beta \rVert_1$. The set with constant L1 norm is a diamond. "Lasso (l1 penalty) results in sparse solutions – vector with more zero coordinates." The slide adds that this is good for high-dimensional problems and gives an interpretable solution.
-- An L0 penalty would be ideal, but the optimization becomes non-convex.
+**L2 example** ($\lambda = 0.2$, both vectors have data loss 0.4):
 
-### Linear models: when $A^T A$ is not invertible
+- $A = (3, 0)$: $J = 0.4 + 0.2 \cdot 9 = 2.2$
+- $B = (2, 1)$: $J = 0.4 + 0.2 \cdot 5 = 1.4$, so L2 prefers the spread-out $B$
+- L1 ties them: $3 + 0 = 2 + 1 = 3$
 
-Credited to CMU 10601 ([[Block 2 Slides]], p. 100). The least-squares solution in [[Optimization]] needs $A^T A$ to be invertible. If it is not, the system has $r$ equations and $p$ unknowns and is underdetermined. It has many feasible solutions, so the solution must be constrained further. One constraint biases the solution toward small values of $\beta$, so that small changes in input do not give large changes in output. The two penalized estimates are:
+> [!warning] Exam trap
+> L1 deletes weights; L2 only shrinks them. Read $\lambda$ and any factor of $\frac{1}{2}$ from the definition: $\frac{1}{2}\lambda \lVert W \rVert^2$ has gradient $\lambda W$, not $2\lambda W$.
 
-$$\hat{\beta}_{MAP} = \arg\min_\beta \sum_{i=1}^{n} (Y_i - X_i\beta)^2 + \lambda \lVert \beta \rVert_2^2 \quad \text{(ridge regression, L2 penalty)}$$
+### Training Randomness, Full Model at Test
 
-$$\hat{\beta}_{MAP} = \arg\min_\beta \sum_{i=1}^{n} (Y_i - X_i\beta)^2 + \lambda \lVert \beta \rVert_1 \quad \text{(lasso, L1 penalty)}$$
+Training adds randomness or removes part of the model or input; testing uses the full model or input. The network cannot depend on one unit, connection, layer, or image region.
 
-A note on naming: the L2 penalty is called ridge in least squares and is a special case of Tikhonov regularization. It matches weight decay under plain SGD, but not under the decoupled form in AdamW ([[Block 2 Slides]], p. 100).
+| Method | Training | Testing |
+| --- | --- | --- |
+| [[Dropout]] | Zero random hidden activations | Full network, scaled |
+| [[Batch Normalization]] | Normalize with batch statistics | Running statistics |
+| [[Data Augmentation]] | Random transforms of the input | Fixed transform or averaging protocol |
+| DropConnect | Zero random weights (connections) | All connections |
+| Stochastic depth | Skip random [[Residual Connections|residual blocks]]; the shortcut carries the signal | All layers |
+| Cutout | Zero random image regions | Full image |
+| Mixup | Train on random blends of image pairs; blend the labels the same way | Original images |
+| Fractional max pooling | Named in the course list only | |
 
-### Why regularize
+- [[Dropout]] masks a unit's output, so all its outgoing connections go at once; DropConnect masks single connections.
+- Cutout suits small datasets like CIFAR, less so ImageNet.
+- Mixup: 40% cat plus 60% dog gives the target cat 0.4, dog 0.6.
 
-Also credited to CMU 10701 ([[Block 1 Slides]], p. 299):
+### Train vs. Eval Mode
 
-- Express preferences over weights.
-- Make the model simple so it works on test data.
-- Improve optimization by adding curvature.
+Each method has its own evaluation rule (the Testing column above). Decide the evaluation protocol before comparing models, or a score difference can come from the protocol instead of the models. See [[Switch the Model to Evaluation Mode When Evaluating]].
 
-### On a neural network
+> [!warning] Exam trap
+> A model left in train mode at evaluation still drops units and uses batch statistics, so its validation score is wrong even though the weights are right.
 
-[[Block 3 Slides]] shows the same formula on a neural network with $\lambda \in \{0.001, 0.01, 0.1\}$, under the title "Larger Model Capacity May Overfit – Need to Regularize them". A larger $\lambda$ gives a smoother decision boundary ([[Block 3 Slides]], p. 96). The next slides add the penalty for each weight matrix to a network's total loss ([[Block 3 Slides]], p. 102). See [[Neural Networks]]. Regularization is also a hyperparameter choice in Model Selection for neural networks ([[Block 2 Slides]], p. 94).
+### Diagnose, Then Choose
 
-### Training randomness, full model at test
+Check the gap between training and validation performance before picking a regularizer, then compare one controlled change at a time. See [[Overfitting and Underfitting]].
 
-Block 7 shows a common pattern. Training adds randomness or removes part of the model or the input. Testing uses the full model or the full input. Each slide adds one method to a growing list of examples: Dropout, Batch Normalization, Data Augmentation, DropConnect, Fractional Max Pooling, Stochastic Depth, Cutout / Random Crop, and Mixup ([[Block 7 Slides]], pp. 166–169).
-
-| Method | Training | Testing | Source |
-| --- | --- | --- | --- |
-| [[Dropout]] | Set some hidden activations to zero at random. | Turn off the mask; apply the chosen scaling convention. | pp. 140–153, 165 |
-| DropConnect | "Drop connections between neurons (set weights to 0)". | "Use all the connections". | p. 166; Wan et al., "Regularization of Neural Networks using DropConnect", ICML 2013 |
-| Stochastic depth | "Skip some layers in the network". | Use all the layers. | p. 167; Huang et al., "Deep Networks with Stochastic Depth", ECCV 2016 |
-| Cutout | "Set random image regions to zero". | "Use full image". | p. 168; DeVries and Taylor, "Improved Regularization of Convolutional Neural Networks with Cutout", arXiv 2017 |
-| Mixup | "Train on random blends of images". | "Use original images". | p. 169; Zhang et al., "mixup: Beyond Empirical Risk Minimization", ICLR 2018 |
-
-Notes on the methods:
-
-- **DropConnect** zeroes weights, not activations. Synthesis: dropout masks a unit's output, so it removes all of the unit's outgoing connections at once. DropConnect masks single connections (p. 166).
-- **Stochastic depth.** The figure shows a stack of residual blocks. In training, some blocks are grayed out, and the identity shortcut carries the signal past them (p. 167). See [[Residual Connections]] and [[ResNet]]. The slide's printed text is "Use all the layer"; this topic reads it as "all the layers".
-- **Cutout** "works very well for small datasets like CIFAR, less common for large datasets like ImageNet" (p. 168). The slide pairs it with random crop in the list: "Cutout / Random Crop". Random crops are covered in [[Data Augmentation]].
-- **Mixup** blends the pixels of pairs of training images at random, for example 40% cat and 60% dog. The target label is blended in the same way: cat: 0.4, dog: 0.6 (p. 169). The slide also shows a U-shaped curve on [0, 1] with no label or caption. The slides do not say what it plots.
-- **Fractional Max Pooling** appears in the example list from p. 167 onward, but Block 7 has no slide that explains it. [[Block 1 Slides]], p. 297, also names "fractional pooling" only in a list.
-- [[Batch Normalization]] and [[Data Augmentation]] are in the same list. Their own topics explain them.
-
-### Each method has its own evaluation rule
-
-A course schematic states: "Each method has its own evaluation rule" ([[Block 7 Slides]], p. 165):
-
-| Method | Evaluation rule |
+| Symptom | Remedy |
 | --- | --- |
-| Dropout | "Turn off the random mask; apply the chosen scaling convention." |
-| BatchNorm | "Use stored training statistics in the usual running-statistics mode." |
-| Augmentation | "Use a fixed evaluation transform, or a predefined averaging protocol." |
-
-The slide ends with a rule: "Decide the evaluation protocol before comparing models" (p. 165). Synthesis: if two models use different evaluation rules, a difference in their scores can come from the protocol and not from the models. See [[Switch the Model to Evaluation Mode When Evaluating]].
-
-### Diagnose, then choose
-
-Block 7 tells the reader to "return to the gap between training and validation performance" before choosing a regularizer ([[Block 7 Slides]], p. 170):
-
-| Option | When to use it |
-| --- | --- |
-| More or better data | "Improve coverage and inspect labels or duplicates." |
-| Augmentation / weight decay | "Test task-appropriate transformations and constraints." |
-| Dropout / early stopping | "Use when they fit the architecture and validation protocol." |
-
-"Compare one controlled change at a time" (p. 170). See [[Overfitting and Underfitting]], [[Data Augmentation]], and [[Early Stopping]].
-
-### Why it matters
-
-Regularization is the main tool in this lecture against [[Overfitting and Underfitting]]. Synthesis: a penalty puts Ockham's razor into the objective that [[Optimization]] minimizes. For linear least squares it also picks one answer when the normal equation has many. The training-randomness methods reach a similar goal without a penalty term: the network cannot depend on one unit, connection, layer, or image region.
+| Train good, validation poor; data is the limit | More or better data: improve coverage, inspect labels and duplicates |
+| Train good, validation poor; data fixed | [[Data Augmentation]] or weight decay: task-appropriate transforms and constraints |
+| Train good, validation poor; architecture allows | [[Dropout]] or [[Early Stopping]], when they fit the architecture and validation protocol |
+| Train and validation both poor | Underfitting: lower $\lambda$ or add capacity |
 
 ## Related
 
-- [[L1 Regularization and Feature Selection]]: why the L1 penalty zeroes weights and the L2 penalty only shrinks them
+- [[L1 Regularization and Feature Selection]]: why L1 zeroes weights and L2 only shrinks them
 - [[Dropout]]
 - [[Loss Functions]]
 - [[Overfitting and Underfitting]]
@@ -172,12 +118,12 @@ Regularization is the main tool in this lecture against [[Overfitting and Underf
 - [[Data Augmentation]]
 - [[Early Stopping]]
 - [[Residual Connections]]
-- [[Switch the Model to Evaluation Mode When Evaluating]]: the rule for the training-randomness methods at evaluation
+- [[Switch the Model to Evaluation Mode When Evaluating]]: the evaluation rule for the randomness methods
 
 ## Sources
 
-- [[Block 1 Slides]], pp. 288–299
-- [[Block 3 Slides]], pp. 96, 102
-- [[Block 2 Slides]], pp. 94, 100
-- [[Block 7 Slides]], pp. 138–139, 165–170
-- [[F26-midterm-review-234p]], pp. 108, 112, 125–127
+- [[Block 1 Slides]]
+- [[Block 3 Slides]]
+- [[Block 2 Slides]]
+- [[Block 7 Slides]]
+- [[F26-midterm-review-234p]]

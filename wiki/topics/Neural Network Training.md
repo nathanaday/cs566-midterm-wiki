@@ -6,39 +6,68 @@ subject: 3 Training
 
 ## Definition
 
-Training a neural network chooses its weights by gradient-based optimization of a loss over the training data ([[Gradient Descent]], [[Loss Functions]]). CSCI 566 teaches it as a set of problems that stop training from working or from generalizing, each with the methods that answer it. This page gathers them; each linked topic holds the claims and their citations.
+Training chooses the weights of a network by [[Gradient Descent]] on a loss over the training data ([[Loss Functions]]). This page is the map: the loop, the knobs, the failure signs, and the detailed pages that hold each method.
 
-## Explanation
+### Training Loop
 
-### Gradient problems
+1. Preprocess the data: zero-center and scale with statistics fit on the training split only ([[Data Preprocessing]]).
+2. Initialize the weights at a scale that keeps activations alive ([[Weight Initialization]]).
+3. Sample a minibatch and apply augmentation ([[Data Augmentation]]).
+4. Forward pass: compute the loss, including any penalty $\lambda R(W)$ ([[Regularization]]).
+5. Backward pass: compute $dW$ for every parameter ([[Backpropagation]]).
+6. Clip the gradient if its norm exceeds the threshold ([[Gradient Clipping]]).
+7. Step with the optimizer ([[Gradient-Based Optimizers]]).
+8. Evaluate on the validation split; keep the best checkpoint ([[Early Stopping]]).
 
-- [[Vanishing Gradient Problem]]: in backpropagation, the gradient for early layers shrinks toward zero when many small local derivatives multiply, so those layers learn slowly or not at all.
-- [[Exploding Gradient Problem]]: when the gradient becomes too large, a gradient descent step overshoots to a high-loss configuration or fills the network with Inf or NaN values.
-- [[Weight Initialization]]: weight initialization sets the starting scale of a network's weights, such as small random numbers, Xavier (std = 1/sqrt(Din)), or He/Kaiming (std = sqrt(2/Din)), so that activations and gradients keep a usable scale across layers.
-- [[Batch Normalization]]: A layer that normalizes each channel of a batch to zero mean and unit variance and then applies a learned scale and shift.
-- [[Layer Normalization]]: A normalization layer that normalizes the features within one example or token, not one feature across a mini-batch as batch normalization does.
+**Update rule.**
 
-### Data
+$$W \leftarrow W - \eta \cdot dW$$
 
-- [[Data Preprocessing]]: data preprocessing transforms input data before training.
-- [[Data Augmentation]]: A regularizer that applies random, label-preserving transformations (flips, crops and scales, color jitter, learned AutoAugment policies) to each training image before the network sees it, while the label stays the same.
+**Regularized loss.**
 
-### Optimizers
+$$L = \frac{1}{N} \sum_{i=1}^{N} L_i(f(x_i; W), y_i) + \lambda R(W)$$
 
-- [[Gradient-Based Optimizers]]: the update rules that turn gradients into parameter steps (SGD, SGD + Momentum, AdaGrad, RMSProp, Adam, and AdamW), compared by what each remembers and how it scales each step.
+> [!warning] Exam trap
+> The step moves against the gradient. A weight with $dL/dw < 0$ goes up: weight 2.0, gradient $-0.5$, $\eta = 0.1$ gives 2.05.
 
-### Generalization
+### Hyperparameter Checklist
 
-- [[Dropout]]: A regularizer that sets a random subset of hidden activations to zero in each training forward pass, then turns the mask off at evaluation and uses a classic or inverted scaling convention so that training and evaluation scales match.
-- [[Early Stopping]]: early stopping keeps the checkpoint with the best value of a chosen validation metric instead of the last training checkpoint.
+| Knob | Rule of thumb |
+| --- | --- |
+| Learning rate $\eta$ | Tune first; every optimizer needs one |
+| Optimizer | SGD + Momentum for vision, AdamW for Transformers |
+| Batch size | Larger batches: less gradient noise, fewer steps per epoch |
+| Weight decay $\lambda$ | L2 penalty under SGD; decoupled decay under AdamW |
+| Dropout rate | Train with mask, evaluate without; match the scale |
+| Initialization | Xavier: $\sigma = 1/\sqrt{D_{in}}$; He: $\sigma = \sqrt{2/D_{in}}$ |
+| Schedule | Decay $\eta$ over training |
 
-### Reuse of trained models
+> [!tip]
+> Change one factor per experiment. Hold the data split, metric, and compute budget fixed, and record every run.
 
-- [[Transfer Learning]]: transfer learning starts a model from representations learned on other (source) data instead of training from scratch.
+### Symptoms and Remedies
 
-### Practice
+| Loss curve | Diagnosis | Remedy |
+| --- | --- | --- |
+| Blows up, NaN or Inf | $\eta$ too high or [[Exploding Gradient Problem]] | Lower $\eta$, [[Gradient Clipping]] |
+| Falls fast, then plateaus high | $\eta$ too high | Lower $\eta$ or add a schedule |
+| Falls very slowly | $\eta$ too low | Raise $\eta$ |
+| Stuck near initial loss | Dead units or [[Vanishing Gradient Problem]] | Fix init, use ReLU, add [[Batch Normalization]] |
+| Train falls, validation rises | Overfitting | [[Regularization]], [[Dropout]], [[Data Augmentation]], [[Early Stopping]] |
+| Both stay high | Underfitting | Larger model, longer training |
 
-- Change One Factor per Experiment: in CSCI 566 training and tuning experiments, keep the data split, metric, and compute budget the same, change one factor per run so the cause of a result is clear, and record the setting and outcome of every run.
+### Normalization and Scale
+
+- [[Batch Normalization]] normalizes each channel across the minibatch, then applies a learned scale and shift; it uses running statistics at evaluation.
+- [[Layer Normalization]] normalizes the features within one example, so it does not depend on batch size.
+- [[Weight Initialization]] and normalization both aim to keep the activation and gradient scale constant across depth.
+
+> [!warning] Exam trap
+> Batch norm and dropout behave differently in train and eval mode. Forgetting to switch modes changes the output.
+
+### Reuse of Trained Models
+
+- [[Transfer Learning]] starts from weights learned on source data, then freezes or fine-tunes layers on the target task.
 
 ## Related
 

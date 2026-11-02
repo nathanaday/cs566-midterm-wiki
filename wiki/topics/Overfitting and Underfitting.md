@@ -27,113 +27,94 @@ subject: 1 Foundations and classical machine learning
 
 ## Definition
 
-An **underfit** model is too simple. It cannot capture the trends in the data and has too much bias
+An **underfit** model is too simple for its data: training and validation error are both high. An **overfit** model is too complex and fits the noise: training error is low, validation error high. Both are a mismatch between model complexity and data complexity.
 
-An **overfit** model is too complex. It fits the noise in the data, or "outliers", and does not have enough bias
+**Formal overfitting.** Hypothesis $h$ overfits if some $h'$ has higher training error but lower true error:
 
-### Formal definition
+$$
+error(h, D_{train}) < error(h', D_{train}) \quad\text{and}\quad error_{true}(h) > error_{true}(h')
+$$
 
-With $error(h, D_{train})$, $error(h, D_{test})$, and $error_{true}(h)$ as in [[Model Evaluation]]:
+**Generalization gap.** The amount of overfitting; validation error stands in for the unknown $error_{true}$:
 
-- Hypothesis $h$ overfits the training data if some other $h'$ has:
-	- $error(h, D_{train}) < error(h', D_{train})$
-	- AND $error_{true}(h) > error_{true}(h')$.
-- Amount of overfitting $= error_{true}(h) - error(h, D_{train})$. In practice $error_{true}(h)$ is unknown.
+$$
+\text{gap} = error_{true}(h) - error(h, D_{train})
+$$
 
-### Training error and generalization error
+### Bias and Variance
 
-**Training error** is model error on the training data. **Generalization error** is model error on new data.
+| Model | Bias | Variance | Fit |
+| --- | --- | --- | --- |
+| Too simple | High | Low | Underfit |
+| Right size | Low | Low | Appropriate |
+| Too complex | Low | High | Overfit |
 
-| | Training error low | Training error high |
+- **Bias**: the model cannot represent the trend; every refit errs the same way.
+- **Variance**: the model tracks its sample; refits on new samples disagree.
+- Capacity trades bias for variance. [[Regularization]] trades it back.
+
+### Train/Validation Gap Patterns
+
+| Train error | Val error | Gap | Diagnosis | Remedy |
+| --- | --- | --- | --- | --- |
+| Low | High | Large | Overfitting | More data, [[Data Augmentation]], [[Regularization]], [[Dropout]], [[Early Stopping]], smaller model |
+| High | High | Small | Underfitting | More capacity, better features, train longer |
+| Low | Low | Small | Good fit | None; confirm the split is clean |
+| High | Low | Negative | Bug | Check for leakage, label errors, or a bad split |
+
+> [!warning] Exam trap
+> A small gap alone proves nothing. Both errors high with a small gap is underfitting. Read the absolute level first, then the gap.
+
+### Learning Curves in Words
+
+Loss against epochs:
+
+- Healthy: train and validation loss fall together and flatten.
+- Overfitting: train loss keeps falling while validation loss bottoms out and turns up. Keep the checkpoint at the validation minimum; see [[Early Stopping]].
+- Underfitting: both curves stay high, or are still falling when training stops. Train longer or add capacity before regularizing.
+
+Error against model complexity:
+
+- Training error keeps falling as complexity grows.
+- Generalization error is U shaped: it falls, reaches a minimum at the right-sized model, then rises.
+- Left of the minimum is underfitting (both high); right of it is overfitting (gap widens).
+
+### Model Complexity vs Data Complexity
+
+Model complexity: the number of learnable parameters and their value range; more neurons, more capacity. Data complexity: the number of examples, features per example, and class separability.
+
+| | Data simple | Data complex |
 | --- | --- | --- |
-| **Generalization error low** | Good | Bug? |
-| **Generalization error high** | Overfitting | Underfitting |
+| **Model simple** | Normal | Underfitting |
+| **Model complex** | Overfitting | Normal |
 
+- Complex models need more data. Matching the two is model selection.
+- A larger regularization strength $\lambda$ smooths the decision boundary.
+- In [[k-Nearest Neighbors]], small $k$ overfits and large $k$ underfits.
 
-### The generalization gap
-
-The **generalization gap** is the distance between performance on the training data and performance on new data. Better optimization algorithms help reduce the training loss.
-
-### Model complexity
-
-Model complexity is "the capacity of a set of function to fit data points". In ML it usually means the **number of learnable parameters** and the **value range of those parameters**. 
-
-As model complexity grows, training error keeps falling. Generalization error falls, reaches a minimum at the optimal model, and then rises. The gap on the left, where both errors are high, is underfitting. The gap on the right is overfitting.
-
-![[Screenshot 2026-11-01 at 9.06.55 PM.png]]
-
-
-Network size is another source of capacity. "more neurons = more capacity" 
-
-"Larger Model Capacity May Overfit – Need to Regularize them", shows that a larger regularization strength $\lambda$ smooths the boundary 
-
-In [[k-Nearest Neighbors]], the number of neighbors k controls capacity. Small k leads to overfitting, and large k leads to underfitting ([[Block 2 Slides]], p. 180). 
-
-### Data complexity
-
-Data complexity is "the richness of information" ([[Block 2 Slides]], p. 95). It depends on the number of examples, the number of features in each example, and the separability of the classes.
-
-It is hard to compare across very different data, for example a character and a pixel. A more precise measure is **Kolmogorov** complexity: data is simple if a short program can generate it ([[Block 2 Slides]], p. 92).
-
-| | Data complexity low | Data complexity high |
-| --- | --- | --- |
-| **Model complexity low** | Normal | Underfitting |
-| **Model complexity high** | Overfitting | Normal |
-
-"Complex models need more data." At low data complexity, a simple (linear) model has lower generalization error. At higher data complexity, a complex model such as a deep neural network reaches a lower generalization error ([[Block 2 Slides]], p. 93). Matching the two complexities is Model Selection ([[Block 2 Slides]], p. 95).
-
-### Memorization is not overfitting
-
-- **Memorization**: a model can reproduce a particular training string.
-- **Overfitting**: training fit improves while performance on new data worsens.
-
-### Reading training and validation curves
-
-| Curves                                                                                      | Meaning                                                                          | Next step                                                                        |
-| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Training and validation loss fall together                                                  | "The model is learning patterns that transfer to held-out data."                 | None given                                                                       |
-| Both loss curves stay high                                                                  | "The model has not yet fit even the training examples well."                     | "Check the training pipeline before adding more regularization."                 |
-| Training loss falls, validation loss rises                                                  | "The best training checkpoint may not be the best held-out checkpoint."          | "Select checkpoints using the chosen validation metric." See [[Early Stopping]]. |
-| Train and validation accuracy both still rise                                               | "Validation accuracy still improves: a longer run may help."                     | Train longer                                                                     |
-| Large gap; validation accuracy peaks early and then falls while train accuracy keeps rising | "A large gap can suggest overfitting."                                           | "Check the split, labels and regularization."                                    |
-| Both accuracies low, with a small gap                                                       | "Both accuracies low: possible underfitting. A small gap alone is inconclusive." | None given                                                                       |
-
-### Train and validation errors as clues
-
-| Observed pattern | Possible cause | First things to try |
-| --- | --- | --- |
-| Training and validation errors both high | Too rigid, weak features, or incomplete training | Inspect fit and features; consider more capacity |
-| Training low; validation much higher | Model fits training-specific details | More data, regularization, or a simpler model |
-
-### Diagnose, then choose a fix
-
-| Fix | When and how |
-| --- | --- |
-| More or better data | "Improve coverage and inspect labels or duplicates." |
-| Augmentation / weight decay | "Test task-appropriate transformations and constraints." |
-| Dropout / early stopping | "Use when they fit the architecture and validation protocol." |
-
+> [!warning] Exam trap
+> Memorization is not overfitting. Memorization: the model can reproduce a training string. Overfitting: training fit improves while held-out performance worsens.
 
 ## Related
 
-- [[VC Dimension]]: the shattering measure of capacity
+- [[VC Dimension]]: capacity by shattering
 - [[Regularization]]
-- [[Early Stopping]]: checkpoint selection when validation loss turns up
+- [[Early Stopping]]: checkpoint at the validation minimum
 - [[Dropout]]
 - [[Data Augmentation]]
 - Model Selection
 - [[Model Evaluation]]
-- Tree Ensembles: ensembles of decision trees, and bias and variance measured across refits
-- AutoML: ensemble learning as an alternative
+- Tree Ensembles
+- AutoML
 - [[k-Nearest Neighbors]]: k as a capacity setting
 - Test Set Contamination
 - [[Neural Networks]]
-- [[Linear Separability]]: when a linear boundary underfits; class separability is also a factor of data complexity
+- [[Linear Separability]]: linear boundaries underfit
 
 ## Sources
 
-- [[Block 1 Slides]], p. 292
-- [[Block 3 Slides]], pp. 95–96
-- [[Block 2 Slides]], pp. 82, 84–93, 95, 98, 153-163, 180
-- [[Block 7 Slides]], pp. 131–137, 170, 180–185, 318
-- [[F26-midterm-review-234p]], pp. 4, 12–15, 18, 137–138. Pp. 12–15 repeat Block 2 slides 82, 86, 90, and 91. Pp. 137–138 repeat Block 7 slides 132 and 134.
+- [[Block 1 Slides]]
+- [[Block 3 Slides]]
+- [[Block 2 Slides]]
+- [[Block 7 Slides]]
+- [[F26-midterm-review-234p]]

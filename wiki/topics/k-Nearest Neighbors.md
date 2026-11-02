@@ -7,61 +7,73 @@ subject: 1 Foundations and classical machine learning
 
 ## Definition
 
-k-nearest neighbors (kNN) is a classifier that labels a new point by majority vote over its k nearest training points. The user must pick two things: k and the distance metric The cost of kNN is in prediction, not training. 
+k-nearest neighbors (kNN) labels a new point by majority vote over its k nearest training points. The user picks two things: k and the distance function. Training only stores the data, so all the cost falls on prediction.
 
-## Explanation
+### Algorithm
 
-### Nearest neighbor (k = 1)
+- `train(D)`: store D. Nothing is fit.
+- `h(x')`: compute $d(x', x^{(i)})$ for every $i$, take the k smallest, return the majority label.
+- k = 1 (nearest neighbor): the partition of the input space is a Voronoi diagram, and the decision boundary follows the Voronoi edges between points with different labels.
+- Five neighbors by distance with labels P, O, P, O, O: k = 1 gives P, k = 3 gives P (2 to 1), k = 5 gives O (3 to 2).
 
-- `train(D)` only stores the dataset D. `h(x')` finds the point $x^{(i)}$ in D nearest to $x'$ and returns its label $y^{(i)}$
-- The 1-NN partition of the input space is a Voronoi diagram
-- The 1-NN decision boundary follows the Voronoi edges between training points that have different labels 
-- **Nearest neighbor needs no training. It always has zero training error**
+### Distance Functions
 
-### The kNN algorithm
+kNN needs $d: \mathbb{R}^M \times \mathbb{R}^M \to \mathbb{R}$.
 
-- "The prediction depends on k, because a larger k lets more neighbors vote." 
-- Five neighbors, sorted by increasing distance, have the labels purple, orange, purple, orange, orange. k = 1 predicts purple. k = 3 predicts purple, 2 to 1. k = 5 predicts orange, 3 to 2. In this example the votes are unweighted and the distances are distinct
+**Euclidean (L2), the default choice.**
 
-### Distance functions
+$$
+d(u, v) = \sqrt{\sum_{m=1}^{M} (u_m - v_m)^2}
+$$
 
-kNN requires a distance function $d: \mathbb{R}^M \times \mathbb{R}^M \to \mathbb{R}$
+**Manhattan (L1).**
 
-| Distance | Formula | Note |
-| --- | --- | --- |
-| Euclidean (L2) | $d(u, v) = \sqrt{\sum_{m=1}^{M} (u_m - v_m)^2}$ | the most common choice for kNN |
-| Manhattan (L1) | $d(u, v) = \sum_{m=1}^{M} \lvert u_m - v_m \rvert$ | one alternative |
+$$
+d(u, v) = \sum_{m=1}^{M} \lvert u_m - v_m \rvert
+$$
 
 ### Choosing k
 
-- k controls the model capacity. A large k makes the decision boundary smoother. Small k leads to overfitting, and large k leads to underfitting 
-- Ways to choose k: monitor the error rate or accuracy; use systematic methods (automated ML, cross-validation, Bayesian optimization); or use the heuristic $k = \sqrt{N}$, where N is the total number of samples
-- "choose k by validation results"
-- A learner should be able to explain what k trades off and how to choose it ([[Block 2 Slides]], p. 182)
-- Don't decide on training data alone; K=1 always works perfectly on training data
+k sets model capacity. See [[Overfitting and Underfitting]].
 
-### Pros and cost
+| k | Boundary | Failure mode | Training error |
+| --- | --- | --- | --- |
+| Small | jagged, follows noise | overfits | zero at k = 1 |
+| Large | smooth | underfits | rises |
+| k = N | constant majority class | ignores x | high |
 
-- Pros: intuitive and explainable, no training or retraining, and provably near-optimal in terms of true error rate 
-- kNN must always store all data, $O(ND)$. Finding the k closest points in D dimensions costs $O(ND + N \log k)$
-- Data structures can speed up the search, with a trade-off between training and test costs. Stochastic methods can approximate it 
+- Pick k on a validation split: fit on one part, score accuracy on the held-out part, keep the best k. See [[Model Evaluation]].
+- Alternatives: cross-validation, automated search, or $k = \sqrt{N}$ as a starting point.
 
+> [!warning] Exam trap
+> Training error cannot choose k. 1-NN always scores zero on the training set because every point is its own nearest neighbor.
 
-Synthesis: semantic caching, kNN-LM, and RAG all run the same nearest-neighbor lookup. They differ in what they do with the neighbors: return a stored answer, vote on the next token, or insert text into the context.
+### Cost
+
+| Phase | Cost | Note |
+| --- | --- | --- |
+| Train | $O(1)$ compute, $O(ND)$ memory | stores all N points of D dimensions |
+| Predict one point | $O(ND + N \log k)$ | distance to every point, then select the k closest |
+
+- Search structures (trees, hashing) and approximate nearest neighbor (ANN) search move cost from prediction into a build step.
+- Pros: explainable, no training or retraining, near-optimal true error rate as N grows.
+
+> [!warning] Exam trap
+> Curse of dimensionality: in high dimensions every point sits at nearly the same distance from every other, so "nearest" loses meaning and kNN needs exponentially more data. Scale features first, because distance weights every dimension equally.
 
 ## Related
 
-- [[kNN Regression]]: the same neighbors, averaged instead of voted
-- [[Outlier Detection]]: the k-th neighbor distance as an outlier score
-- [[Overfitting and Underfitting]]: k sets where kNN falls between the two
-- [[Linear Classification]]: a parametric classifier, in contrast to kNN, which stores the data
-- [[Model Evaluation]]: why zero training error for 1-NN says little about true error, and how validation data chooses k
-- [[k-Means]]: also assigns points by distance, but without labels
-- Autoregressive Language Modeling: the model that kNN-LM interpolates with
-- KV Cache: a different cache, inside one generation
+- [[kNN Regression]]: average instead of vote
+- [[Outlier Detection]]: k-th neighbor distance as a score
+- [[Overfitting and Underfitting]]: what k trades off
+- [[Linear Classification]]: parametric, in contrast to kNN
+- [[Model Evaluation]]: validation chooses k
+- [[k-Means]]: distance without labels
+- Autoregressive Language Modeling: what kNN-LM interpolates with
+- KV Cache: a different cache
 - Agent Memory: retrieval into context
 
 ## Sources
 
-- [[Block 2 Slides]], pp. 143-182. The deck credits CMU 10601 for the nearest neighbor and kNN slides (pp. 143-150) and Matt Gormley for the kNN figures on the Fisher Iris data (pp. 152-164).
-- [[F26-midterm-review-234p]], pp. 4, 26–28. Pp. 27–28 repeat Block 2 slides 148 and 150.
+- [[Block 2 Slides]]
+- [[F26-midterm-review-234p]]
