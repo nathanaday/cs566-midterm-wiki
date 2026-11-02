@@ -1,0 +1,9 @@
+{
+  "internal/threads/policies/change-through-tools/POLICY.md": "b610ed8cfb313671f7aeb5e8e67d1233361e42974ec4893528345e0958b3b1ea",
+  "internal/threads/promises/thread-closed/PROMISE.md": "8fb745c4cdab3cddf08f256d34cf1689543911751d123e1b223e4536c8ebb57a",
+  "internal/threads/skills/stub/SKILL.md": "21d5be029ec3ce639f1bb24eda463f24640c85dbd0601d0505c0fc7eb10614e8",
+  "internal/threads/skills/spec/SKILL.md": "3dae6a4b0c814b9a046771a82137437bb3032ad9f17a2211a2887f2dcd636f96",
+  "internal/threads/skills/run/SKILL.md": "9ce8dd4c133d2d3d70048626058ce2ba12b6d1dcd73d7ebfa2dc162852246008",
+  "internal/threads/agents/reviewer/AGENT.md": "a2545b4723fe8070725ef31c4bee3d953ade4999c168f1907e09cf18adf27331",
+  "internal/threads/agents/validator/AGENT.md": "e5b0a54f5a77951c0d2cef6c18eac9c88db917a0459ccb7695ba19ba1d9aeeef"
+}

@@ -20,7 +20,7 @@ Bare page numbers in this section refer to [[Block 6 Slides]]. Claims from [[Blo
 
 ### Setup
 
-A graph $G = (A, X)$ has a vertex set $V$, a binary adjacency matrix $A$, and a node feature matrix $X \in \mathbb{R}^{|V| \times m}$. Each node has an $m$-dimensional feature vector. $N(v)$ is the set of neighbors of node $v$ (pp. 63, 72). See [[Graph]].
+A graph $G = (A, X)$ has a vertex set $V$, a binary adjacency matrix $A$, and a node feature matrix $X \in \mathbb{R}^{|V| \times m}$. Each node has an $m$-dimensional feature vector. $N(v)$ is the set of neighbors of node $v$ (pp. 63, 72). See [[Graph Neural Networks]].
 
 ### Adjacency matrix and feature matrix
 
@@ -123,9 +123,6 @@ Synthesis: the 1x1 convolution is the grid form of the shared node MLP. It reads
 ## Related
 
 - [[Graph Neural Networks]]
-- [[Graph Convolutional Network]]
-- [[Neighborhood Aggregation]]
-- [[Graph]]
 - Road Delay GNN Example: the worked numbers for neighbor order, node order, and graph readout
 - Head (machine learning): the shared node head and the graph head after the readout
 - [[Neural Networks]]: the MLP that a shared node MLP applies

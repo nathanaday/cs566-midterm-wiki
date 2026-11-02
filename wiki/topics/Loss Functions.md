@@ -28,31 +28,29 @@ subject: 1 Foundations and classical machine learning
 
 A loss function $L$ measures how well a learned $W$ maps $X$ to $Y$, compared with the ground truth $y^*$. Optimization finds the $W$ that minimizes $L$ ([[Block 1 Slides]], pp. 258–259, 339; [[Block 2 Slides]], p. 27).
 
-The midterm review gives the loss its place in training: "A loss converts model scores into a number that training tries to reduce." "Training turns a score into a loss, a loss into gradients, and gradients into parameter updates." ([[F26-midterm-review-234p]], p. 78)
-
 ## Explanation
 
 ### Four losses
 
-Given $f(x; W, b)$ and examples $(x_i, y_i)$, the slides define four losses to minimize ([[Block 1 Slides]], pp. 276–280). The formulas follow the slides' notation.
+Given $f(x; W, b)$ and examples $(x_i, y_i)$ , and a number of training samples $N$ 
 
-**Hinge loss** (p. 277)
+**Hinge loss** (p. 277) - SVMs, binary classification; focuses on measuring confidence; used when distinction between classes must be higher; model must be confidently correct ($j$ is the number of classes in the definition below)
 
 $$Loss = \frac{1}{N} \sum_{i=1}^{N} \sum_{j \neq y_i} \max\left(0,\ 1 + f(x_i; W, b)_j - f(x_i; W, b)_{y_i}\right)$$
 
-**L1 loss** (p. 278)
+**L1 loss (MAE)** (p. 278) - better for data with real outliers that should not influence the model as heavily 
 
 $$Loss = \frac{1}{N} \sum_{i=1}^{N} \lVert y_i - f(x_i; W, b) \rVert_1$$
 
-**L2 loss** (p. 279)
+**L2 loss (MSE)** (p. 279) - penalizes outliers more heavily, good for data that does not have a lot of outliers to begin with
 
 $$Loss = \frac{1}{N} \sum_{i=1}^{N} \lVert y_i - f(x_i; W, b) \rVert_2^2$$
 
-**Cross-entropy loss** (p. 280)
+**Cross-entropy loss** (p. 280); focused on minimizing uncertainty (entropy) based on the ground truth (low entropy)
 
 $$Loss = -\frac{1}{N} \sum_{i=1}^{N} \hat{y}_i \log P(y_i = j \mid x_i), \qquad P(y_i = j \mid x_i) = \frac{e^{f(x_i; W, b)}}{\sum_{j=1}^{C} e^{f(x_j; W, b)}}$$
 
-"Each loss function penalizes differently" ([[Block 1 Slides]], p. 281).
+
 
 ### Squared loss and its slope
 

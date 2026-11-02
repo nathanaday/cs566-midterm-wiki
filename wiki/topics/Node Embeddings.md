@@ -7,7 +7,7 @@ subject: 7 Graphs
 
 ## Definition
 
-A node embedding is a vector $z_u \in \mathbb{R}^d$ for a node $u$ of a [[Graph]]. The goal is "efficient task-independent feature learning for machine learning with graphs": learn a map $f: u \to \mathbb{R}^d$ from each node to its feature representation, or embedding ([[Block 6 Slides]], p. 43).
+A node embedding is a vector $z_u \in \mathbb{R}^d$ for a node $u$ of a [[Graph Neural Networks|graph]]. The goal is "efficient task-independent feature learning for machine learning with graphs": learn a map $f: u \to \mathbb{R}^d$ from each node to its feature representation, or embedding ([[Block 6 Slides]], p. 43).
 
 The extended revision of the deck states the goal another way: "Learn node vectors useful for a chosen graph task" ([[Block 6 Slides Extended]], p. 52). In that deck, an embedding is a numeric vector that the prediction head uses (p. 48).
 
@@ -21,7 +21,7 @@ Traditional ML on graphs needs a person to design node, edge, and graph-level fe
 
 The slides compare this change to the change from classical ML to deep learning. Classical ML extracts features by hand, then classifies. [[Deep Learning]] learns feature extraction and classification together ([[Block 6 Slides]], p. 42; [[Block 6 Slides Extended]], p. 51).
 
-Embeddings encode network information. Many downstream tasks can use them: node classification, link prediction, graph classification, anomalous node detection, and clustering ([[Block 6 Slides]], p. 44; [[Block 6 Slides Extended]], p. 53). See [[Graph]] for these tasks.
+Embeddings encode network information. Many downstream tasks can use them: node classification, link prediction, graph classification, anomalous node detection, and clustering ([[Block 6 Slides]], p. 44; [[Block 6 Slides Extended]], p. 53). See [[Graph Neural Networks]] for these tasks.
 
 ### What an embedding holds
 
@@ -101,7 +101,7 @@ Source: [[Block 6 Slides Extended]], p. 58. The reason for the comparison: a new
 
 The deck's example uses illustrative numbers. Training has learned one vector for each of roads A, B, C, and D, for example A $\to [0.2, 0.8]$ and B $\to [0.5, 0.1]$. A newly added road E has no trained table entry yet (p. 59). In the lookup matrix $Z$, one column stores the vector for one node ID, and the column height is the vector width (p. 60).
 
-A GNN learns a function with shared weights and uses it at every road. Road E's features and its neighbor vectors go through the same learned GNN update, and the result is a computed vector for E. The inputs change from road to road, but the learned weights are shared (p. 61). How each layer shares its weights is described in [[Neighborhood Aggregation]] and [[Graph Convolutional Network]].
+A GNN learns a function with shared weights and uses it at every road. Road E's features and its neighbor vectors go through the same learned GNN update, and the result is a computed vector for E. The inputs change from road to road, but the learned weights are shared (p. 61). How each layer shares its weights is described in [[Graph Neural Networks]].
 
 ### New nodes and new graphs
 
@@ -135,10 +135,7 @@ Synthesis: the decoder objective resembles Contrastive Learning. Both pull the e
 
 ## Related
 
-- [[Graph]]: graph types, task levels, and the traditional feature-engineering pipeline
-- [[Graph Neural Networks]]: the deep encoders, and more examples of inductive use
-- [[Neighborhood Aggregation]]: the shared update that a GNN encoder runs at each node
-- [[Graph Convolutional Network]]: the basic update rule and its shared weights
+- [[Graph Neural Networks]]: graph types, task levels, the deep encoders and their shared update rule, and inductive use
 - [[Convolutional Neural Networks (CNN)]]: the same reuse of learned weights on new inputs
 - [[Overfitting and Underfitting]]: generalization to new data
 - [[Deep Learning]]: learned features in place of hand-designed ones

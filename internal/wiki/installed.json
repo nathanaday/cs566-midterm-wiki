@@ -1,0 +1,14 @@
+{
+  "internal/wiki/policies/cite-every-claim/POLICY.md": "00c46b2318f62d2649f6955b4dd608bb29acf4e2d32469ee52331756f83f2598",
+  "internal/wiki/policies/one-plan/POLICY.md": "5b2c9d5968e9415b81ad64b1afdfc88d9a59738f39fd1f5ecaa73eb070f7abc4",
+  "internal/wiki/policies/one-topic/POLICY.md": "35b424f9ec7761ff9b675ea60e80422918a9978cfd636468d45c51399f14d323",
+  "internal/wiki/promises/change-applied/PROMISE.md": "830d5c09c1ad8fd871bd2ce8f52f3052f41f1316885636d0b171d6d7057188eb",
+  "internal/wiki/promises/sources-absorbed/PROMISE.md": "7356d54f4a0c8366605101178d64a7dddf5f1050339d7a274902db074fdb49cc",
+  "internal/wiki/promises/clean-topics/PROMISE.md": "d3008ecdb0fd77312226e42964a76cfb95bde6e883d34b399218eae8865f4ecf",
+  "internal/wiki/agents/extractor/AGENT.md": "8c372e7168be3f55c11e2802a2c57409b1eb0896ac61f485b1ef6b5e994bf716",
+  "internal/wiki/agents/drafter/AGENT.md": "493df7b73194d2075b03125fb7257b7dfaa8b04fdd81da202cc41594407ab2a5",
+  "internal/wiki/skills/ingest/SKILL.md": "0c578de71bcbef1eaefa5d4b7581cbb41694cd00429a79e70f5413bdd0d3e0ca",
+  "internal/wiki/skills/ingest/page-forms.md": "3108b2a6e66afb34797f6c1b8a32e5d55876a21b401965fe68acd514d8bad4d0",
+  "internal/wiki/skills/checkout/SKILL.md": "7788fa633b8e9ff1ab5030ff41be6f2972e083d7f08697ad6452d3d34585f3f7",
+  "internal/wiki/promises/reading-list-made/PROMISE.md": "be202ee8ed3159d4684ce9c6d2f46e295839e2cbfa321f4e32e8691cba2933d2"
+}

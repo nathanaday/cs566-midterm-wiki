@@ -17,12 +17,12 @@ Most questions are short recall or a one-line calculation. The calculations are 
 
 - p. 1, instructions and the answer sheet: [[_index|CSCI 566 Midterm Wiki]].
 - p. 2, Q1 to Q8, generalization gap, layer cost, zero initialization, the 1x1 filter, exploding gradients, tree pruning, NaN weights in an RNN, and L2 in GNNs: [[Overfitting and Underfitting]], [[Regularization]], [[Pooling Layer]], [[Weight Initialization]], [[Convolutional Layer]], [[Exploding Gradient Problem]], [[Gradient Clipping]], [[Decision Trees]], [[Recurrent Neural Networks (RNN)]], [[Graph Neural Networks]].
-- p. 3, Q9 to Q15, aggregation in GNNs, pooling, why ReLU is nonlinear, a linear-network calculation, tree weaknesses, and graphs of varying size: [[Neighborhood Aggregation]], [[Pooling Layer]], [[Activation Functions]], [[Fundamentals of Deep Learning Nonlinear Activation]], [[Forward Propagation]], [[Decision Trees]], [[Graph Neural Networks]].
-- p. 4, Q16 to Q22, directed graphs, graph autoencoders, what counts as regularization, reading activation plots, and preprocessing statistics: [[Graph]], [[Regularization]], [[Activation Functions]], [[Fit Preprocessing on Training Data Only]].
+- p. 3, Q9 to Q15, aggregation in GNNs, pooling, why ReLU is nonlinear, a linear-network calculation, tree weaknesses, and graphs of varying size: [[Graph Neural Networks]], [[Pooling Layer]], [[Activation Functions]], [[Fundamentals of Deep Learning Nonlinear Activation]], [[Forward Propagation]], [[Decision Trees]].
+- p. 4, Q16 to Q22, directed graphs, graph autoencoders, what counts as regularization, reading activation plots, and preprocessing statistics: [[Graph Neural Networks]], [[Regularization]], [[Activation Functions]], [[Fit Preprocessing on Training Data Only]].
 - p. 5, Q23 to Q27, BatchNorm modes, dense parameter growth, RNN facts, the LeNet-5 kernel shape, and the first tree-size bound: [[Batch Normalization]], [[Fully Connected Layer]], [[Recurrent Neural Networks (RNN)]], [[Convolutional Layer]], [[Decision Trees]].
 - p. 6, Q28 to Q36, tree-size bounds, linear and nonlinear layers, kNN and conv parameter counts, inference cost, Lasso against Ridge, and the single-neuron gradient step: [[Decision Trees]], [[k-Nearest Neighbors]], [[Convolutional Layer]], [[AlexNet]], [[ResNet]], [[Regularization]], [[Gradient Descent]].
 - p. 7, Q37 to Q42, two model-parameterization puzzles, outliers, kNN outlier detection, a circular classifier, and zero training error: [[Function Approximation]], [[Linear Classification]], [[k-Nearest Neighbors]], [[Linear Separability]], [[Model Evaluation]].
-- p. 8, Q43 to Q48, MLP parameters, an MLP with no activations, 0/1 loss under backprop, shuffle invariance of a 1x1 conv with global pooling, permutation-invariant functions, and a GNN aggregation design: [[Fully Connected Layer]], [[Loss Functions]], [[Pooling Layer]], [[Permutation Invariance and Equivariance]], [[Neighborhood Aggregation]].
+- p. 8, Q43 to Q48, MLP parameters, an MLP with no activations, 0/1 loss under backprop, shuffle invariance of a 1x1 conv with global pooling, permutation-invariant functions, and a GNN aggregation design: [[Fully Connected Layer]], [[Loss Functions]], [[Pooling Layer]], [[Permutation Invariance and Equivariance]], [[Graph Neural Networks]].
 - p. 9, Q49 to Q54, centroids, k-means initialization, kNN regression, residual connections, gradient clipping, and why gradients vanish in deep nets: [[k-Means]], [[Clustering]], [[k-Nearest Neighbors]], [[Residual Connections]], [[Gradient Clipping]], [[Vanishing Gradient Problem]], [[Backpropagation]].
 - p. 10, Q55 and Q56, what deep means for a CNN, and the grade curve: [[Convolutional Neural Networks (CNN)]], [[_index|CSCI 566 Midterm Wiki]].
 
@@ -40,15 +40,15 @@ Each row links the topics a student would open to answer the question. The last 
 | 6 | Purpose of pruning a decision tree | A | [[Decision Trees]], [[Overfitting and Underfitting]] |
 | 7 | RNN weights become NaN | B | [[Recurrent Neural Networks (RNN)]], [[Exploding Gradient Problem]] |
 | 8 | Does L2 regularization work in GNNs | B | [[Graph Neural Networks]], [[Regularization]] |
-| 9 | Purpose of the GNN aggregation function | A | [[Neighborhood Aggregation]], [[Graph Neural Networks]] |
+| 9 | Purpose of the GNN aggregation function | A | [[Graph Neural Networks]] |
 | 10 | Are pooling layers necessary | C | [[Pooling Layer]], [[Convolutional Neural Networks (CNN)]] |
 | 11 | Why ReLU counts as nonlinear | C | [[Activation Functions]], [[Fundamentals of Deep Learning Nonlinear Activation]] |
 | 12 | Why layers need a nonlinearity | C | [[Fundamentals of Deep Learning Nonlinear Activation]], [[Neural Networks]] |
 | 13 | Output of a 3-neuron linear layer | B | [[Forward Propagation]], [[Perceptron]] |
 | 14 | Disadvantage of decision trees | C | [[Decision Trees]], [[Overfitting and Underfitting]] |
 | 15 | How a GNN handles graphs of different sizes | B | [[Graph Neural Networks]] |
-| 16 | Not a method for directed graphs in GNNs | C | [[Graph]], [[Graph Neural Networks]], [[Graph Neural Network Variants]] |
-| 17 | What a graph autoencoder is | A | [[Graph Neural Networks]], [[Graph Neural Network Variants]] |
+| 16 | Not a method for directed graphs in GNNs | C | [[Graph Neural Networks]] |
+| 17 | What a graph autoencoder is | A | [[Graph Neural Networks]] |
 | 18 | Not a regularization technique | C | [[Regularization]], [[Weight Initialization]], [[Data Augmentation]] |
 | 19 | Pick the sigmoid curve | E | [[Activation Functions]] |
 | 20 | Pick the ELU curve | C | [[Activation Functions]] |
@@ -79,7 +79,7 @@ Each row links the topics a student would open to answer the question. The last 
 | 45 | Backprop with 0/1 loss | B | [[Loss Functions]], [[Gradient Descent]] |
 | 46 | 1x1 conv plus global max pool under pixel shuffling | B | [[Pooling Layer]], [[Convolutional Layer]], [[Permutation Invariance and Equivariance]], [[1x1 Convolution]] |
 | 47 | Which function is permutation invariant | C | [[Permutation Invariance and Equivariance]] |
-| 48 | Distance-weighted aggregation and invariance | A or C | [[Neighborhood Aggregation]], [[Permutation Invariance and Equivariance]], [[Node Embeddings]], [[Graph Neural Network Variants]] |
+| 48 | Distance-weighted aggregation and invariance | A or C | [[Graph Neural Networks]], [[Permutation Invariance and Equivariance]], [[Node Embeddings]] |
 | 49 | Meaning of centroid | A | [[k-Means]], [[Clustering]] |
 | 50 | Poor k-means initialization | B | [[k-Means]], [[k-Means Initialization and Local Minima]] |
 | 51 | kNN for regression | A | [[k-Nearest Neighbors]], [[kNN Regression]] |
@@ -121,7 +121,6 @@ The count is the number of questions whose row links the topic. It measures how 
 | [[Weight Initialization]] | 2 |
 | [[Gradient Clipping]] | 2 |
 | [[Recurrent Neural Networks (RNN)]] | 2 |
-| [[Neighborhood Aggregation]] | 2 |
 | [[Perceptron]] | 2 |
 | [[Fully Connected Layer]] | 2 |
 | [[ResNet]] | 2 |
@@ -130,7 +129,7 @@ The count is the number of questions whose row links the topic. It measures how 
 | [[Function Approximation]] | 2 |
 | [[k-Means]] | 2 |
 
-**Touched once.** [[Forward Propagation]], [[Graph]], [[Data Augmentation]], [[Fit Preprocessing on Training Data Only]], [[Data Preprocessing]], [[Switch the Model to Evaluation Mode When Evaluating]], [[AlexNet]], [[Unsupervised Outlier Model Selection]], [[Linear Separability]], [[Model Evaluation]], [[Node Embeddings]], [[Clustering]], [[Residual Connections]], [[Backpropagation]], [[Deep Learning]], [[_index|CSCI 566 Midterm Wiki]].
+**Touched once.** [[Forward Propagation]], [[Data Augmentation]], [[Fit Preprocessing on Training Data Only]], [[Data Preprocessing]], [[Switch the Model to Evaluation Mode When Evaluating]], [[AlexNet]], [[Unsupervised Outlier Model Selection]], [[Linear Separability]], [[Model Evaluation]], [[Node Embeddings]], [[Clustering]], [[Residual Connections]], [[Backpropagation]], [[Deep Learning]], [[_index|CSCI 566 Midterm Wiki]].
 
 **Not touched by this exam.** Sixteen topics in this wiki have no question in the 2024 exam: Activation Sparsity, Adapters, Dropout, Dying ReLU, Early Stopping, Fine-Tuning, Gradient-Based Optimizers, Graph Convolutional Network, Layer Normalization, LoRA, Neural Network Training, Optimization, Parameter-Efficient Fine-Tuning, Softmax Layer, Transfer Learning, Transformers. They are left unlinked here so the graph keeps them at a distance from this page. They are where the wiki is wider than this exam: Fall 2026 material the 2024 exam predates, such as Transformers and the fine-tuning family, plus training details such as dropout, early stopping, and normalization.
 
@@ -142,9 +141,9 @@ Questions the slide-based topics answered only partly or not at all, listed by h
 - **Decision tree size bounds**, now [[Decision Tree Size Bounds]] (Q27 to Q30, four questions). [[Decision Trees]] covers learning, stopping, and pruning, but not the maximum number of leaves or the maximum depth as a function of the number of attributes k and samples N, for binary and for continuous attributes. The exam spends four questions on exactly that.
 - **Outlier detection basics**, now [[Outlier Detection]] (Q39, Q40). The only outlier page from the slides, [[Unsupervised Outlier Model Selection]], is a Block 7 research example, as are MetaOD and TOD. Nothing defined an outlier or explains the kNN-distance detector, where points with few close neighbors are flagged.
 - **Parameterization of a hypothesis class**, now [[Parameterization of a Hypothesis Class]] (Q37, Q38). Why y = w²x can only fit non-negative slopes while y = tan(w)x + wx fits any slope. [[Function Approximation]] and [[Linear Classification]] do not discuss how the parameterization constrains the reachable functions.
-- **Graph autoencoder**, now in [[Graph Neural Network Variants]] (Q17). Autoencoders belong to Block 8, which the midterm does not cover, and no graph page mentioned the unsupervised variant.
-- **Directed graphs inside a GNN**, now in [[Graph Neural Network Variants]] (Q16). [[Graph]] defines directed graphs as data, but no page covers the modeling options the question lists: treating edges as undirected, separate weight matrices for in-edges and out-edges, or more flexible weights.
-- **Attention-weighted neighbor aggregation**, now in [[Graph Neural Network Variants]] (Q48). [[Neighborhood Aggregation]] and [[Permutation Invariance and Equivariance]] give the invariance argument, but no page covered aggregators that weight neighbors by a learned or distance-based score, the graph attention network. The exam's own answer key hedges between A and C.
+- **Graph autoencoder**, now in [[Graph Neural Networks]] (Q17). Autoencoders belong to Block 8, which the midterm does not cover, and no graph page mentioned the unsupervised variant.
+- **Directed graphs inside a GNN**, now in [[Graph Neural Networks]] (Q16). The decks define directed graphs as data, but no page covered the modeling options the question lists: treating edges as undirected, separate weight matrices for in-edges and out-edges, or more flexible weights.
+- **Attention-weighted neighbor aggregation**, now in [[Graph Neural Networks]] (Q48). [[Permutation Invariance and Equivariance]] gives the invariance argument, but no page covered aggregators that weight neighbors by a learned or distance-based score, the graph attention network. The exam's own answer key hedges between A and C.
 - **L1 sparsity and feature selection**, now [[L1 Regularization and Feature Selection]] (Q35). [[Regularization]] lists L1, Lasso, and Ridge as aliases and gives the L1 penalty formula, but does not state that the L1 penalty drives weights to exactly zero and so selects features.
 - **k-means local minima**, now [[k-Means Initialization and Local Minima]] (Q50). [[k-Means]] lists initialization as step one but does not say the algorithm converges to a local minimum that depends on it. [[Optimization]] mentions local minima in general.
 - **kNN regression**, now [[kNN Regression]] (Q51). [[k-Nearest Neighbors]] covers classification by majority vote only. The regression form averages the neighbors' values.

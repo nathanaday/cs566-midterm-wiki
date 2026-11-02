@@ -1,0 +1,37 @@
+filters:
+  or:
+    - type == "module"
+    - type == "session"
+properties:
+  file.name:
+    displayName: Name
+views:
+  - type: table
+    name: Modules
+    filters:
+      and:
+        - type == "module"
+    order:
+      - file.name
+      - name
+      - description
+      - created
+  - type: table
+    name: Sessions
+    filters:
+      and:
+        - type == "session"
+    groupBy:
+      property: module
+      direction: ASC
+    order:
+      - file.name
+      - state
+      - unmet
+      - met
+      - iteration
+      - harness
+      - created
+    sort:
+      - property: created
+        direction: DESC

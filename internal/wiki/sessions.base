@@ -1,0 +1,91 @@
+filters:
+  and:
+    - module == "wiki"
+    - type != "module"
+    - type != "policy"
+    - type != "promise"
+properties:
+  file.name:
+    displayName: Session
+views:
+  - type: table
+    name: Open
+    filters:
+      and:
+        - type == "session"
+        - state != "done"
+    order:
+      - file.name
+      - state
+      - unmet
+      - met
+      - iteration
+      - harness
+      - created
+    sort:
+      - property: created
+        direction: DESC
+  - type: table
+    name: All
+    filters:
+      and:
+        - type == "session"
+    order:
+      - file.name
+      - state
+      - unmet
+      - met
+      - iteration
+      - harness
+      - created
+    sort:
+      - property: created
+        direction: DESC
+  - type: table
+    name: Versions
+    filters:
+      and:
+        - type == "snapshot"
+    order:
+      - version
+      - created
+      - notes
+      - change
+      - restored
+    sort:
+      - property: version
+        direction: DESC
+  - type: table
+    name: Changes
+    filters:
+      and:
+        - type == "change"
+    order:
+      - file.name
+      - status
+      - reason
+      - creates
+      - modifies
+      - removes
+      - session
+      - before
+      - after
+      - applied
+      - rejected
+    sort:
+      - property: created
+        direction: DESC
+  - type: table
+    name: Checkouts
+    filters:
+      and:
+        - type == "session"
+        - flow == "checkout"
+    order:
+      - file.name
+      - status
+      - created
+      - returned
+    sort:
+      - property: created
+        direction: DESC

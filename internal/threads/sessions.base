@@ -1,0 +1,58 @@
+filters:
+  and:
+    - module == "threads"
+    - type != "module"
+    - type != "policy"
+    - type != "promise"
+properties:
+  file.name:
+    displayName: Session
+views:
+  - type: table
+    name: Open
+    filters:
+      and:
+        - type == "session"
+        - state != "done"
+    order:
+      - file.name
+      - state
+      - unmet
+      - met
+      - iteration
+      - harness
+      - created
+    sort:
+      - property: created
+        direction: DESC
+  - type: table
+    name: All
+    filters:
+      and:
+        - type == "session"
+    order:
+      - file.name
+      - state
+      - unmet
+      - met
+      - iteration
+      - harness
+      - created
+    sort:
+      - property: created
+        direction: DESC
+  - type: table
+    name: Board
+    filters:
+      and:
+        - type == "session"
+        - flow == "thread"
+    order:
+      - file.name
+      - phase
+      - priority
+      - description
+      - created
+    sort:
+      - property: created
+        direction: DESC

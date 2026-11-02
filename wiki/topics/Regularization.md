@@ -32,7 +32,6 @@ Regularization adds a penalty to the loss so the model does not fit the training
 
 $$L(W) = \frac{1}{N} \sum_{i=1}^{N} L_i(f(x_i, W), y_i) + \lambda R(W)$$
 
-- Data loss, "fitting to the data": "Model predictions should match training data."
 - Regularization, "preferring a simple model": "Prevent the model from doing too well on training data."
 - $\lambda$ is the regularization strength, a hyperparameter. "Regularization strength is a hyperparameter, so validation data decides whether it helps generalization" ([[F26-midterm-review-234p]], p. 112).
 
@@ -46,17 +45,24 @@ A second family of regularizers adds randomness during training and uses the ful
 
 ## Explanation
 
-### Toy example
-
-The slides fit the same points with a curve that passes through every point ($f_1$) and a straight line ($f_2$). New points show that $f_2$ is better. "Regularization pushes against fitting the data too well so we don't fit noise in the data" ([[Block 1 Slides]], pp. 288–290). The slides quote Ockham's razor: "Among competing hypotheses, the simplest is the best" ([[Block 1 Slides]], p. 291).
 
 ### Common regularizers
 
-| Name | $R(W)$ |
-| --- | --- |
-| L2 | $\sum_k \sum_l W_{k,l}^2$ |
-| L1 | $\sum_k \sum_l \lvert W_{k,l} \rvert$ |
-| Elastic net (L1 + L2) | $\sum_k \sum_l \beta W_{k,l}^2 + \lvert W_{k,l} \rvert$ |
+| Name                  | $R(W)$                                                  | $\frac{d}{dW} (\lambda \cdot R(W))$ |
+| --------------------- | ------------------------------------------------------- | ----------------------------------- |
+| L2                    | $\sum_k \sum_l W_{k,l}^2$                               | $2 \cdot \lambda W$                 |
+| L1                    | $\sum_k \sum_l \lvert W_{k,l} \rvert$                   | $\lambda \cdot sign(W)$             |
+| Elastic net (L1 + L2) | $\sum_k \sum_l \beta W_{k,l}^2 + \lvert W_{k,l} \rvert$ |                                     |
+|                       |                                                         |                                     |
+
+**L2**
+- Spread the weights evenly, shrink weights by a fraction and never quite land on zero
+
+**L1**
+- Indifferent between spreading vs. concentrating; if the loss function cannot overcome $\lambda$ the weights stay at 0
+- "Feature Selection"; does not just shrink features, it deletes them
+
+
 
 Source: [[Block 1 Slides]], p. 296. Block 7 gives the same three forms "in common use" and labels L2 "(Weight decay)". It adds $\lambda R(W)$ to the multiclass SVM loss $L = \frac{1}{N} \sum_{i=1}^{N} \sum_{j \neq y_i} \max(0, f(x_i; W)_j - f(x_i; W)_{y_i} + 1)$ ([[Block 7 Slides]], p. 139). It also states: "L2 penalty = sum of squared weights" (p. 138). [[F26-midterm-review-234p]] repeats both slides (pp. 125-126). The slides list more complex methods to revisit later: dropout, [[Batch Normalization|batch normalization]], stochastic depth, and fractional pooling ([[Block 1 Slides]], p. 297). Block 7 covers them below.
 
