@@ -18,3 +18,13 @@ The slides and the exam are in `attachments/`. The pages that explain them are i
 ## How to Open It
 
 The repository is an [Obsidian](https://obsidian.md) vault. Clone it, then in Obsidian choose **Open folder as vault** and pick the repository folder. Start at `_index.md`. No plugins need to be installed; the index table and the graph colours use features that ship with Obsidian.
+
+## Export the Cheatsheet
+
+The pages on the Topic Map canvas in `cheatsheet/` are the curated set for the exam. One command turns them into a printable PDF:
+
+```
+python3 tools/export_cheatsheet.py
+```
+
+It needs `pandoc` and `tectonic`, both available through Homebrew. The script strips each page to its title and content sections, drops the Related and Sources lists and the frontmatter, orders the pages by the canvas edges, and compiles one PDF at 9pt with half-inch margins into `../Midterm-Cheatsheet/`. The PDF opens with a contents list and an alphabetical index of every page title and alias, and the script writes the same page numbers back into `cheatsheet/Cheatsheet Index.md`. Pass `--flow` to let short pages share a sheet, or `--font-size` and `--margin` to change the density.

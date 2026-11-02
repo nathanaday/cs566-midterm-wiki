@@ -1,6 +1,6 @@
 ---
 description: k-nearest neighbors (kNN) stores the training set and labels a new point by majority vote over its k nearest training points under a chosen distance function; k sets the model's capacity, and all the cost is at prediction time.
-aliases: [kNN, KNN, k-NN, k Nearest Neighbor, k-nearest neighbors, k Nearest Neighbor Algorithm, Nearest Neighbor Algorithm, 1-NN, nearest neighbor classifier, Voronoi diagram, kNN-LM, Nearest Neighbor Language Models, Semantic caching with kNN, semantic cache, Approximate nearest neighbor search, ANN search, Distance function, k-nearest neighbor voting]
+aliases: [kNN, KNN, k-NN, k-nearest neighbors, Nearest Neighbor Algorithm, 1-NN]
 sources: ["[[Block 2 Slides]]", "[[F26-midterm-review-234p]]"]
 subject: 1 Foundations and classical machine learning
 ---
@@ -45,7 +45,7 @@ k sets model capacity. See [[Overfitting and Underfitting]].
 - Pick k on a validation split: fit on one part, score accuracy on the held-out part, keep the best k. See [[Model Evaluation]].
 - Alternatives: cross-validation, automated search, or $k = \sqrt{N}$ as a starting point.
 
-> [!warning] Exam trap
+> [!tip]
 > Training error cannot choose k. 1-NN always scores zero on the training set because every point is its own nearest neighbor.
 
 ### Cost
@@ -58,7 +58,7 @@ k sets model capacity. See [[Overfitting and Underfitting]].
 - Search structures (trees, hashing) and approximate nearest neighbor (ANN) search move cost from prediction into a build step.
 - Pros: explainable, no training or retraining, near-optimal true error rate as N grows.
 
-> [!warning] Exam trap
+> [!tip]
 > Curse of dimensionality: in high dimensions every point sits at nearly the same distance from every other, so "nearest" loses meaning and kNN needs exponentially more data. Scale features first, because distance weights every dimension equally.
 
 ## Related

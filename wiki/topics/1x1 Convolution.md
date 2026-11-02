@@ -51,7 +51,7 @@ Example: 8x8x64 map through 16 filters of 1x1x64 gives 8x8x16.
 
 The bottleneck path uses about 31% of the parameters of the direct path.
 
-> [!warning] Exam trap
+> [!tip]
 > Fewer parameters does not mean the same function. The two paths can represent different functions.
 
 > [!tip]

@@ -1,6 +1,6 @@
 ---
 description: A deep learning model for graph data that computes one embedding per node through layers of neighborhood aggregation with shared weights, read by a head matched to the node, pair, or graph output; this page also covers graphs as data, the GCN update rule, training, the CNN special case, and the directed, attention, and autoencoder variants.
-aliases: [GNN, GNNs, Graph Neural Network, Graph, Graphs, Graph Convolutional Network, GCN, GCNs, Graph Neural Network Variants, Neighborhood Aggregation, Message Passing, Neighbor Aggregation, GNN Computation Graph, GNN Depth, k-Hop Neighborhood, Synchronous Layer Updates, Deep Encoder Update Rule, Mean-Aggregation GNN Update, W_self, W_neighbor, GNN Weight Sharing, Feature Column Order, GNN Training, GNN Model Design, Inductive GNN Inference, Graph ML, Graph ML task levels, Heterogeneous graph, Bipartite graph, Directed graph, Undirected graph, Knowledge graph, Link prediction, Node classification, Graph-level prediction, Graph notation, Graph Attention Network, GAT, Graph Autoencoder, GAE, Directed Graphs in GNNs, Attention-Weighted Aggregation, Edge Direction in GNNs]
+aliases: [GNN, GNNs, Graph Neural Network, GCN, Graph Convolutional Network, Message Passing]
 sources: ["[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[Block 5 Slides]]", "[[F26-midterm-review-234p]]", "[[CSCI 566 Midterm (Spring 2024)]]"]
 subject: 7 Graphs
 ---
@@ -9,43 +9,11 @@ subject: 7 Graphs
 
 A graph neural network (GNN) is a deep node encoder: a stack of layers that update each node's embedding from its own embedding and its neighbors', with one set of weights shared by every node. A head then reads the embeddings per node, per node pair, or per graph. The basic form, which averages the neighbors, is the graph convolutional network (GCN); variants differ in the aggregation step.
 
-## Explanation
-
-### Graphs and Notation
-
-- $G = (V, E)$: node set $V$, edge set $E$; $N(v)$ is the neighbor set of $v$.
-- $A \in \{0,1\}^{|V| \times |V|}$: adjacency matrix, $A_{uv} = 1$ when $(u, v) \in E$; symmetric for an undirected graph.
-- $D$: degree matrix, diagonal with $D_{vv} = \sum_u A_{vu} = |N(v)|$.
-- $X \in \mathbb{R}^{|V| \times m}$: one $m$-dimensional feature row per node; with no features, use a one-hot indicator or constant 1s.
-
-| Kind | Edges |
-| --- | --- |
-| Undirected | symmetric, $A = A^\top$ |
-| Directed | ordered pairs, $A \neq A^\top$ in general |
-| Bipartite | every edge joins set $U$ to set $V$ |
-| Heterogeneous | $G = (V, E, R, T)$: node types $T(v)$, edge relations $r \in R$ |
-
 A plain MLP on the rows of $[A \,\|\, X]$ fails: $O(|V|)$ parameters, no transfer across graph sizes, and sensitivity to node order.
 
 ### Message Passing
 
-Each layer runs aggregate, then update, at every node at once.
-
-**Aggregate.**
-$$m_v^{(k)} = \text{AGG}\big(\{\, h_u^{(k)} : u \in N(v) \,\}\big)$$
-
-**Update.**
-$$h_v^{(k+1)} = \sigma\big(W_k\, m_v^{(k)} + B_k\, h_v^{(k)}\big), \qquad h_v^{(0)} = x_v, \qquad z_v = h_v^{(K)}$$
-
-$W_k$ ($W_{neighbor}$) weights the neighbor message, $B_k$ ($W_{self}$) the node's own vector; $\sigma$ is a non-linearity such as ReLU. Weight shapes depend on feature width, not on $|V|$.
-
-**GCN layer, per node (mean aggregation).**
-$$h_v^{(k+1)} = \sigma\Big(W_k \sum_{u \in N(v)} \frac{h_u^{(k)}}{|N(v)|} + B_k h_v^{(k)}\Big)$$
-
-**GCN layer, matrix form (normalized adjacency).**
-$$H^{(k+1)} = \sigma\big(\tilde{D}^{-1/2}\, \tilde{A}\, \tilde{D}^{-1/2}\, H^{(k)} W_k\big), \qquad \tilde{A} = A + I, \quad \tilde{D}_{vv} = \sum_u \tilde{A}_{vu}$$
-
-The self-loop in $\tilde{A}$ folds the self term into one weight matrix, and the symmetric normalization $1/\sqrt{d_u d_v}$ replaces the plain mean $D^{-1} A$.
+Each layer runs **aggregate**, then **update**, at every node at once.
 
 **Aggregation must be permutation invariant.** AGG treats $N(v)$ as a set: a sum, mean, max, or attention-weighted sum gives the same $m_v$ in any neighbor order. Concatenation, a recurrent pass over the list, or a weight tied to "the first neighbor" breaks this.
 
@@ -53,14 +21,14 @@ The self-loop in $\tilde{A}$ folds the self term into one weight matrix, and the
 - Reach: a layer-$k$ embedding sees nodes up to $k$ hops away; information moves one edge per layer.
 - Schedule: read layer $k$, write layer $k+1$ for all nodes. An in-place update depends on node order.
 
-> [!warning] Exam trap
+> [!tip]
 > Weight sharing alone does not make a GNN; a shared per-node MLP shares weights too. The GNN update reads the neighbors.
 
 ### Invariance, Shared Weights, and Depth
 
-- Per node, the encoder is permutation invariant; over all nodes, permutation equivariant: permute the feature rows and $A$ together, and the output rows permute the same way. See [[Permutation Invariance and Equivariance]].
+- Per node, the encoder is **permutation invariant**; over all nodes, **permutation equivariant**: permute the feature rows and $A$ together, and the output rows permute the same way. 
 - All nodes share $W_k$ and $B_k$ per layer, as a CNN shares one kernel across positions and an RNN one update across time steps. Parameter count depends on width and depth, so a trained GNN runs inductively on unseen graphs whose features have the same meaning and width.
-- A CNN is a GNN with a fixed neighbor count and order: a 3x3 filter learns one $W_l^u$ per offset $u$; graph neighbors have no order. See [[Convolutional Neural Networks (CNN)]].
+- A CNN is a GNN with a fixed neighbor count and order: a 3x3 filter learns one $W_l^u$ per offset $u$; graph neighbors have no order. 
 - Node (row) order may change when $A$ moves with it; feature (column) order may not, since each column carries the meaning the weights learned.
 
 **Over-smoothing.** Each layer averages a node with its neighbors, so after many layers the embeddings of all nodes in a connected region converge toward one vector. Depth trades reach for distinctness and compute; a few layers is the usual choice.
@@ -104,7 +72,7 @@ $$Z = \text{GCN}(X, A), \qquad \hat{A} = \sigma(Z Z^\top), \qquad \hat{A}_{uv} =
 
 The loss is binary cross-entropy between $\hat{A}$ and $A$ with non-edges down-weighted or sampled. It is unsupervised, scores unseen pairs for link prediction, and reuses the dot-product decoder of [[Node Embeddings]]; VGAE adds a Gaussian prior and a KL term.
 
-> [!warning] Exam trap
+> [!tip]
 > A GNN does not predict the next state of a graph. Link prediction scores one pair at a time; graph generation is a separate graph-level task.
 
 ## Related

@@ -1,47 +1,6 @@
 ---
 description: "How CSCI 566 evaluates supervised models: test error estimates the unknown true error, the training, validation, and test splits each have one job, hyperparameters are chosen on validation data or by cross-validation, and the test set stays outside every selection loop."
-aliases:
-  - Evaluation of ML Algorithms
-  - Error rate
-  - Test error
-  - ML evaluation metrics
-  - Model metrics
-  - Evaluation metrics
-  - Hyperparameter
-  - Hyperparameters
-  - Train/validation/test split
-  - Validation set
-  - Val split
-  - Cross-validation
-  - Accuracy
-  - Precision
-  - Recall
-  - F1 score
-  - Precision and recall
-  - Metrics for binary classification
-  - k-fold cross-validation
-  - 5-fold cross-validation
-  - Do not tune hyperparameters on training or test data
-  - Deciding hyperparameters
-  - Training, validation and test splits
-  - Data splits
-  - Three data splits
-  - Hyperparameters vs. parameters
-  - Keep near-duplicate photos in the same split
-  - Evaluate once on held-out test data
-  - Repeated validation can overfit the selection process
-  - Keep the test score outside the hyperparameter search loop
-  - Keep the test set out of stopping decisions
-  - Fixed stopping protocol
-  - Training, validation, and test split
-  - Held-out test set
-  - Evaluate on the test set once, after selection
-  - Evaluate once, after selection
-  - Keep the test set out of model selection
-  - Select by validation, test the final choice
-  - Keep grouped samples in the same split
-  - Split by plant
-  - Group split
+aliases: [Evaluation metrics, Accuracy, Precision and recall, F1 score, Cross-validation, Train/validation/test split]
 sources:
   - "[[Block 1 Slides]]"
   - "CSCI 566 Syllabus"
@@ -111,7 +70,7 @@ $$F_1 = \frac{2pr}{p + r}$$
 | Predicts positive for everyone | base rate | 1 |
 | Predicts positive only when certain | high | low |
 
-> [!warning] Exam trap
+> [!tip]
 > Accuracy misleads on imbalanced data: the majority-class model scores the base rate while finding no positive. F1 is low when either $p$ or $r$ is low; the arithmetic mean would hide the gap.
 
 ### Hyperparameters and Data Splits
@@ -128,7 +87,7 @@ $$F_1 = \frac{2pr}{p + r}$$
 | 3 | Train, validation, test split; pick on validation, report on test | Good |
 | 4 | Cross-validation: rotate folds as validation, average; test stays separate | Good for small data; rare in deep learning |
 
-> [!warning] Exam trap
+> [!tip]
 > Any choice made with the test score, including when to stop training, turns the test error into a training signal. It then no longer estimates the true error. Pick on validation, test the final model once.
 
 > [!tip]

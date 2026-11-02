@@ -57,10 +57,10 @@ The saving depends on rank and matrix shape. The $d \cdot k$ frozen entries of $
 | Inference cost after training | None (merged) | Module stays |
 | Learns | An update to $W$ | A new sub-network |
 
-> [!warning] Exam trap
+> [!tip]
 > The low-rank object is the update $\Delta W = BA$, not $W_0$. LoRA does not factorize the original matrix.
 
-> [!warning] Exam trap
+> [!tip]
 > PEFT reduces parameter updates, not backpropagation. The backward pass still runs through frozen layers to reach $A$ and $B$; optimizer state shrinks, activation memory can stay large. See [[Backpropagation]].
 
 ## Related

@@ -1,21 +1,6 @@
 ---
 description: Underfitting is a model too simple for its data (high training and generalization error), and overfitting is a model that fits noise (low training error, high generalization error); CSCI 566 frames both as a mismatch between model complexity and data complexity and diagnoses them from training and validation curves.
-aliases:
-  - Overfitting
-  - Underfitting
-  - Appropriate fitting
-  - Model capacity
-  - Model complexity
-  - Data complexity
-  - Generalization
-  - Generalization error
-  - Training error
-  - Generalization gap
-  - Train/validation gap
-  - Learning curves
-  - Loss curves
-  - Accuracy curves
-  - Train and validation errors as clues
+aliases: [Overfitting, Underfitting, Generalization, Generalization gap, Model capacity, Learning curves]
 sources:
   - "[[Block 1 Slides]]"
   - "[[Block 3 Slides]]"
@@ -62,7 +47,7 @@ $$
 | Low | Low | Small | Good fit | None; confirm the split is clean |
 | High | Low | Negative | Bug | Check for leakage, label errors, or a bad split |
 
-> [!warning] Exam trap
+> [!tip]
 > A small gap alone proves nothing. Both errors high with a small gap is underfitting. Read the absolute level first, then the gap.
 
 ### Learning Curves in Words
@@ -92,7 +77,7 @@ Model complexity: the number of learnable parameters and their value range; more
 - A larger regularization strength $\lambda$ smooths the decision boundary.
 - In [[k-Nearest Neighbors]], small $k$ overfits and large $k$ underfits.
 
-> [!warning] Exam trap
+> [!tip]
 > Memorization is not overfitting. Memorization: the model can reproduce a training string. Overfitting: training fit improves while held-out performance worsens.
 
 ## Related

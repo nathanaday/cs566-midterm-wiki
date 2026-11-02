@@ -1,6 +1,6 @@
 ---
 description: A CNN layer that slides a set of learned filters over an input volume, computes one dot product plus bias at each position, and stacks the resulting activation maps; its weights are shared across locations.
-aliases: [Convolution Layer, Conv Layer, CONV layer, Conv, Locally Connected Layer, Weight Sharing, Parameter Sharing, Shared Weights, Convolution Filter, Kernel, Activation Map, Feature Map, Stride, Zero Padding, Padding, Standard Dense 2D Convolution, Convolution Output Size, Counting Convolution Parameters]
+aliases: [Convolution Layer, Conv Layer, Kernel, Feature Map, Weight Sharing, Padding]
 sources: ["[[Block 4 Slides]]", "Lecture 3 Notes - Convolutional and Pooling Layers", "[[F26-midterm-review-234p]]"]
 subject: 4 Convolutional networks
 ---
@@ -44,7 +44,7 @@ $$P = 0 \quad\Rightarrow\quad W_2 = \frac{W_1 - F}{S} + 1 \qquad (S = 1 \to W_2 
 
 Padding can also make a stride fit that otherwise would not.
 
-> [!warning] Exam trap
+> [!tip]
 > The midterm review writes the same formula as $(n + 2p - k)/s + 1$ with lowercase $n$ for a spatial length; there uppercase $N$ is batch size. Block 4 uses $N$ for the side length. Read each formula in its own notation, and check that the division is exact.
 
 ### Parameter Count
@@ -96,7 +96,7 @@ For a 200x200 image and 40k hidden units:
 - First-layer filters are local templates, often oriented edges and opposing colours, unlike the whole-image templates of a linear classifier.
 - No layer type wins every task; vision transformers match or beat convolution at large pretraining scale.
 
-> [!warning] Exam trap
+> [!tip]
 > A convolutional layer alone is linear. Two stacked convolutions without a nonlinearity collapse to one linear map.
 
 ## Related

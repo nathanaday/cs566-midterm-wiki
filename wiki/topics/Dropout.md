@@ -1,6 +1,6 @@
 ---
 description: A regularizer that sets a random subset of hidden activations to zero in each training forward pass, then turns the mask off at evaluation and uses a classic or inverted scaling convention so that training and evaluation scales match.
-aliases: [Dropout regularization, Classic dropout, Inverted dropout, Dropout test-time scaling, Dropout scaling conventions]
+aliases: [Dropout regularization, Classic dropout, Inverted dropout]
 sources: ["[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 subject: 3 Training
 ---
@@ -50,7 +50,7 @@ H1 *= U1
 
 Each hidden layer draws its own mask; the output layer has none. Classic dropout omits the `/ p` here and instead multiplies each hidden layer by `p` in `predict`.
 
-> [!warning] Exam trap
+> [!tip]
 > At evaluation the mask is off and the output is deterministic. Inverted dropout needs no scaling, since the $1/q$ already happened in training; classic dropout multiplies by $q$. With inverted $q = 0.8$ (training scale 1.25), scaling by 0.8 at evaluation shrinks the output and scaling by 1.25 inflates it.
 
 > [!tip] Naming of p

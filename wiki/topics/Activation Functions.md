@@ -1,6 +1,6 @@
 ---
 description: The non-linear function a neural network applies to each unit's weighted sum, such as sigmoid, tanh, ReLU, Leaky ReLU, PReLU, Maxout, ELU, or GELU, without which stacked layers collapse to one linear map.
-aliases: [Activation Function, Nonlinearity, Nonlinear Activation, ReLU, Rectified Linear Unit, Sigmoid, Logistic Function, tanh, Leaky ReLU, PReLU, Parametric ReLU, Parametric Rectifier, ELU, Exponential Linear Unit, Maxout, Activation Saturation, Saturated Neurons]
+aliases: [Activation Function, Nonlinearity, ReLU, Sigmoid, tanh, Leaky ReLU]
 sources: ["[[Block 3 Slides]]", "CSCI 566 Syllabus", "Sep 14 Lecture Account", "[[Block 4 Slides]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 subject: 2 Neural networks
 ---
@@ -45,7 +45,7 @@ A unit saturates when its input falls in a flat region of $f$: the local derivat
 | $0$ | $0.50$ | $0.25$ |
 | $10$ | $\approx 0.999955$ | $\approx 0.000045$ |
 
-> [!warning] Exam trap
+> [!tip]
 > Each sigmoid layer multiplies the backward gradient by at most 0.25; tanh by at most 1. ReLU does not saturate for $x > 0$ but passes zero gradient for $x < 0$.
 
 ### Sigmoid Is Not Zero-Centered

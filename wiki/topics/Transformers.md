@@ -1,6 +1,6 @@
 ---
 description: A sequence model built only from attention and feed-forward layers, with no recurrence or convolution; decoder-only variants such as GPT predict the next word, and encoder-only variants such as BERT are pretrained as masked language models.
-aliases: [Transformer, Decoder-only Transformer, GPT-style Transformer, Text-generating Transformer, Autoregressive Transformer, Transformer block, Transformer layer, Transformer LM, Encoder-only Transformer, Masked language model, Masked language modeling, MLM, MLM pretraining, BERT, BERT-Base, BERT-Large]
+aliases: [Transformer, Transformer block, Decoder-only Transformer, Encoder-only Transformer, BERT, Masked language model]
 sources: ["Attention Is All You Need (note)", "Topic Note - Transformers", "Topic Note - Sequence Transduction", "An Image is Worth 16x16 Words (note)", "Fall 2026 Reading List", "[[Block 3 Slides]]", "[[Block 5 Slides]]", "[[Block 6 Slides]]", "[[Block 6 Slides Extended]]", "[[Block 7 Slides]]", "[[F26-midterm-review-234p]]"]
 subject: 6 Sequence models
 ---
@@ -47,9 +47,6 @@ With $d_k = d_v = d_{\text{model}}/h$, the concatenation is $n \times d_{\text{m
 
 **Complexity.** Per layer, self-attention costs $O(n^2 d)$ time and $O(n^2)$ memory for the score matrix, with $O(1)$ sequential steps and a path of length 1 between any two positions. An RNN layer costs $O(n d^2)$ but takes $n$ sequential steps. The quadratic term dominates on long sequences; for ViT, patch size sets token count, and token count sets cost (Visual Token Count).
 
-> [!warning] Exam trap
-> Divide the scores by $\sqrt{d_k}$, not $d_k$, and $d_k$ is the per-head key width ($d_{\text{model}}/h$), not $d_{\text{model}}$.
-
 ### Positional Encoding
 
 Attention is permutation invariant: "dog bites man" and "man bites dog" give the same bag of token vectors. The model adds a position vector to each token embedding before the first block.
@@ -64,12 +61,7 @@ Learned position embeddings (GPT, BERT) work as well at fixed lengths. See Posit
 
 ### Block Layout
 
-Every block has two sublayers, each wrapped as $\text{LayerNorm}(x + \text{Sublayer}(x))$ ([[Residual Connections]], [[Layer Normalization]]). The feed-forward sublayer is one MLP applied to each position separately with shared weights.
-
-**Position-wise feed-forward.**
-$$
-\operatorname{FFN}(x) = \max(0,\, xW_1 + b_1)\, W_2 + b_2, \qquad W_1 : d_{\text{model}} \times d_{\text{ff}}, \quad d_{\text{ff}} = 4\, d_{\text{model}} \text{ (typical)}
-$$
+Every block has two sublayers, each wrapped as $\text{LayerNorm}(x + \text{Sublayer}(x))$. The feed-forward sublayer is one MLP applied to each position separately with shared weights.
 
 | Block | Sublayers in order | Mask |
 | --- | --- | --- |
@@ -78,10 +70,7 @@ $$
 | Decoder-only (GPT) | masked self-attention, add & norm, FFN, add & norm | causal |
 | Encoder-only (BERT) | self-attention, add & norm, FFN, add & norm | none |
 
-- Attention mixes information across positions; the FFN transforms features within one position.
-- Weights are shared across positions within a layer; each of the $L$ stacked layers has its own weights.
-- Full model: tokens + positions -> block x $L$ -> prediction head (linear to vocabulary, softmax) -> next token.
-- BERT and GPT-3 use GELU in the FFN instead of ReLU ([[Activation Functions]], [[Activation Sparsity]]).
+- BERT and GPT-3 use GELU in the FFN instead of ReLU 
 
 > [!tip]
 > Depth counts blocks; generation length counts tokens. One attention layer already reads the whole allowed prefix; more blocks add processing steps, not reach.
@@ -95,15 +84,9 @@ The causal mask adds $-\infty$ to every score $s_{ij}$ with $j > i$ before the s
 - Padding mask: the same trick hides padded positions in a batch, in encoder or decoder.
 - Graph view: unmasked self-attention is a complete graph over tokens with input-dependent edge weights; the causal mask makes the edges directional ([[Graph Neural Networks]]).
 
-> [!warning] Exam trap
+> [!tip]
 > The causal mask is the only difference between the decoder-only and encoder-only layers. Masked language modeling (BERT) hides a token and predicts it from both sides, so it needs unmasked attention; next-token prediction (GPT) uses left context only. The MLM [MASK] token and the causal attention mask are different things.
 
-### Variants and Scale
-
-- Encoder-only: BERT-Base 110M parameters, BERT-Large 340M; pretrained with MLM, then [[Fine-Tuning]] or [[Adapters]] ([[Transfer Learning]]).
-- Decoder-only: GPT-2 1.5B parameters on about 10B tokens; GPT-3 175B on 300B; Chinchilla 70B on 1.4T; Llama 3.1 405B on 15T. Size grows on two axes, parameters and tokens (Scaling Laws).
-- Vision: ViT cuts an image into fixed-size patches and treats each as a token, with no convolutions ([[Convolutional Neural Networks (CNN)]]); VLMs, world models, and video models inherit this tokenization.
-- Training at scale: data parallelism copies the model to each GPU and syncs gradients; model parallelism shards large matrices across GPUs. Both need communication between GPUs.
 
 ## Related
 

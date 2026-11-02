@@ -27,23 +27,16 @@ $$W \leftarrow W - \eta \cdot dW$$
 
 $$L = \frac{1}{N} \sum_{i=1}^{N} L_i(f(x_i; W), y_i) + \lambda R(W)$$
 
-> [!warning] Exam trap
-> The step moves against the gradient. A weight with $dL/dw < 0$ goes up: weight 2.0, gradient $-0.5$, $\eta = 0.1$ gives 2.05.
+| Parameter              | Rule of thumb                                                      |
+| ---------------------- | ------------------------------------------------------------------ |
+| Learning rate $\eta$   | Tune first; every optimizer needs one                              |
+| Optimizer              | SGD + Momentum for vision, AdamW for Transformers                  |
+| Batch size             | Larger batches: less gradient noise, fewer steps per epoch         |
+| Weight decay $\lambda$ | L2 penalty under SGD; decoupled decay under AdamW                  |
+| Dropout rate           | Train with mask, evaluate without; match the scale                 |
+| Initialization         | Xavier: $\sigma = 1/\sqrt{D_{in}}$; He: $\sigma = \sqrt{2/D_{in}}$ |
+| Schedule               | Decay $\eta$ over training                                         |
 
-### Hyperparameter Checklist
-
-| Knob | Rule of thumb |
-| --- | --- |
-| Learning rate $\eta$ | Tune first; every optimizer needs one |
-| Optimizer | SGD + Momentum for vision, AdamW for Transformers |
-| Batch size | Larger batches: less gradient noise, fewer steps per epoch |
-| Weight decay $\lambda$ | L2 penalty under SGD; decoupled decay under AdamW |
-| Dropout rate | Train with mask, evaluate without; match the scale |
-| Initialization | Xavier: $\sigma = 1/\sqrt{D_{in}}$; He: $\sigma = \sqrt{2/D_{in}}$ |
-| Schedule | Decay $\eta$ over training |
-
-> [!tip]
-> Change one factor per experiment. Hold the data split, metric, and compute budget fixed, and record every run.
 
 ### Symptoms and Remedies
 
@@ -62,17 +55,8 @@ $$L = \frac{1}{N} \sum_{i=1}^{N} L_i(f(x_i; W), y_i) + \lambda R(W)$$
 - [[Layer Normalization]] normalizes the features within one example, so it does not depend on batch size.
 - [[Weight Initialization]] and normalization both aim to keep the activation and gradient scale constant across depth.
 
-> [!warning] Exam trap
+> [!tip]
 > Batch norm and dropout behave differently in train and eval mode. Forgetting to switch modes changes the output.
-
-### Reuse of Trained Models
-
-- [[Transfer Learning]] starts from weights learned on source data, then freezes or fine-tunes layers on the target task.
-
-## Related
-
-- [[Neural Networks]]: the broader subject
-- Machine Learning: the broader subject
 
 ## Sources
 

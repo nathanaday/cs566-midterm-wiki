@@ -36,7 +36,7 @@ $$
 | Small batch | Noisy statistics | No effect |
 | Common in | CNNs | Transformers |
 
-> [!warning] Exam trap
+> [!tip]
 > LayerNorm has no train/eval mode switch and no batch-size pitfall. Both problems belong to BatchNorm only.
 
 ### In Transformers
